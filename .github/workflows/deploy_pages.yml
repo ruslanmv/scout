@@ -1,22 +1,42 @@
 name: deploy pages
+
 on:
   workflow_dispatch:
   push:
     branches: [ main, master ]
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   pages:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
     permissions:
-      contents: read
-      pages: write
-      id-token: write
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python scripts/export_for_github_pages.py
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: public
-      - uses: actions/deploy-pages@v4
+      - name: Build static Pages bundle
+        run: python scripts/export_for_github_pages.py
+      - name: Add Pages marker
+        run: touch public/.nojekyll
+      - name: Publish to gh-pages branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          cd public
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b gh-pages
+          git add -A
+          git commit -m "Deploy ${GITHUB_SHA}"
+          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push --force origin gh-pages
