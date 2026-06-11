@@ -1,19 +1,53 @@
 #!/usr/bin/env python
+from __future__ import annotations
 
+import json
+import shutil
 import sys
-from pathlib import Path as _Path
-_ROOT = _Path(__file__).resolve().parents[1]
-if str(_ROOT) not in sys.path:
-    sys.path.insert(0, str(_ROOT))
 from pathlib import Path
-import shutil, json
 
-root = Path(__file__).resolve().parents[1]
-out = root / "public" / "scout"
-if out.exists():
-    shutil.rmtree(out)
-out.mkdir(parents=True)
-shutil.copytree(root / "dashboard", out, dirs_exist_ok=True)
-(out / "data").mkdir(exist_ok=True)
-shutil.copy2(root / "datasets/latest.json", out / "data/latest.json")
-print(f"Exported GitHub Pages bundle to {out}")
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+
+def ensure_latest_dataset() -> Path:
+    latest = ROOT / "datasets" / "latest.json"
+    if latest.exists():
+        return latest
+    from scripts.generate_snapshot import main as generate_snapshot
+
+    generate_snapshot()
+    if not latest.exists():
+        raise FileNotFoundError("datasets/latest.json was not generated")
+    return latest
+
+
+def copy_dashboard(out: Path, latest: Path, index: Path) -> None:
+    if out.exists():
+        shutil.rmtree(out)
+    out.mkdir(parents=True)
+    shutil.copytree(ROOT / "dashboard", out, dirs_exist_ok=True)
+    data_dir = out / "data"
+    data_dir.mkdir(exist_ok=True)
+    shutil.copy2(latest, data_dir / "latest.json")
+    if index.exists():
+        shutil.copy2(index, data_dir / "index.json")
+    else:
+        (data_dir / "index.json").write_text(json.dumps({"latest": "latest.json"}, indent=2), encoding="utf-8")
+
+
+def main() -> None:
+    public = ROOT / "public"
+    latest = ensure_latest_dataset()
+    index = ROOT / "datasets" / "index.json"
+    if public.exists():
+        shutil.rmtree(public)
+    copy_dashboard(public, latest, index)
+    copy_dashboard(public / "scout", latest, index)
+    (public / "404.html").write_text((public / "index.html").read_text(encoding="utf-8"), encoding="utf-8")
+    print(f"Exported GitHub Pages bundle to {public} and {public / 'scout'}")
+
+
+if __name__ == "__main__":
+    main()
