@@ -10,11 +10,7 @@ function esc(value) {
   return String(value ?? '').replace(/[&<>'"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[c]));
 }
 
-function setStatus(message) {
-  $('status').textContent = message;
-  const mode = $('report-mode');
-  if (mode) mode.textContent = state.staticMode ? 'Static Pages' : 'Live API';
-}
+function setStatus(message) { $('status').textContent = message; }
 
 async function fetchJSON(url, options) {
   const res = await fetch(url, options);
@@ -172,9 +168,6 @@ function renderReport(data) {
   $('sticky').classList.remove('hidden');
   $('preview-topic').textContent = top.name || 'Scout Report';
   $('preview-copy').textContent = report.summary?.headline || 'Your simple plan is ready.';
-  $('report-score').textContent = score(top);
-  $('report-mode').textContent = state.staticMode ? 'Static Pages' : 'Live API';
-  $('report-date').textContent = new Date().toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
   $('report-title').textContent = `${report.location?.city ? `${report.location.city}, ` : ''}${report.location?.country || 'Worldwide'} · ${labels.goals[report.goal] || report.goal} · ${labels.profiles[report.profile] || report.profile}`;
   $('top-topic').textContent = top.name || '—';
   $('top-summary').textContent = top.why_follow || top.summary || '—';

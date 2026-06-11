@@ -14,7 +14,6 @@
       <a class="brand" href="./"><span class="brand-mark">S</span><span>Scout</span></a>
       <div class="navlinks">
         <a href="../docs">API</a>
-        <a href="Scout%20Report.html">Report</a>
         <a href="data/index.json">Dataset</a>
         <a href="https://github.com/ruslanmv/scout">GitHub</a>
       </div>
@@ -81,24 +80,17 @@
 
   <main>
     <section class="trust-strip" aria-label="What Scout gives you">
-      <div><strong>01</strong><span>Pick your profile</span></div>
-      <div><strong>02</strong><span>Get a ranked opportunity</span></div>
-      <div><strong>03</strong><span>Follow a study → build → publish plan</span></div>
-      <div><strong>04</strong><span>Share the report anywhere</span></div>
+      <div><strong>Simple</strong><span>No dashboards to learn</span></div>
+      <div><strong>Actionable</strong><span>Study, build, publish</span></div>
+      <div><strong>Auditable</strong><span>Open JSON dataset</span></div>
+      <div><strong>Static-ready</strong><span>Works on GitHub Pages</span></div>
     </section>
 
-    <section id="report" class="report hidden report-shell" aria-label="Generated Scout report">
-      <aside class="report-sidebar">
-        <p class="eyebrow">Scout Report</p>
-        <h2 id="report-title">Your next best move</h2>
-        <div class="report-score">
-          <span id="report-score">—</span>
-          <small>Opportunity score</small>
-        </div>
-        <div class="report-meta">
-          <p><strong>Mode</strong><span id="report-mode">Live API</span></p>
-          <p><strong>Generated</strong><span id="report-date">Today</span></p>
-          <p><strong>Share</strong><span>Copy the URL and send your plan</span></p>
+    <section id="report" class="report hidden">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Your Scout Report</p>
+          <h2 id="report-title">Your next best move</h2>
         </div>
         <div class="mode-switch vertical">
           <button id="simple" class="active">Simple view</button>
@@ -107,24 +99,23 @@
         </div>
       </aside>
 
-      <div class="report-main">
-        <article class="next-card report-hero-card">
-          <div>
-            <span class="pill">Top opportunity</span>
-            <h3 id="top-topic">—</h3>
-            <p id="top-summary">—</p>
-            <div class="actions">
-              <button id="top-evidence" class="primary small">See why</button>
-              <button id="top-project" class="secondary small">Get project plan</button>
-            </div>
+      <article class="next-card">
+        <div>
+          <span class="pill">Top opportunity</span>
+          <h3 id="top-topic">—</h3>
+          <p id="top-summary">—</p>
+          <div class="actions">
+            <button id="top-evidence" class="primary small">See why</button>
+            <button id="top-project" class="secondary small">Get project plan</button>
           </div>
-          <div class="next-move action-stack">
-            <p><strong>Study</strong><span id="study-now">—</span></p>
-            <p><strong>Build</strong><span id="build-now">—</span></p>
-            <p><strong>Publish</strong><span id="publish-now">GitHub + demo + short article</span></p>
-            <p><strong>Confidence</strong><span id="confidence-now">—</span></p>
-          </div>
-        </article>
+        </div>
+        <div class="next-move">
+          <p><strong>Study</strong><span id="study-now">—</span></p>
+          <p><strong>Build</strong><span id="build-now">—</span></p>
+          <p><strong>Publish</strong><span id="publish-now">GitHub + demo + short article</span></p>
+          <p><strong>Confidence</strong><span id="confidence-now">—</span></p>
+        </div>
+      </article>
 
         <section class="insights" id="insights"></section>
 
