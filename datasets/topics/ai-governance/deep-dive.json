@@ -1,0 +1,158 @@
+{
+  "topic_id": "ai-governance",
+  "topic_name": "AI Governance and Policy Automation",
+  "location": {
+    "country": "Worldwide",
+    "city": null
+  },
+  "goal": "career",
+  "profile": "developer",
+  "recommendation": "build_now",
+  "score": 80.08,
+  "confidence": {
+    "score": 0.82,
+    "label": "Medium confidence",
+    "hype_risk": 0.28
+  },
+  "executive_summary": "AI Governance and Policy Automation is a strong Scout recommendation because Enterprise AI adoption requires safety, auditability, policy enforcement, and regulatory readiness. Your practical move is: AI policy checker.",
+  "why_it_matters": "Enterprise AI adoption requires safety, auditability, policy enforcement, and regulatory readiness.",
+  "evidence": {
+    "signals": {
+      "github_activity": 72,
+      "github_growth": 75,
+      "huggingface_activity": 65,
+      "news_mentions": 90,
+      "job_demand": 84,
+      "community_activity": 70,
+      "local_relevance": 88,
+      "project_potential": 82,
+      "career_value": 86,
+      "learning_accessibility": 72,
+      "durability": 94,
+      "ecosystem_fit": 97
+    },
+    "source_summary": "Medium confidence, based on Community, Jobs, News/RSS.",
+    "sources": [
+      {
+        "name": "News/RSS"
+      },
+      {
+        "name": "Jobs"
+      },
+      {
+        "name": "Community"
+      }
+    ]
+  },
+  "local_analysis": {
+    "score": 88,
+    "summary": "Relevance for Worldwide is estimated from local boosts, jobs/community proxies, and topic fit."
+  },
+  "global_analysis": {
+    "score": 74.0,
+    "summary": "Global momentum combines developer activity, AI ecosystem activity, market/news mentions, job demand, and community signals."
+  },
+  "study_plan": [
+    "AI risk taxonomy",
+    "Policy checks",
+    "Audit trails",
+    "Human approval",
+    "EU AI Act basics"
+  ],
+  "project_blueprints": [
+    {
+      "title": "AI policy checker",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Governance",
+        "Risk management",
+        "Python",
+        "Policy engines"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    },
+    {
+      "title": "Guardian policy pack",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Governance",
+        "Risk management",
+        "Python",
+        "Policy engines"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    },
+    {
+      "title": "Compliance dashboard",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Governance",
+        "Risk management",
+        "Python",
+        "Policy engines"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    }
+  ],
+  "visibility_plan": {
+    "github_repo": "ai-governance-demo",
+    "huggingface_space": "AI Governance and Policy Automation Demo",
+    "blog_title": "How I built a AI Governance and Policy Automation project from trend intelligence",
+    "skills_to_show": [
+      "Governance",
+      "Risk management",
+      "Python",
+      "Policy engines"
+    ],
+    "publish_steps": [
+      "Create a clean GitHub README with screenshots and architecture.",
+      "Publish a working demo or notebook.",
+      "Write a short article explaining the problem, approach, and result.",
+      "Register the agent/tool in MatrixHub when relevant."
+    ]
+  },
+  "risks": [
+    "Regulation changes over time",
+    "Legal interpretation needs expert review"
+  ],
+  "agent_matrix_opportunities": [
+    {
+      "type": "mcp_server",
+      "name": "AI Governance and Policy Automation MCP",
+      "value": "Expose reusable capabilities to agents."
+    },
+    {
+      "type": "agent",
+      "name": "AI Governance and Policy Automation Scout Agent",
+      "value": "Turn trend intelligence into guided tasks."
+    },
+    {
+      "type": "dataset",
+      "name": "ai-governance-signals",
+      "value": "Preserve evidence for reproducible learning."
+    }
+  ],
+  "raw_data_links": {
+    "topic": "/api/v1/topics/ai-governance",
+    "deep_dive": "/api/v1/topics/ai-governance/deep-dive",
+    "dataset": "/api/v1/datasets/latest"
+  }
+}

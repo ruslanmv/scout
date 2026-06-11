@@ -1,0 +1,74 @@
+{
+  "id": "ai-governance",
+  "name": "AI Governance and Policy Automation",
+  "summary": "Policies, controls, risk checks, and compliance workflows for AI systems.",
+  "why_follow": "Enterprise AI adoption requires safety, auditability, policy enforcement, and regulatory readiness.",
+  "signals": {
+    "github_activity": 72,
+    "github_growth": 75,
+    "huggingface_activity": 65,
+    "news_mentions": 90,
+    "job_demand": 84,
+    "community_activity": 70,
+    "local_relevance": 88,
+    "project_potential": 82,
+    "career_value": 86,
+    "learning_accessibility": 72,
+    "durability": 94,
+    "ecosystem_fit": 97
+  },
+  "starter_actions": [
+    "Study AI policy basics",
+    "Build a policy checklist assistant",
+    "Create a risk scoring workflow"
+  ],
+  "study_plan": [
+    "AI risk taxonomy",
+    "Policy checks",
+    "Audit trails",
+    "Human approval",
+    "EU AI Act basics"
+  ],
+  "project_ideas": [
+    "AI policy checker",
+    "Guardian policy pack",
+    "Compliance dashboard"
+  ],
+  "skills": [
+    "Governance",
+    "Risk management",
+    "Python",
+    "Policy engines"
+  ],
+  "risks": [
+    "Regulation changes over time",
+    "Legal interpretation needs expert review"
+  ],
+  "sources": [
+    {
+      "name": "News/RSS"
+    },
+    {
+      "name": "Jobs"
+    },
+    {
+      "name": "Community"
+    }
+  ],
+  "trust": {
+    "score": 0.82,
+    "label": "Medium confidence",
+    "hype_risk": 0.28
+  },
+  "trend_score": 74.0,
+  "actionability_score": 85.7,
+  "matrix_value_score": 83.35,
+  "score": 80.08,
+  "rank": 4,
+  "priority": "build_now",
+  "labels": [
+    "build_now",
+    "local_opportunity"
+  ],
+  "location_context": null
+}

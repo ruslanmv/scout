@@ -1,0 +1,162 @@
+{
+  "topic_id": "llm-evaluation",
+  "topic_name": "LLM and Agent Evaluation",
+  "location": {
+    "country": "Worldwide",
+    "city": null
+  },
+  "goal": "career",
+  "profile": "developer",
+  "recommendation": "build_now",
+  "score": 85.56,
+  "confidence": {
+    "score": 0.86,
+    "label": "High confidence",
+    "hype_risk": 0.2
+  },
+  "executive_summary": "LLM and Agent Evaluation is a strong Scout recommendation because As AI systems move from demos to production, teams need reliable evaluation, observability, and regression testing. Your practical move is: Agent quality dashboard.",
+  "why_it_matters": "As AI systems move from demos to production, teams need reliable evaluation, observability, and regression testing.",
+  "evidence": {
+    "signals": {
+      "github_activity": 86,
+      "github_growth": 90,
+      "huggingface_activity": 80,
+      "news_mentions": 78,
+      "job_demand": 81,
+      "community_activity": 72,
+      "local_relevance": 78,
+      "project_potential": 92,
+      "career_value": 90,
+      "learning_accessibility": 75,
+      "durability": 94,
+      "ecosystem_fit": 96
+    },
+    "source_summary": "High confidence, based on GitHub, Hugging Face, News/RSS.",
+    "sources": [
+      {
+        "name": "GitHub"
+      },
+      {
+        "name": "Hugging Face"
+      },
+      {
+        "name": "News/RSS"
+      }
+    ]
+  },
+  "local_analysis": {
+    "score": 78,
+    "summary": "Relevance for Worldwide is estimated from local boosts, jobs/community proxies, and topic fit."
+  },
+  "global_analysis": {
+    "score": 82.9,
+    "summary": "Global momentum combines developer activity, AI ecosystem activity, market/news mentions, job demand, and community signals."
+  },
+  "study_plan": [
+    "Golden datasets",
+    "Prompt regression tests",
+    "Traces",
+    "LLM-as-judge",
+    "Human review"
+  ],
+  "project_blueprints": [
+    {
+      "title": "Agent quality dashboard",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Evaluation",
+        "Observability",
+        "Python",
+        "Dashboards",
+        "OpenTelemetry"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    },
+    {
+      "title": "RAG evaluation suite",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Evaluation",
+        "Observability",
+        "Python",
+        "Dashboards",
+        "OpenTelemetry"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    },
+    {
+      "title": "Prompt regression tool",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Evaluation",
+        "Observability",
+        "Python",
+        "Dashboards",
+        "OpenTelemetry"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    }
+  ],
+  "visibility_plan": {
+    "github_repo": "llm-evaluation-demo",
+    "huggingface_space": "LLM and Agent Evaluation Demo",
+    "blog_title": "How I built a LLM and Agent Evaluation project from trend intelligence",
+    "skills_to_show": [
+      "Evaluation",
+      "Observability",
+      "Python",
+      "Dashboards",
+      "OpenTelemetry"
+    ],
+    "publish_steps": [
+      "Create a clean GitHub README with screenshots and architecture.",
+      "Publish a working demo or notebook.",
+      "Write a short article explaining the problem, approach, and result.",
+      "Register the agent/tool in MatrixHub when relevant."
+    ]
+  },
+  "risks": [
+    "LLM-as-judge can be biased",
+    "Metrics can be misleading without human checks"
+  ],
+  "agent_matrix_opportunities": [
+    {
+      "type": "mcp_server",
+      "name": "LLM and Agent Evaluation MCP",
+      "value": "Expose reusable capabilities to agents."
+    },
+    {
+      "type": "agent",
+      "name": "LLM and Agent Evaluation Scout Agent",
+      "value": "Turn trend intelligence into guided tasks."
+    },
+    {
+      "type": "dataset",
+      "name": "llm-evaluation-signals",
+      "value": "Preserve evidence for reproducible learning."
+    }
+  ],
+  "raw_data_links": {
+    "topic": "/api/v1/topics/llm-evaluation",
+    "deep_dive": "/api/v1/topics/llm-evaluation/deep-dive",
+    "dataset": "/api/v1/datasets/latest"
+  }
+}

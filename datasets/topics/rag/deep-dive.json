@@ -1,0 +1,162 @@
+{
+  "topic_id": "rag",
+  "topic_name": "Retrieval-Augmented Generation",
+  "location": {
+    "country": "Worldwide",
+    "city": null
+  },
+  "goal": "career",
+  "profile": "developer",
+  "recommendation": "study_now",
+  "score": 88.34,
+  "confidence": {
+    "score": 0.89,
+    "label": "High confidence",
+    "hype_risk": 0.18
+  },
+  "executive_summary": "Retrieval-Augmented Generation is a strong Scout recommendation because RAG remains one of the most practical ways to build useful AI applications with enterprise and local data. Your practical move is: Local PDF assistant.",
+  "why_it_matters": "RAG remains one of the most practical ways to build useful AI applications with enterprise and local data.",
+  "evidence": {
+    "signals": {
+      "github_activity": 93,
+      "github_growth": 86,
+      "huggingface_activity": 88,
+      "news_mentions": 75,
+      "job_demand": 88,
+      "community_activity": 76,
+      "local_relevance": 86,
+      "project_potential": 94,
+      "career_value": 92,
+      "learning_accessibility": 82,
+      "durability": 92,
+      "ecosystem_fit": 91
+    },
+    "source_summary": "High confidence, based on GitHub, Hugging Face, Jobs.",
+    "sources": [
+      {
+        "name": "GitHub"
+      },
+      {
+        "name": "Hugging Face"
+      },
+      {
+        "name": "Jobs"
+      }
+    ]
+  },
+  "local_analysis": {
+    "score": 86,
+    "summary": "Relevance for Worldwide is estimated from local boosts, jobs/community proxies, and topic fit."
+  },
+  "global_analysis": {
+    "score": 86.6,
+    "summary": "Global momentum combines developer activity, AI ecosystem activity, market/news mentions, job demand, and community signals."
+  },
+  "study_plan": [
+    "Embeddings",
+    "Chunking",
+    "Vector search",
+    "Reranking",
+    "Evaluation"
+  ],
+  "project_blueprints": [
+    {
+      "title": "Local PDF assistant",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Python",
+        "Vector databases",
+        "Embeddings",
+        "LangChain",
+        "LlamaIndex"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    },
+    {
+      "title": "RAG evaluation dashboard",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Python",
+        "Vector databases",
+        "Embeddings",
+        "LangChain",
+        "LlamaIndex"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    },
+    {
+      "title": "Enterprise knowledge assistant",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Python",
+        "Vector databases",
+        "Embeddings",
+        "LangChain",
+        "LlamaIndex"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    }
+  ],
+  "visibility_plan": {
+    "github_repo": "rag-demo",
+    "huggingface_space": "Retrieval-Augmented Generation Demo",
+    "blog_title": "How I built a Retrieval-Augmented Generation project from trend intelligence",
+    "skills_to_show": [
+      "Python",
+      "Vector databases",
+      "Embeddings",
+      "LangChain",
+      "LlamaIndex"
+    ],
+    "publish_steps": [
+      "Create a clean GitHub README with screenshots and architecture.",
+      "Publish a working demo or notebook.",
+      "Write a short article explaining the problem, approach, and result.",
+      "Register the agent/tool in MatrixHub when relevant."
+    ]
+  },
+  "risks": [
+    "Poor evaluation can hide hallucinations",
+    "Data privacy must be handled carefully"
+  ],
+  "agent_matrix_opportunities": [
+    {
+      "type": "mcp_server",
+      "name": "Retrieval-Augmented Generation MCP",
+      "value": "Expose reusable capabilities to agents."
+    },
+    {
+      "type": "agent",
+      "name": "Retrieval-Augmented Generation Scout Agent",
+      "value": "Turn trend intelligence into guided tasks."
+    },
+    {
+      "type": "dataset",
+      "name": "rag-signals",
+      "value": "Preserve evidence for reproducible learning."
+    }
+  ],
+  "raw_data_links": {
+    "topic": "/api/v1/topics/rag",
+    "deep_dive": "/api/v1/topics/rag/deep-dive",
+    "dataset": "/api/v1/datasets/latest"
+  }
+}

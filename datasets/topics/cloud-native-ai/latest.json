@@ -1,0 +1,60 @@
+{
+  "id": "cloud-native-ai",
+  "name": "Cloud-Native AI Applications",
+  "summary": "Deploying AI apps using containers, serverless, observability, and scalable cloud infrastructure.",
+  "why_follow": "AI products need production infrastructure, deployment, monitoring, and cost control.",
+  "signals": {
+    "github_activity": 82,
+    "github_growth": 70,
+    "huggingface_activity": 72,
+    "news_mentions": 70,
+    "job_demand": 90,
+    "community_activity": 76,
+    "local_relevance": 80,
+    "project_potential": 86,
+    "career_value": 92,
+    "learning_accessibility": 76,
+    "durability": 94,
+    "ecosystem_fit": 88
+  },
+  "starter_actions": [
+    "Containerize an AI API",
+    "Deploy to cloud",
+    "Add monitoring"
+  ],
+  "study_plan": [
+    "Docker",
+    "FastAPI",
+    "Kubernetes basics",
+    "CI/CD",
+    "Observability"
+  ],
+  "project_ideas": [
+    "Deployable RAG API",
+    "AI app observability stack",
+    "Cost-aware model router"
+  ],
+  "skills": [
+    "Docker",
+    "Kubernetes",
+    "FastAPI",
+    "CI/CD",
+    "Cloud"
+  ],
+  "trust": {
+    "score": 0.84,
+    "label": "Medium confidence",
+    "hype_risk": 0.14
+  },
+  "trend_score": 76.6,
+  "actionability_score": 86.5,
+  "matrix_value_score": 83.3,
+  "score": 81.56,
+  "rank": 6,
+  "priority": "build_now",
+  "labels": [
+    "build_now",
+    "local_opportunity"
+  ],
+  "location_context": null
+}

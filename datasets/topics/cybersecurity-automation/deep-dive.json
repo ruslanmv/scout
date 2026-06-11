@@ -1,0 +1,158 @@
+{
+  "topic_id": "cybersecurity-automation",
+  "topic_name": "Cybersecurity Automation",
+  "location": {
+    "country": "Worldwide",
+    "city": null
+  },
+  "goal": "career",
+  "profile": "developer",
+  "recommendation": "build_now",
+  "score": 82.98,
+  "confidence": {
+    "score": 0.87,
+    "label": "High confidence",
+    "hype_risk": 0.15
+  },
+  "executive_summary": "Cybersecurity Automation is a strong Scout recommendation because Security demand is durable and AI-assisted automation is becoming important across organizations. Your practical move is: Phishing analysis assistant.",
+  "why_it_matters": "Security demand is durable and AI-assisted automation is becoming important across organizations.",
+  "evidence": {
+    "signals": {
+      "github_activity": 84,
+      "github_growth": 74,
+      "huggingface_activity": 68,
+      "news_mentions": 82,
+      "job_demand": 94,
+      "community_activity": 79,
+      "local_relevance": 84,
+      "project_potential": 85,
+      "career_value": 96,
+      "learning_accessibility": 68,
+      "durability": 96,
+      "ecosystem_fit": 86
+    },
+    "source_summary": "High confidence, based on GitHub, Jobs, News/RSS.",
+    "sources": [
+      {
+        "name": "GitHub"
+      },
+      {
+        "name": "Jobs"
+      },
+      {
+        "name": "News/RSS"
+      }
+    ]
+  },
+  "local_analysis": {
+    "score": 84,
+    "summary": "Relevance for Worldwide is estimated from local boosts, jobs/community proxies, and topic fit."
+  },
+  "global_analysis": {
+    "score": 79.1,
+    "summary": "Global momentum combines developer activity, AI ecosystem activity, market/news mentions, job demand, and community signals."
+  },
+  "study_plan": [
+    "Threat modeling",
+    "Log analysis",
+    "Detection rules",
+    "Incident response",
+    "Secure automation"
+  ],
+  "project_blueprints": [
+    {
+      "title": "Phishing analysis assistant",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Security",
+        "Python",
+        "SIEM",
+        "Detection engineering"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    },
+    {
+      "title": "Security log summarizer",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Security",
+        "Python",
+        "SIEM",
+        "Detection engineering"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    },
+    {
+      "title": "Vulnerability triage bot",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Security",
+        "Python",
+        "SIEM",
+        "Detection engineering"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    }
+  ],
+  "visibility_plan": {
+    "github_repo": "cybersecurity-automation-demo",
+    "huggingface_space": "Cybersecurity Automation Demo",
+    "blog_title": "How I built a Cybersecurity Automation project from trend intelligence",
+    "skills_to_show": [
+      "Security",
+      "Python",
+      "SIEM",
+      "Detection engineering"
+    ],
+    "publish_steps": [
+      "Create a clean GitHub README with screenshots and architecture.",
+      "Publish a working demo or notebook.",
+      "Write a short article explaining the problem, approach, and result.",
+      "Register the agent/tool in MatrixHub when relevant."
+    ]
+  },
+  "risks": [
+    "Security tooling must be used ethically",
+    "Avoid offensive misuse"
+  ],
+  "agent_matrix_opportunities": [
+    {
+      "type": "mcp_server",
+      "name": "Cybersecurity Automation MCP",
+      "value": "Expose reusable capabilities to agents."
+    },
+    {
+      "type": "agent",
+      "name": "Cybersecurity Automation Scout Agent",
+      "value": "Turn trend intelligence into guided tasks."
+    },
+    {
+      "type": "dataset",
+      "name": "cybersecurity-automation-signals",
+      "value": "Preserve evidence for reproducible learning."
+    }
+  ],
+  "raw_data_links": {
+    "topic": "/api/v1/topics/cybersecurity-automation",
+    "deep_dive": "/api/v1/topics/cybersecurity-automation/deep-dive",
+    "dataset": "/api/v1/datasets/latest"
+  }
+}

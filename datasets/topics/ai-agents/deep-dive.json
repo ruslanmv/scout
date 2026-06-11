@@ -1,0 +1,170 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "location": {
+    "country": "Worldwide",
+    "city": null
+  },
+  "goal": "career",
+  "profile": "developer",
+  "recommendation": "study_now",
+  "score": 91.62,
+  "confidence": {
+    "score": 0.91,
+    "label": "High confidence",
+    "hype_risk": 0.22
+  },
+  "executive_summary": "AI Agents and Agentic Workflows is a strong Scout recommendation because Agent systems are becoming a practical interface for automation, enterprise workflows, coding, research, and multi-agent orchestration. Your practical move is: Local trend scout agent.",
+  "why_it_matters": "Agent systems are becoming a practical interface for automation, enterprise workflows, coding, research, and multi-agent orchestration.",
+  "evidence": {
+    "signals": {
+      "github_activity": 96,
+      "github_growth": 94,
+      "huggingface_activity": 92,
+      "news_mentions": 88,
+      "job_demand": 85,
+      "community_activity": 84,
+      "local_relevance": 82,
+      "project_potential": 96,
+      "career_value": 95,
+      "learning_accessibility": 78,
+      "durability": 90,
+      "ecosystem_fit": 99
+    },
+    "source_summary": "High confidence, based on GitHub, Hugging Face, News/RSS.",
+    "sources": [
+      {
+        "name": "GitHub",
+        "type": "developer_activity"
+      },
+      {
+        "name": "Hugging Face",
+        "type": "ai_builder_activity"
+      },
+      {
+        "name": "News/RSS",
+        "type": "market_signal"
+      }
+    ]
+  },
+  "local_analysis": {
+    "score": 82,
+    "summary": "Relevance for Worldwide is estimated from local boosts, jobs/community proxies, and topic fit."
+  },
+  "global_analysis": {
+    "score": 91.7,
+    "summary": "Global momentum combines developer activity, AI ecosystem activity, market/news mentions, job demand, and community signals."
+  },
+  "study_plan": [
+    "Tool calling",
+    "Agent orchestration",
+    "Memory and retrieval",
+    "Evaluation",
+    "Governance and safety"
+  ],
+  "project_blueprints": [
+    {
+      "title": "Local trend scout agent",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Python",
+        "FastAPI",
+        "LangGraph",
+        "MCP",
+        "RAG",
+        "Docker"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    },
+    {
+      "title": "Agent workflow dashboard",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Python",
+        "FastAPI",
+        "LangGraph",
+        "MCP",
+        "RAG",
+        "Docker"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    },
+    {
+      "title": "Agent evaluator MCP server",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Python",
+        "FastAPI",
+        "LangGraph",
+        "MCP",
+        "RAG",
+        "Docker"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    }
+  ],
+  "visibility_plan": {
+    "github_repo": "ai-agents-demo",
+    "huggingface_space": "AI Agents and Agentic Workflows Demo",
+    "blog_title": "How I built a AI Agents and Agentic Workflows project from trend intelligence",
+    "skills_to_show": [
+      "Python",
+      "FastAPI",
+      "LangGraph",
+      "MCP",
+      "RAG",
+      "Docker"
+    ],
+    "publish_steps": [
+      "Create a clean GitHub README with screenshots and architecture.",
+      "Publish a working demo or notebook.",
+      "Write a short article explaining the problem, approach, and result.",
+      "Register the agent/tool in MatrixHub when relevant."
+    ]
+  },
+  "risks": [
+    "Frameworks change quickly",
+    "Production reliability requires evaluation",
+    "Autonomy needs governance"
+  ],
+  "agent_matrix_opportunities": [
+    {
+      "type": "mcp_server",
+      "name": "AI Agents and Agentic Workflows MCP",
+      "value": "Expose reusable capabilities to agents."
+    },
+    {
+      "type": "agent",
+      "name": "AI Agents and Agentic Workflows Scout Agent",
+      "value": "Turn trend intelligence into guided tasks."
+    },
+    {
+      "type": "dataset",
+      "name": "ai-agents-signals",
+      "value": "Preserve evidence for reproducible learning."
+    }
+  ],
+  "raw_data_links": {
+    "topic": "/api/v1/topics/ai-agents",
+    "deep_dive": "/api/v1/topics/ai-agents/deep-dive",
+    "dataset": "/api/v1/datasets/latest"
+  }
+}

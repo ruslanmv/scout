@@ -1,0 +1,152 @@
+{
+  "topic_id": "cloud-native-ai",
+  "topic_name": "Cloud-Native AI Applications",
+  "location": {
+    "country": "Worldwide",
+    "city": null
+  },
+  "goal": "career",
+  "profile": "developer",
+  "recommendation": "build_now",
+  "score": 81.56,
+  "confidence": {
+    "score": 0.84,
+    "label": "Medium confidence",
+    "hype_risk": 0.14
+  },
+  "executive_summary": "Cloud-Native AI Applications is a strong Scout recommendation because AI products need production infrastructure, deployment, monitoring, and cost control. Your practical move is: Deployable RAG API.",
+  "why_it_matters": "AI products need production infrastructure, deployment, monitoring, and cost control.",
+  "evidence": {
+    "signals": {
+      "github_activity": 82,
+      "github_growth": 70,
+      "huggingface_activity": 72,
+      "news_mentions": 70,
+      "job_demand": 90,
+      "community_activity": 76,
+      "local_relevance": 80,
+      "project_potential": 86,
+      "career_value": 92,
+      "learning_accessibility": 76,
+      "durability": 94,
+      "ecosystem_fit": 88
+    },
+    "source_summary": "Medium confidence, based on public signals.",
+    "sources": []
+  },
+  "local_analysis": {
+    "score": 80,
+    "summary": "Relevance for Worldwide is estimated from local boosts, jobs/community proxies, and topic fit."
+  },
+  "global_analysis": {
+    "score": 76.6,
+    "summary": "Global momentum combines developer activity, AI ecosystem activity, market/news mentions, job demand, and community signals."
+  },
+  "study_plan": [
+    "Docker",
+    "FastAPI",
+    "Kubernetes basics",
+    "CI/CD",
+    "Observability"
+  ],
+  "project_blueprints": [
+    {
+      "title": "Deployable RAG API",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Docker",
+        "Kubernetes",
+        "FastAPI",
+        "CI/CD",
+        "Cloud"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    },
+    {
+      "title": "AI app observability stack",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Docker",
+        "Kubernetes",
+        "FastAPI",
+        "CI/CD",
+        "Cloud"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    },
+    {
+      "title": "Cost-aware model router",
+      "level": "intermediate",
+      "estimated_time": "1-4 weeks",
+      "deliverables": [
+        "GitHub repo",
+        "live demo",
+        "short write-up"
+      ],
+      "stack": [
+        "Docker",
+        "Kubernetes",
+        "FastAPI",
+        "CI/CD",
+        "Cloud"
+      ],
+      "why_it_promotes_you": "It creates visible proof that you can convert a trend into a working product artifact."
+    }
+  ],
+  "visibility_plan": {
+    "github_repo": "cloud-native-ai-demo",
+    "huggingface_space": "Cloud-Native AI Applications Demo",
+    "blog_title": "How I built a Cloud-Native AI Applications project from trend intelligence",
+    "skills_to_show": [
+      "Docker",
+      "Kubernetes",
+      "FastAPI",
+      "CI/CD",
+      "Cloud"
+    ],
+    "publish_steps": [
+      "Create a clean GitHub README with screenshots and architecture.",
+      "Publish a working demo or notebook.",
+      "Write a short article explaining the problem, approach, and result.",
+      "Register the agent/tool in MatrixHub when relevant."
+    ]
+  },
+  "risks": [
+    "Signals may be incomplete.",
+    "Some trends can be overhyped."
+  ],
+  "agent_matrix_opportunities": [
+    {
+      "type": "mcp_server",
+      "name": "Cloud-Native AI Applications MCP",
+      "value": "Expose reusable capabilities to agents."
+    },
+    {
+      "type": "agent",
+      "name": "Cloud-Native AI Applications Scout Agent",
+      "value": "Turn trend intelligence into guided tasks."
+    },
+    {
+      "type": "dataset",
+      "name": "cloud-native-ai-signals",
+      "value": "Preserve evidence for reproducible learning."
+    }
+  ],
+  "raw_data_links": {
+    "topic": "/api/v1/topics/cloud-native-ai",
+    "deep_dive": "/api/v1/topics/cloud-native-ai/deep-dive",
+    "dataset": "/api/v1/datasets/latest"
+  }
+}

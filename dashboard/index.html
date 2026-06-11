@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scout — Developer Trend Intelligence</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar">
+      <a class="brand" href="/dashboard"><span class="brand-mark">S</span><span>Scout</span></a>
+      <div class="navlinks">
+        <a href="/docs">API</a>
+        <a href="/api/v1/datasets/index">Dataset</a>
+        <a href="https://ruslanmv.com">ruslanmv.com</a>
+      </div>
+    </nav>
+
+    <section class="hero-grid">
+      <div>
+        <p class="eyebrow">Developer trend intelligence</p>
+        <h1>Find your next developer advantage.</h1>
+        <p class="hero-copy">Scout turns public technology signals into a personal report: what to study, what to build, why it matters, and how to publish yourself.</p>
+        <div class="command-panel">
+          <label>I am a
+            <select id="profile">
+              <option value="developer">Developer</option>
+              <option value="ai_engineer">AI engineer</option>
+              <option value="student">Student</option>
+              <option value="founder">Founder</option>
+              <option value="enterprise">Enterprise leader</option>
+              <option value="agent">Agentic AI system</option>
+            </select>
+          </label>
+          <label>in
+            <input id="location" value="Rome, Italy" placeholder="Rome, Italy" />
+          </label>
+          <label>and I want to
+            <select id="goal">
+              <option value="build_portfolio">Build my portfolio</option>
+              <option value="career">Improve my career</option>
+              <option value="create_agents">Create agents/tools</option>
+              <option value="startup">Find startup ideas</option>
+              <option value="research">Research emerging topics</option>
+            </select>
+          </label>
+          <button id="load" class="primary">Generate Scout Report</button>
+          <button id="geo" class="secondary">Use my location</button>
+        </div>
+        <p class="micro">Example: Rome · Developer · Build portfolio → Study AI Agents, build a local trend scout, publish GitHub + Hugging Face demo.</p>
+      </div>
+      <aside class="radar-card">
+        <p class="eyebrow">Live report preview</p>
+        <h2 id="preview-topic">AI Agents</h2>
+        <p id="preview-copy">Your top opportunity appears here after the report is generated.</p>
+        <div class="pulse-ring"><span></span></div>
+      </aside>
+    </section>
+  </header>
+
+  <main>
+    <section id="report" class="report hidden">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Your Scout Report</p>
+          <h2 id="report-title">Your next best move</h2>
+        </div>
+        <div class="mode-switch">
+          <button id="simple" class="active">Simple</button>
+          <button id="advanced">Advanced</button>
+          <button id="save">Save as PDF</button>
+        </div>
+      </div>
+
+      <article class="next-card">
+        <div>
+          <span class="pill">Top opportunity</span>
+          <h3 id="top-topic">—</h3>
+          <p id="top-summary">—</p>
+          <div class="actions">
+            <button id="top-evidence" class="primary small">See evidence</button>
+            <button id="top-project" class="secondary small">View project plan</button>
+          </div>
+        </div>
+        <div class="next-move">
+          <p><strong>Study</strong><span id="study-now">—</span></p>
+          <p><strong>Build</strong><span id="build-now">—</span></p>
+          <p><strong>Publish</strong><span id="publish-now">GitHub + Hugging Face + article</span></p>
+          <p><strong>Confidence</strong><span id="confidence-now">—</span></p>
+        </div>
+      </article>
+
+      <section class="insights" id="insights"></section>
+
+      <section class="split">
+        <article>
+          <div class="section-head compact"><h3>Local Opportunity Radar</h3><p>Strongest topics for your location.</p></div>
+          <div id="local" class="cards"></div>
+          <button id="show-local" class="ghost">Show all local topics</button>
+        </article>
+        <article>
+          <div class="section-head compact"><h3>Global Technology Pulse</h3><p>Topics growing across the worldwide developer ecosystem.</p></div>
+          <div id="global" class="cards"></div>
+          <button id="show-global" class="ghost">Show all global topics</button>
+        </article>
+      </section>
+
+      <section class="split">
+        <article>
+          <div class="section-head compact"><h3>Build these projects</h3><p>Portfolio ideas you can publish as proof of work.</p></div>
+          <div id="projects" class="project-list"></div>
+        </article>
+        <article>
+          <div class="section-head compact"><h3>Your Visibility Plan</h3><p>Copy-ready assets to promote yourself.</p></div>
+          <div id="visibility" class="visibility"></div>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <aside id="drawer" class="drawer hidden" aria-live="polite">
+    <div class="drawer-panel">
+      <button id="close-drawer" class="close">×</button>
+      <p class="eyebrow">Deep dive</p>
+      <h2 id="drawer-title">Topic</h2>
+      <div class="tabs">
+        <button data-tab="overview" class="active">Overview</button>
+        <button data-tab="evidence">Evidence</button>
+        <button data-tab="study">Study Plan</button>
+        <button data-tab="projects">Projects</button>
+        <button data-tab="raw">Raw Data</button>
+      </div>
+      <div id="drawer-content" class="drawer-content"></div>
+    </div>
+  </aside>
+
+  <div id="sticky" class="sticky hidden">Next move: <strong id="sticky-move">—</strong><button id="sticky-btn">View project</button></div>
+
+  <footer>Scout is a public developer-facing layer of Matrix Scout for Agent-Matrix. Built for trusted, geolocated knowledge creation.</footer>
+  <script src="app.js"></script>
+</body>
+</html>

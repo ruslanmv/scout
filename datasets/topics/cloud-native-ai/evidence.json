@@ -1,0 +1,23 @@
+{
+  "topic_id": "cloud-native-ai",
+  "signals": {
+    "github_activity": 82,
+    "github_growth": 70,
+    "huggingface_activity": 72,
+    "news_mentions": 70,
+    "job_demand": 90,
+    "community_activity": 76,
+    "local_relevance": 80,
+    "project_potential": 86,
+    "career_value": 92,
+    "learning_accessibility": 76,
+    "durability": 94,
+    "ecosystem_fit": 88
+  },
+  "sources": [],
+  "trust": {
+    "score": 0.84,
+    "label": "Medium confidence",
+    "hype_risk": 0.14
+  }
+}
