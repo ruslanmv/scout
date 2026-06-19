@@ -21,6 +21,13 @@
 - Community/event collector.
 - Better source health and confidence model.
 
+## v0.4
+
+- Live AI plan generation via OllaBridge Cloud (OpenAI-compatible gateway).
+- Admin-only Settings page + API for provider/model/key configuration.
+- Deterministic fallback so the dataset and API never break.
+- See [docs/AI_AND_ADMIN.md](docs/AI_AND_ADMIN.md).
+
 ## v1.0
 
 - Public ruslanmv.com/scout page.

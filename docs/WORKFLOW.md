@@ -54,9 +54,19 @@ datasets/batches/latest.json
 
 They cover default locations, goals, and profiles defined in `app/services/analysis_generator.py`.
 
+## Live AI plans (on demand)
+
+The **daily workflow above is deterministic** — it produces a stable, auditable
+dataset with no external AI required. Separately, the running app generates a
+**live AI plan** per request via `POST /api/v1/ai/plan`, calling an
+OpenAI-compatible gateway (OllaBridge Cloud by default) with the topic's real
+signals. This keeps the dataset reproducible while giving users a real,
+non-templated path. Configure it with `SCOUT_AI_*` env vars or the admin
+Settings page — see [AI_AND_ADMIN.md](AI_AND_ADMIN.md).
+
 ## Optional ML/LLM enrichment
 
-The workflow is deterministic by default. Enable optional models with:
+The dataset workflow is deterministic by default. Enable optional models with:
 
 ```text
 SCOUT_USE_SENTENCE_TRANSFORMERS=1

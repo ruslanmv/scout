@@ -19,8 +19,10 @@ Use:
 GET /api/v1/matrix/opportunities
 ```
 
-or MCP tool:
+or via the [Scout MCP server](../scout_mcp/README.md) tool:
 
 ```text
-get_matrix_opportunities
+find_build_opportunities
 ```
+
+Scout can also pre-plan the study/build/publish path live via its AI advisor (OllaBridge Cloud) — see [AI_AND_ADMIN.md](AI_AND_ADMIN.md).

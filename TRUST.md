@@ -26,3 +26,5 @@ The public site should show simple trust labels:
 - Low confidence
 - Experimental
 - Insufficient data
+
+AI-generated plans are labeled by `source` (`ollabridge-cloud` or `deterministic`) so live AI output stays distinguishable from the built-in fallback. See [docs/AI_AND_ADMIN.md](docs/AI_AND_ADMIN.md).

@@ -1,0 +1,19 @@
+{
+  "name": "scout-trend-intelligence",
+  "version": "0.1.0",
+  "description": "Trend intelligence MCP server — brainstorm hot technical trends and what to build next, grounded in real GitHub/Hugging Face/news/jobs signals.",
+  "homepage": "https://github.com/ruslanmv/scout",
+  "transport": ["stdio", "streamable-http"],
+  "command": "python -m scout_mcp",
+  "tools": [
+    "list_hot_trends",
+    "recommend_what_to_build",
+    "brainstorm_project_ideas",
+    "topic_deep_dive",
+    "find_build_opportunities",
+    "search_trends",
+    "generate_action_plan"
+  ],
+  "resources": ["scout://trends/latest"],
+  "prompts": ["brainstorm_next_build"]
+}
