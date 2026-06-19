@@ -8,6 +8,7 @@ Contributions are welcome for:
 - scoring improvements,
 - dashboard UX,
 - MCP integration,
+- AI providers and plan prompts (see docs/AI_AND_ADMIN.md),
 - documentation.
 
 Please keep the public dataset privacy-safe and source-attributed.

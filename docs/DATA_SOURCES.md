@@ -15,3 +15,5 @@ Future sources:
 - community events,
 - research feeds,
 - Stack Overflow and developer forums where terms permit.
+
+These signals feed the ranking; the live study/build/publish plan is then synthesized by the AI advisor (OllaBridge Cloud) — see [AI_AND_ADMIN.md](AI_AND_ADMIN.md).

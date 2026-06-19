@@ -2,6 +2,8 @@
 
 Scout exports a static dashboard that can be served from the repository root or from `/scout/`.
 
+> The static Pages build has no backend, so live AI plans (`/api/v1/ai/plan`) and the admin Settings page work only on the hosted app; Pages uses the deterministic dataset. See [AI_AND_ADMIN.md](AI_AND_ADMIN.md).
+
 ## Local export
 
 ```bash

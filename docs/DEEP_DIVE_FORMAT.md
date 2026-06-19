@@ -13,3 +13,5 @@ A deep dive response contains:
 - Agent-Matrix opportunities,
 - risks,
 - raw data links.
+
+The study plan, project ideas, and visibility plan can be generated live by the AI advisor (OllaBridge Cloud), with a deterministic fallback — see [AI_AND_ADMIN.md](AI_AND_ADMIN.md).

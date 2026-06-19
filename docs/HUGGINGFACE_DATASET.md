@@ -17,3 +17,5 @@ topics/{topic}/latest.json
 topics/{topic}/deep-dive.json
 snapshots/YYYY-MM-DD.json
 ```
+
+The dataset stays deterministic and reproducible; live AI plans are generated separately at request time (see [AI_AND_ADMIN.md](AI_AND_ADMIN.md)).

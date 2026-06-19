@@ -11,6 +11,16 @@ Scout ranks topics using multiple public signals:
 
 Scout avoids using private or invasive personal data. The public version focuses on **topics**, **locations**, and **aggregated developer opportunities**.
 
+## Plan generation
+
+Ranking is deterministic and reproducible. The user-facing **action plan**
+(study → build → publish) is then generated live by an AI advisor that receives
+the top topic and its real signals, so guidance is grounded in evidence rather
+than a fixed template. If AI is disabled or unreachable, Scout falls back to
+deterministic templates with the same response shape. The daily public dataset
+remains fully deterministic and auditable. See
+[docs/AI_AND_ADMIN.md](docs/AI_AND_ADMIN.md).
+
 ## Score layers
 
 ### Trend score

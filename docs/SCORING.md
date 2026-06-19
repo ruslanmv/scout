@@ -11,6 +11,8 @@ Scout ranks topics using multiple public signals:
 
 Scout avoids using private or invasive personal data. The public version focuses on **topics**, **locations**, and **aggregated developer opportunities**.
 
+Ranking is deterministic; the user-facing action plan is generated live by the AI advisor with a deterministic fallback — see [AI_AND_ADMIN.md](AI_AND_ADMIN.md).
+
 ## Score layers
 
 ### Trend score

@@ -1,23 +1,39 @@
-# Scout — Developer Trend Intelligence
+<div align="center">
 
-**Scout** is a public, geolocated trend intelligence API and premium dashboard for developers, learners, and agentic AI systems.
+# 🛰️ Scout — Developer Trend Intelligence
 
-It answers one practical question:
+### Know what to learn, build, and publish next.
 
-> Given a person’s location and goals, what IT topics should they follow, study, build, and publish around now?
+**Scout turns noisy tech signals into a one-page, AI-designed action plan — tailored to your location, goal, and profile. No signup. One click. Shareable.**
 
-Scout combines GitHub developer activity intelligence with automated trend collection and static data publishing in one repository.
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg?style=flat-square&logo=python&logoColor=white)](https://www.python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688.svg?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![AI: OllaBridge Cloud](https://img.shields.io/badge/AI-OllaBridge%20Cloud-42f5a7.svg?style=flat-square)](https://github.com/ruslanmv/ollabridge-cloud)
+[![MCP](https://img.shields.io/badge/MCP-server-7c5cff.svg?style=flat-square)](scout_mcp/README.md)
+[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg?style=flat-square)](LICENSE)
 
-Public site target:
+[Live AI](#live-ai-engine-ollabridge-cloud) · [Quick start](#quick-start) · [MCP server](scout_mcp/README.md) · [API](#core-api-endpoints) · [Docs](docs/)
 
-```text
-https://ruslanmv.com/scout/
-```
+**Created by [Ruslan Magana Vsevolodovna](https://ruslanmv.com)** — part of the **Agent-Matrix** ecosystem.
 
-Local API:
+</div>
+
+![Scout dashboard — know what to learn, build, and publish next](docs/assets/screenshots/hero.png)
+
+> **One question, answered with evidence:** given your location and goals, what should you **study, build, and publish** right now?
+
+Scout blends real signals — GitHub activity, Hugging Face momentum, news, and job demand — with a **live AI engine** that designs a concrete **study → build → publish** path. Not a hardcoded template: a real plan, grounded in today's data. It runs as an API, a one-click dashboard, and an **[MCP server](scout_mcp/README.md)** any LLM can call to brainstorm what to build next.
+
+## Screenshots
+
+| ✨ Live AI plan (grounded in real signals) | 🔐 Admin settings (configure the AI) |
+| :---: | :---: |
+| [![Live AI plan](docs/assets/screenshots/ai-plan.png)](docs/assets/screenshots/ai-plan.png) | [![Admin settings](docs/assets/screenshots/admin.png)](docs/assets/screenshots/admin.png) |
+
+Run it locally in one line:
 
 ```bash
-uvicorn app.main:app --reload
+uvicorn app.main:app --reload   # then open http://127.0.0.1:8000/dashboard
 ```
 
 ## What the frontend consumes
@@ -66,6 +82,13 @@ GET  /api/v1/search?q=agents
 GET  /api/v1/locations
 GET  /api/v1/sources/health
 GET  /api/v1/models/status
+GET  /api/v1/ai/status
+POST /api/v1/ai/plan
+GET  /api/v1/admin/enabled
+GET  /api/v1/admin/settings      (admin)
+POST /api/v1/admin/settings      (admin)
+POST /api/v1/admin/test          (admin)
+POST /api/v1/admin/reset         (admin)
 ```
 
 ## Daily generation workflow
@@ -93,17 +116,88 @@ public/scout/
 
 GitHub Actions runs this daily through `.github/workflows/daily_trends.yml`.
 
-## Model strategy
+## Live AI engine (OllaBridge Cloud)
 
-Scout is deterministic by default so the public dataset remains stable, auditable, and cheap to generate.
+Scout uses a real AI to design each user's **study → build → publish** path. When
+you open a report, the dashboard calls `POST /api/v1/ai/plan`, which sends the
+top topic plus its **real collected signals** (GitHub, Hugging Face, news, jobs)
+to an OpenAI-compatible gateway and gets back a concrete, personalized plan —
+not a hardcoded template.
 
-Optional model hooks are included:
+The default gateway is the public **[OllaBridge Cloud](https://github.com/ruslanmv/ollabridge-cloud)**
+Space — <https://huggingface.co/spaces/ruslanmv/ollabridge> — which works out of
+the box with no API key:
 
-- semantic reranking with `sentence-transformers` when `SCOUT_USE_SENTENCE_TRANSFORMERS=1`,
-- optional description enrichment through `SCOUT_ENABLE_LLM=1`,
-- provider configuration via `.env.example`.
+```text
+SCOUT_AI_BASE_URL = https://ruslanmv-ollabridge.hf.space/v1
+SCOUT_AI_MODEL    = free-best        # or free-fast, qwen2.5:1.5b, fable-5, claude-best, gpt-best
+```
 
-The fallback model is a reproducible TF/cosine + signal-weighted ranker, so the API works without external credentials.
+The value above is the Space's **direct API endpoint** (the `*.hf.space`
+subdomain is what serves `/v1/chat/completions`). You can also set
+`SCOUT_AI_BASE_URL` to the Space *page* URL
+(`https://huggingface.co/spaces/ruslanmv/ollabridge`) — Scout auto-resolves it
+to the endpoint.
+
+Scout is **fail-safe**: if AI is turned off, unconfigured, or the gateway is
+unreachable, every plan falls back to the deterministic TF/cosine +
+signal-weighted templates, so the API and daily dataset never break. The `source`
+field on each plan (`ollabridge-cloud` or `deterministic`) tells you which engine
+produced it. The daily public dataset stays deterministic, stable, and auditable;
+AI only powers the live, on-demand plan.
+
+### Admin settings (admin only)
+
+Operators can configure the AI engine at runtime from an admin-only page:
+
+```text
+http://127.0.0.1:8000/dashboard/admin.html
+```
+
+Set the gate first (any secret of your choice), then unlock the page with it:
+
+```bash
+export SCOUT_ADMIN_KEY="choose-a-strong-secret"
+```
+
+From there an admin can switch the provider/model, paste an API key (stored
+server-side, never echoed back to the browser), toggle AI on/off, and run a live
+**Test connection**. All settings default from environment variables
+(`SCOUT_AI_*`) and runtime overrides are persisted to `runtime/settings.json`
+(gitignored). If `SCOUT_ADMIN_KEY` is unset, the admin area stays locked — the
+safe default for public deployments.
+
+Other optional model hooks remain available: semantic reranking with
+`sentence-transformers` (`SCOUT_USE_SENTENCE_TRANSFORMERS=1`).
+
+**Full reference:** [docs/AI_AND_ADMIN.md](docs/AI_AND_ADMIN.md) — env vars,
+endpoints, plan shape, URL auto-resolution, and security notes.
+
+## MCP server — brainstorm what to build
+
+Scout ships as a **Model Context Protocol** server so any LLM (Claude Desktop, or
+any MCP client) can call it to brainstorm hot technical trends and the next
+high-leverage project — grounded in real signals, not guesses.
+
+```bash
+pip install mcp        # the official MCP SDK
+python -m scout_mcp    # stdio server (or: python -m scout_mcp --http)
+```
+
+Connect it in Claude Desktop's `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "scout": { "command": "python", "args": ["-m", "scout_mcp"], "cwd": "/absolute/path/to/scout" }
+  }
+}
+```
+
+Then ask: *"Use Scout to brainstorm what an AI engineer in San Francisco should
+build this month."* Tools: `list_hot_trends`, `recommend_what_to_build`,
+`brainstorm_project_ideas`, `topic_deep_dive`, `find_build_opportunities`,
+`search_trends`, `generate_action_plan`. Full guide: [scout_mcp/README.md](scout_mcp/README.md).
 
 ## Quick start
 
@@ -150,3 +244,9 @@ This repository includes an adapted design inspired by:
 - `news-and-trends` style scheduled RSS/data/static publishing workflows.
 
 Scout does not claim ownership of those upstream designs. See `NOTICE.md` and `docs/ARCHITECTURE.md`.
+
+## Contribute & credits
+
+Scout is built and maintained by **[Ruslan Magana Vsevolodovna](https://ruslanmv.com)** as the trend-intelligence layer of the **Agent-Matrix** ecosystem.
+
+If Scout helped you decide what to build next, please **⭐ star the repo** and consider contributing — new data sources, topics, fixes, and ideas are all welcome. More projects at **[ruslanmv.com](https://ruslanmv.com)** · **[github.com/ruslanmv](https://github.com/ruslanmv)**.

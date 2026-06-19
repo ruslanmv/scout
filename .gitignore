@@ -9,3 +9,7 @@ site/_site/
 .DS_Store
 .coverage
 htmlcov/
+
+# Runtime admin overrides (AI settings saved from the Settings page)
+runtime/
+*.local.json
