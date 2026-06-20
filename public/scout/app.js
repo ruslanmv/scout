@@ -184,7 +184,74 @@ function renderReport(data) {
   renderProjects(report.projects || simpleProjects(top));
   renderVisibility(report.visibility_plan || simpleVisibility(top));
   updateUrl();
+  loadAiPlan();
   window.scrollTo({ top: $('report').offsetTop - 20, behavior: 'smooth' });
+}
+
+function chips(items) { return (items || []).map((s) => `<span class="chip">${esc(s)}</span>`).join(''); }
+function olist(items) { return `<ol>${(items || []).map((s) => `<li>${esc(s)}</li>`).join('')}</ol>`; }
+
+function aiBadge(plan) {
+  if (plan.source === 'ollabridge-cloud') return `<span class="ai-badge">✨ Live AI · ${esc(plan.provider)} · ${esc(plan.model)}</span>`;
+  return `<span class="ai-badge off">Built-in plan · ${esc(plan.provider || 'Scout templates')}</span>`;
+}
+
+function renderAiPlan(panel, plan) {
+  const build = plan.build || {};
+  panel.innerHTML = `
+    <div class="ai-head">
+      <div>${aiBadge(plan)}<h3>${esc(plan.headline || 'Your AI action plan')}</h3></div>
+      <button id="ai-regen" class="secondary small">↻ Regenerate</button>
+    </div>
+    <p class="ai-why">${esc(plan.why_now || '')}</p>
+    <div class="ai-grid">
+      <div class="ai-col"><h4>📚 Study</h4>${olist(plan.study)}</div>
+      <div class="ai-col"><h4>🛠 Build</h4>
+        <p class="ai-build-title">${esc(build.title || '')}</p>
+        <p class="muted">${esc(build.description || '')}</p>
+        <p class="ai-stack">${chips(build.stack)}</p>
+        <p class="muted">Deliverables: ${esc((build.deliverables || []).join(' · '))}</p>
+      </div>
+      <div class="ai-col"><h4>🚀 Publish</h4>${olist(plan.publish)}</div>
+    </div>
+    <div class="ai-foot">
+      <div><h4>Skills you'll show</h4><p>${chips(plan.skills)}</p></div>
+      <div><h4>Watch out for</h4>${olist(plan.risks)}</div>
+    </div>
+    <p class="ai-confidence">${esc(plan.confidence || '')}${plan.note ? ` — ${esc(plan.note)}` : ''}</p>`;
+  document.getElementById('ai-regen')?.addEventListener('click', () => loadAiPlan());
+}
+
+function renderAiLoading(panel, status) {
+  panel.innerHTML = `<div class="ai-head"><div><span class="ai-badge">✨ ${esc(status.provider)} · ${esc(status.model)}</span><h3>Designing your plan…</h3></div></div><p class="ai-why">Scout is asking the AI to turn your real trend signals into a concrete path. This takes a few seconds.</p>`;
+}
+
+function renderAiError(panel, message) {
+  panel.innerHTML = `<div class="ai-head"><div><span class="ai-badge off">AI unavailable</span><h3>Showing Scout's built-in plan above</h3></div><button id="ai-regen" class="secondary small">↻ Retry</button></div><p class="ai-why muted">${esc(message)}</p>`;
+  document.getElementById('ai-regen')?.addEventListener('click', () => loadAiPlan());
+}
+
+async function loadAiPlan() {
+  const panel = $('ai-plan');
+  if (!panel || state.staticMode) { panel?.classList.add('hidden'); return; }
+  let status;
+  try { status = await fetchJSON('/api/v1/ai/status'); } catch { panel.classList.add('hidden'); return; }
+  if (!status.ai_enabled) { panel.classList.add('hidden'); return; }
+  const top = state.report?.recommendations?.[0] || state.local[0];
+  if (!top || (!top.id && !top.name)) { panel.classList.add('hidden'); return; }
+  panel.classList.remove('hidden');
+  renderAiLoading(panel, status);
+  try {
+    const loc = parseLocation($('location').value);
+    const plan = await fetchJSON('/api/v1/ai/plan', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ topic_id: top.id, topic: top, country: loc.country || 'Worldwide', city: loc.city || null, goal: $('goal').value, profile: $('profile').value }),
+    });
+    renderAiPlan(panel, plan);
+  } catch (e) {
+    renderAiError(panel, e.message || 'The AI engine could not be reached.');
+  }
 }
 
 async function load() {
