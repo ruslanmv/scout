@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Scout Report premium landing page</title>
+  <desc id="desc">Premium Scout Report interface with animated orbit preview, command panel, and generated opportunity report cards.</desc>
+  <defs>
+    <radialGradient id="bg1" cx="18%" cy="5%" r="70%"><stop offset="0" stop-color="#1c6a52"/><stop offset="0.44" stop-color="#07110f"/><stop offset="1" stop-color="#030705"/></radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#42f5a7" stop-opacity="0.55"/><stop offset="1" stop-color="#42f5a7" stop-opacity="0"/></radialGradient>
+    <linearGradient id="brand" x1="0" x2="1"><stop stop-color="#42f5a7"/><stop offset="1" stop-color="#62c7ff"/></linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#132922" stop-opacity="0.96"/><stop offset="0.58" stop-color="#07110f" stop-opacity="0.94"/><stop offset="1" stop-color="#0b1b25" stop-opacity="0.96"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="24" stdDeviation="30" flood-color="#000" flood-opacity="0.55"/></filter>
+  </defs>
+  <rect width="1440" height="900" fill="url(#bg1)"/>
+  <circle cx="140" cy="0" r="360" fill="url(#glow)" opacity="0.65"/>
+  <circle cx="1210" cy="135" r="270" fill="#62c7ff" opacity="0.13"/>
+
+  <g filter="url(#shadow)">
+    <rect x="78" y="24" width="1284" height="64" rx="24" fill="#06100d" opacity="0.82" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="96" y="36" width="40" height="40" rx="13" fill="url(#brand)"/>
+    <text x="112" y="63" fill="#03110d" font-size="24" font-weight="900" font-family="Inter, Arial">S</text>
+    <text x="150" y="62" fill="#f1fff9" font-size="20" font-weight="900" font-family="Inter, Arial">Scout Report</text>
+    <text x="1138" y="62" fill="#ccefe5" font-size="15" font-weight="700" font-family="Inter, Arial">Home</text>
+    <text x="1208" y="62" fill="#ccefe5" font-size="15" font-weight="700" font-family="Inter, Arial">Dataset</text>
+    <text x="1294" y="62" fill="#ccefe5" font-size="15" font-weight="700" font-family="Inter, Arial">GitHub</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="78" y="120" width="1284" height="392" rx="42" fill="url(#panel)" stroke="#ffffff" stroke-opacity="0.12"/>
+    <path d="M78 120 H1362 V512 H78 Z" fill="none" stroke="#42f5a7" stroke-opacity="0.10"/>
+    <text x="118" y="178" fill="#9feacb" font-size="14" font-weight="900" letter-spacing="2" font-family="Inter, Arial">PREMIUM OPPORTUNITY INTELLIGENCE</text>
+    <text x="118" y="260" fill="#f7fffb" font-size="76" font-weight="900" letter-spacing="-5" font-family="Inter, Arial">Scout maps your next</text>
+    <text x="118" y="336" fill="#f7fffb" font-size="76" font-weight="900" letter-spacing="-5" font-family="Inter, Arial">breakout developer move.</text>
+    <text x="118" y="386" fill="#d3eee6" font-size="22" font-family="Inter, Arial">Live technology signals become a cinematic plan for what to study,</text>
+    <text x="118" y="416" fill="#d3eee6" font-size="22" font-family="Inter, Arial">what to build, and how to publish proof people can trust.</text>
+    <rect x="118" y="452" width="176" height="44" rx="18" fill="#ffffff" opacity="0.08" stroke="#ffffff" stroke-opacity="0.14"/>
+    <text x="136" y="481" fill="#f2ffbd" font-size="20" font-weight="900" font-family="Inter, Arial">10×</text><text x="180" y="481" fill="#cfeee5" font-size="16" font-family="Inter, Arial">clearer path</text>
+    <rect x="308" y="452" width="212" height="44" rx="18" fill="#ffffff" opacity="0.08" stroke="#ffffff" stroke-opacity="0.14"/>
+    <text x="326" y="481" fill="#f2ffbd" font-size="20" font-weight="900" font-family="Inter, Arial">4</text><text x="350" y="481" fill="#cfeee5" font-size="16" font-family="Inter, Arial">proof-of-work sections</text>
+
+    <rect x="980" y="152" width="330" height="328" rx="32" fill="#ffffff" opacity="0.07" stroke="#ffffff" stroke-opacity="0.12"/>
+    <circle cx="1145" cy="285" r="114" fill="none" stroke="#bdf9ff" stroke-opacity="0.23" stroke-width="2"/>
+    <ellipse cx="1145" cy="285" rx="148" ry="52" fill="none" stroke="#bdf9ff" stroke-opacity="0.23" stroke-width="2" transform="rotate(-24 1145 285)"/>
+    <ellipse cx="1145" cy="285" rx="70" ry="140" fill="none" stroke="#bdf9ff" stroke-opacity="0.23" stroke-width="2" transform="rotate(28 1145 285)"/>
+    <rect x="1090" y="230" width="110" height="110" rx="34" fill="url(#brand)"/>
+    <text x="1125" y="303" fill="#03110d" font-size="58" font-weight="900" font-family="Inter, Arial">S</text>
+    <circle cx="1032" cy="300" r="8" fill="#fff38a"/><circle cx="1246" cy="238" r="8" fill="#62c7ff"/><circle cx="1220" cy="392" r="8" fill="#42f5a7"/>
+    <text x="1015" y="430" fill="#9feacb" font-size="13" font-weight="900" letter-spacing="2" font-family="Inter, Arial">REPORT PREVIEW</text>
+    <text x="1015" y="462" fill="#f7fffb" font-size="34" font-weight="900" font-family="Inter, Arial">AI Agents</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="108" y="542" width="1224" height="74" rx="26" fill="#06100d" opacity="0.88" stroke="#78ffd8" stroke-opacity="0.22"/>
+    <rect x="126" y="558" width="235" height="42" rx="15" fill="#091713" stroke="#2b5147"/><text x="146" y="584" fill="#f1fff9" font-size="16" font-family="Inter, Arial">Developer</text>
+    <rect x="378" y="558" width="305" height="42" rx="15" fill="#091713" stroke="#2b5147"/><text x="398" y="584" fill="#f1fff9" font-size="16" font-family="Inter, Arial">Rome, Italy</text>
+    <rect x="700" y="558" width="305" height="42" rx="15" fill="#091713" stroke="#2b5147"/><text x="720" y="584" fill="#f1fff9" font-size="16" font-family="Inter, Arial">Build my portfolio</text>
+    <rect x="1024" y="558" width="152" height="42" rx="15" fill="url(#brand)"/><text x="1048" y="584" fill="#03110d" font-size="15" font-weight="900" font-family="Inter, Arial">Generate report</text>
+    <rect x="1192" y="558" width="118" height="42" rx="15" fill="#10251f" stroke="#2b5147"/><text x="1215" y="584" fill="#dffbf2" font-size="15" font-weight="900" font-family="Inter, Arial">Share</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="78" y="650" width="300" height="196" rx="30" fill="#132922" opacity="0.92" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="106" y="696" fill="#9feacb" font-size="13" font-weight="900" letter-spacing="2" font-family="Inter, Arial">SCOUT REPORT</text>
+    <text x="106" y="734" fill="#f1fff9" font-size="26" font-weight="900" font-family="Inter, Arial">Rome, Italy · Portfolio</text>
+    <circle cx="228" cy="792" r="48" fill="url(#brand)"/><text x="198" y="808" fill="#03110d" font-size="42" font-weight="900" font-family="Inter, Arial">91</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="410" y="650" width="952" height="196" rx="28" fill="#132922" opacity="0.92" stroke="#78ffd8" stroke-opacity="0.18"/>
+    <rect x="446" y="690" width="142" height="30" rx="15" fill="#1b3d33"/><text x="466" y="710" fill="#bdf9df" font-size="13" font-weight="900" font-family="Inter, Arial">TOP OPPORTUNITY</text>
+    <text x="446" y="765" fill="#f7fffb" font-size="56" font-weight="900" letter-spacing="-3" font-family="Inter, Arial">AI Agents</text>
+    <text x="446" y="808" fill="#cde3dc" font-size="20" font-family="Inter, Arial">Study agent patterns → build a useful workflow → publish a live demo.</text>
+    <rect x="1060" y="690" width="250" height="38" rx="18" fill="#07120f" stroke="#23483e"/><text x="1082" y="715" fill="#42f5a7" font-size="14" font-weight="900" font-family="Inter, Arial">STUDY</text><text x="1144" y="715" fill="#f1fff9" font-size="14" font-family="Inter, Arial">Agent evaluation</text>
+    <rect x="1060" y="742" width="250" height="38" rx="18" fill="#07120f" stroke="#23483e"/><text x="1082" y="767" fill="#42f5a7" font-size="14" font-weight="900" font-family="Inter, Arial">BUILD</text><text x="1140" y="767" fill="#f1fff9" font-size="14" font-family="Inter, Arial">Portfolio assistant</text>
+    <rect x="1060" y="794" width="250" height="38" rx="18" fill="#07120f" stroke="#23483e"/><text x="1082" y="819" fill="#42f5a7" font-size="14" font-weight="900" font-family="Inter, Arial">PUBLISH</text><text x="1156" y="819" fill="#f1fff9" font-size="14" font-family="Inter, Arial">GitHub + demo</text>
+  </g>
+</svg>
