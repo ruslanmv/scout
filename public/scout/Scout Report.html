@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
 </head>
-<body class="report-document">
+<body class="report-document premium-landing">
   <header class="report-topbar">
     <a class="brand" href="./"><span class="brand-mark">S</span><span>Scout Report</span></a>
     <nav class="navlinks">
@@ -19,13 +19,27 @@
   </header>
 
   <main class="report-document-main">
-    <section class="report-intro" aria-label="Report controls">
-      <div>
-        <p class="eyebrow">Shareable opportunity report</p>
-        <h1>One page for what to study, build, and publish next.</h1>
-        <p class="hero-copy">Pick a profile and Scout turns the current dataset into a practical developer action plan. This page is optimized for GitHub Pages, PDF export, and sharing with a mentor, teammate, or recruiter.</p>
+    <section class="report-intro premium-hero" aria-label="Report controls">
+      <div class="hero-content">
+        <p class="eyebrow">Premium opportunity intelligence</p>
+        <h1>Scout maps your next breakout developer move.</h1>
+        <p class="hero-copy">Pick a profile and Scout turns live technology signals into a cinematic action plan: what to study, what to build, and how to publish proof recruiters and collaborators can trust.</p>
+        <div class="hero-stats" aria-label="Scout outcomes">
+          <span><strong>10×</strong> clearer build path</span>
+          <span><strong>4</strong> proof-of-work sections</span>
+          <span><strong>PDF</strong> mentor-ready export</span>
+        </div>
       </div>
-      <aside class="radar-card compact-preview">
+      <aside class="radar-card compact-preview premium-orbit" aria-label="Animated Scout report preview">
+        <div class="orbit-stage" aria-hidden="true">
+          <span class="orbit-ring ring-one"></span>
+          <span class="orbit-ring ring-two"></span>
+          <span class="orbit-ring ring-three"></span>
+          <span class="signal-dot dot-one"></span>
+          <span class="signal-dot dot-two"></span>
+          <span class="signal-dot dot-three"></span>
+          <div class="orbit-core"><span>S</span></div>
+        </div>
         <p class="eyebrow">Report preview</p>
         <h2 id="preview-topic">AI Agents</h2>
         <p id="preview-copy">Your top opportunity appears after the report is generated.</p>
@@ -38,7 +52,7 @@
       <button class="preset" data-location="Bengaluru, India" data-profile="founder" data-goal="startup">Startup ideas</button>
     </section>
 
-    <section class="command-panel report-command" aria-label="Generate a Scout Report">
+    <section class="command-panel report-command premium-command" aria-label="Generate a Scout Report">
       <label>I am a
         <select id="profile">
           <option value="developer">Developer</option>
@@ -81,7 +95,7 @@
       <div><strong>04</strong><span>Publish plan</span></div>
     </section>
 
-    <section id="report" class="report hidden report-shell" aria-label="Generated Scout report">
+    <section id="report" class="report hidden report-shell premium-report" aria-label="Generated Scout report">
       <aside class="report-sidebar">
         <p class="eyebrow">Scout Report</p>
         <h2 id="report-title">Your next best move</h2>
@@ -121,6 +135,8 @@
         </article>
 
         <section class="insights" id="insights"></section>
+
+        <section id="ai-plan" class="ai-plan hidden" aria-label="AI-generated action plan"></section>
 
         <section class="split">
           <article>

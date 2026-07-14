@@ -18,7 +18,7 @@
 
 </div>
 
-![Scout dashboard — know what to learn, build, and publish next](docs/assets/screenshots/hero.png)
+![Scout Report premium landing page — know what to study, build, and publish next](docs/assets/screenshots/scout-report-premium.svg)
 
 > **One question, answered with evidence:** given your location and goals, what should you **study, build, and publish** right now?
 
@@ -26,9 +26,9 @@ Scout blends real signals — GitHub activity, Hugging Face momentum, news, and 
 
 ## Screenshots
 
-| ✨ Live AI plan (grounded in real signals) | 🔐 Admin settings (configure the AI) |
-| :---: | :---: |
-| [![Live AI plan](docs/assets/screenshots/ai-plan.png)](docs/assets/screenshots/ai-plan.png) | [![Admin settings](docs/assets/screenshots/admin.png)](docs/assets/screenshots/admin.png) |
+| 🛰️ Premium Scout Report | ✨ Live AI plan (grounded in real signals) | 🔐 Admin settings (configure the AI) |
+| :---: | :---: | :---: |
+| [![Premium Scout Report](docs/assets/screenshots/scout-report-premium.svg)](docs/assets/screenshots/scout-report-premium.svg) | [![Live AI plan](docs/assets/screenshots/ai-plan.png)](docs/assets/screenshots/ai-plan.png) | [![Admin settings](docs/assets/screenshots/admin.png)](docs/assets/screenshots/admin.png) |
 
 Run it locally in one line:
 
