@@ -169,9 +169,6 @@ function renderReport(data) {
   $('preview-topic').textContent = top.name || 'Scout Report';
   $('preview-copy').textContent = report.summary?.headline || 'Your simple plan is ready.';
   $('report-title').textContent = `${report.location?.city ? `${report.location.city}, ` : ''}${report.location?.country || 'Worldwide'} · ${labels.goals[report.goal] || report.goal} · ${labels.profiles[report.profile] || report.profile}`;
-  $('report-score').textContent = top.name ? score(top) : '—';
-  $('report-mode').textContent = state.staticMode ? 'Static dataset' : 'Live API';
-  $('report-date').textContent = new Date().toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
   $('top-topic').textContent = top.name || '—';
   $('top-summary').textContent = top.why_follow || top.summary || '—';
   $('study-now').textContent = (report.summary?.next_move?.study || top.study_plan || [top.name || '—']).slice(0, 2).join(' → ');
@@ -274,7 +271,7 @@ async function load() {
     setStatus(`Could not generate report: ${e.message}`);
   } finally {
     $('load').disabled = false;
-    $('load').textContent = 'Generate report';
+    $('load').textContent = 'Generate my plan';
   }
 }
 
