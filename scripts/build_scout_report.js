@@ -15,8 +15,8 @@ const babel = require("@babel/core");
 const fs = require("fs");
 const path = require("path");
 
-const DASH = path.join(__dirname, "..", "dashboard");
-const FILES = ["scout-components", "scout-landing", "scout-drawer", "scout-app"];
+const DASH = path.join(__dirname, "..", "scout");
+const FILES = ["scout-components", "scout-landing", "scout-app"];
 
 for (const f of FILES) {
   const src = fs.readFileSync(path.join(DASH, f + ".jsx"), "utf8");

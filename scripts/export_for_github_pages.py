@@ -23,11 +23,11 @@ def ensure_latest_dataset() -> Path:
     return latest
 
 
-def copy_dashboard(out: Path, latest: Path, index: Path) -> None:
+def _copy_site(src: Path, out: Path, latest: Path, index: Path) -> None:
     if out.exists():
         shutil.rmtree(out)
     out.mkdir(parents=True)
-    shutil.copytree(ROOT / "dashboard", out, dirs_exist_ok=True)
+    shutil.copytree(src, out, dirs_exist_ok=True)
     data_dir = out / "data"
     data_dir.mkdir(exist_ok=True)
     shutil.copy2(latest, data_dir / "latest.json")
@@ -37,6 +37,18 @@ def copy_dashboard(out: Path, latest: Path, index: Path) -> None:
         (data_dir / "index.json").write_text(json.dumps({"latest": "latest.json"}, indent=2), encoding="utf-8")
 
 
+def copy_dashboard(out: Path, latest: Path, index: Path) -> None:
+    _copy_site(ROOT / "dashboard", out, latest, index)
+
+
+def copy_scout(out: Path, latest: Path, index: Path) -> None:
+    """Regenerate and export the multi-page Scout product to /scout."""
+    from scripts.build_scout_site import main as build_scout_site
+
+    build_scout_site()
+    _copy_site(ROOT / "scout", out, latest, index)
+
+
 def main() -> None:
     public = ROOT / "public"
     latest = ensure_latest_dataset()
@@ -44,7 +56,7 @@ def main() -> None:
     if public.exists():
         shutil.rmtree(public)
     copy_dashboard(public, latest, index)
-    copy_dashboard(public / "scout", latest, index)
+    copy_scout(public / "scout", latest, index)
     (public / "404.html").write_text((public / "index.html").read_text(encoding="utf-8"), encoding="utf-8")
     print(f"Exported GitHub Pages bundle to {public} and {public / 'scout'}")
 

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#08170f" />
+  <title>Your Scout Report</title>
+  <meta name="description" content="Your personalized developer opportunity report." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../scout.css" />
+  <link rel="stylesheet" href="../scout-site.css" />
+</head>
+<body class="site">
+  <header class="tool-header">
+    <div class="tool-header__in">
+      <a class="tool-header__back" href="../">← <span>Home</span></a>
+      <a class="tool-header__title" href="../" style="color:#fff"><span class="gl">◇</span> Scout</a>
+      <div class="tool-header__user"><span class="live"><span class="dot"></span>LIVE</span><span class="avatar">RM</span></div>
+    </div>
+  </header>
+    <nav class="subnav"><div class="subnav__in"><a data-keepq href="../report/" class="active">Report</a><a data-keepq href="../report/overview/">Overview</a><a data-keepq href="../report/ai-plan/">AI Plan</a><a data-keepq href="../report/local-radar/">Local Radar</a><a data-keepq href="../report/global-pulse/">Global Pulse</a><a data-keepq href="../report/projects/">Projects</a><a data-keepq href="../report/visibility/">Visibility</a></div></nav>
+  <main class="pagewrap">
+    <div class="pagehead reveal">
+      <div class="crumbs"><a data-keepq href="../">Home</a><span>/</span><span>Report</span></div>
+      <div class="meta">Scout Report</div>
+      <h1 data-bind="loc">Your report</h1>
+      <p class="lede">Personalized for <b data-bind="profile">Developer</b> · goal <b data-bind="goal">Build portfolio</b>. Here is your opportunity report and every section of the plan.</p>
+      <div class="stat-inline">
+        <div class="si"><div class="n"><span data-bind="score">—</span><span style="color:var(--faint);font-size:1rem">/100</span></div><div class="l">Opportunity score</div></div>
+        <div class="si"><div class="n" data-bind="topicsCount">—</div><div class="l">Topics</div></div>
+        <div class="si"><div class="n" data-bind="projectsCount">—</div><div class="l">Project ideas</div></div>
+        <div class="si"><div class="n" data-bind="actionsCount">—</div><div class="l">Actions</div></div>
+      </div>
+    </div>
+
+    <article class="darkpanel move reveal" style="grid-template-columns:1fr;margin-top:24px">
+      <div class="move-main">
+        <div class="verdict">
+          <span class="vbadge"><span class="d"></span>Your strongest opportunity</span>
+          <h3 class="vhead">Learn <span class="em" data-bind="topShort">—</span>.</h3>
+          <p class="vsub" data-bind="verdict">Loading your report…</p>
+        </div>
+        <div class="gain" data-bind="topSummary">—</div>
+        <div class="move-foot">
+          <span class="conf high on-dark"><span class="d"></span>High confidence</span>
+          <div class="ctarow"><a class="btn primary small on-dark" data-keepq href="../report/overview/">Open overview →</a></div>
+        </div>
+      </div>
+    </article>
+
+    <section class="section">
+      <div class="section-head"><h3>Report sections</h3></div>
+      <div class="navgrid"><a class="card navcard" data-keepq href="../report/overview/"><div class="nc-top"><span class="nc-ic">◎</span><h3>Overview</h3></div><p>The quick summary of your strongest opportunities and confidence.</p><span class="go">Open →</span></a><a class="card navcard" data-keepq href="../report/ai-plan/"><div class="nc-top"><span class="nc-ic">◇</span><h3>AI Plan</h3></div><p>A validate → learn → build → publish → grow action plan.</p><span class="go">Open →</span></a><a class="card navcard" data-keepq href="../report/local-radar/"><div class="nc-top"><span class="nc-ic">◉</span><h3>Local Radar</h3></div><p>Opportunities, hiring demand, and activity near you.</p><span class="go">Open →</span></a><a class="card navcard" data-keepq href="../report/global-pulse/"><div class="nc-top"><span class="nc-ic">◐</span><h3>Global Pulse</h3></div><p>What is gaining momentum around the world.</p><span class="go">Open →</span></a><a class="card navcard" data-keepq href="../report/projects/"><div class="nc-top"><span class="nc-ic">▣</span><h3>Projects</h3></div><p>Portfolio-ready project ideas with stacks and deliverables.</p><span class="go">Open →</span></a><a class="card navcard" data-keepq href="../report/visibility/"><div class="nc-top"><span class="nc-ic">◈</span><h3>Visibility</h3></div><p>How to publish and get noticed for what you build.</p><span class="go">Open →</span></a></div>
+    </section>
+    <div class="backrow"><a class="btn ghost" href="../">← Start a new report</a></div>
+  </main>
+  <footer class="foot">
+    <div class="wrap row">
+      <div class="brand"><span style="color:var(--green)">◇</span> Scout</div>
+      <div class="links">
+        <a href="../api/">API</a>
+        <a href="../dataset/">Dataset</a>
+        <a href="../admin/">Admin</a>
+        <a href="https://github.com/ruslanmv/scout" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+      <div class="copy">Public developer layer of Matrix Scout · ruslanmv.com</div>
+    </div>
+  </footer>
+  <script>window.SCOUT_PAGE = { type: "report", rel: "../" };</script>
+  <script src="../scout-data.js"></script>
+  <script src="../scout-site.js"></script>
+</body>
+</html>

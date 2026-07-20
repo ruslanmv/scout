@@ -45,11 +45,16 @@ app.include_router(admin_router, prefix="/api/v1")
 if Path("dashboard").exists():
     app.mount("/dashboard", StaticFiles(directory="dashboard", html=True), name="dashboard")
 
+# The multi-page Scout product (landing + report sections + topics + docs).
+if Path("scout").exists():
+    app.mount("/scout", StaticFiles(directory="scout", html=True), name="scout")
+
 @app.get("/")
 def root():
     return {
         "name": "Scout",
         "description": "Developer trend intelligence API and dashboard",
+        "scout": "/scout",
         "dashboard": "/dashboard",
         "docs": "/docs",
     }
