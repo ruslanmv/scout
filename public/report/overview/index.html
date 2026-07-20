@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Scout creates a simple developer trend report: what to study, what to build, and how to publish it." />
+  <title>Scout — Overview</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="manifest" href="../../manifest.json" />
+</head>
+<body data-base="../.." data-page="overview">
+  <nav class="topbar page-topbar">
+    <a class="brand" href="../../"><span class="brand-mark">S</span><span>Scout</span></a>
+    <div class="navlinks">
+      <a href="../../report/overview/">Report</a>
+      <a href="../../dataset/">Dataset</a>
+      <a href="../../api/">API</a>
+      <a href="../../admin/">Admin</a>
+    </div>
+  </nav>
+<main class="page-shell">
+<h1 class="page-title">Overview</h1>
+  <section class="report-controls">
+    <input id="location" value="Rome, Italy" aria-label="Location" />
+    <select id="profile" aria-label="Profile"><option value="developer">Developer</option><option value="ai_engineer">AI engineer</option><option value="student">Student</option><option value="founder">Founder</option><option value="enterprise">Enterprise leader</option><option value="agent">Agentic AI system</option></select>
+    <select id="goal" aria-label="Goal"><option value="build_portfolio">Build my portfolio</option><option value="career">Improve my career</option><option value="create_agents">Create agents/tools</option><option value="startup">Find startup ideas</option><option value="research">Research emerging topics</option></select>
+    <button id="load" class="primary small">Update report</button><button id="share" class="secondary small">Copy link</button><button id="simple" class="active hidden">Simple</button><button id="advanced" class="hidden">Signal</button><button id="save" class="secondary small">Save as PDF</button>
+  </section>
+  <p id="status" class="micro"></p>
+  <nav class="report-nav" aria-label="Scout report pages">
+    <a class="report-nav-btn" data-page-link="overview" href="../../report/overview/">Overview</a>
+    <a class="report-nav-btn" data-page-link="ai-plan" href="../../report/ai-plan/">AI plan</a>
+    <a class="report-nav-btn" data-page-link="local-radar" href="../../report/local-radar/">Local radar</a>
+    <a class="report-nav-btn" data-page-link="global-pulse" href="../../report/global-pulse/">Global pulse</a>
+    <a class="report-nav-btn" data-page-link="projects" href="../../report/projects/">Projects</a>
+    <a class="report-nav-btn" data-page-link="visibility" href="../../report/visibility/">Visibility</a>
+  </nav>
+<section id="report" class="report"><h1 id="report-title">Scout report</h1><article class="next-card"><div><span class="pill">Top opportunity</span><h2 id="top-topic">—</h2><p id="top-summary">—</p><div class="actions"><button id="top-evidence" class="primary small">See why</button><a id="top-project-link" class="secondary small" href="../projects/">Get project plan</a></div></div><div class="next-move"><p><strong>Study</strong><span id="study-now">—</span></p><p><strong>Build</strong><span id="build-now">—</span></p><p><strong>Publish</strong><span id="publish-now">GitHub + demo + short article</span></p><p><strong>Confidence</strong><span id="confidence-now">—</span></p></div></article><section class="insights" id="insights"></section></section>
+</main><aside id="drawer" class="drawer hidden" aria-live="polite"><div class="drawer-panel"><button id="close-drawer" class="close" aria-label="Close">×</button><p class="eyebrow">Topic details</p><h2 id="drawer-title">Topic</h2><div class="tabs"><button data-tab="overview" class="active">Overview</button><button data-tab="evidence">Evidence</button><button data-tab="study">Study Plan</button><button data-tab="projects">Projects</button><button data-tab="raw">Raw Data</button></div><div id="drawer-content" class="drawer-content"></div></div></aside><footer><strong>Scout</strong> · Open developer trend intelligence</footer><script src="../../app.js"></script>
+</body>
+</html>
