@@ -318,8 +318,8 @@ function Landing({ profile, setProfile, city, country, setLocation, goal, setGoa
           <div className="l-wrap l-head-in">
             <div className="l-brand"><span className="gl">◇</span>Scout</div>
             <nav className="l-nav">
-              <a href="#">API</a><a href="#">Methodology</a><a href="#">Trust</a>
-              <a className="gh" href="https://github.com/ruslanmv" target="_blank" rel="noreferrer"><LIc d={L_ICONS.git} size={18} />GitHub</a>
+              <a href="api/">API</a><a href="dataset/">Dataset</a><a href="report/overview/">Report</a>
+              <a className="gh" href="https://github.com/ruslanmv/scout" target="_blank" rel="noreferrer"><LIc d={L_ICONS.git} size={18} />GitHub</a>
             </nav>
           </div>
         </header>
@@ -395,8 +395,8 @@ function Landing({ profile, setProfile, city, country, setLocation, goal, setGoa
             <div className="l-foot-in">
               <span>© 2026 Scout</span>
               <span className="links">
-                <a href="#">API</a><a href="#">Methodology</a><a href="#">Trust</a>
-                <a href="https://github.com/ruslanmv" target="_blank" rel="noreferrer"><LIc d={L_ICONS.git} size={16} />GitHub</a>
+                <a href="api/">API</a><a href="dataset/">Dataset</a><a href="report/overview/">Report</a>
+                <a href="https://github.com/ruslanmv/scout" target="_blank" rel="noreferrer"><LIc d={L_ICONS.git} size={16} />GitHub</a>
               </span>
             </div>
           </footer>

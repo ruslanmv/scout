@@ -541,14 +541,14 @@ function Landing({
   }, "\u25C7"), "Scout"), /*#__PURE__*/React.createElement("nav", {
     className: "l-nav"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "#"
+    href: "api/"
   }, "API"), /*#__PURE__*/React.createElement("a", {
-    href: "#"
-  }, "Methodology"), /*#__PURE__*/React.createElement("a", {
-    href: "#"
-  }, "Trust"), /*#__PURE__*/React.createElement("a", {
+    href: "dataset/"
+  }, "Dataset"), /*#__PURE__*/React.createElement("a", {
+    href: "report/overview/"
+  }, "Report"), /*#__PURE__*/React.createElement("a", {
     className: "gh",
-    href: "https://github.com/ruslanmv",
+    href: "https://github.com/ruslanmv/scout",
     target: "_blank",
     rel: "noreferrer"
   }, /*#__PURE__*/React.createElement(LIc, {
@@ -742,13 +742,13 @@ function Landing({
   }, /*#__PURE__*/React.createElement("span", null, "\xA9 2026 Scout"), /*#__PURE__*/React.createElement("span", {
     className: "links"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "#"
+    href: "api/"
   }, "API"), /*#__PURE__*/React.createElement("a", {
-    href: "#"
-  }, "Methodology"), /*#__PURE__*/React.createElement("a", {
-    href: "#"
-  }, "Trust"), /*#__PURE__*/React.createElement("a", {
-    href: "https://github.com/ruslanmv",
+    href: "dataset/"
+  }, "Dataset"), /*#__PURE__*/React.createElement("a", {
+    href: "report/overview/"
+  }, "Report"), /*#__PURE__*/React.createElement("a", {
+    href: "https://github.com/ruslanmv/scout",
     target: "_blank",
     rel: "noreferrer"
   }, /*#__PURE__*/React.createElement(LIc, {

@@ -1,5 +1,5 @@
 const $ = (id) => document.getElementById(id);
-const state = { report: null, local: [], global: [], activeTopic: null, activeDive: null, showAllLocal: false, showAllGlobal: false, advanced: false, staticMode: false };
+const state = { report: null, local: [], global: [], activeTopic: null, activeDive: null, showAllLocal: false, showAllGlobal: false, advanced: false, staticMode: false, activePage: 'overview' };
 
 const labels = {
   goals: { career: 'Career growth', build_portfolio: 'Build portfolio', create_agents: 'Create agents', startup: 'Startup ideas', research: 'Research' },
@@ -10,7 +10,7 @@ function esc(value) {
   return String(value ?? '').replace(/[&<>'"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[c]));
 }
 
-function setStatus(message) { $('status').textContent = message; }
+function setStatus(message) { setText('status', message); }
 
 async function fetchJSON(url, options) {
   const res = await fetch(url, options);
@@ -30,6 +30,10 @@ function qs() {
 }
 
 function apiPath(path) { return `${window.location.origin}${path}`; }
+function basePath() { return document.body?.dataset?.base || '.'; }
+function getPage() { return document.body?.dataset?.page || 'landing'; }
+function optional(id) { return document.getElementById(id); }
+function setText(id, value) { const el = optional(id); if (el) el.textContent = value; }
 
 function trustLabel(topic) { return topic?.trust?.label || topic?.confidence?.label || 'Medium confidence'; }
 function signal(topic, key) { return Number(topic?.signals?.[key] || 0); }
@@ -56,15 +60,14 @@ function card(topic, index) {
     <p class="muted"><strong>Build:</strong> ${esc(project)}</p>
     <div class="topic-footer"><span class="pill">${esc(topic.priority || 'trend')}</span><span class="trust">${esc(trustLabel(topic))}</span></div>
     ${detail}
-    <button class="link-btn" data-topic="${esc(topic.id)}">See simple plan</button>
+    <a class="link-btn" href="${basePath()}/topics/${esc(topic.id)}/">Open full analysis</a>
   </div>`;
 }
 
-function bindTopicButtons() {
-  document.querySelectorAll('[data-topic]').forEach((button) => button.addEventListener('click', () => deepDive(button.dataset.topic)));
-}
+function bindTopicButtons() {}
 
 function renderCards(el, topics, showAll) {
+  if (!el) return;
   const visible = showAll ? topics : topics.slice(0, 3);
   el.innerHTML = visible.map(card).join('');
   bindTopicButtons();
@@ -72,6 +75,7 @@ function renderCards(el, topics, showAll) {
 
 function renderInsights(report) {
   const top = report.summary || {};
+  if (!$('insights')) return;
   $('insights').innerHTML = [
     ['Study first', top.top_topic || '—'],
     ['Build next', top.top_project || '—'],
@@ -96,12 +100,14 @@ function renderVisibility(plan) {
     ['Blog title', plan.blog_title],
     ['Skills', (plan.skills_to_show || []).join(', ')],
   ];
+  if (!$('visibility')) return;
   $('visibility').innerHTML = rows.map(([label, value]) => `<div class="copy-row"><span>${esc(label)}</span><code>${esc(value || '—')}</code><button class="copy-btn" data-copy="${esc(value || '')}">Copy</button></div>`).join('') +
     `<ol>${(plan.publish_steps || []).map((s) => `<li>${esc(s)}</li>`).join('')}</ol>`;
   document.querySelectorAll('.copy-btn').forEach((button) => button.addEventListener('click', () => copyValue(button.dataset.copy, button)));
 }
 
 function renderProjects(projects) {
+  if (!$('projects')) return;
   $('projects').innerHTML = (projects || []).slice(0, 5).map((p) => `<div class="project"><h4>${esc(p.title || p)}</h4><p>${esc(p.why_it_promotes_you || p.description || '')}</p><p class="muted">${esc(p.estimated_time || '1-4 weeks')} · ${esc((p.deliverables || ['GitHub repo', 'Live demo', 'Short article']).join(' · '))}</p></div>`).join('');
 }
 
@@ -152,10 +158,35 @@ function buildStaticReport(dataset) {
 }
 
 async function loadStaticFallback() {
-  const dataset = await fetchJSON('data/latest.json');
+  const dataset = await fetchJSON(`${basePath()}/data/latest.json`);
   state.staticMode = true;
   setStatus(`Static GitHub Pages mode · dataset generated ${new Date(dataset.generated_at || Date.now()).toLocaleDateString()}`);
   return buildStaticReport(dataset);
+}
+
+
+function setReportPage(page) {
+  state.activePage = page || getPage() || 'overview';
+  document.querySelectorAll('[data-page-link]').forEach((link) => link.classList.toggle('active', link.dataset.pageLink === state.activePage));
+}
+
+function reportUrl(page) {
+  const params = qs();
+  return `${basePath()}/report/${page}/?${params.toString()}`;
+}
+
+function renderStaticPlan(report, top) {
+  const panel = $('ai-static-plan');
+  if (!panel) return;
+  const study = report.summary?.next_move?.study || top.study_plan || [top.name || 'Study the top opportunity'];
+  const build = report.summary?.next_move?.build || report.summary?.top_project || (top.project_ideas || [])[0] || 'Build a practical demo';
+  panel.innerHTML = `
+    <h3>${esc(report.summary?.headline || 'Your built-in action plan')}</h3>
+    <div class="ai-grid">
+      <div class="ai-col"><h4>📚 Study</h4>${olist(study)}</div>
+      <div class="ai-col"><h4>🛠 Build</h4><p class="ai-build-title">${esc(build)}</p><p class="muted">Turn the top trend into a small proof-of-work demo.</p></div>
+      <div class="ai-col"><h4>🚀 Publish</h4>${olist((report.visibility_plan?.publish_steps || simpleVisibility(top).publish_steps))}</div>
+    </div>`;
 }
 
 function renderReport(data) {
@@ -164,28 +195,28 @@ function renderReport(data) {
   state.global = data.global_topics || [];
   const report = state.report;
   const top = report.recommendations?.[0] || state.local[0] || {};
-  $('report').classList.remove('hidden');
-  $('sticky').classList.remove('hidden');
-  $('preview-topic').textContent = top.name || 'Scout Report';
-  $('preview-copy').textContent = report.summary?.headline || 'Your simple plan is ready.';
-  $('report-title').textContent = `${report.location?.city ? `${report.location.city}, ` : ''}${report.location?.country || 'Worldwide'} · ${labels.goals[report.goal] || report.goal} · ${labels.profiles[report.profile] || report.profile}`;
-  $('top-topic').textContent = top.name || '—';
-  $('top-summary').textContent = top.why_follow || top.summary || '—';
-  $('study-now').textContent = (report.summary?.next_move?.study || top.study_plan || [top.name || '—']).slice(0, 2).join(' → ');
-  $('build-now').textContent = report.summary?.next_move?.build || report.summary?.top_project || (top.project_ideas || [])[0] || '—';
-  $('confidence-now').textContent = report.summary?.confidence?.label || trustLabel(top);
-  $('sticky-move').textContent = report.summary?.next_move?.build || 'Open project plan';
-  $('top-evidence').onclick = () => deepDive(top.id);
-  $('top-project').onclick = () => deepDive(top.id, 'projects');
-  $('sticky-btn').onclick = () => deepDive(top.id, 'projects');
+  optional('report')?.classList.remove('hidden');
+  optional('sticky')?.classList.remove('hidden');
+  setText('preview-topic', top.name || 'Scout Report');
+  setText('preview-copy', report.summary?.headline || 'Your simple plan is ready.');
+  setText('report-title', `${report.location?.city ? `${report.location.city}, ` : ''}${report.location?.country || 'Worldwide'} · ${labels.goals[report.goal] || report.goal} · ${labels.profiles[report.profile] || report.profile}`);
+  setText('top-topic', top.name || '—');
+  setText('top-summary', top.why_follow || top.summary || '—');
+  setText('study-now', (report.summary?.next_move?.study || top.study_plan || [top.name || '—']).slice(0, 2).join(' → '));
+  setText('build-now', report.summary?.next_move?.build || report.summary?.top_project || (top.project_ideas || [])[0] || '—');
+  setText('confidence-now', report.summary?.confidence?.label || trustLabel(top));
+  setText('sticky-move', report.summary?.next_move?.build || 'Open project plan');
+  if (optional('top-evidence')) $('top-evidence').onclick = () => { window.location.href = `${basePath()}/topics/${top.id}/`; };
+  if (optional('top-project-link')) $('top-project-link').href = reportUrl('projects');
+  if (optional('sticky-btn')) $('sticky-btn').onclick = () => { window.location.href = reportUrl('projects'); };
   renderInsights(report);
+  renderStaticPlan(report, top);
   renderCards($('local'), state.local, state.showAllLocal);
   renderCards($('global'), state.global, state.showAllGlobal);
   renderProjects(report.projects || simpleProjects(top));
   renderVisibility(report.visibility_plan || simpleVisibility(top));
-  updateUrl();
+  setReportPage(getPage());
   loadAiPlan();
-  window.scrollTo({ top: $('report').offsetTop - 20, behavior: 'smooth' });
 }
 
 function chips(items) { return (items || []).map((s) => `<span class="chip">${esc(s)}</span>`).join(''); }
@@ -233,13 +264,14 @@ function renderAiError(panel, message) {
 
 async function loadAiPlan() {
   const panel = $('ai-plan');
-  if (!panel || state.staticMode) { panel?.classList.add('hidden'); return; }
+  if (!panel || state.staticMode) { panel?.classList.add('hidden'); $('ai-static-plan')?.classList.remove('hidden'); return; }
   let status;
-  try { status = await fetchJSON('/api/v1/ai/status'); } catch { panel.classList.add('hidden'); return; }
-  if (!status.ai_enabled) { panel.classList.add('hidden'); return; }
+  try { status = await fetchJSON('/api/v1/ai/status'); } catch { panel.classList.add('hidden'); $('ai-static-plan')?.classList.remove('hidden'); return; }
+  if (!status.ai_enabled) { panel.classList.add('hidden'); $('ai-static-plan')?.classList.remove('hidden'); return; }
   const top = state.report?.recommendations?.[0] || state.local[0];
-  if (!top || (!top.id && !top.name)) { panel.classList.add('hidden'); return; }
+  if (!top || (!top.id && !top.name)) { panel.classList.add('hidden'); $('ai-static-plan')?.classList.remove('hidden'); return; }
   panel.classList.remove('hidden');
+  $('ai-static-plan')?.classList.add('hidden');
   renderAiLoading(panel, status);
   try {
     const loc = parseLocation($('location').value);
@@ -250,11 +282,13 @@ async function loadAiPlan() {
     });
     renderAiPlan(panel, plan);
   } catch (e) {
+    $('ai-static-plan')?.classList.remove('hidden');
     renderAiError(panel, e.message || 'The AI engine could not be reached.');
   }
 }
 
 async function load() {
+  if (!optional('report')) { window.location.href = reportUrl('overview'); return; }
   $('load').disabled = true;
   $('load').textContent = 'Generating…';
   try {
@@ -275,47 +309,21 @@ async function load() {
   }
 }
 
-function staticDeepDive(topicId) {
-  const topic = [...state.local, ...state.global].find((t) => t.id === topicId) || state.local[0] || {};
-  return {
-    topic,
-    executive_summary: topic.why_follow || topic.summary,
-    evidence: { signals: topic.signals || {}, sources: topic.sources || [], trust: topic.trust || {} },
-    study_plan: topic.study_plan || [],
-    project_blueprints: simpleProjects(topic),
-    risks: topic.risks || [],
-  };
+function topicUrl(topic) {
+  return `${basePath()}/topics/${topic}/`;
 }
 
-async function deepDive(topic, preferred = 'overview') {
-  if (!topic) return;
-  try {
-    state.activeDive = state.staticMode ? staticDeepDive(topic) : await fetchJSON(`/api/v1/topics/${topic}/deep-dive?${qs().toString()}`);
-  } catch (e) {
-    state.activeDive = staticDeepDive(topic);
-  }
-  $('drawer-title').textContent = state.activeDive.topic?.name || state.activeDive.topic_name || topic;
-  $('drawer').classList.remove('hidden');
-  setTab(preferred);
+async function deepDive(topic) {
+  if (topic) window.location.href = topicUrl(topic);
 }
 
-function setTab(tab) {
-  document.querySelectorAll('.tabs button').forEach((b) => b.classList.toggle('active', b.dataset.tab === tab));
-  const d = state.activeDive || {};
-  const topic = d.topic || {};
-  let html = '';
-  if (tab === 'overview') html = `<p>${esc(d.executive_summary || topic.why_follow || topic.summary || '')}</p><div class="metrics">${metric('Global', d.global_analysis?.score || topicScore(topic))}${metric('Local', d.local_analysis?.score || topic.signals?.local_relevance)}${metric('Project', topic.signals?.project_potential)}${metric('Career', topic.signals?.career_value)}</div><h3>Risks to watch</h3><ul>${(d.risks || topic.risks || []).map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`;
-  if (tab === 'evidence') html = `<p>${esc(d.evidence?.source_summary || 'Evidence combines public technology signals from the Scout dataset.')}</p><pre>${esc(JSON.stringify(d.evidence || {}, null, 2))}</pre>`;
-  if (tab === 'study') html = `<ol>${(d.study_plan || topic.study_plan || []).map((x) => `<li>${esc(x)}</li>`).join('')}</ol>`;
-  if (tab === 'projects') html = (d.project_blueprints || d.project_ideas || simpleProjects(topic)).map((p) => typeof p === 'string' ? `<div class="project"><h4>${esc(p)}</h4></div>` : `<div class="project"><h4>${esc(p.title)}</h4><p>${esc(p.why_it_promotes_you || '')}</p><p class="muted">Stack: ${esc((p.stack || p.deliverables || []).join(', '))}</p></div>`).join('');
-  if (tab === 'raw') html = `<pre>${esc(JSON.stringify(d, null, 2))}</pre>`;
-  $('drawer-content').innerHTML = html;
+function reportShareUrl() {
+  const params = qs();
+  return `${window.location.origin}${window.location.pathname}?${params.toString()}`;
 }
 
 function updateUrl() {
-  const params = qs();
-  const url = `${window.location.pathname}?${params.toString()}`;
-  window.history.replaceState({}, '', url);
+  return reportShareUrl();
 }
 
 function hydrateFromUrl() {
@@ -325,6 +333,7 @@ function hydrateFromUrl() {
   if (country) $('location').value = city ? `${city}, ${country}` : country;
   if (params.get('goal')) $('goal').value = params.get('goal');
   if (params.get('profile')) $('profile').value = params.get('profile');
+  if (params.get('page')) state.activePage = params.get('page');
 }
 
 function applyPreset(button) {
@@ -335,16 +344,16 @@ function applyPreset(button) {
   load();
 }
 
-$('load').addEventListener('click', load);
-$('share').addEventListener('click', (event) => { updateUrl(); copyValue(window.location.href, event.currentTarget); });
-$('show-local').addEventListener('click', () => { state.showAllLocal = !state.showAllLocal; $('show-local').textContent = state.showAllLocal ? 'Show top 3 only' : 'Show all local topics'; renderCards($('local'), state.local, state.showAllLocal); });
-$('show-global').addEventListener('click', () => { state.showAllGlobal = !state.showAllGlobal; $('show-global').textContent = state.showAllGlobal ? 'Show top 3 only' : 'Show all global topics'; renderCards($('global'), state.global, state.showAllGlobal); });
-$('simple').addEventListener('click', () => { state.advanced = false; $('simple').classList.add('active'); $('advanced').classList.remove('active'); renderCards($('local'), state.local, state.showAllLocal); renderCards($('global'), state.global, state.showAllGlobal); });
-$('advanced').addEventListener('click', () => { state.advanced = true; $('advanced').classList.add('active'); $('simple').classList.remove('active'); renderCards($('local'), state.local, state.showAllLocal); renderCards($('global'), state.global, state.showAllGlobal); });
-$('save').addEventListener('click', () => window.print());
-$('close-drawer').addEventListener('click', () => $('drawer').classList.add('hidden'));
-document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => setTab(b.dataset.tab)));
+if (optional('load')) $('load').addEventListener('click', load);
+if (optional('share')) $('share').addEventListener('click', (event) => { copyValue(updateUrl(), event.currentTarget); });
+if (optional('show-local')) $('show-local').addEventListener('click', () => { state.showAllLocal = !state.showAllLocal; $('show-local').textContent = state.showAllLocal ? 'Show top 3 only' : 'Show all local topics'; renderCards($('local'), state.local, state.showAllLocal); });
+if (optional('show-global')) $('show-global').addEventListener('click', () => { state.showAllGlobal = !state.showAllGlobal; $('show-global').textContent = state.showAllGlobal ? 'Show top 3 only' : 'Show all global topics'; renderCards($('global'), state.global, state.showAllGlobal); });
+if (optional('simple')) $('simple').addEventListener('click', () => { state.advanced = false; optional('simple')?.classList.add('active'); optional('advanced')?.classList.remove('active'); renderCards(optional('local'), state.local, state.showAllLocal); renderCards(optional('global'), state.global, state.showAllGlobal); });
+if (optional('advanced')) $('advanced').addEventListener('click', () => { state.advanced = true; optional('advanced')?.classList.add('active'); optional('simple')?.classList.remove('active'); renderCards(optional('local'), state.local, state.showAllLocal); renderCards(optional('global'), state.global, state.showAllGlobal); });
+if (optional('save')) $('save').addEventListener('click', () => window.print());
+if (optional('close-drawer')) $('close-drawer').addEventListener('click', () => $('drawer').classList.add('hidden'));
 document.querySelectorAll('.preset').forEach((button) => button.addEventListener('click', () => applyPreset(button)));
-
 hydrateFromUrl();
-load();
+document.querySelectorAll('[data-page-link]').forEach((link) => { link.href = reportUrl(link.dataset.pageLink); });
+setReportPage(getPage());
+if (optional('report')) load();
