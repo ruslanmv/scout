@@ -1,5 +1,5 @@
 const $ = (id) => document.getElementById(id);
-const state = { report: null, local: [], global: [], activeTopic: null, activeDive: null, showAllLocal: false, showAllGlobal: false, advanced: false, staticMode: false };
+const state = { report: null, local: [], global: [], activeTopic: null, activeDive: null, showAllLocal: false, showAllGlobal: false, advanced: false, staticMode: false, activePage: 'overview' };
 
 const labels = {
   goals: { career: 'Career growth', build_portfolio: 'Build portfolio', create_agents: 'Create agents', startup: 'Startup ideas', research: 'Research' },
@@ -158,6 +158,30 @@ async function loadStaticFallback() {
   return buildStaticReport(dataset);
 }
 
+
+function setReportPage(page, scroll = false) {
+  const target = page || 'overview';
+  state.activePage = target;
+  document.querySelectorAll('.report-nav-btn').forEach((button) => button.classList.toggle('active', button.dataset.page === target));
+  document.querySelectorAll('[data-page-panel]').forEach((panel) => panel.classList.toggle('active', panel.dataset.pagePanel === target));
+  if (scroll && $('report')) window.scrollTo({ top: $('report').offsetTop - 20, behavior: 'smooth' });
+  if (state.report) updateUrl();
+}
+
+function renderStaticPlan(report, top) {
+  const panel = $('ai-static-plan');
+  if (!panel) return;
+  const study = report.summary?.next_move?.study || top.study_plan || [top.name || 'Study the top opportunity'];
+  const build = report.summary?.next_move?.build || report.summary?.top_project || (top.project_ideas || [])[0] || 'Build a practical demo';
+  panel.innerHTML = `
+    <h3>${esc(report.summary?.headline || 'Your built-in action plan')}</h3>
+    <div class="ai-grid">
+      <div class="ai-col"><h4>📚 Study</h4>${olist(study)}</div>
+      <div class="ai-col"><h4>🛠 Build</h4><p class="ai-build-title">${esc(build)}</p><p class="muted">Turn the top trend into a small proof-of-work demo.</p></div>
+      <div class="ai-col"><h4>🚀 Publish</h4>${olist((report.visibility_plan?.publish_steps || simpleVisibility(top).publish_steps))}</div>
+    </div>`;
+}
+
 function renderReport(data) {
   state.report = data.report;
   state.local = data.local_topics || data.report?.recommendations || [];
@@ -176,14 +200,15 @@ function renderReport(data) {
   $('confidence-now').textContent = report.summary?.confidence?.label || trustLabel(top);
   $('sticky-move').textContent = report.summary?.next_move?.build || 'Open project plan';
   $('top-evidence').onclick = () => deepDive(top.id);
-  $('top-project').onclick = () => deepDive(top.id, 'projects');
-  $('sticky-btn').onclick = () => deepDive(top.id, 'projects');
+  $('top-project').onclick = () => setReportPage('projects', true);
+  $('sticky-btn').onclick = () => setReportPage('projects', true);
   renderInsights(report);
+  renderStaticPlan(report, top);
   renderCards($('local'), state.local, state.showAllLocal);
   renderCards($('global'), state.global, state.showAllGlobal);
   renderProjects(report.projects || simpleProjects(top));
   renderVisibility(report.visibility_plan || simpleVisibility(top));
-  updateUrl();
+  setReportPage(state.activePage || 'overview');
   loadAiPlan();
   window.scrollTo({ top: $('report').offsetTop - 20, behavior: 'smooth' });
 }
@@ -233,13 +258,14 @@ function renderAiError(panel, message) {
 
 async function loadAiPlan() {
   const panel = $('ai-plan');
-  if (!panel || state.staticMode) { panel?.classList.add('hidden'); return; }
+  if (!panel || state.staticMode) { panel?.classList.add('hidden'); $('ai-static-plan')?.classList.remove('hidden'); return; }
   let status;
-  try { status = await fetchJSON('/api/v1/ai/status'); } catch { panel.classList.add('hidden'); return; }
-  if (!status.ai_enabled) { panel.classList.add('hidden'); return; }
+  try { status = await fetchJSON('/api/v1/ai/status'); } catch { panel.classList.add('hidden'); $('ai-static-plan')?.classList.remove('hidden'); return; }
+  if (!status.ai_enabled) { panel.classList.add('hidden'); $('ai-static-plan')?.classList.remove('hidden'); return; }
   const top = state.report?.recommendations?.[0] || state.local[0];
-  if (!top || (!top.id && !top.name)) { panel.classList.add('hidden'); return; }
+  if (!top || (!top.id && !top.name)) { panel.classList.add('hidden'); $('ai-static-plan')?.classList.remove('hidden'); return; }
   panel.classList.remove('hidden');
+  $('ai-static-plan')?.classList.add('hidden');
   renderAiLoading(panel, status);
   try {
     const loc = parseLocation($('location').value);
@@ -250,6 +276,7 @@ async function loadAiPlan() {
     });
     renderAiPlan(panel, plan);
   } catch (e) {
+    $('ai-static-plan')?.classList.remove('hidden');
     renderAiError(panel, e.message || 'The AI engine could not be reached.');
   }
 }
@@ -314,6 +341,7 @@ function setTab(tab) {
 
 function updateUrl() {
   const params = qs();
+  params.set('page', state.activePage || 'overview');
   const url = `${window.location.pathname}?${params.toString()}`;
   window.history.replaceState({}, '', url);
 }
@@ -325,6 +353,7 @@ function hydrateFromUrl() {
   if (country) $('location').value = city ? `${city}, ${country}` : country;
   if (params.get('goal')) $('goal').value = params.get('goal');
   if (params.get('profile')) $('profile').value = params.get('profile');
+  if (params.get('page')) state.activePage = params.get('page');
 }
 
 function applyPreset(button) {
@@ -345,6 +374,7 @@ $('save').addEventListener('click', () => window.print());
 $('close-drawer').addEventListener('click', () => $('drawer').classList.add('hidden'));
 document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => setTab(b.dataset.tab)));
 document.querySelectorAll('.preset').forEach((button) => button.addEventListener('click', () => applyPreset(button)));
+document.querySelectorAll('.report-nav-btn').forEach((button) => button.addEventListener('click', () => setReportPage(button.dataset.page, true)));
 
 hydrateFromUrl();
 load();
