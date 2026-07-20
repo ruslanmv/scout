@@ -167,14 +167,13 @@ async function loadStaticFallback() {
 }
 
 
-function setReportPage(page) {
-  state.activePage = page || getPage() || 'overview';
-  document.querySelectorAll('[data-page-link]').forEach((link) => link.classList.toggle('active', link.dataset.pageLink === state.activePage));
-}
-
-function reportUrl(page) {
-  const params = qs();
-  return `${basePath()}/report/${page}/?${params.toString()}`;
+function setReportPage(page, scroll = false) {
+  const target = page || 'overview';
+  state.activePage = target;
+  document.querySelectorAll('.report-nav-btn').forEach((button) => button.classList.toggle('active', button.dataset.page === target));
+  document.querySelectorAll('[data-page-panel]').forEach((panel) => panel.classList.toggle('active', panel.dataset.pagePanel === target));
+  if (scroll && $('report')) window.scrollTo({ top: $('report').offsetTop - 20, behavior: 'smooth' });
+  if (state.report) updateUrl();
 }
 
 function renderStaticPlan(report, top) {
@@ -197,27 +196,27 @@ function renderReport(data) {
   state.global = data.global_topics || [];
   const report = state.report;
   const top = report.recommendations?.[0] || state.local[0] || {};
-  optional('report')?.classList.remove('hidden');
-  optional('sticky')?.classList.remove('hidden');
-  setText('preview-topic', top.name || 'Scout Report');
-  setText('preview-copy', report.summary?.headline || 'Your simple plan is ready.');
-  setText('report-title', `${report.location?.city ? `${report.location.city}, ` : ''}${report.location?.country || 'Worldwide'} · ${labels.goals[report.goal] || report.goal} · ${labels.profiles[report.profile] || report.profile}`);
-  setText('top-topic', top.name || '—');
-  setText('top-summary', top.why_follow || top.summary || '—');
-  setText('study-now', (report.summary?.next_move?.study || top.study_plan || [top.name || '—']).slice(0, 2).join(' → '));
-  setText('build-now', report.summary?.next_move?.build || report.summary?.top_project || (top.project_ideas || [])[0] || '—');
-  setText('confidence-now', report.summary?.confidence?.label || trustLabel(top));
-  setText('sticky-move', report.summary?.next_move?.build || 'Open project plan');
-  if (optional('top-evidence')) $('top-evidence').onclick = () => deepDive(top.id);
-  if (optional('top-project-link')) $('top-project-link').href = reportUrl('projects');
-  if (optional('sticky-btn')) $('sticky-btn').onclick = () => { window.location.href = reportUrl('projects'); };
+  $('report').classList.remove('hidden');
+  $('sticky').classList.remove('hidden');
+  $('preview-topic').textContent = top.name || 'Scout Report';
+  $('preview-copy').textContent = report.summary?.headline || 'Your simple plan is ready.';
+  $('report-title').textContent = `${report.location?.city ? `${report.location.city}, ` : ''}${report.location?.country || 'Worldwide'} · ${labels.goals[report.goal] || report.goal} · ${labels.profiles[report.profile] || report.profile}`;
+  $('top-topic').textContent = top.name || '—';
+  $('top-summary').textContent = top.why_follow || top.summary || '—';
+  $('study-now').textContent = (report.summary?.next_move?.study || top.study_plan || [top.name || '—']).slice(0, 2).join(' → ');
+  $('build-now').textContent = report.summary?.next_move?.build || report.summary?.top_project || (top.project_ideas || [])[0] || '—';
+  $('confidence-now').textContent = report.summary?.confidence?.label || trustLabel(top);
+  $('sticky-move').textContent = report.summary?.next_move?.build || 'Open project plan';
+  $('top-evidence').onclick = () => deepDive(top.id);
+  $('top-project').onclick = () => setReportPage('projects', true);
+  $('sticky-btn').onclick = () => setReportPage('projects', true);
   renderInsights(report);
   renderStaticPlan(report, top);
   renderCards($('local'), state.local, state.showAllLocal);
   renderCards($('global'), state.global, state.showAllGlobal);
   renderProjects(report.projects || simpleProjects(top));
   renderVisibility(report.visibility_plan || simpleVisibility(top));
-  setReportPage(getPage());
+  setReportPage(state.activePage || 'overview');
   loadAiPlan();
 }
 
@@ -350,6 +349,7 @@ function setTab(tab) {
 
 function updateUrl() {
   const params = qs();
+  params.set('page', state.activePage || 'overview');
   const url = `${window.location.pathname}?${params.toString()}`;
   window.history.replaceState({}, '', url);
 }
@@ -382,6 +382,8 @@ if (optional('save')) $('save').addEventListener('click', () => window.print());
 if (optional('close-drawer')) $('close-drawer').addEventListener('click', () => $('drawer').classList.add('hidden'));
 document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => setTab(b.dataset.tab)));
 document.querySelectorAll('.preset').forEach((button) => button.addEventListener('click', () => applyPreset(button)));
+document.querySelectorAll('.report-nav-btn').forEach((button) => button.addEventListener('click', () => setReportPage(button.dataset.page, true)));
+
 hydrateFromUrl();
 document.querySelectorAll('[data-page-link]').forEach((link) => { link.href = reportUrl(link.dataset.pageLink); });
 setReportPage(getPage());

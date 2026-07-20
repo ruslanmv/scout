@@ -97,6 +97,75 @@
         <a href="dataset/">Dataset</a>
         <a href="api/">API</a>
       </div>
+
+      <nav class="report-nav" aria-label="Scout report sections">
+        <button class="report-nav-btn active" data-page="overview">Overview</button>
+        <button class="report-nav-btn" data-page="ai">AI plan</button>
+        <button class="report-nav-btn" data-page="local">Local radar</button>
+        <button class="report-nav-btn" data-page="global">Global pulse</button>
+        <button class="report-nav-btn" data-page="projects">Projects</button>
+        <button class="report-nav-btn" data-page="visibility">Visibility</button>
+      </nav>
+
+      <section class="report-page active" data-page-panel="overview" aria-labelledby="overview-page-title">
+        <div class="page-kicker">Section 1 of 6</div>
+        <h2 id="overview-page-title" class="page-title">Overview</h2>
+      <article class="next-card">
+        <div>
+          <span class="pill">Top opportunity</span>
+          <h3 id="top-topic">—</h3>
+          <p id="top-summary">—</p>
+          <div class="actions">
+            <button id="top-evidence" class="primary small">See why</button>
+            <button id="top-project" class="secondary small">Get project plan</button>
+          </div>
+        </div>
+        <div class="next-move">
+          <p><strong>Study</strong><span id="study-now">—</span></p>
+          <p><strong>Build</strong><span id="build-now">—</span></p>
+          <p><strong>Publish</strong><span id="publish-now">GitHub + demo + short article</span></p>
+          <p><strong>Confidence</strong><span id="confidence-now">—</span></p>
+        </div>
+      </article>
+
+        <section class="insights" id="insights"></section>
+      </section>
+
+      <section class="report-page" data-page-panel="ai" aria-labelledby="ai-page-title">
+        <div class="page-kicker">Section 2 of 6</div>
+        <h2 id="ai-page-title" class="page-title">AI action plan</h2>
+        <article id="ai-plan" class="ai-plan hidden" aria-live="polite"></article>
+        <article id="ai-static-plan" class="ai-plan static-plan" aria-live="polite">
+          <h3>Built-in action plan</h3>
+          <p>Generate a report to see a focused study, build, and publish plan for your top opportunity.</p>
+        </article>
+      </section>
+
+      <section class="report-page" data-page-panel="local" aria-labelledby="local-page-title">
+        <div class="page-kicker">Section 3 of 6</div>
+        <div class="section-head compact"><h2 id="local-page-title" class="page-title">Local radar</h2><p>Best bets for your selected location.</p></div>
+        <div id="local" class="cards section-cards"></div>
+        <button id="show-local" class="ghost">Show all local topics</button>
+      </section>
+
+      <section class="report-page" data-page-panel="global" aria-labelledby="global-page-title">
+        <div class="page-kicker">Section 4 of 6</div>
+        <div class="section-head compact"><h2 id="global-page-title" class="page-title">Global pulse</h2><p>Developer topics gaining global traction.</p></div>
+        <div id="global" class="cards section-cards"></div>
+        <button id="show-global" class="ghost">Show all global topics</button>
+      </section>
+
+      <section class="report-page" data-page-panel="projects" aria-labelledby="projects-page-title">
+        <div class="page-kicker">Section 5 of 6</div>
+        <div class="section-head compact"><h2 id="projects-page-title" class="page-title">Build these projects</h2><p>Proof-of-work ideas you can publish fast.</p></div>
+        <div id="projects" class="project-list project-grid"></div>
+      </section>
+
+      <section class="report-page" data-page-panel="visibility" aria-labelledby="visibility-page-title">
+        <div class="page-kicker">Section 6 of 6</div>
+        <div class="section-head compact"><h2 id="visibility-page-title" class="page-title">Visibility plan</h2><p>Copy-ready assets to promote yourself.</p></div>
+        <div id="visibility" class="visibility"></div>
+      </section>
     </section>
   </main>
 
