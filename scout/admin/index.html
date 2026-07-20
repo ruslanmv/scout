@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#08170f" />
+  <title>Scout Admin</title>
+  <meta name="description" content="Protected administration area." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../scout.css" />
+  <link rel="stylesheet" href="../scout-site.css" />
+</head>
+<body class="site">
+  <header class="tool-header">
+    <div class="tool-header__in">
+      <a class="tool-header__back" href="../">← <span>Home</span></a>
+      <a class="tool-header__title" href="../" style="color:#fff"><span class="gl">◇</span> Scout</a>
+      <div class="tool-header__user"><span class="live"><span class="dot"></span>LIVE</span><span class="avatar">RM</span></div>
+    </div>
+  </header>
+  <main class="pagewrap">
+    <div class="pagehead reveal">
+      <div class="crumbs"><a data-keepq href="../">Home</a><span>/</span><span>Admin</span></div>
+      <div class="meta">Restricted</div>
+      <h1>Admin Area</h1>
+      <p class="lede">Manage data, settings, and system configuration. This area is protected and separate from the public product.</p>
+    </div>
+    <div class="locked reveal"><span class="ri">🔒</span><p><b>Authentication required.</b> Sign in with your admin key to manage Scout. AI provider settings live in the existing secured settings page.</p></div>
+    <div class="admin-shell">
+      <nav class="admin-side"><a href="#" class="active">Dashboard</a><a href="#">Data management</a><a href="#">Dataset updates</a><a href="#">Topic management</a><a href="#">API configuration</a><a href="#">AI provider settings</a><a href="#">Users & access</a><a href="#">System health</a><a href="#">Logs</a><a href="#">Analytics</a><a href="#">Deployment</a></nav>
+      <div class="admin-panel">
+        <article class="card" style="padding:22px"><div class="section-head compact"><h3>Overview</h3></div>
+          <div class="stat-inline" style="margin-top:12px">
+            <div class="si"><div class="n">6</div><div class="l">Topics</div></div>
+            <div class="si"><div class="n">5</div><div class="l">Sources</div></div>
+            <div class="si"><div class="n">OK</div><div class="l">Health</div></div>
+          </div></article>
+        <article class="card" style="padding:22px"><div class="section-head compact"><h3>Quick actions</h3></div>
+          <div class="ctarow" style="margin-top:12px">
+            <a class="btn small" href="#">Regenerate snapshot</a>
+            <a class="btn small" href="#">Publish dataset</a>
+            <a class="btn small" href="#">View logs</a>
+          </div>
+          <p class="muted-note">AI provider &amp; runtime settings are managed in the secured settings page of the backend.</p>
+        </article>
+      </div>
+    </div>
+    <div class="backrow"><a class="btn ghost" href="../">← Home</a></div>
+  </main>
+  <footer class="foot">
+    <div class="wrap row">
+      <div class="brand"><span style="color:var(--green)">◇</span> Scout</div>
+      <div class="links">
+        <a href="../api/">API</a>
+        <a href="../dataset/">Dataset</a>
+        <a href="../admin/">Admin</a>
+        <a href="https://github.com/ruslanmv/scout" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+      <div class="copy">Public developer layer of Matrix Scout · ruslanmv.com</div>
+    </div>
+  </footer>
+  <script>window.SCOUT_PAGE = { type: "doc", rel: "../" };</script>
+  <script src="../scout-data.js"></script>
+  <script src="../scout-site.js"></script>
+</body>
+</html>

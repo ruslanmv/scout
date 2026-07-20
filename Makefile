@@ -1,4 +1,4 @@
-.PHONY: install run serve dev test snapshot export-pages build-pages clean
+.PHONY: install run serve dev test snapshot site export-pages build-pages clean
 
 PYTHON ?= python3
 VENV ?= .venv
@@ -22,6 +22,10 @@ test:
 
 snapshot:
 	$(PY) scripts/generate_snapshot.py
+
+# Generate the multi-page Scout site (report sections, topics, docs) into scout/
+site:
+	$(PY) scripts/build_scout_site.py
 
 export-pages:
 	$(PY) scripts/export_for_github_pages.py

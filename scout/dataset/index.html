@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#08170f" />
+  <title>Scout Dataset</title>
+  <meta name="description" content="Open, versioned dataset of developer technology signals." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../scout.css" />
+  <link rel="stylesheet" href="../scout-site.css" />
+</head>
+<body class="site">
+  <header class="tool-header">
+    <div class="tool-header__in">
+      <a class="tool-header__back" href="../">← <span>Home</span></a>
+      <a class="tool-header__title" href="../" style="color:#fff"><span class="gl">◇</span> Scout</a>
+      <div class="tool-header__user"><span class="live"><span class="dot"></span>LIVE</span><span class="avatar">RM</span></div>
+    </div>
+  </header>
+  <main class="pagewrap">
+    <div class="pagehead reveal">
+      <div class="crumbs"><a data-keepq href="../">Home</a><span>/</span><span>Dataset</span></div>
+      <div class="meta">Open data</div>
+      <h1>Dataset Information</h1>
+      <p class="lede">Scout publishes an open, versioned dataset of developer technology signals. This page explains what is inside, how it is scored, and how to use it.</p>
+    </div>
+    <div class="prose">
+      <h2>Data sources</h2>
+      <p>Signals combine public activity from GitHub, Hugging Face, news / RSS, job listings, and community discussion. No private data is used.</p>
+      <h2>Data structure</h2>
+    </div>
+    <div class="fields"><div class="frow"><div class="fk">id</div><div class="fv">Stable topic identifier, e.g. ai-agents.</div></div><div class="frow"><div class="fk">name / short</div><div class="fv">Human-readable topic names.</div></div><div class="frow"><div class="fk">summary / why_follow</div><div class="fv">Plain-language description and rationale.</div></div><div class="frow"><div class="fk">signals</div><div class="fv">0–100 indicators: github_activity, github_growth, huggingface_activity, news_mentions, job_demand, community_activity, local_relevance, project_potential, career_value, learning_accessibility, durability, ecosystem_fit.</div></div><div class="frow"><div class="fk">study_plan / project_ideas / skills</div><div class="fv">Learning steps, buildable projects, and skills shown.</div></div><div class="frow"><div class="fk">trust</div><div class="fv">Confidence score, label, and hype-risk index.</div></div><div class="frow"><div class="fk">sources</div><div class="fv">The independent inputs each topic is cross-checked against.</div></div></div>
+    <div class="prose">
+      <h2>Scoring methodology</h2>
+      <p>A composite score weights developer activity, growth, hiring demand, project potential, and ecosystem fit. Per-location relevance adjusts ranking for your city and country.</p>
+      <h2 id="trust">Confidence &amp; trust</h2>
+      <p>Each topic carries a confidence label and a hype-risk index, derived from source agreement, freshness, and provenance. Treat medium-confidence topics as directional.</p>
+      <h2>Updates, version &amp; license</h2>
+      <ul><li><b>Update frequency:</b> refreshed on a scheduled snapshot.</li>
+      <li><b>Versioning:</b> each snapshot is dated; <code style="font-family:var(--mono)">latest</code> always points at the newest.</li>
+      <li><b>License:</b> Apache-2.0 (code) with an open dataset for reuse.</li></ul>
+      <h2>Download &amp; access</h2>
+      <ul><li>Raw JSON: <a href="../data/latest.json"><code style="font-family:var(--mono)">/data/latest.json</code></a></li>
+      <li>Programmatic: see the <a data-keepq href="../api/">API documentation</a>.</li></ul>
+      <h2>Known limitations</h2>
+      <p>Signals are proxies, not ground truth. Local indicators depend on data availability, and fast-moving topics can shift between snapshots.</p>
+    </div>
+    <div class="backrow"><a class="btn ghost" href="../">← Home</a></div>
+  </main>
+  <footer class="foot">
+    <div class="wrap row">
+      <div class="brand"><span style="color:var(--green)">◇</span> Scout</div>
+      <div class="links">
+        <a href="../api/">API</a>
+        <a href="../dataset/">Dataset</a>
+        <a href="../admin/">Admin</a>
+        <a href="https://github.com/ruslanmv/scout" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+      <div class="copy">Public developer layer of Matrix Scout · ruslanmv.com</div>
+    </div>
+  </footer>
+  <script>window.SCOUT_PAGE = { type: "doc", rel: "../" };</script>
+  <script src="../scout-data.js"></script>
+  <script src="../scout-site.js"></script>
+</body>
+</html>
