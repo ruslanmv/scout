@@ -2,174 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="A shareable Scout Report with a ranked developer opportunity, study path, project plan, and publishing checklist." />
-  <title>Scout Report — Developer Opportunity Plan</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#08170f" />
+  <meta name="color-scheme" content="light" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Scout" />
+  <title>Scout — Your Developer Radar</title>
+  <meta name="description" content="Scout your next developer advantage. Discover what to study, build, and publish next based on your location, goals, and live developer signals." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="scout.css" />
+  <link rel="stylesheet" href="scout-landing.css" />
 </head>
-<body class="report-document">
-  <header class="report-topbar">
-    <a class="brand" href="./"><span class="brand-mark">S</span><span>Scout Report</span></a>
-    <nav class="navlinks">
-      <a href="./">Home</a>
-      <a href="data/latest.json">Dataset</a>
-      <a href="https://github.com/ruslanmv/scout">GitHub</a>
-    </nav>
-  </header>
+<body>
+  <div id="root"></div>
 
-  <main class="report-document-main">
-    <section class="report-intro" aria-label="Report controls">
-      <div>
-        <p class="eyebrow">Shareable opportunity report</p>
-        <h1>One page for what to study, build, and publish next.</h1>
-        <p class="hero-copy">Pick a profile and Scout turns the current dataset into a practical developer action plan. This page is optimized for GitHub Pages, PDF export, and sharing with a mentor, teammate, or recruiter.</p>
-      </div>
-      <aside class="radar-card compact-preview">
-        <p class="eyebrow">Report preview</p>
-        <h2 id="preview-topic">AI Agents</h2>
-        <p id="preview-copy">Your top opportunity appears after the report is generated.</p>
-      </aside>
-    </section>
+  <!-- React is vendored locally and the JSX is precompiled to plain JS, so the
+       page is fully self-contained: no CDN, no in-browser Babel, works offline
+       and on GitHub Pages. The .jsx files remain in the repo as source; run
+       `make screenshots`/the build to recompile them into the .js served here. -->
+  <script src="vendor/react.production.min.js"></script>
+  <script src="vendor/react-dom.production.min.js"></script>
 
-    <section class="quick-picks" aria-label="Quick report presets">
-      <button class="preset active" data-location="Rome, Italy" data-profile="developer" data-goal="build_portfolio">Portfolio builder</button>
-      <button class="preset" data-location="San Francisco, United States" data-profile="ai_engineer" data-goal="create_agents">AI engineer</button>
-      <button class="preset" data-location="Bengaluru, India" data-profile="founder" data-goal="startup">Startup ideas</button>
-    </section>
+  <script src="scout-data.js"></script>
+  <script src="scout-components.js"></script>
+  <script src="scout-landing.js"></script>
+  <script src="scout-drawer.js"></script>
+  <script src="scout-app.js"></script>
 
-    <section class="command-panel report-command" aria-label="Generate a Scout Report">
-      <label>I am a
-        <select id="profile">
-          <option value="developer">Developer</option>
-          <option value="ai_engineer">AI engineer</option>
-          <option value="student">Student</option>
-          <option value="founder">Founder</option>
-          <option value="enterprise">Enterprise leader</option>
-          <option value="agent">Agentic AI system</option>
-        </select>
-      </label>
-      <label>in
-        <input id="location" value="Rome, Italy" list="locations" placeholder="Rome, Italy" />
-        <datalist id="locations">
-          <option value="Rome, Italy"></option>
-          <option value="Milan, Italy"></option>
-          <option value="Turin, Italy"></option>
-          <option value="San Francisco, United States"></option>
-          <option value="Bengaluru, India"></option>
-          <option value="Worldwide"></option>
-        </datalist>
-      </label>
-      <label>and I want to
-        <select id="goal">
-          <option value="build_portfolio">Build my portfolio</option>
-          <option value="career">Improve my career</option>
-          <option value="create_agents">Create agents/tools</option>
-          <option value="startup">Find startup ideas</option>
-          <option value="research">Research emerging topics</option>
-        </select>
-      </label>
-      <button id="load" class="primary">Generate report</button>
-      <button id="share" class="secondary">Copy share link</button>
-    </section>
-    <p id="status" class="micro">Scout is ready. Generate a report or open a shared link.</p>
-
-    <section class="trust-strip report-steps" aria-label="Report sections">
-      <div><strong>01</strong><span>Opportunity score</span></div>
-      <div><strong>02</strong><span>Next best action</span></div>
-      <div><strong>03</strong><span>Evidence and signals</span></div>
-      <div><strong>04</strong><span>Publish plan</span></div>
-    </section>
-
-    <section id="report" class="report hidden report-shell" aria-label="Generated Scout report">
-      <aside class="report-sidebar">
-        <p class="eyebrow">Scout Report</p>
-        <h2 id="report-title">Your next best move</h2>
-        <div class="report-score">
-          <span id="report-score">—</span>
-          <small>Opportunity score</small>
-        </div>
-        <div class="report-meta">
-          <p><strong>Mode</strong><span id="report-mode">Live API</span></p>
-          <p><strong>Generated</strong><span id="report-date">Today</span></p>
-          <p><strong>Share</strong><span>Copy the URL and send your plan</span></p>
-        </div>
-        <div class="mode-switch vertical">
-          <button id="simple" class="active">Simple view</button>
-          <button id="advanced">Signal view</button>
-          <button id="save">Save as PDF</button>
-        </div>
-      </aside>
-
-      <div class="report-main">
-        <article class="next-card report-hero-card">
-          <div>
-            <span class="pill">Top opportunity</span>
-            <h3 id="top-topic">—</h3>
-            <p id="top-summary">—</p>
-            <div class="actions">
-              <button id="top-evidence" class="primary small">See why</button>
-              <button id="top-project" class="secondary small">Get project plan</button>
-            </div>
-          </div>
-          <div class="next-move action-stack">
-            <p><strong>Study</strong><span id="study-now">—</span></p>
-            <p><strong>Build</strong><span id="build-now">—</span></p>
-            <p><strong>Publish</strong><span id="publish-now">GitHub + demo + short article</span></p>
-            <p><strong>Confidence</strong><span id="confidence-now">—</span></p>
-          </div>
-        </article>
-
-        <section class="insights" id="insights"></section>
-
-        <section class="split">
-          <article>
-            <div class="section-head compact"><h3>Local radar</h3><p>Best bets for your selected location.</p></div>
-            <div id="local" class="cards"></div>
-            <button id="show-local" class="ghost">Show all local topics</button>
-          </article>
-          <article>
-            <div class="section-head compact"><h3>Global pulse</h3><p>Developer topics gaining global traction.</p></div>
-            <div id="global" class="cards"></div>
-            <button id="show-global" class="ghost">Show all global topics</button>
-          </article>
-        </section>
-
-        <section class="split">
-          <article>
-            <div class="section-head compact"><h3>Build these projects</h3><p>Proof-of-work ideas you can publish fast.</p></div>
-            <div id="projects" class="project-list"></div>
-          </article>
-          <article>
-            <div class="section-head compact"><h3>Visibility plan</h3><p>Copy-ready assets to promote yourself.</p></div>
-            <div id="visibility" class="visibility"></div>
-          </article>
-        </section>
-      </div>
-    </section>
-  </main>
-
-  <aside id="drawer" class="drawer hidden" aria-live="polite">
-    <div class="drawer-panel">
-      <button id="close-drawer" class="close" aria-label="Close">×</button>
-      <p class="eyebrow">Deep dive</p>
-      <h2 id="drawer-title">Topic</h2>
-      <div class="tabs">
-        <button data-tab="overview" class="active">Overview</button>
-        <button data-tab="evidence">Evidence</button>
-        <button data-tab="study">Study Plan</button>
-        <button data-tab="projects">Projects</button>
-        <button data-tab="raw">Raw Data</button>
-      </div>
-      <div id="drawer-content" class="drawer-content"></div>
-    </div>
-  </aside>
-
-  <div id="sticky" class="sticky hidden">Next move: <strong id="sticky-move">—</strong><button id="sticky-btn">Open plan</button></div>
-
-  <footer>
-    <strong>Scout Report</strong> · Designed for sharing, saving, and shipping your next proof of work.
-  </footer>
-  <script src="app.js"></script>
+  <template id="__bundler_thumbnail">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <rect width="100" height="100" fill="#05070e"/>
+      <circle cx="50" cy="50" r="26" fill="none" stroke="#5b86ff" stroke-width="2" opacity=".5"/>
+      <circle cx="50" cy="50" r="16" fill="none" stroke="#35e6ff" stroke-width="2" opacity=".75"/>
+      <circle cx="50" cy="50" r="6" fill="#35e6ff"/>
+      <line x1="50" y1="50" x2="74" y2="36" stroke="#35e6ff" stroke-width="2"/>
+      <circle cx="72" cy="37" r="4" fill="#b079ff"/>
+    </svg>
+  </template>
 </body>
 </html>

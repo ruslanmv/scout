@@ -26,9 +26,14 @@ Scout blends real signals — GitHub activity, Hugging Face momentum, news, and 
 
 ## Screenshots
 
-| 🛰️ Premium Scout Report | ✨ Live AI plan (grounded in real signals) | 🔐 Admin settings (configure the AI) |
+| 🛰️ Scout Report (study → build → publish) | ✨ Live AI plan (grounded in real signals) | 🔐 Admin settings (configure the AI) |
 | :---: | :---: | :---: |
-| [![Premium Scout Report](docs/assets/screenshots/scout-report-premium.svg)](docs/assets/screenshots/scout-report-premium.svg) | [![Live AI plan](docs/assets/screenshots/ai-plan.png)](docs/assets/screenshots/ai-plan.png) | [![Admin settings](docs/assets/screenshots/admin.png)](docs/assets/screenshots/admin.png) |
+| [![Scout Report](docs/assets/screenshots/hero.png)](docs/assets/screenshots/hero.png) | [![Live AI plan](docs/assets/screenshots/ai-plan.png)](docs/assets/screenshots/ai-plan.png) | [![Admin settings](docs/assets/screenshots/admin.png)](docs/assets/screenshots/admin.png) |
+
+> Screenshots are captured from the running app with `scripts/shoot.py`
+> (Playwright Chromium). To refresh them, start the app (`make serve`) and run
+> `python scripts/shoot.py --admin-key "$SCOUT_ADMIN_KEY"` — see
+> [Regenerating screenshots](#regenerating-screenshots).
 
 Run it locally in one line:
 
@@ -201,6 +206,16 @@ build this month."* Tools: `list_hot_trends`, `recommend_what_to_build`,
 
 ## Quick start
 
+The fastest path uses the `Makefile` — it creates a virtualenv, installs
+dependencies, and generates the first dataset snapshot:
+
+```bash
+make install   # venv + deps + first snapshot
+make serve     # run the app on http://127.0.0.1:8000
+```
+
+Or set it up by hand:
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
@@ -219,8 +234,36 @@ http://127.0.0.1:8000/dashboard
 Run tests:
 
 ```bash
-pytest
+make test      # or: pytest
 ```
+
+### Regenerating screenshots
+
+The README images live in `docs/assets/screenshots/` and are captured from the
+running app with [`scripts/shoot.py`](scripts/shoot.py) (Playwright Chromium).
+Playwright is a transient, sandbox-only dependency — install it just for the
+capture and remove it afterwards:
+
+```bash
+python -m pip install playwright
+python -m playwright install chromium   # skip in sandboxes that pre-install it
+
+# 1. Start the app with an admin key so the admin page can be unlocked.
+export SCOUT_ADMIN_KEY="choose-a-secret"
+make serve &
+
+# 2. Capture hero.png, report.png, ai-plan.png and admin.png.
+python scripts/shoot.py \
+  --base-url http://127.0.0.1:8000 \
+  --out docs/assets/screenshots \
+  --admin-key "$SCOUT_ADMIN_KEY"
+
+# 3. (optional) Drop the transient dependency.
+python -m pip uninstall -y playwright
+```
+
+Screenshots default to a 1440×900 viewport at 2× device scale (a crisp
+2880×1800 output) in dark mode. Pass `--light` for light-mode captures.
 
 ## Repository role
 

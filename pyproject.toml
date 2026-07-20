@@ -19,3 +19,6 @@ dev = ["pytest>=8.2.0", "httpx>=0.27.0"]
 
 [project.scripts]
 scout-mcp = "scout_mcp.server:main"
+
+[tool.setuptools.packages.find]
+include = ["app*", "scout_mcp*"]

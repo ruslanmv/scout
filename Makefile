@@ -1,4 +1,4 @@
-.PHONY: install run dev test snapshot export-pages build-pages clean
+.PHONY: install run serve dev test snapshot export-pages build-pages clean
 
 PYTHON ?= python3
 VENV ?= .venv
@@ -11,6 +11,9 @@ install:
 
 run:
 	$(PY) -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+
+serve:
+	$(PY) -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 
 dev: run
 
