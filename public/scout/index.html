@@ -2,174 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Scout creates a simple developer trend report: what to study, what to build, and how to publish it." />
-  <title>Scout — Find your next developer advantage</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#02170f" />
+  <meta name="description" content="Scout turns technology signals into a professional, multi-page developer action plan for what to learn, build, and publish next." />
+  <title>Scout — Find your next developer move</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="scout.css" />
+  <link rel="stylesheet" href="scout-landing.css" />
 </head>
 <body>
-  <header class="hero">
-    <nav class="topbar">
-      <a class="brand" href="./"><span class="brand-mark">S</span><span>Scout</span></a>
-      <div class="navlinks">
-        <a href="../docs">API</a>
-        <a href="data/index.json">Dataset</a>
-        <a href="https://github.com/ruslanmv/scout">GitHub</a>
-        <a href="admin.html" title="Admin settings">⚙ Admin</a>
-      </div>
-    </nav>
-
-    <section class="hero-grid">
-      <div>
-        <p class="eyebrow">Free developer trend report</p>
-        <h1>Know what to learn, build, and publish next.</h1>
-        <p class="hero-copy">Scout converts noisy tech signals into a one-page action plan for your location, goal, and profile. No signup. One click. Shareable results.</p>
-        <div class="quick-picks" aria-label="Quick report presets">
-          <button class="preset active" data-location="Rome, Italy" data-profile="developer" data-goal="build_portfolio">Portfolio builder</button>
-          <button class="preset" data-location="San Francisco, United States" data-profile="ai_engineer" data-goal="create_agents">AI engineer</button>
-          <button class="preset" data-location="Bengaluru, India" data-profile="founder" data-goal="startup">Startup ideas</button>
-        </div>
-        <div class="command-panel">
-          <label>I am a
-            <select id="profile">
-              <option value="developer">Developer</option>
-              <option value="ai_engineer">AI engineer</option>
-              <option value="student">Student</option>
-              <option value="founder">Founder</option>
-              <option value="enterprise">Enterprise leader</option>
-              <option value="agent">Agentic AI system</option>
-            </select>
-          </label>
-          <label>in
-            <input id="location" value="Rome, Italy" list="locations" placeholder="Rome, Italy" />
-            <datalist id="locations">
-              <option value="Rome, Italy"></option>
-              <option value="Milan, Italy"></option>
-              <option value="Turin, Italy"></option>
-              <option value="San Francisco, United States"></option>
-              <option value="Bengaluru, India"></option>
-              <option value="Worldwide"></option>
-            </datalist>
-          </label>
-          <label>and I want to
-            <select id="goal">
-              <option value="build_portfolio">Build my portfolio</option>
-              <option value="career">Improve my career</option>
-              <option value="create_agents">Create agents/tools</option>
-              <option value="startup">Find startup ideas</option>
-              <option value="research">Research emerging topics</option>
-            </select>
-          </label>
-          <button id="load" class="primary">Generate my plan</button>
-          <button id="share" class="secondary">Copy share link</button>
-        </div>
-        <p id="status" class="micro">Tip: try “Portfolio builder” for a simple study → build → publish plan.</p>
-      </div>
-      <aside class="radar-card">
-        <p class="eyebrow">Your 30-second outcome</p>
-        <h2 id="preview-topic">AI Agents</h2>
-        <p id="preview-copy">A practical plan appears here after Scout ranks the opportunities.</p>
-        <div class="outcome-list">
-          <span>1. Study the highest-leverage topic</span>
-          <span>2. Build a small proof-of-work demo</span>
-          <span>3. Publish it where recruiters and collaborators look</span>
-        </div>
-      </aside>
-    </section>
-  </header>
-
-  <main>
-    <section class="trust-strip" aria-label="What Scout gives you">
-      <div><strong>Simple</strong><span>No dashboards to learn</span></div>
-      <div><strong>Actionable</strong><span>Study, build, publish</span></div>
-      <div><strong>Auditable</strong><span>Open JSON dataset</span></div>
-      <div><strong>Static-ready</strong><span>Works on GitHub Pages</span></div>
-    </section>
-
-    <section id="report" class="report hidden">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Your Scout Report</p>
-          <h2 id="report-title">Your next best move</h2>
-        </div>
-        <div class="mode-switch vertical">
-          <button id="simple" class="active">Simple view</button>
-          <button id="advanced">Signal view</button>
-          <button id="save">Save as PDF</button>
-        </div>
-      </div>
-
-      <article class="next-card">
-        <div>
-          <span class="pill">Top opportunity</span>
-          <h3 id="top-topic">—</h3>
-          <p id="top-summary">—</p>
-          <div class="actions">
-            <button id="top-evidence" class="primary small">See why</button>
-            <button id="top-project" class="secondary small">Get project plan</button>
-          </div>
-        </div>
-        <div class="next-move">
-          <p><strong>Study</strong><span id="study-now">—</span></p>
-          <p><strong>Build</strong><span id="build-now">—</span></p>
-          <p><strong>Publish</strong><span id="publish-now">GitHub + demo + short article</span></p>
-          <p><strong>Confidence</strong><span id="confidence-now">—</span></p>
-        </div>
-      </article>
-
-        <article id="ai-plan" class="ai-plan hidden" aria-live="polite"></article>
-
-        <section class="insights" id="insights"></section>
-
-      <section class="split">
-        <article>
-          <div class="section-head compact"><h3>Local radar</h3><p>Best bets for your selected location.</p></div>
-          <div id="local" class="cards"></div>
-          <button id="show-local" class="ghost">Show all local topics</button>
-        </article>
-        <article>
-          <div class="section-head compact"><h3>Global pulse</h3><p>Developer topics gaining global traction.</p></div>
-          <div id="global" class="cards"></div>
-          <button id="show-global" class="ghost">Show all global topics</button>
-        </article>
-      </section>
-
-      <section class="split">
-        <article>
-          <div class="section-head compact"><h3>Build these projects</h3><p>Proof-of-work ideas you can publish fast.</p></div>
-          <div id="projects" class="project-list"></div>
-        </article>
-        <article>
-          <div class="section-head compact"><h3>Visibility plan</h3><p>Copy-ready assets to promote yourself.</p></div>
-          <div id="visibility" class="visibility"></div>
-        </article>
-      </section>
-    </section>
-  </main>
-
-  <aside id="drawer" class="drawer hidden" aria-live="polite">
-    <div class="drawer-panel">
-      <button id="close-drawer" class="close" aria-label="Close">×</button>
-      <p class="eyebrow">Deep dive</p>
-      <h2 id="drawer-title">Topic</h2>
-      <div class="tabs">
-        <button data-tab="overview" class="active">Overview</button>
-        <button data-tab="evidence">Evidence</button>
-        <button data-tab="study">Study Plan</button>
-        <button data-tab="projects">Projects</button>
-        <button data-tab="raw">Raw Data</button>
-      </div>
-      <div id="drawer-content" class="drawer-content"></div>
-    </div>
-  </aside>
-
-  <div id="sticky" class="sticky hidden">Next move: <strong id="sticky-move">—</strong><button id="sticky-btn">Open plan</button></div>
-
-  <footer>
-    <strong>Scout</strong> · Open developer trend intelligence · part of the <a href="https://ruslanmv.com">Agent-Matrix</a> ecosystem<br/>
-    Created by <a href="https://ruslanmv.com">Ruslan Magana Vsevolodovna</a> · <a href="https://github.com/ruslanmv/scout">★ Star on GitHub</a> · If Scout helped you, contribute 💚
-  </footer>
-  <script src="app.js"></script>
+  <div id="root"></div>
+  <noscript>
+    <main class="landing-noscript">
+      <h1>Scout</h1>
+      <p>Scout creates a multi-page developer action report.</p>
+      <a href="report/overview/">Open the report overview</a>
+    </main>
+  </noscript>
+  <script src="vendor/react.production.min.js"></script>
+  <script src="vendor/react-dom.production.min.js"></script>
+  <script src="scout-data.js"></script>
+  <script src="scout-components.js"></script>
+  <script src="scout-landing.js"></script>
+  <script src="landing-boot.js"></script>
 </body>
 </html>
