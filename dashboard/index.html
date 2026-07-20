@@ -13,10 +13,10 @@
     <nav class="topbar">
       <a class="brand" href="./"><span class="brand-mark">S</span><span>Scout</span></a>
       <div class="navlinks">
-        <a href="../docs">API</a>
-        <a href="data/index.json">Dataset</a>
+        <a href="api/">API</a>
+        <a href="dataset/">Dataset</a>
         <a href="https://github.com/ruslanmv/scout">GitHub</a>
-        <a href="admin.html" title="Admin settings">⚙ Admin</a>
+        <a href="admin/" title="Admin settings">⚙ Admin</a>
       </div>
     </nav>
 
@@ -24,7 +24,7 @@
       <div>
         <p class="eyebrow">Free developer trend report</p>
         <h1>Know what to learn, build, and publish next.</h1>
-        <p class="hero-copy">Scout converts noisy tech signals into a one-page action plan for your location, goal, and profile. No signup. One click. Shareable results.</p>
+        <p class="hero-copy">Scout converts noisy tech signals into a focused action plan for your location, goal, and profile. No signup. One click. Shareable results.</p>
         <div class="quick-picks" aria-label="Quick report presets">
           <button class="preset active" data-location="Rome, Italy" data-profile="developer" data-goal="build_portfolio">Portfolio builder</button>
           <button class="preset" data-location="San Francisco, United States" data-profile="ai_engineer" data-goal="create_agents">AI engineer</button>
@@ -84,87 +84,21 @@
       <div><strong>Simple</strong><span>No dashboards to learn</span></div>
       <div><strong>Actionable</strong><span>Study, build, publish</span></div>
       <div><strong>Auditable</strong><span>Open JSON dataset</span></div>
-      <div><strong>Static-ready</strong><span>Works on GitHub Pages</span></div>
+      <div><strong>Multi-page</strong><span>Focused pages for every section</span></div>
     </section>
 
-    <section id="report" class="report hidden">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Your Scout Report</p>
-          <h2 id="report-title">Your next best move</h2>
-        </div>
-        <div class="mode-switch vertical">
-          <button id="simple" class="active">Simple view</button>
-          <button id="advanced">Signal view</button>
-          <button id="save">Save as PDF</button>
-        </div>
+    <section class="landing-section">
+      <div class="section-head compact"><h2>Start with a focused report.</h2><p>Scout keeps this homepage lightweight. After you generate a plan, every major section opens on its own URL.</p></div>
+      <div class="landing-links">
+        <a href="report/overview/">Report overview</a>
+        <a href="report/ai-plan/">AI plan</a>
+        <a href="report/local-radar/">Local radar</a>
+        <a href="report/projects/">Projects</a>
+        <a href="dataset/">Dataset</a>
+        <a href="api/">API</a>
       </div>
-
-      <article class="next-card">
-        <div>
-          <span class="pill">Top opportunity</span>
-          <h3 id="top-topic">—</h3>
-          <p id="top-summary">—</p>
-          <div class="actions">
-            <button id="top-evidence" class="primary small">See why</button>
-            <button id="top-project" class="secondary small">Get project plan</button>
-          </div>
-        </div>
-        <div class="next-move">
-          <p><strong>Study</strong><span id="study-now">—</span></p>
-          <p><strong>Build</strong><span id="build-now">—</span></p>
-          <p><strong>Publish</strong><span id="publish-now">GitHub + demo + short article</span></p>
-          <p><strong>Confidence</strong><span id="confidence-now">—</span></p>
-        </div>
-      </article>
-
-        <article id="ai-plan" class="ai-plan hidden" aria-live="polite"></article>
-
-        <section class="insights" id="insights"></section>
-
-      <section class="split">
-        <article>
-          <div class="section-head compact"><h3>Local radar</h3><p>Best bets for your selected location.</p></div>
-          <div id="local" class="cards"></div>
-          <button id="show-local" class="ghost">Show all local topics</button>
-        </article>
-        <article>
-          <div class="section-head compact"><h3>Global pulse</h3><p>Developer topics gaining global traction.</p></div>
-          <div id="global" class="cards"></div>
-          <button id="show-global" class="ghost">Show all global topics</button>
-        </article>
-      </section>
-
-      <section class="split">
-        <article>
-          <div class="section-head compact"><h3>Build these projects</h3><p>Proof-of-work ideas you can publish fast.</p></div>
-          <div id="projects" class="project-list"></div>
-        </article>
-        <article>
-          <div class="section-head compact"><h3>Visibility plan</h3><p>Copy-ready assets to promote yourself.</p></div>
-          <div id="visibility" class="visibility"></div>
-        </article>
-      </section>
     </section>
   </main>
-
-  <aside id="drawer" class="drawer hidden" aria-live="polite">
-    <div class="drawer-panel">
-      <button id="close-drawer" class="close" aria-label="Close">×</button>
-      <p class="eyebrow">Deep dive</p>
-      <h2 id="drawer-title">Topic</h2>
-      <div class="tabs">
-        <button data-tab="overview" class="active">Overview</button>
-        <button data-tab="evidence">Evidence</button>
-        <button data-tab="study">Study Plan</button>
-        <button data-tab="projects">Projects</button>
-        <button data-tab="raw">Raw Data</button>
-      </div>
-      <div id="drawer-content" class="drawer-content"></div>
-    </div>
-  </aside>
-
-  <div id="sticky" class="sticky hidden">Next move: <strong id="sticky-move">—</strong><button id="sticky-btn">Open plan</button></div>
 
   <footer>
     <strong>Scout</strong> · Open developer trend intelligence · part of the <a href="https://ruslanmv.com">Agent-Matrix</a> ecosystem<br/>
