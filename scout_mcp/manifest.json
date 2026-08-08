@@ -12,7 +12,17 @@
     "topic_deep_dive",
     "find_build_opportunities",
     "search_trends",
-    "generate_action_plan"
+    "generate_action_plan",
+    "resolve_learning_goal",
+    "compare_learning_targets",
+    "evaluate_skill_gap",
+    "search_learning_resources",
+    "find_certifications",
+    "generate_learning_path",
+    "replan_learning_path",
+    "record_learning_progress",
+    "explain_course_recommendation",
+    "check_source_health"
   ],
   "resources": ["scout://trends/latest"],
   "prompts": ["brainstorm_next_build"]

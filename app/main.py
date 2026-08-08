@@ -18,6 +18,7 @@ from app.api.locations import router as locations_router
 from app.api.models import router as models_router
 from app.api.ai import router as ai_router
 from app.api.admin import router as admin_router
+from app.api.learning import router as learning_router
 
 app = FastAPI(
     title="Scout — Developer Trend Intelligence",
@@ -41,6 +42,7 @@ app.include_router(locations_router, prefix="/api/v1")
 app.include_router(models_router, prefix="/api/v1")
 app.include_router(ai_router, prefix="/api/v1")
 app.include_router(admin_router, prefix="/api/v1")
+app.include_router(learning_router, prefix="/api/v1")
 
 if Path("dashboard").exists():
     app.mount("/dashboard", StaticFiles(directory="dashboard", html=True), name="dashboard")

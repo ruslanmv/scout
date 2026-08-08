@@ -113,6 +113,55 @@ async def capture_admin(page, base_url: str, out_dir: Path, admin_key: str | Non
     await screenshot(page, out_dir, "admin", full_page=True)
 
 
+async def capture_learn(page, base_url: str, out_dir: Path):
+    """Drive the Learning Navigator wizard through to a generated plan.
+
+    The page is part of the (light) Scout site, so we force a light color scheme
+    regardless of the run default. It uses the live API when available and its
+    own deterministic demo data otherwise, so this capture works either way.
+    """
+    await page.emulate_media(color_scheme="light")
+    await page.goto(f"{base_url}/scout/learn/", wait_until="networkidle")
+    await settle(page, 1400)  # let fonts + the constellation canvas settle
+
+    # Step 1 — the wizard hero.
+    await screenshot(page, out_dir, "learn-wizard", full_page=False)
+
+    try:
+        # Populate the wizard's own state object and jump to the review step
+        # (which resolves the goal). Driving the page's `go()` directly is far
+        # more robust than click-stepping through five animated panels.
+        await page.evaluate(
+            """() => {
+                const { S, go } = window.__scout;
+                Object.assign(S, {
+                    intent: 'advance_career', query: 'become an AI engineer',
+                    role: 'Backend developer', skills: ['Python'],
+                    country: 'Italy', city: 'Rome', useLoc: true,
+                    hours: 8, budget: 100,
+                });
+                go(4);
+            }"""
+        )
+        await page.wait_for_selector("#reviewbox .target", timeout=12000)
+        await settle(page, 700)
+        await screenshot(page, out_dir, "learn-review", full_page=False)
+
+        # Generate the full path.
+        await page.click("#generate")
+        await page.wait_for_selector("#plan.on", timeout=20000)
+        await settle(page, 1200)
+        await page.evaluate("window.scrollTo(0, 0)")
+        await settle(page, 400)
+        await screenshot(page, out_dir, "learn-plan", full_page=False)
+        await screenshot(page, out_dir, "learn-plan-full", full_page=True)
+    except Exception as exc:  # noqa: BLE001 — keep the run going
+        print(f"skipped learn plan capture: {exc}")
+
+    # Restore the run's default scheme for any later captures.
+    await page.emulate_media(color_scheme="no-preference")
+
+
 async def main():
     parser = argparse.ArgumentParser(
         description="Capture high-quality screenshots of the local Scout app."
@@ -152,6 +201,7 @@ async def main():
 
         await capture_dashboard(page, args.base_url, out_dir)
         await capture_admin(page, args.base_url, out_dir, args.admin_key)
+        await capture_learn(page, args.base_url, out_dir)
 
         await browser.close()
 

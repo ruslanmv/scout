@@ -12,7 +12,7 @@
 [![MCP](https://img.shields.io/badge/MCP-server-7c5cff.svg?style=flat-square)](scout_mcp/README.md)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg?style=flat-square)](LICENSE)
 
-[Live AI](#live-ai-engine-ollabridge-cloud) · [Quick start](#quick-start) · [MCP server](scout_mcp/README.md) · [API](#core-api-endpoints) · [Docs](docs/)
+[Learning Navigator](#-learning-navigator--what-to-learn-next) · [Live AI](#live-ai-engine-ollabridge-cloud) · [Quick start](#quick-start) · [MCP server](scout_mcp/README.md) · [API](#core-api-endpoints) · [Docs](docs/)
 
 **Created by [Ruslan Magana Vsevolodovna](https://ruslanmv.com)** — part of the **Agent-Matrix** ecosystem.
 
@@ -24,16 +24,44 @@
 
 Scout blends real signals — GitHub activity, Hugging Face momentum, news, and job demand — with a **live AI engine** that designs a concrete **study → build → publish** path. Not a hardcoded template: a real plan, grounded in today's data. It runs as an API, a one-click dashboard, and an **[MCP server](scout_mcp/README.md)** any LLM can call to brainstorm what to build next.
 
+And when the question is *what should I learn* — a topic, a certification, or a career move — the **[Learning Navigator](#-learning-navigator--what-to-learn-next)** turns your goal into a verified, ordered path of skills, real courses, and certifications. A deterministic pipeline decides the sequence; AI only narrates it; every step shows its evidence.
+
 ## Screenshots
 
-| 🛰️ Scout Report (study → build → publish) | ✨ Live AI plan (grounded in real signals) | 🔐 Admin settings (configure the AI) |
+### 🎓 Learning Navigator — goal → verified path
+
+| Five-step wizard | Generated plan with evidence |
+| :---: | :---: |
+| [![Learning Navigator wizard](docs/assets/screenshots/learn-wizard.png)](docs/assets/screenshots/learn-wizard.png) | [![Generated learning path](docs/assets/screenshots/learn-plan.png)](docs/assets/screenshots/learn-plan.png) |
+
+Try it live in the app at **`/scout/learn/`**. Each stage explains *why it was
+selected* — reasons, warnings, access type, time, level, evidence confidence and
+last-verified date — with a free or cheaper alternative, a portfolio project, and
+a readiness checkpoint. Prices Scout can't verify read **“Verify on provider.”**
+
+### 🎒 My Learning portal — follow &amp; track your paths
+
+| Dashboard (all your paths) | Path navigator (map · stage · progress) |
+| :---: | :---: |
+| [![My Learning dashboard](docs/assets/screenshots/portal-dashboard.png)](docs/assets/screenshots/portal-dashboard.png) | [![Path navigator](docs/assets/screenshots/portal-navigator.png)](docs/assets/screenshots/portal-navigator.png) |
+
+Save any generated path to **`/scout/my-learning/`** and follow it: a path map
+with per-stage status, course cards you can open or mark complete, a details
+drawer, deterministic progress, and real replanning that keeps completed work.
+Persisted in your browser (localStorage) — no account needed.
+**Reference:** [docs/MY_LEARNING_PORTAL.md](docs/MY_LEARNING_PORTAL.md).
+
+### 🛰️ Trend intelligence dashboard
+
+| Scout Report (study → build → publish) | ✨ Live AI plan (grounded in real signals) | 🔐 Admin settings (configure the AI) |
 | :---: | :---: | :---: |
 | [![Scout Report](docs/assets/screenshots/hero.png)](docs/assets/screenshots/hero.png) | [![Live AI plan](docs/assets/screenshots/ai-plan.png)](docs/assets/screenshots/ai-plan.png) | [![Admin settings](docs/assets/screenshots/admin.png)](docs/assets/screenshots/admin.png) |
 
 > Screenshots are captured from the running app with `scripts/shoot.py`
 > (Playwright Chromium). To refresh them, start the app (`make serve`) and run
 > `python scripts/shoot.py --admin-key "$SCOUT_ADMIN_KEY"` — see
-> [Regenerating screenshots](#regenerating-screenshots).
+> [Regenerating screenshots](#regenerating-screenshots). The script now also
+> drives the Learning Navigator wizard to a generated plan.
 
 Run it locally in one line:
 
@@ -63,6 +91,8 @@ That returns everything needed for the first screen:
 
 ```text
 GET  /api/v1/health
+GET  /api/v1/health/sources
+GET  /api/v1/health/sources/summary
 GET  /api/v1/ui/bootstrap
 GET  /api/v1/options
 GET  /api/v1/report
@@ -89,12 +119,61 @@ GET  /api/v1/sources/health
 GET  /api/v1/models/status
 GET  /api/v1/ai/status
 POST /api/v1/ai/plan
+POST /api/v1/learning/goals/resolve
+POST /api/v1/learning/resources/search
+POST /api/v1/learning/skill-gap
+POST /api/v1/learning/paths
+GET  /api/v1/learning/paths/{path_id}
+POST /api/v1/learning/paths/{path_id}/replan
+PATCH /api/v1/learning/paths/{path_id}/progress
+GET  /api/v1/skills/search
+GET  /api/v1/skills/graph
+GET  /api/v1/occupations/search
+GET  /api/v1/certifications/search
+GET  /api/v1/providers/health
 GET  /api/v1/admin/enabled
 GET  /api/v1/admin/settings      (admin)
 POST /api/v1/admin/settings      (admin)
 POST /api/v1/admin/test          (admin)
 POST /api/v1/admin/reset         (admin)
 ```
+
+## 🎓 Learning Navigator — what to learn next
+
+Beyond *what to build*, Scout can plan *what to learn*: a verified, ordered path
+of skills, courses, and certifications toward a topic, a certification, or a
+career move. The path is produced by a **deterministic pipeline** (resolve goal →
+skill gap → retrieve resources → rank → weighted set-cover optimizer), and AI
+only narrates the result — so it stays reliable and evidence-backed even with AI
+and live search switched off.
+
+Four intentions drive it:
+
+| Intention | Example | What Scout does |
+| --- | --- | --- |
+| **Learn a topic** | *"I want to learn AI"* | Refines it into a complete target (foundations → RAG → deployment → portfolio). |
+| **Prepare a certification** | *"AWS Solutions Architect Associate"* | Maps the official exam domains to skills and schedules study by exam weighting. |
+| **Advance a career** | *"Python dev → AI engineer"* | Computes the skill gap vs. the target role and orders the fill. |
+| **Discover what's next** | *"Backend dev — what now?"* | Combines trends, your background and local demand. |
+
+A five-step **wizard + plan view** lives at [`/scout/learn/`](scout/learn/) — a
+single self-contained page skinned to Scout's design system, with a skill-gap
+map, a numbered stage timeline, and evidence on every card. It calls the live API
+and falls back to deterministic demo data offline.
+
+Generate a path from the API:
+
+```bash
+curl -X POST http://127.0.0.1:8000/api/v1/learning/paths \
+  -H 'Content-Type: application/json' \
+  -d '{"request":{"intent":"advance_career","query":"become an AI engineer",
+        "target_role":"AI Engineer","current_skills":[{"name":"Python","level":"intermediate"}],
+        "country":"Italy","city":"Rome","hours_per_week":8,"budget":{"maximum":100,"currency":"EUR"}}}'
+```
+
+Nine new MCP tools (`resolve_learning_goal`, `generate_learning_path`,
+`evaluate_skill_gap`, `find_certifications`, …) expose the same pipeline to any
+LLM client. **Full reference:** [docs/LEARNING_NAVIGATOR.md](docs/LEARNING_NAVIGATOR.md).
 
 ## Daily generation workflow
 
@@ -252,7 +331,8 @@ python -m playwright install chromium   # skip in sandboxes that pre-install it
 export SCOUT_ADMIN_KEY="choose-a-secret"
 make serve &
 
-# 2. Capture hero.png, report.png, ai-plan.png and admin.png.
+# 2. Capture the dashboard (hero/report/ai-plan/admin) and the Learning
+#    Navigator (learn-wizard/learn-review/learn-plan/learn-plan-full).
 python scripts/shoot.py \
   --base-url http://127.0.0.1:8000 \
   --out docs/assets/screenshots \
@@ -263,7 +343,12 @@ python -m pip uninstall -y playwright
 ```
 
 Screenshots default to a 1440×900 viewport at 2× device scale (a crisp
-2880×1800 output) in dark mode. Pass `--light` for light-mode captures.
+2880×1800 output) in dark mode. Pass `--light` for light-mode captures. The
+Learning Navigator shots are always captured light (it belongs to the light
+Scout site) and are driven to a generated plan via the page's `window.__scout`
+automation hook. In sandboxes that pre-install Chromium at a different build than
+the pip Playwright expects, pass `--executable-path` to the bundled binary
+instead of running `playwright install`.
 
 ## Repository role
 
@@ -273,6 +358,7 @@ It converts public technology signals into:
 
 - recommended topics,
 - developer study paths,
+- verified learning paths (skills → courses → certifications),
 - portfolio project ideas,
 - visibility/publishing plans,
 - Agent-Matrix opportunities,
