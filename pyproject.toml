@@ -15,6 +15,9 @@ testpaths = ["tests"]
 ml = ["sentence-transformers>=3.0.0", "scikit-learn>=1.5.0"]
 llm = ["openai>=1.40.0", "transformers>=4.44.0"]
 mcp = ["mcp>=1.2.0"]
+# Course-discovery search adapters (Tavily / Brave). Optional: without httpx and
+# an API key, Scout falls back to its offline static catalog.
+learning = ["httpx>=0.27.0"]
 dev = ["pytest>=8.2.0", "httpx>=0.27.0"]
 
 [project.scripts]
