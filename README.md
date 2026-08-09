@@ -175,6 +175,16 @@ Nine new MCP tools (`resolve_learning_goal`, `generate_learning_path`,
 `evaluate_skill_gap`, `find_certifications`, …) expose the same pipeline to any
 LLM client. **Full reference:** [docs/LEARNING_NAVIGATOR.md](docs/LEARNING_NAVIGATOR.md).
 
+## 🛰️ On the roadmap — Scout Radar (Global IT Needs Intelligence)
+
+A planned intelligence layer that answers *what the market needs now, what is
+emerging, and what a product/R&D manager should prepare for* — a LangGraph
+pipeline over real signals with **deterministic scoring** and **AI-written
+explanations kept strictly separate** (the same principle proven in the Learning
+Navigator). It reuses Scout's existing collectors, OllaBridge client, dated
+snapshots, health monitor, and static export. Complete integration plan:
+**[docs/SCOUT_RADAR_PLAN.md](docs/SCOUT_RADAR_PLAN.md)**.
+
 ## Daily generation workflow
 
 The daily workflow populates frontend-ready datasets and batch reports:
