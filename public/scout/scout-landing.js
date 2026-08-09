@@ -542,10 +542,6 @@ function Landing({
   }, "\u25C7"), "Scout"), /*#__PURE__*/React.createElement("nav", {
     className: "l-nav"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "learn/"
-  }, "Learn"), /*#__PURE__*/React.createElement("a", {
-    href: "my-learning/"
-  }, "My Learning"), /*#__PURE__*/React.createElement("a", {
     href: "api/"
   }, "API"), /*#__PURE__*/React.createElement("a", {
     href: "dataset/"
@@ -747,8 +743,6 @@ function Landing({
   }, /*#__PURE__*/React.createElement("span", null, "\xA9 2026 Scout"), /*#__PURE__*/React.createElement("span", {
     className: "links"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "learn/"
-  }, "Learn"), /*#__PURE__*/React.createElement("a", {
     href: "api/"
   }, "API"), /*#__PURE__*/React.createElement("a", {
     href: "dataset/"
