@@ -55,6 +55,104 @@
       <div class="section-head"><h3>Report sections</h3></div>
       <div class="navgrid"><a class="card navcard" data-keepq href="../report/overview/"><div class="nc-top"><span class="nc-ic">◎</span><h3>Overview</h3></div><p>The quick summary of your strongest opportunities and confidence.</p><span class="go">Open →</span></a><a class="card navcard" data-keepq href="../report/ai-plan/"><div class="nc-top"><span class="nc-ic">◇</span><h3>AI Plan</h3></div><p>A validate → learn → build → publish → grow action plan.</p><span class="go">Open →</span></a><a class="card navcard" data-keepq href="../report/local-radar/"><div class="nc-top"><span class="nc-ic">◉</span><h3>Local Radar</h3></div><p>Opportunities, hiring demand, and activity near you.</p><span class="go">Open →</span></a><a class="card navcard" data-keepq href="../report/global-pulse/"><div class="nc-top"><span class="nc-ic">◐</span><h3>Global Pulse</h3></div><p>What is gaining momentum around the world.</p><span class="go">Open →</span></a><a class="card navcard" data-keepq href="../report/projects/"><div class="nc-top"><span class="nc-ic">▣</span><h3>Projects</h3></div><p>Portfolio-ready project ideas with stacks and deliverables.</p><span class="go">Open →</span></a><a class="card navcard" data-keepq href="../report/visibility/"><div class="nc-top"><span class="nc-ic">◈</span><h3>Visibility</h3></div><p>How to publish and get noticed for what you build.</p><span class="go">Open →</span></a></div>
     </section>
+    
+    <section class="section reveal" id="become">
+      <div class="section-head">
+        <h3>🎯 Create a new learning path</h3>
+        <p class="section-lead">Point Scout at what you want to <em>become</em> and it builds a
+          verified, step-by-step path — wired straight into
+          <a data-keepq href="../my-learning/">My Learning</a>.</p>
+      </div>
+      <article class="darkpanel" style="padding:clamp(20px,3vw,32px)">
+        <form id="becomeForm" novalidate>
+          <div class="become-grid">
+            <div class="field">
+              <label for="become-role">What do you want to become?</label>
+              <input id="become-role" list="become-roles" autocomplete="off"
+                     placeholder="e.g. AI Engineer" value="AI Engineer" />
+              <datalist id="become-roles">
+                <option>AI Engineer</option><option>AI Agent Developer</option>
+                <option>Machine Learning Engineer</option><option>MLOps Engineer</option>
+                <option>Cloud Solutions Architect</option><option>Backend Developer</option>
+                <option>Data Engineer</option><option>Platform Engineer</option>
+              </datalist>
+            </div>
+            <div class="field sel">
+              <label for="become-goal">Your main objective</label>
+              <select id="become-goal">
+                <option value="build_portfolio">Build a portfolio</option>
+                <option value="career">Land a job</option>
+                <option value="startup">Launch a product</option>
+                <option value="upskill">Upskill in my role</option>
+              </select>
+            </div>
+          </div>
+          <div class="become-focus">
+            <span class="become-focus-l">Focus areas (optional)</span>
+            <div class="chips" id="become-chips">
+              <button type="button" data-f="Multi-agent orchestration">Multi-agent orchestration</button>
+              <button type="button" data-f="Tool calling">Tool calling</button>
+              <button type="button" data-f="RAG">RAG</button>
+              <button type="button" data-f="Vector databases">Vector databases</button>
+              <button type="button" data-f="Evaluation">Evaluation</button>
+              <button type="button" data-f="Deployment">Deployment</button>
+            </div>
+          </div>
+          <button class="btn primary big on-dark" type="submit">⚡ Generate my learning path →</button>
+          <p class="become-note">Uses your report's location automatically. The path is built by
+            Scout's deterministic pipeline; prices it can't verify show “Verify on provider”.</p>
+        </form>
+      </article>
+    </section>
+    <style>
+      #become .become-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+      @media(max-width:560px){#become .become-grid{grid-template-columns:1fr}}
+      #become .field label{color:#cfe0d6}
+      #become .field input,#become .field select{background:rgba(255,255,255,.06);
+        border:1px solid rgba(120,200,160,.28);color:#eaf3ee}
+      #become .field input:focus,#become .field select:focus{border-color:var(--green-on-dark);
+        box-shadow:0 0 0 4px rgba(84,217,140,.15)}
+      #become .field.sel::after{color:var(--green-on-dark)}
+      #become .become-focus{margin:16px 0 6px}
+      #become .become-focus-l{display:block;font-weight:800;color:#cfe0d6;font-size:11px;
+        text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+      #become .chips{display:flex;flex-wrap:wrap;gap:8px}
+      #become .chips button{background:rgba(255,255,255,.06);border:1px solid rgba(120,200,160,.28);
+        color:#cfe0d6;border-radius:999px;padding:7px 13px;font-weight:700;font-size:13px;cursor:pointer}
+      #become .chips button.on{background:var(--green);border-color:var(--green);color:#fff}
+      #become .btn.big{margin-top:6px}
+      #become .become-note{color:#8fb0a0;font-size:12px;margin:12px 0 0}
+    </style>
+    <script>
+    (function(){
+      var q = new URLSearchParams(location.search);
+      var goalSel = document.getElementById('become-goal');
+      var g = q.get('goal');
+      if (g) for (var i=0;i<goalSel.options.length;i++){ if (goalSel.options[i].value===g){ goalSel.selectedIndex=i; break; } }
+      var focus = [];
+      Array.prototype.forEach.call(document.querySelectorAll('#become-chips button'), function(b){
+        b.addEventListener('click', function(){
+          b.classList.toggle('on');
+          var f=b.getAttribute('data-f'); var i=focus.indexOf(f);
+          if (i>=0) focus.splice(i,1); else focus.push(f);
+        });
+      });
+      document.getElementById('becomeForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        var role = (document.getElementById('become-role').value||'').trim() || 'AI Engineer';
+        var u = new URL('../learn/', location.href);
+        u.searchParams.set('intent','advance_career');
+        u.searchParams.set('role', role);
+        u.searchParams.set('goal', goalSel.value);
+        if (q.get('country')) u.searchParams.set('country', q.get('country'));
+        if (q.get('city')) u.searchParams.set('city', q.get('city'));
+        if (focus.length) u.searchParams.set('focus', focus.join(','));
+        u.searchParams.set('start','1');
+        window.location.href = u.toString();
+      });
+    })();
+    </script>
+    
     <div class="backrow"><a class="btn ghost" href="../">← Start a new report</a></div>
   </main>
   <footer class="foot">

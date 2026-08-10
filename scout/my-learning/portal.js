@@ -203,7 +203,14 @@
         '<div class="kind">Completed · ' + fmtDate(rec.completedAt || rec.lastActivityAt) + '</div>' +
         '<h4>' + esc(rec.name) + '</h4>' +
         '<div class="meta">Skills gained: ' + Object.keys(skills).slice(0, 6).map(esc).join(", ") + '</div>' +
-        '<div class="foot"><a class="btn small" href="path.html?id=' + rec.id + '">Review</a></div>';
+        '<div class="foot"><a class="btn small" href="path.html?id=' + rec.id + '">Review</a>' +
+        '<div class="menu"><button class="menu__btn" aria-label="Path menu">•••</button>' +
+        '<div class="menu__list">' +
+          '<button data-act="rename">Rename</button>' +
+          '<button data-act="archive">Archive</button>' +
+          '<button data-act="delete" class="danger">Delete</button>' +
+        '</div></div></div>';
+      wireMenu(c, rec);
       host.appendChild(c);
     });
   }
@@ -457,6 +464,14 @@
     var rb = document.getElementById("replan-btn"); if (rb) rb.onclick = openReplan;
     var rc = document.getElementById("replan-cancel"); if (rc) rc.onclick = closeReplan;
     var rg = document.getElementById("replan-go"); if (rg) rg.onclick = doReplan;
+    var db = document.getElementById("delete-btn");
+    if (db) db.onclick = function () {
+      if (!CUR_REC) return;
+      if (confirm('Delete "' + CUR_REC.name + '"? This removes the path and its progress. This cannot be undone.')) {
+        removePath(CUR_REC.id);
+        location.href = "./";
+      }
+    };
   }
   function wireDashboardChrome() {
     var q = document.getElementById("search");

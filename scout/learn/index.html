@@ -911,6 +911,43 @@
   // Small automation hook — lets screenshot tooling drive the wizard by state
   // instead of click-stepping through animated panels. Harmless in normal use.
   window.__scout = { S, go, resolveGoal, buildRequest };
+
+  /* ============ deep-link prefill (from the report "become" widget) ============ */
+  function _overlay(msg){
+    const o=el("div"); o.id="autoOverlay";
+    o.style.cssText="position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:var(--green-dark);color:#eaf3ee;text-align:center;padding:24px";
+    o.innerHTML='<div><div class="spin" style="margin:0 auto 14px;width:22px;height:22px;border-width:3px"></div>'+
+      '<div style="font-family:var(--serif);font-size:1.35rem">'+msg+'</div>'+
+      '<div style="color:#9db3a7;font-size:13px;margin-top:6px">Wiring it into My Learning…</div></div>';
+    document.body.appendChild(o); return o;
+  }
+  async function autoTransfer(){
+    _overlay("Building your learning path");
+    const req = buildRequest();
+    let plan;
+    try { plan = await post("/learning/paths", { request: req }); }
+    catch(_){ plan = DEMO.path(req); }
+    window.__plan = plan;
+    const id = saveToMyLearning(true);
+    location.replace("../my-learning/path.html?id=" + id);
+  }
+  (function initFromQuery(){
+    const q = new URLSearchParams(location.search);
+    if (!q.get("role") && !q.get("query") && !q.get("intent")) return;
+    const role = (q.get("role") || "").trim();
+    S.intent = q.get("intent") || (role ? "advance_career" : "learn_topic");
+    S.query = q.get("query") || role;
+    if (q.get("country")) { S.country = q.get("country"); S.useLoc = true; }
+    if (q.get("city")) S.city = q.get("city");
+    const focus = q.get("focus");
+    if (focus) S.query = (S.query + " — focus: " + focus.replace(/,/g, ", ")).trim();
+    if ($("#query")) $("#query").value = S.query;
+    if ($("#role") && S.role) $("#role").value = S.role;
+    if ($("#country")) $("#country").value = S.country || "";
+    if ($("#city")) $("#city").value = S.city || "";
+    drawIntents();
+    if (q.get("start") === "1" || q.get("auto") === "1") autoTransfer();
+  })();
   </script>
 </body>
 </html>
