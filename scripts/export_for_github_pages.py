@@ -58,6 +58,14 @@ def main() -> None:
     copy_dashboard(public, latest, index)
     copy_scout(public / "scout", latest, index)
     (public / "404.html").write_text((public / "index.html").read_text(encoding="utf-8"), encoding="utf-8")
+    # Serve the bundle as-is: no Jekyll build (so folders like assets/ and any
+    # underscore-prefixed paths are published untouched, and README is never
+    # rendered in place of the app).
+    (public / ".nojekyll").write_text("", encoding="utf-8")
+    # Preserve the latest source-health snapshot alongside the site.
+    health = ROOT / "datasets" / "health" / "latest.json"
+    if health.exists():
+        shutil.copy2(health, public / "health.json")
     print(f"Exported GitHub Pages bundle to {public} and {public / 'scout'}")
 
 

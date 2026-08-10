@@ -9,14 +9,20 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
+# actions/deploy-pages@v4 needs pages:write to publish and id-token:write to
+# request the OIDC token — without id-token the deploy fails with
+# "Unable to get ACTIONS_ID_TOKEN_REQUEST_URL".
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   pages:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
