@@ -21,6 +21,9 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           SCOUT_ENABLE_LLM: ${{ vars.SCOUT_ENABLE_LLM || '0' }}
           SCOUT_LLM_PROVIDER: ${{ vars.SCOUT_LLM_PROVIDER || 'deterministic' }}
+          # OllaBridge gateway key (optional). Set an OB_TOKEN repository secret to
+          # authenticate live AI; runtime_settings reads it as the AI API key.
+          OB_TOKEN: ${{ secrets.OB_TOKEN }}
       - name: Validate dataset schema
         run: python scripts/validate_dataset.py
       - name: Build static dashboard bundle

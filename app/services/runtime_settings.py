@@ -72,15 +72,31 @@ def _env_int(name: str, default: int) -> int:
         return default
 
 
+def _first_env(*names: str, default: str = "") -> str:
+    """First non-empty environment variable among ``names`` (order = precedence)."""
+    for name in names:
+        val = os.getenv(name)
+        if val:
+            return val
+    return default
+
+
 def _defaults_from_env() -> dict[str, Any]:
+    # The OllaBridge gateway can be configured with the canonical SCOUT_AI_*
+    # variables, the SCOUT_LLM_* aliases (see docs/SCOUT_RADAR_PLAN.md), or the
+    # provider-native OB_TOKEN / OB_BASE_URL — whichever the operator already has.
+    # SCOUT_AI_* wins when several are set. Keys are read from the environment
+    # only and never persisted to disk or returned to clients.
     return {
         "ai_enabled": _env_bool("SCOUT_AI_ENABLED", True),
-        "ai_provider": os.getenv("SCOUT_AI_PROVIDER", DEFAULT_PROVIDER),
-        "ai_base_url": os.getenv("SCOUT_AI_BASE_URL", DEFAULT_BASE_URL),
-        "ai_model": os.getenv("SCOUT_AI_MODEL", DEFAULT_MODEL),
-        "ai_api_key": os.getenv("SCOUT_AI_API_KEY", ""),
+        "ai_provider": _first_env("SCOUT_AI_PROVIDER", "SCOUT_LLM_PROVIDER", default=DEFAULT_PROVIDER),
+        "ai_base_url": _first_env("SCOUT_AI_BASE_URL", "SCOUT_LLM_BASE_URL", "OB_BASE_URL",
+                                  default=DEFAULT_BASE_URL),
+        "ai_model": _first_env("SCOUT_AI_MODEL", "SCOUT_LLM_MODEL", default=DEFAULT_MODEL),
+        "ai_api_key": _first_env("SCOUT_AI_API_KEY", "SCOUT_LLM_API_KEY", "OB_TOKEN",
+                                 "OLLABRIDGE_API_KEY", default=""),
         "ai_temperature": _env_float("SCOUT_AI_TEMPERATURE", 0.4),
-        "ai_timeout": _env_float("SCOUT_AI_TIMEOUT", 45.0),
+        "ai_timeout": _env_float("SCOUT_AI_TIMEOUT", _env_float("SCOUT_LLM_TIMEOUT", 45.0)),
         "ai_max_tokens": _env_int("SCOUT_AI_MAX_TOKENS", 900),
     }
 
