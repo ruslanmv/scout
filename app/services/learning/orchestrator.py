@@ -77,16 +77,39 @@ def skill_gap_for_request(
 
 
 def search_resources(req: LearningGoalRequest, skills: list[str] | None = None):
-    """Retrieve + normalize resources across all providers for a query."""
+    """Retrieve + normalize resources across all providers, plus real per-skill
+    course discovery (Udemy / Coursera / web) for the missing skills.
+
+    The static catalog always contributes; when a web-search backend is
+    configured (Tavily / Brave key, or SCOUT_ENABLE_WEB_DISCOVERY=1) real course
+    URLs are discovered per skill and tagged with that skill so the ranker can
+    surface them. Discovery is best-effort and never breaks generation.
+    """
+    lang = (req.language or "en").lower()[:2] or "en"
     query = ResourceQuery(
-        text=req.query,
-        skills=skills or [],
-        language=(req.language or "en").lower()[:2] or "en",
-        providers=req.preferred_providers,
-        free_only=req.budget.free_only,
-        limit=40,
+        text=req.query, skills=skills or [], language=lang,
+        providers=req.preferred_providers, free_only=req.budget.free_only, limit=40,
     )
-    return providers.search_all(query)
+    resources = providers.search_all(query)
+
+    # Real course discovery per missing skill (capped to keep it responsive).
+    # The site-restricted query uses the skill name itself, which yields the
+    # cleanest marketplace results.
+    terms: list[tuple[str, str]] = []
+    for sid in (skills or [])[:8]:
+        node = taxonomy.get_skill(sid)
+        if node:
+            terms.append((sid, node.name))
+    try:
+        discovered = providers.web_discover(terms, per_term=2, language=lang)
+    except Exception:  # noqa: BLE001 — discovery is optional
+        discovered = []
+    seen = {r.id for r in resources}
+    for r in discovered:
+        if r.id not in seen:
+            seen.add(r.id)
+            resources.append(r)
+    return resources
 
 
 def _goal_for_request(req: LearningGoalRequest, resolved_goal_id: str | None) -> GoalCandidate:

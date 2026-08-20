@@ -4,6 +4,9 @@ const { useState: uSL, useEffect: uEL, useRef: uRL } = React;
 const SL = window.SCOUT;
 
 const L_LOCS = SL.LOCATIONS.flatMap(l => l.cities.map(c => ({ label: c + ", " + l.country, city: c, country: l.country })));
+// Scout 2.0 Phase 1: occupations for the universal typeahead + popular chips.
+const L_OCCS = (SL.OCCUPATIONS || []);
+const L_POPULAR = ["Developer", "Data Analyst", "Nurse", "Teacher", "Accountant", "Marketing Specialist", "UX/Product Designer", "Electrician"];
 const L_COORDS = {
   Rome: [41.9, 12.5], Milan: [45.46, 9.19], Turin: [45.07, 7.69],
   Berlin: [52.52, 13.40], Munich: [48.14, 11.58],
@@ -292,6 +295,22 @@ function LField({ k, value, onChange, options }) {
   );
 }
 
+/* Free-text occupation typeahead (Scout 2.0 Phase 1): any profession, not a
+   closed dev-role list. A native datalist gives suggestions while still allowing
+   hybrid/emerging titles ("Growth Hacker", "Prompt Engineer"). */
+function OccField({ k, value, onChange, occupations }) {
+  return (
+    <label className="l-field l-field-type">
+      <span className="lf-k">{k}</span>
+      <input list="scout-occs" value={value} onChange={onChange} autoComplete="off"
+        placeholder="your role — Nurse, Marketer, Developer…" spellCheck="false" />
+      <datalist id="scout-occs">
+        {occupations.map(o => <option key={o.id} value={o.name} />)}
+      </datalist>
+    </label>
+  );
+}
+
 /* ---------- landing page ---------- */
 function Landing({ profile, setProfile, city, country, setLocation, goal, setGoal, onGenerate }) {
   const [locating, setLocating] = uSL(false);
@@ -327,12 +346,19 @@ function Landing({ profile, setProfile, city, country, setLocation, goal, setGoa
           <div className="l-wrap l-hero-grid">
             <div>
               <span className="l-eyebrow l-an"><span className="dot" />Your next move</span>
-              <h1 className="l-h1 l-an d1">Find your <em>next</em><br /><em>developer move</em>.</h1>
-              <p className="l-sub l-an d2">Scout turns technology signals into a simple plan: what to <em>learn</em>, what to <em>build</em>, and where to <em>publish</em>.</p>
+              <h1 className="l-h1 l-an d1">Find your <em>next</em><br /><em>career move</em>.</h1>
+              <p className="l-sub l-an d2">Whatever your profession, Scout turns real signals into a simple plan: what to <em>learn</em>, what to <em>practice</em>, and how to <em>get seen</em>.</p>
               <div className="l-form l-an d2">
-                <LField k="I'm a" value={profile} onChange={e => setProfile(e.target.value)} options={SL.PROFILES.map(p => ({ value: p, label: p }))} />
+                <OccField k="I'm a" value={profile} onChange={e => setProfile(e.target.value)} occupations={L_OCCS} />
                 <LField k="in" value={locLabel} onChange={e => { const o = L_LOCS.find(x => x.label === e.target.value); if (o) setLocation(o.city, o.country); }} options={L_LOCS.map(o => ({ value: o.label, label: o.label }))} />
                 <LField k="I want to" value={goal} onChange={e => setGoal(e.target.value)} options={SL.GOALS.map(g => ({ value: g.id, label: g.label }))} />
+              </div>
+              <div className="l-chips l-an d2">
+                {L_POPULAR.map(p => (
+                  <button key={p} type="button"
+                    className={"l-chip" + (profile === p ? " on" : "")}
+                    onClick={() => setProfile(p)}>{p}</button>
+                ))}
               </div>
               <div className="l-cta-row l-an d4">
                 <button className="l-btn" onClick={onGenerate}>Find my next move <span aria-hidden="true">→</span></button>

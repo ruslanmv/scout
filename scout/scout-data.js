@@ -104,6 +104,30 @@ window.SCOUT = (function () {
   ];
 
   const PROFILES = ["Developer", "AI Engineer", "Student", "Founder", "Data Scientist"];
+  // Scout 2.0 Phase 1 — universal occupations for the landing typeahead (mirrors
+  // app/services/learning/taxonomy.py; the backend /occupations/search is richer).
+  const OCCUPATIONS = [
+    {id:"ai-engineer", name:"AI Engineer", domain:"Tech & Data"},
+    {id:"ml-engineer", name:"Machine Learning Engineer", domain:"Tech & Data"},
+    {id:"backend-developer", name:"Backend Developer", domain:"Tech & Data"},
+    {id:"cloud-architect", name:"Cloud Solutions Architect", domain:"Tech & Data"},
+    {id:"data-analyst", name:"Data Analyst", domain:"Tech & Data"},
+    {id:"data-scientist", name:"Data Scientist", domain:"Tech & Data"},
+    {id:"registered-nurse", name:"Registered Nurse", domain:"Health"},
+    {id:"nurse-practitioner", name:"Nurse Practitioner", domain:"Health"},
+    {id:"accountant", name:"Accountant", domain:"Business & Finance"},
+    {id:"financial-analyst", name:"Financial Analyst", domain:"Business & Finance"},
+    {id:"project-manager", name:"Project Manager", domain:"Business & Finance"},
+    {id:"marketing-specialist", name:"Marketing Specialist", domain:"Marketing & Creative"},
+    {id:"ux-designer", name:"UX/Product Designer", domain:"Marketing & Creative"},
+    {id:"content-writer", name:"Content Writer", domain:"Marketing & Creative"},
+    {id:"mechanical-engineer", name:"Mechanical Engineer", domain:"Engineering & Manufacturing"},
+    {id:"electrician", name:"Electrician", domain:"Trades & Logistics"},
+    {id:"teacher", name:"Teacher", domain:"Education"},
+    {id:"lawyer", name:"Lawyer", domain:"Legal & Public"},
+    {id:"research-scientist", name:"Research Scientist", domain:"Science & Research"},
+    {id:"chef", name:"Chef", domain:"Hospitality & Service"}
+  ];
 
   /* ----- derivations ----- */
   function composite(t) {
@@ -194,5 +218,5 @@ window.SCOUT = (function () {
   function repoName(t) {
     return t.id.replace(/[^a-z0-9-]/g, "") + "-" + (t.project_ideas[0] || "lab").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   }
-  return { TOPICS, LOCATIONS, GOALS, PROFILES, composite, radar, difficulty, evidence, action, actionShort, verdict, effort, payoff, whyRank, whyReasons, planSteps, repoName };
+  return { TOPICS, LOCATIONS, GOALS, PROFILES, OCCUPATIONS, composite, radar, difficulty, evidence, action, actionShort, verdict, effort, payoff, whyRank, whyReasons, planSteps, repoName };
 })();

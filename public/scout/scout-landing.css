@@ -60,6 +60,14 @@
 .l-field select{appearance:none;-webkit-appearance:none;width:100%;background:transparent;border:0;outline:none;color:var(--tx-light);font-weight:700;font-size:15px;padding:0;cursor:pointer}
 .l-field select option{background:#0a2517;color:var(--tx-light)}
 .l-field .lf-c{position:absolute;right:13px;bottom:11px;color:#9db5a7;font-size:11px;pointer-events:none}
+/* Scout 2.0 Phase 1 — universal occupation typeahead + popular chips */
+.l-field-type{padding-right:14px}
+.l-field-type input{width:100%;background:transparent;border:0;outline:none;color:var(--tx-light);font-weight:700;font-size:15px;padding:0}
+.l-field-type input::placeholder{color:#7f9a8b;font-weight:600}
+.l-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.l-chip{background:rgba(255,255,255,.05);border:1px solid var(--bd-dark);color:#c7dccf;border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:700;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+.l-chip:hover{border-color:var(--grn);color:#fff}
+.l-chip.on{background:var(--grn);border-color:var(--grn);color:#07130c}
 .l-cta-row{display:flex;align-items:center;gap:24px;margin-top:24px;flex-wrap:wrap}
 .l-btn{background:var(--grn);color:#fff;border:0;border-radius:14px;min-height:56px;padding:0 30px;font-weight:700;font-size:16px;display:inline-flex;align-items:center;gap:11px;cursor:pointer;white-space:nowrap;box-shadow:0 18px 44px -16px rgba(34,200,120,.75);transition:transform .15s,box-shadow .15s,background .15s}
 .l-btn:hover{transform:translateY(-2px);background:#27d381;box-shadow:0 20px 44px -14px rgba(34,200,120,.7)}

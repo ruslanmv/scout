@@ -26,12 +26,35 @@ jobs:
           OB_TOKEN: ${{ secrets.OB_TOKEN }}
       - name: Validate dataset schema
         run: python scripts/validate_dataset.py
+      - name: Collect universal demand signals (Scout 2.0 Phase 3)
+        # Job-market demand across every domain via Adzuna. Fail-safe: writes a
+        # valid empty file when ADZUNA_APP_ID / ADZUNA_APP_KEY are unset, so the
+        # workflow never fails just because a source is unconfigured.
+        run: python scripts/collect_signals.py
+        env:
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+      - name: Narrate AI plans into the dataset (Scout 2.0)
+        # Pre-computes AI plans per (location x goal x profile) cell so the static
+        # site serves real AI output. Only cells whose ranking changed are
+        # re-narrated. No-op when AI is disabled or no OB_TOKEN is set.
+        run: python scripts/narrate_batch.py
+        env:
+          SCOUT_AI_ENABLED: ${{ vars.SCOUT_AI_ENABLED || '1' }}
+          SCOUT_AI_BASE_URL: ${{ vars.SCOUT_AI_BASE_URL }}
+          SCOUT_AI_MODEL: ${{ vars.SCOUT_AI_MODEL }}
+          OB_TOKEN: ${{ secrets.OB_TOKEN }}
       - name: Build static dashboard bundle
         run: python scripts/export_for_github_pages.py
+      - name: Refresh the dynamic README trends section
+        # Rewrites the block between the SCOUT:TRENDS markers from the latest
+        # dataset + signals. Fail-safe: leaves the README untouched if data is
+        # missing, so the workflow never breaks the README.
+        run: python scripts/update_readme.py
       - name: Commit refreshed datasets
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add datasets public || true
-          git commit -m "Update Scout trend datasets and reports" || echo "No changes"
+          git add datasets public README.md || true
+          git commit -m "Update Scout trend datasets, reports and README" || echo "No changes"
           git push || true

@@ -202,14 +202,33 @@ for left-to-right layout) for skill-graph visualizations.
 
 ## Course discovery providers
 
-Structured, official sources are preferred. Udemy discontinued its Affiliate API
-(Jan 2025) and Coursera's catalog needs partner access, so both are implemented
-as **search-discovery** adapters that store only title/URL/snippet plus
-provenance and redirect the user to the provider.
+Udemy discontinued its Affiliate API (Jan 2025) and Coursera's catalog needs
+partner access, so both are **search-discovery** adapters: Scout finds real,
+public course URLs and stores only title/URL/snippet plus provenance, never
+inventing ratings, prices or duration (price shows "Verify on provider").
 
-Set `TAVILY_API_KEY` or `BRAVE_API_KEY` (and `pip install '.[learning]'`) to
-enable discovery. Without a key, discovery is disabled and Scout uses its offline
-static catalog — the pipeline still works end to end.
+Discovery runs **per missing skill** (`providers.web_discover`), so each found
+course is tagged with the one skill it was searched for and the deterministic
+ranker can score it. Backends, in priority order:
+
+| Backend | Enable with |
+| --- | --- |
+| Tavily | `TAVILY_API_KEY` |
+| Brave | `BRAVE_API_KEY` |
+| DuckDuckGo (keyless, best-effort) | `SCOUT_ENABLE_WEB_DISCOVERY=1` |
+
+With none configured, discovery is a no-op and Scout uses its offline static
+catalog — the pipeline still works end to end. When the learner lists a
+marketplace (Udemy/Coursera) in `preferred_providers`, a discovered real course
+becomes the **primary** recommendation for the skills it covers, with the free
+official resource kept as the stage's **alternative**; its warnings
+("search-discovered", "verify price") always stand.
+
+The frontend reaches these via the API. Serving the FastAPI backend and the
+static site from the same origin (e.g. `uvicorn app.main:app`) wires real data
+automatically; a separately hosted backend can be pointed to with
+`window.SCOUT_API_BASE`. With no backend reachable, the pages fall back to demo
+data (clearly labelled).
 
 ## Roadmap
 

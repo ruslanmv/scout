@@ -12,14 +12,19 @@ way — only the ``source`` field tells you which engine produced it.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import Any
 
 import requests
 
 from app.services import runtime_settings
+
+# Where the nightly NARRATE stage stores pre-computed AI plans (Scout 2.0 §5).
+AI_PLANS_DIR = Path("datasets/ai_plans")
 from app.services.analysis_generator import (
     confidence_sentence,
     next_move,
@@ -182,34 +187,22 @@ def _build_messages(topic: dict, country: str, city: str | None, goal: str, prof
     ]
 
 
-def generate_plan(topic: dict, country: str, city: str | None,
-                  goal: str, profile: str) -> dict[str, Any]:
-    """Live AI plan for a topic, with deterministic fallback on any failure."""
-    settings = runtime_settings.get_settings()
+def _assemble_ai_plan(data: dict, topic: dict, country: str, city: str | None,
+                      goal: str, profile: str, *, source: str,
+                      provider: str, model: str) -> dict[str, Any]:
+    """Normalize a model's JSON reply into Scout's stable plan contract."""
     fallback = fallback_plan(topic, country, city, goal, profile)
-    if not settings["ai_enabled"]:
-        fallback["note"] = "AI is disabled. Showing Scout's built-in plan."
-        return fallback
-    try:
-        raw = _chat(_build_messages(topic, country, city, goal, profile), settings)
-        data = _extract_json(raw)
-    except Exception as exc:  # noqa: BLE001 — never break the product on AI errors
-        fallback["note"] = f"AI unavailable ({type(exc).__name__}); showing Scout's built-in plan."
-        fallback["error"] = str(exc)[:200]
-        return fallback
-
     build = data.get("build")
     if isinstance(build, str):
         build = {"title": build}
     if not isinstance(build, dict):
         build = fallback["build"]
-
     return {
         "topic_id": topic.get("id"),
         "topic_name": topic.get("name"),
-        "source": "ollabridge-cloud",
-        "provider": settings["ai_provider"],
-        "model": settings["ai_model"],
+        "source": source,
+        "provider": provider,
+        "model": model,
         "generated_at": _now(),
         "headline": str(data.get("headline") or fallback["headline"]).strip(),
         "why_now": str(data.get("why_now") or fallback["why_now"]).strip(),
@@ -225,6 +218,87 @@ def generate_plan(topic: dict, country: str, city: str | None,
         "risks": _str_list(data.get("risks"), 5) or fallback["risks"],
         "confidence": str(data.get("confidence") or fallback["confidence"]).strip(),
     }
+
+
+def live_plan(topic: dict, country: str, city: str | None, goal: str, profile: str,
+              settings: dict[str, Any] | None = None) -> dict[str, Any] | None:
+    """Narrate a plan with the live gateway. Returns ``None`` on any failure —
+    no template fallback here, so callers (serving and the nightly batch) can
+    decide what to do next. This is the single place that calls the LLM."""
+    s = settings or runtime_settings.get_settings()
+    if not s.get("ai_enabled"):
+        return None
+    try:
+        raw = _chat(_build_messages(topic, country, city, goal, profile), s)
+        data = _extract_json(raw)
+    except Exception:  # noqa: BLE001 — never break the product on AI errors
+        return None
+    return _assemble_ai_plan(data, topic, country, city, goal, profile,
+                             source="ollabridge-cloud", provider=s["ai_provider"], model=s["ai_model"])
+
+
+# --- Nightly AI-batch (Scout 2.0 §5–6): pre-compute plans into the dataset ---
+
+def batch_key(topic_id: str | None, country: str, city: str | None,
+              goal: str, profile: str) -> str:
+    """Stable filename slug for a (topic × location × goal × profile) cell."""
+    def slug(v: str) -> str:
+        return re.sub(r"[^a-z0-9]+", "-", (v or "").lower()).strip("-") or "-"
+    parts = [topic_id or "topic", country or "worldwide", city or "any", goal or "any", profile or "any"]
+    return "__".join(slug(p) for p in parts)
+
+
+def batch_content_hash(topic: dict, country: str, city: str | None,
+                       goal: str, profile: str) -> str:
+    """Hash of the inputs that determine a plan — used to skip re-narrating cells
+    whose deterministic ranking did not change since the last run (cost control)."""
+    payload = {
+        "topic_id": topic.get("id"),
+        "signals": topic.get("signals", {}),
+        "rank": topic.get("rank"),
+        "country": country, "city": city, "goal": goal, "profile": profile,
+    }
+    blob = json.dumps(payload, sort_keys=True, default=str)
+    return hashlib.sha256(blob.encode("utf-8")).hexdigest()[:16]
+
+
+def load_batch_plan(topic: dict, country: str, city: str | None, goal: str, profile: str,
+                    base_dir: Path | None = None) -> dict[str, Any] | None:
+    """Load a pre-computed nightly plan for this cell, if one exists."""
+    directory = base_dir or AI_PLANS_DIR
+    path = directory / (batch_key(topic.get("id"), country, city, goal, profile) + ".json")
+    if not path.exists():
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        return None
+    data["source"] = "ai-batch"
+    return data
+
+
+def generate_plan(topic: dict, country: str, city: str | None,
+                  goal: str, profile: str) -> dict[str, Any]:
+    """Serving order (Scout 2.0 §6.1): live AI → nightly AI-batch → deterministic
+    template. The ``source`` field says which engine produced the plan, so the
+    static site can serve real AI output from the dataset with no live backend."""
+    settings = runtime_settings.get_settings()
+
+    # 1. live AI, when the gateway is enabled and reachable
+    plan = live_plan(topic, country, city, goal, profile, settings)
+    if plan is not None:
+        return plan
+
+    # 2. nightly AI-batch plan pre-computed into the dataset
+    batch = load_batch_plan(topic, country, city, goal, profile)
+    if batch is not None:
+        return batch
+
+    # 3. deterministic template — true last resort
+    fallback = fallback_plan(topic, country, city, goal, profile)
+    fallback["note"] = ("AI is disabled." if not settings["ai_enabled"]
+                        else "AI unavailable; showing Scout's built-in plan.")
+    return fallback
 
 
 def test_connection(settings: dict[str, Any] | None = None) -> dict[str, Any]:

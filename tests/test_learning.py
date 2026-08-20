@@ -141,6 +141,56 @@ def test_free_only_filter_blocks_unverifiable_access():
     assert ranked == []
 
 
+def test_web_discovery_finds_and_tags_real_courses(monkeypatch):
+    import app.providers.web_search as ws
+    from app.providers import base as providers
+
+    monkeypatch.setenv("SCOUT_ENABLE_WEB_DISCOVERY", "1")
+
+    def fake_run(query_text, limit):
+        if "udemy.com/course/" in query_text:
+            t = query_text.split('"')[1]
+            return [{"title": f"{t}: Complete Bootcamp", "url": f"https://www.udemy.com/course/{t.replace(' ', '-').lower()}/", "snippet": "hands-on"}]
+        if "coursera.org/learn" in query_text:
+            t = query_text.split('"')[1]
+            return [{"title": f"{t} Specialization", "url": f"https://www.coursera.org/learn/{t.replace(' ', '-').lower()}", "snippet": "university"}]
+        return []
+
+    monkeypatch.setattr(ws, "_run_web_search", fake_run)
+    found = providers.web_discover([("skill:llm-apis", "LLM APIs")], per_term=1)
+    by_provider = {r.provider for r in found}
+    assert {"udemy", "coursera"} <= by_provider
+    for r in found:
+        assert r.skills_taught == ["skill:llm-apis"]         # tagged with the searched skill
+        assert r.provenance.source_type == "web_search"
+        assert r.price_display() == "Verify on provider"     # never an invented price
+
+
+def test_preferred_marketplace_course_becomes_primary(monkeypatch):
+    import app.providers.web_search as ws
+
+    monkeypatch.setenv("SCOUT_ENABLE_WEB_DISCOVERY", "1")
+
+    def fake_run(query_text, limit):
+        if "udemy.com/course/" in query_text:
+            t = query_text.split('"')[1]
+            return [{"title": f"{t}: Complete Bootcamp", "url": f"https://www.udemy.com/course/{t.replace(' ', '-').lower()}/", "snippet": "x"}]
+        return []
+
+    monkeypatch.setattr(ws, "_run_web_search", fake_run)
+    req = _career_request(preferred_providers=["Udemy", "Coursera", "Microsoft Learn", "YouTube"])
+    path = orchestrator.generate_path(req)
+    providers_used = [s.resources[0].primary.resource.provider for s in path.stages if s.resources]
+    # at least one stage is now topped by a real discovered marketplace course,
+    # and where it is, the free official option is kept as the alternative
+    assert "udemy" in providers_used
+    for s in path.stages:
+        if s.resources and s.resources[0].primary.resource.provider == "udemy":
+            assert s.resources[0].alternative is not None
+            assert s.resources[0].primary.resource.price_display() == "Verify on provider"
+            break
+
+
 def test_web_discovered_resource_shows_verify_on_provider():
     from app.services.learning.schemas import (
         LearningResource,
@@ -352,6 +402,35 @@ def test_skill_graph_depth_orders_prerequisites_before_dependents():
     g = taxonomy.graph(["skill:rag-foundations"])
     depth = {n["id"]: n["depth"] for n in g["nodes"]}
     assert depth["skill:python"] < depth["skill:embeddings"] < depth["skill:rag-foundations"]
+
+
+def test_domain_layer_and_occupation_tagging():
+    domains = taxonomy.list_domains()
+    ids = {d["id"] for d in domains}
+    assert len(domains) == 10
+    assert {"tech-data", "health", "business-finance"} <= ids
+    # the taxonomy is now universal — occupations span multiple domains, each tagged
+    assert all(o.domain for o in taxonomy.all_occupations())
+    represented = {o.domain for o in taxonomy.all_occupations()}
+    assert {"tech-data", "health", "marketing-creative"} <= represented
+    tech = next(d for d in domains if d["id"] == "tech-data")
+    assert tech["occupation_count"] >= 4
+    # domain filter works both ways
+    assert taxonomy.search_occupations("", domain="tech-data")
+    health = taxonomy.search_occupations("", domain="health")
+    assert health and all(o.domain == "health" for o in health)
+    # a hybrid/emerging title resolves via alias
+    assert taxonomy.search_occupations("growth hacker")
+
+
+def test_api_occupation_domains_and_filter():
+    r = client.get("/api/v1/occupations/domains")
+    assert r.status_code == 200
+    assert len(r.json()["domains"]) == 10
+    filtered = client.get("/api/v1/occupations/search?domain=tech-data").json()
+    assert filtered["results"] and all(o["domain"] == "tech-data" for o in filtered["results"])
+    health = client.get("/api/v1/occupations/search?domain=health").json()["results"]
+    assert health and all(o["domain"] == "health" for o in health)
 
 
 def test_api_knowledge_and_provider_endpoints():

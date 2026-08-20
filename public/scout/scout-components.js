@@ -333,7 +333,7 @@ function NextBar({
     className: "nb-x",
     onClick: onClose,
     "aria-label": "Dismiss"
-  }, "\u2715"));
+  }, "✕"));
 }
 
 /* ---------- opportunity card (quiet; ring + metrics only in advanced) ---------- */
@@ -420,7 +420,7 @@ function OpportunityCard({
     className: "whyrank"
   }, S.whyRank(topic)), /*#__PURE__*/React.createElement("span", {
     className: "inspect"
-  }, "Why? \u2192")));
+  }, "Why? →")));
 }
 
 /* ---------- project card ---------- */
@@ -440,7 +440,7 @@ function ProjectCard({
     style: {
       marginLeft: "auto"
     }
-  }, diff)), /*#__PURE__*/React.createElement("h4", null, idea), /*#__PURE__*/React.createElement("p", null, "Turn the ", topic.short, " signal into a portfolio piece \u2014 a focused repo, a live demo, and a writeup."), /*#__PURE__*/React.createElement("div", {
+  }, diff)), /*#__PURE__*/React.createElement("h4", null, idea), /*#__PURE__*/React.createElement("p", null, "Turn the ", topic.short, " signal into a portfolio piece — a focused repo, a live demo, and a writeup."), /*#__PURE__*/React.createElement("div", {
     className: "stack"
   }, topic.skills.slice(0, 4).map(s => /*#__PURE__*/React.createElement("span", {
     className: "tag",

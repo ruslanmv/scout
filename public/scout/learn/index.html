@@ -474,7 +474,12 @@
 
   <script>
   /* ============================ state ============================ */
-  const API = (location.origin && location.protocol.startsWith("http")) ? location.origin + "/api/v1" : null;
+  // API base: a deployed backend can be wired without editing code by setting
+  //   window.SCOUT_API_BASE = "https://your-scout-api.example.com/api/v1"
+  // (e.g. via a small config script or a build step). Otherwise use the current
+  // origin; on a static site with no backend, requests fall back to demo data.
+  const API = (window.SCOUT_API_BASE
+    || ((location.origin && location.protocol.startsWith("http")) ? location.origin + "/api/v1" : null));
   const STEPS = [
     ["Goal", "What to achieve"],
     ["Background", "What you know"],

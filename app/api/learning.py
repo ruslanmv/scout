@@ -181,11 +181,20 @@ def skills_search(q: str = Query("", description="Skill name or keyword"),
     return {"query": q, "results": [s.model_dump() for s in orchestrator.search_skills(q, limit)]}
 
 
+@router.get("/occupations/domains")
+def occupations_domains():
+    """The Scout 2.0 career domains (ESCO major groups) with occupation counts —
+    the front door for the universal input (see docs/SCOUT_2.0_PLAN.md)."""
+    return {"domains": taxonomy.list_domains()}
+
+
 @router.get("/occupations/search")
 def occupations_search(q: str = Query("", description="Occupation name or keyword"),
+                       domain: str = Query("", description="Filter by domain id, e.g. tech-data"),
                        limit: int = 10):
-    return {"query": q,
-            "results": [o.model_dump() for o in orchestrator.search_occupations(q, limit)]}
+    results = taxonomy.search_occupations(q, limit, domain=domain or None)
+    return {"query": q, "domain": domain or None,
+            "results": [o.model_dump() for o in results]}
 
 
 @router.get("/certifications/search")
