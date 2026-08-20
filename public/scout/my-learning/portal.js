@@ -10,7 +10,10 @@
 (function () {
   "use strict";
   var KEY = "scout.myLearning.v1";
-  var API = (location.protocol.indexOf("http") === 0) ? location.origin + "/api/v1" : null;
+  // A deployed backend can be wired via window.SCOUT_API_BASE (see learn page);
+  // otherwise use the current origin. Replanning needs a reachable backend.
+  var API = window.SCOUT_API_BASE
+    || ((location.protocol.indexOf("http") === 0) ? location.origin + "/api/v1" : null);
 
   /* ---------------- store ---------------- */
   function load() {

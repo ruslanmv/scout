@@ -57,6 +57,10 @@ def search_all(query: ResourceQuery) -> list[LearningResource]:
     results: list[LearningResource] = []
     seen: set[str] = set()
     for provider in available_providers():
+        # Discovery (search) providers are queried per-skill via web_discover so
+        # their results are tagged with a single skill — never with a topic query.
+        if getattr(provider, "discovery", False):
+            continue
         try:
             for resource in provider.search(query):
                 if resource.id in seen:
@@ -65,4 +69,39 @@ def search_all(query: ResourceQuery) -> list[LearningResource]:
                 results.append(resource)
         except Exception:  # noqa: BLE001 — one bad provider must not break search
             continue
+    return results
+
+
+def web_discover(terms: list[tuple[str, str]], *, per_term: int = 2,
+                 language: str = "en") -> list[LearningResource]:
+    """Find real Udemy / Coursera courses for specific skills (spec §6).
+
+    ``terms`` is a list of ``(skill_id, search_term)`` pairs. Each term is
+    searched on the site-restricted providers and the results are tagged with the
+    skill, so the deterministic ranker can score real courses per skill. This is a
+    no-op (returns ``[]``) unless a web-search backend is configured, and every
+    call is fail-safe.
+    """
+    from app.providers.web_search import (
+        CourseraSearchProvider,
+        UdemySearchProvider,
+        _search_backend,
+    )
+
+    if not _search_backend() or not terms:
+        return []
+    providers = [UdemySearchProvider(), CourseraSearchProvider()]
+    results: list[LearningResource] = []
+    seen: set[str] = set()
+    for skill_id, term in terms:
+        for provider in providers:
+            try:
+                q = ResourceQuery(text=term, skills=[skill_id], language=language, limit=per_term)
+                for resource in provider.search(q):
+                    if resource.url in seen:
+                        continue
+                    seen.add(resource.url)
+                    results.append(resource)
+            except Exception:  # noqa: BLE001
+                continue
     return results

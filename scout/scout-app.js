@@ -20,11 +20,11 @@ function ToolHeader() {
   }, /*#__PURE__*/React.createElement("a", {
     className: "tool-header__back",
     href: "./"
-  }, "\u2190 ", /*#__PURE__*/React.createElement("span", null, "Home")), /*#__PURE__*/React.createElement("div", {
+  }, "← ", /*#__PURE__*/React.createElement("span", null, "Home")), /*#__PURE__*/React.createElement("div", {
     className: "tool-header__title"
   }, /*#__PURE__*/React.createElement("span", {
     className: "gl"
-  }, "\u25C7"), " Scout"), /*#__PURE__*/React.createElement("div", {
+  }, "◇"), " Scout"), /*#__PURE__*/React.createElement("div", {
     className: "tool-header__user"
   }, /*#__PURE__*/React.createElement("span", {
     className: "live"
@@ -106,7 +106,7 @@ function App() {
     className: "dot"
   }), "Your next move"), /*#__PURE__*/React.createElement("h1", null, "Building ", /*#__PURE__*/React.createElement("span", {
     className: "em"
-  }, "your plan"), "\u2026"), /*#__PURE__*/React.createElement("div", {
+  }, "your plan"), "…"), /*#__PURE__*/React.createElement("div", {
     className: "scanning"
   }, /*#__PURE__*/React.createElement("div", {
     className: "scan-ring"
@@ -119,7 +119,7 @@ function App() {
     className: "scan-log"
   }, SCAN_LINES[Math.min(scanIdx, SCAN_LINES.length - 1)]), /*#__PURE__*/React.createElement("div", {
     className: "scan-sub"
-  }, city, ", ", country, " \xB7 ", goalObj.label, " \xB7 ", profile)))))));
+  }, city, ", ", country, " · ", goalObj.label, " · ", profile)))))));
 }
 ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(App, null));
 })();

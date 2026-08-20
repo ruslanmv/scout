@@ -13,6 +13,9 @@ const L_LOCS = SL.LOCATIONS.flatMap(l => l.cities.map(c => ({
   city: c,
   country: l.country
 })));
+// Scout 2.0 Phase 1: occupations for the universal typeahead + popular chips.
+const L_OCCS = SL.OCCUPATIONS || [];
+const L_POPULAR = ["Developer", "Data Analyst", "Nurse", "Teacher", "Accountant", "Marketing Specialist", "UX/Product Designer", "Electrician"];
 const L_COORDS = {
   Rome: [41.9, 12.5],
   Milan: [45.46, 9.19],
@@ -366,11 +369,11 @@ const L_SLIDES = [{
     className: "lc-chip"
   }, "Learn"), /*#__PURE__*/React.createElement("span", {
     className: "lc-arrow"
-  }, "\u2192"), /*#__PURE__*/React.createElement("span", {
+  }, "→"), /*#__PURE__*/React.createElement("span", {
     className: "lc-chip"
   }, "Build"), /*#__PURE__*/React.createElement("span", {
     className: "lc-arrow"
-  }, "\u2192"), /*#__PURE__*/React.createElement("span", {
+  }, "→"), /*#__PURE__*/React.createElement("span", {
     className: "lc-chip"
   }, "Publish")))
 }, {
@@ -385,7 +388,7 @@ const L_SLIDES = [{
     className: "k"
   }, "Stack"), /*#__PURE__*/React.createElement("span", {
     className: "v"
-  }, "Python \xB7 FastAPI \xB7 MCP")), /*#__PURE__*/React.createElement("div", {
+  }, "Python · FastAPI · MCP")), /*#__PURE__*/React.createElement("div", {
     className: "lc-kv"
   }, /*#__PURE__*/React.createElement("span", {
     className: "k"
@@ -446,10 +449,10 @@ function LCarousel() {
   }, /*#__PURE__*/React.createElement("button", {
     onClick: () => go(-1),
     "aria-label": "Previous slide"
-  }, "\u2190"), /*#__PURE__*/React.createElement("button", {
+  }, "←"), /*#__PURE__*/React.createElement("button", {
     onClick: () => go(1),
     "aria-label": "Next slide"
-  }, "\u2192"))), /*#__PURE__*/React.createElement("div", {
+  }, "→"))), /*#__PURE__*/React.createElement("div", {
     className: "lc-stage"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lc-slide",
@@ -485,7 +488,35 @@ function LField({
     value: o.value
   }, o.label))), /*#__PURE__*/React.createElement("span", {
     className: "lf-c"
-  }, "\u25BE"));
+  }, "▾"));
+}
+
+/* Free-text occupation typeahead (Scout 2.0 Phase 1): any profession, not a
+   closed dev-role list. A native datalist gives suggestions while still allowing
+   hybrid/emerging titles ("Growth Hacker", "Prompt Engineer"). */
+function OccField({
+  k,
+  value,
+  onChange,
+  occupations
+}) {
+  return /*#__PURE__*/React.createElement("label", {
+    className: "l-field l-field-type"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lf-k"
+  }, k), /*#__PURE__*/React.createElement("input", {
+    list: "scout-occs",
+    value: value,
+    onChange: onChange,
+    autoComplete: "off",
+    placeholder: "your role — Nurse, Marketer, Developer…",
+    spellCheck: "false"
+  }), /*#__PURE__*/React.createElement("datalist", {
+    id: "scout-occs"
+  }, occupations.map(o => /*#__PURE__*/React.createElement("option", {
+    key: o.id,
+    value: o.name
+  }))));
 }
 
 /* ---------- landing page ---------- */
@@ -539,7 +570,7 @@ function Landing({
     href: "./"
   }, /*#__PURE__*/React.createElement("span", {
     className: "gl"
-  }, "\u25C7"), "Scout"), /*#__PURE__*/React.createElement("nav", {
+  }, "◇"), "Scout"), /*#__PURE__*/React.createElement("nav", {
     className: "l-nav"
   }, /*#__PURE__*/React.createElement("a", {
     href: "learn/"
@@ -569,18 +600,15 @@ function Landing({
     className: "dot"
   }), "Your next move"), /*#__PURE__*/React.createElement("h1", {
     className: "l-h1 l-an d1"
-  }, "Find your ", /*#__PURE__*/React.createElement("em", null, "next"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "developer move"), "."), /*#__PURE__*/React.createElement("p", {
+  }, "Find your ", /*#__PURE__*/React.createElement("em", null, "next"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "career move"), "."), /*#__PURE__*/React.createElement("p", {
     className: "l-sub l-an d2"
-  }, "Scout turns technology signals into a simple plan: what to ", /*#__PURE__*/React.createElement("em", null, "learn"), ", what to ", /*#__PURE__*/React.createElement("em", null, "build"), ", and where to ", /*#__PURE__*/React.createElement("em", null, "publish"), "."), /*#__PURE__*/React.createElement("div", {
+  }, "Whatever your profession, Scout turns real signals into a simple plan: what to ", /*#__PURE__*/React.createElement("em", null, "learn"), ", what to ", /*#__PURE__*/React.createElement("em", null, "practice"), ", and how to ", /*#__PURE__*/React.createElement("em", null, "get seen"), "."), /*#__PURE__*/React.createElement("div", {
     className: "l-form l-an d2"
-  }, /*#__PURE__*/React.createElement(LField, {
+  }, /*#__PURE__*/React.createElement(OccField, {
     k: "I'm a",
     value: profile,
     onChange: e => setProfile(e.target.value),
-    options: SL.PROFILES.map(p => ({
-      value: p,
-      label: p
-    }))
+    occupations: L_OCCS
   }), /*#__PURE__*/React.createElement(LField, {
     k: "in",
     value: locLabel,
@@ -601,13 +629,20 @@ function Landing({
       label: g.label
     }))
   })), /*#__PURE__*/React.createElement("div", {
+    className: "l-chips l-an d2"
+  }, L_POPULAR.map(p => /*#__PURE__*/React.createElement("button", {
+    key: p,
+    type: "button",
+    className: "l-chip" + (profile === p ? " on" : ""),
+    onClick: () => setProfile(p)
+  }, p))), /*#__PURE__*/React.createElement("div", {
     className: "l-cta-row l-an d4"
   }, /*#__PURE__*/React.createElement("button", {
     className: "l-btn",
     onClick: onGenerate
   }, "Find my next move ", /*#__PURE__*/React.createElement("span", {
     "aria-hidden": "true"
-  }, "\u2192")), /*#__PURE__*/React.createElement("button", {
+  }, "→")), /*#__PURE__*/React.createElement("button", {
     className: "l-loc",
     onClick: useMyLoc
   }, locating ? "Locating…" : "Use my current location"))), /*#__PURE__*/React.createElement(LCarousel, null)))), /*#__PURE__*/React.createElement("div", {
@@ -719,7 +754,7 @@ function Landing({
     className: "l-banner"
   }, /*#__PURE__*/React.createElement("span", {
     className: "gl"
-  }, "\u25C7"), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  }, "◇"), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "lb-h"
   }, "Built for developers and ", /*#__PURE__*/React.createElement("em", null, "AI agents")), /*#__PURE__*/React.createElement("div", {
     className: "lb-d"
@@ -744,7 +779,7 @@ function Landing({
     className: "l-foot"
   }, /*#__PURE__*/React.createElement("div", {
     className: "l-foot-in"
-  }, /*#__PURE__*/React.createElement("span", null, "\xA9 2026 Scout"), /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("span", null, "© 2026 Scout"), /*#__PURE__*/React.createElement("span", {
     className: "links"
   }, /*#__PURE__*/React.createElement("a", {
     href: "learn/"

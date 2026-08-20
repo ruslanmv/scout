@@ -133,6 +133,7 @@ class Occupation(BaseModel):
     name: str
     aliases: list[str] = Field(default_factory=list)
     description: str = ""
+    domain: str = ""  # ESCO-major-group domain (Scout 2.0); see taxonomy.DOMAINS
     core_skills: list[str] = Field(default_factory=list)
     specializations: list[str] = Field(default_factory=list)
     external_ids: dict[str, str] = Field(default_factory=dict)

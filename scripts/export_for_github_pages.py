@@ -66,6 +66,22 @@ def main() -> None:
     health = ROOT / "datasets" / "health" / "latest.json"
     if health.exists():
         shutil.copy2(health, public / "health.json")
+
+    # Ship the nightly AI-batch plans so the static site can serve real AI output
+    # from the dataset (Scout 2.0 §6). Mirrored under both site roots.
+    ai_plans = ROOT / "datasets" / "ai_plans"
+    if ai_plans.exists():
+        for dest in (public / "data" / "ai_plans", public / "scout" / "data" / "ai_plans"):
+            dest.mkdir(parents=True, exist_ok=True)
+            shutil.copytree(ai_plans, dest, dirs_exist_ok=True)
+
+    # Ship the latest universal demand signals (Scout 2.0 Phase 3) so the static
+    # site and any client can read job-market demand without the backend.
+    signals = ROOT / "datasets" / "signals" / "latest.json"
+    if signals.exists():
+        for dest in (public / "data", public / "scout" / "data"):
+            dest.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(signals, dest / "signals.json")
     print(f"Exported GitHub Pages bundle to {public} and {public / 'scout'}")
 
 

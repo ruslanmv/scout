@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-08-18T20:58:43.611905+00:00",
+  "sources": [],
+  "countries": [
+    "Worldwide",
+    "Germany"
+  ],
+  "domains_covered": [],
+  "count": 0,
+  "note": "No signal source configured (set ADZUNA_APP_ID / ADZUNA_APP_KEY). Frontend degrades to deterministic ranking.",
+  "signals": []
+}

@@ -84,8 +84,38 @@ _SKILLS: list[dict] = [
 
 # --- Occupations ------------------------------------------------------------
 
+# --- Domains (Scout 2.0) ----------------------------------------------------
+# ~10 domains from the ESCO major occupation groups. The domain selects which
+# signal adapters and "Show" playbook apply (see docs/SCOUT_2.0_PLAN.md). Every
+# occupation is tagged with exactly one domain so the universal input can group
+# and filter across professions, not just software roles.
+
+DOMAINS: list[dict] = [
+    {"id": "tech-data", "name": "Tech & Data",
+     "description": "Software, data, AI, cloud and IT roles."},
+    {"id": "health", "name": "Health",
+     "description": "Clinical, nursing, allied-health and care roles."},
+    {"id": "business-finance", "name": "Business & Finance",
+     "description": "Finance, accounting, operations and management."},
+    {"id": "marketing-creative", "name": "Marketing & Creative",
+     "description": "Marketing, design, content and communications."},
+    {"id": "engineering-manufacturing", "name": "Engineering & Manufacturing",
+     "description": "Mechanical, electrical, civil and production engineering."},
+    {"id": "education", "name": "Education",
+     "description": "Teaching, training and instructional roles."},
+    {"id": "legal-public", "name": "Legal & Public",
+     "description": "Legal, government and public-administration roles."},
+    {"id": "science-research", "name": "Science & Research",
+     "description": "Life, physical and social sciences and research."},
+    {"id": "trades-logistics", "name": "Trades & Logistics",
+     "description": "Skilled trades, construction, transport and logistics."},
+    {"id": "hospitality-service", "name": "Hospitality & Service",
+     "description": "Hospitality, retail, personal and customer service."},
+]
+
+
 _OCCUPATIONS: list[dict] = [
-    {"id": "occupation:ai-engineer", "name": "AI Engineer",
+    {"id": "occupation:ai-engineer", "name": "AI Engineer", "domain": "tech-data",
      "aliases": ["applied ai engineer", "genai engineer", "llm engineer"],
      "description": "Builds and ships applications powered by language models.",
      "core_skills": ["skill:python", "skill:http-apis", "skill:llm-apis", "skill:prompt-design",
@@ -93,24 +123,77 @@ _OCCUPATIONS: list[dict] = [
                      "skill:ai-deployment", "skill:ai-safety", "skill:portfolio"],
      "specializations": ["skill:agents", "skill:ai-eval"],
      "external_ids": {"onet": "15-1299.00", "esco": ""}},
-    {"id": "occupation:ml-engineer", "name": "Machine Learning Engineer",
+    {"id": "occupation:ml-engineer", "domain": "tech-data", "name": "Machine Learning Engineer",
      "aliases": ["ml engineer"],
      "description": "Trains, evaluates and serves machine-learning models.",
      "core_skills": ["skill:python", "skill:databases", "skill:embeddings", "skill:ai-eval",
                      "skill:ai-deployment", "skill:portfolio"],
      "specializations": ["skill:rag-foundations"]},
-    {"id": "occupation:backend-developer", "name": "Backend Developer",
+    {"id": "occupation:backend-developer", "domain": "tech-data", "name": "Backend Developer",
      "aliases": ["backend engineer", "server developer"],
      "description": "Builds server-side services, APIs and data layers.",
      "core_skills": ["skill:python", "skill:git", "skill:testing", "skill:http-apis",
                      "skill:databases", "skill:packaging"],
      "specializations": ["skill:cloud-foundations"]},
-    {"id": "occupation:cloud-architect", "name": "Cloud Solutions Architect",
+    {"id": "occupation:cloud-architect", "domain": "tech-data", "name": "Cloud Solutions Architect",
      "aliases": ["solutions architect", "cloud engineer"],
      "description": "Designs secure, resilient and cost-effective cloud architectures.",
      "core_skills": ["skill:cloud-foundations", "skill:iam", "skill:encryption",
                      "skill:network-security", "skill:databases"],
      "specializations": []},
+    {"id": "occupation:data-analyst", "domain": "tech-data", "name": "Data Analyst",
+     "aliases": ["business analyst", "bi analyst", "analytics"],
+     "description": "Turns data into decisions with SQL, dashboards and reporting.",
+     "core_skills": ["skill:databases", "skill:python"], "specializations": []},
+    {"id": "occupation:data-scientist", "domain": "tech-data", "name": "Data Scientist",
+     "aliases": ["ml scientist", "statistician"],
+     "description": "Builds models and experiments to answer questions with data.",
+     "core_skills": ["skill:python", "skill:databases", "skill:embeddings"], "specializations": []},
+    # --- Universal input (Scout 2.0 Phase 1): occupations across domains. Non-tech
+    # roles are seeded for the typeahead/report; their learning paths stay sparse
+    # until Phase 3 adds cross-domain skills and signals.
+    {"id": "occupation:registered-nurse", "domain": "health", "name": "Registered Nurse",
+     "aliases": ["nurse", "rn", "staff nurse"],
+     "description": "Delivers and coordinates patient care in clinical settings."},
+    {"id": "occupation:nurse-practitioner", "domain": "health", "name": "Nurse Practitioner",
+     "aliases": ["advanced practice nurse", "np"],
+     "description": "Advanced-practice nurse who diagnoses and manages care."},
+    {"id": "occupation:accountant", "domain": "business-finance", "name": "Accountant",
+     "aliases": ["cpa", "bookkeeper", "auditor"],
+     "description": "Prepares and reviews financial records and reporting."},
+    {"id": "occupation:financial-analyst", "domain": "business-finance", "name": "Financial Analyst",
+     "aliases": ["finance analyst", "investment analyst", "fp&a"],
+     "description": "Analyzes financial data to guide business and investment decisions."},
+    {"id": "occupation:project-manager", "domain": "business-finance", "name": "Project Manager",
+     "aliases": ["program manager", "pm", "scrum master"],
+     "description": "Plans, coordinates and delivers projects to scope and schedule."},
+    {"id": "occupation:marketing-specialist", "domain": "marketing-creative", "name": "Marketing Specialist",
+     "aliases": ["marketer", "growth marketer", "digital marketer", "growth hacker"],
+     "description": "Plans and runs campaigns across channels to grow demand."},
+    {"id": "occupation:ux-designer", "domain": "marketing-creative", "name": "UX/Product Designer",
+     "aliases": ["ux designer", "ui designer", "product designer"],
+     "description": "Designs usable, useful product experiences."},
+    {"id": "occupation:content-writer", "domain": "marketing-creative", "name": "Content Writer",
+     "aliases": ["copywriter", "technical writer", "content strategist"],
+     "description": "Writes and edits content that informs and converts."},
+    {"id": "occupation:mechanical-engineer", "domain": "engineering-manufacturing",
+     "name": "Mechanical Engineer", "aliases": ["design engineer", "mechanical designer"],
+     "description": "Designs and analyzes mechanical systems and products."},
+    {"id": "occupation:electrician", "domain": "trades-logistics", "name": "Electrician",
+     "aliases": ["electrical technician", "sparky"],
+     "description": "Installs and maintains electrical systems."},
+    {"id": "occupation:teacher", "domain": "education", "name": "Teacher",
+     "aliases": ["educator", "instructor", "tutor"],
+     "description": "Plans and delivers instruction and assesses learning."},
+    {"id": "occupation:lawyer", "domain": "legal-public", "name": "Lawyer",
+     "aliases": ["attorney", "solicitor", "legal counsel"],
+     "description": "Advises on and represents legal matters."},
+    {"id": "occupation:research-scientist", "domain": "science-research", "name": "Research Scientist",
+     "aliases": ["researcher", "postdoc", "r&d scientist"],
+     "description": "Designs and runs studies to advance knowledge."},
+    {"id": "occupation:chef", "domain": "hospitality-service", "name": "Chef",
+     "aliases": ["cook", "culinary", "kitchen manager"],
+     "description": "Plans menus and leads food preparation."},
 ]
 
 
@@ -218,6 +301,15 @@ def search_skills(query: str, limit: int = 10) -> list[SkillNode]:
     return [s for _, s in scored[:limit]]
 
 
+def list_domains() -> list[dict]:
+    """The Scout 2.0 domains, each with a count of occupations currently seeded."""
+    counts: dict[str, int] = {}
+    for o in _occupation_index().values():
+        if o.domain:
+            counts[o.domain] = counts.get(o.domain, 0) + 1
+    return [{**d, "occupation_count": counts.get(d["id"], 0)} for d in DOMAINS]
+
+
 def all_occupations() -> list[Occupation]:
     return list(_occupation_index().values())
 
@@ -240,11 +332,14 @@ def resolve_occupation(name_or_id: str) -> Occupation | None:
     return None
 
 
-def search_occupations(query: str, limit: int = 10) -> list[Occupation]:
+def search_occupations(query: str, limit: int = 10,
+                       domain: str | None = None) -> list[Occupation]:
     q = (query or "").strip().lower()
+    pool = [o for o in _occupation_index().values()
+            if not domain or o.domain == domain]
     if not q:
-        return all_occupations()[:limit]
-    out = [o for o in _occupation_index().values()
+        return pool[:limit]
+    out = [o for o in pool
            if q in " ".join([o.name, o.description, " ".join(o.aliases)]).lower()]
     return out[:limit]
 

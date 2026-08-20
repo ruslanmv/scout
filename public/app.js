@@ -193,6 +193,7 @@ function olist(items) { return `<ol>${(items || []).map((s) => `<li>${esc(s)}</l
 
 function aiBadge(plan) {
   if (plan.source === 'ollabridge-cloud') return `<span class="ai-badge">✨ Live AI · ${esc(plan.provider)} · ${esc(plan.model)}</span>`;
+  if (plan.source === 'ai-batch') return `<span class="ai-badge">✨ Daily AI · from ${esc((plan.generated_at || '').slice(0, 10) || 'the latest dataset')}</span>`;
   return `<span class="ai-badge off">Built-in plan · ${esc(plan.provider || 'Scout templates')}</span>`;
 }
 
@@ -231,27 +232,57 @@ function renderAiError(panel, message) {
   document.getElementById('ai-regen')?.addEventListener('click', () => loadAiPlan());
 }
 
+// Serving order (Scout 2.0 §6.1): live AI → nightly AI-batch from the dataset →
+// hide. The batch plans let the static site show real AI output with no backend.
+function batchKey(topicId, country, city, goal, profile) {
+  const slug = v => ((v || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || '-');
+  return [topicId || 'topic', country || 'worldwide', city || 'any', goal || 'any', profile || 'any'].map(slug).join('__');
+}
+
+async function fetchBatchPlan(topicId, country, city, goal, profile) {
+  // Degrade up the location tree: exact cell → country → worldwide.
+  const tries = [[country, city], [country, null], ['Worldwide', null]];
+  for (const [c, ci] of tries) {
+    try {
+      const r = await fetch(`data/ai_plans/${batchKey(topicId, c, ci, goal, profile)}.json`);
+      if (r.ok) return await r.json();
+    } catch (e) { /* try the next fallback */ }
+  }
+  return null;
+}
+
 async function loadAiPlan() {
   const panel = $('ai-plan');
-  if (!panel || state.staticMode) { panel?.classList.add('hidden'); return; }
-  let status;
-  try { status = await fetchJSON('/api/v1/ai/status'); } catch { panel.classList.add('hidden'); return; }
-  if (!status.ai_enabled) { panel.classList.add('hidden'); return; }
-  const top = state.report?.recommendations?.[0] || state.local[0];
+  if (!panel) return;
+  const top = state.report?.recommendations?.[0] || state.local?.[0];
   if (!top || (!top.id && !top.name)) { panel.classList.add('hidden'); return; }
+  const loc = parseLocation($('location').value);
+  const goal = $('goal').value, profile = $('profile').value;
   panel.classList.remove('hidden');
-  renderAiLoading(panel, status);
-  try {
-    const loc = parseLocation($('location').value);
-    const plan = await fetchJSON('/api/v1/ai/plan', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ topic_id: top.id, topic: top, country: loc.country || 'Worldwide', city: loc.city || null, goal: $('goal').value, profile: $('profile').value }),
-    });
-    renderAiPlan(panel, plan);
-  } catch (e) {
-    renderAiError(panel, e.message || 'The AI engine could not be reached.');
+
+  // 1. live AI, when a backend + gateway are reachable
+  if (!state.staticMode) {
+    try {
+      const status = await fetchJSON('/api/v1/ai/status');
+      if (status.ai_enabled) {
+        renderAiLoading(panel, status);
+        const plan = await fetchJSON('/api/v1/ai/plan', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ topic_id: top.id, topic: top, country: loc.country || 'Worldwide', city: loc.city || null, goal, profile }),
+        });
+        renderAiPlan(panel, plan);
+        return;
+      }
+    } catch (e) { /* fall through to the nightly batch */ }
   }
+
+  // 2. nightly AI-batch plan pre-computed into the dataset (works statically)
+  renderAiLoading(panel, { provider: 'Daily AI', model: 'from the latest dataset' });
+  const batch = await fetchBatchPlan(top.id, loc.country || 'Worldwide', loc.city || null, goal, profile);
+  if (batch) { renderAiPlan(panel, batch); return; }
+
+  // 3. nothing to show
+  panel.classList.add('hidden');
 }
 
 async function load() {

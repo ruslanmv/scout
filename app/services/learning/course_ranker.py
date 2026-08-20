@@ -123,10 +123,27 @@ def score_resource(
     raw = sum(weights[k] * components.get(k, 0.0) for k in weights)
     score = round(raw * 100, 1)
 
+    # Preferred-provider nudge: if the learner asked for Udemy/Coursera/etc. and a
+    # real course from that provider covers the skill, give it a modest boost so
+    # it can surface — without inventing quality (its warnings still stand).
+    preferred = {p.strip().lower() for p in req.preferred_providers}
+    is_preferred = bool(preferred) and resource.provider.lower() in preferred
+    # A real, discovered course from a marketplace the learner explicitly asked
+    # for (Udemy/Coursera/…) becomes the primary for the skills it covers; the
+    # free official option remains as the stage's alternative. The boost applies
+    # only to discovered courses — the static catalog doesn't need it — so it
+    # surfaces the marketplace course the learner wanted rather than a docs page.
+    is_preferred_discovered = (
+        is_preferred and covered and resource.provenance.source_type == "web_search")
+    if is_preferred_discovered:
+        score = round(min(100.0, score + 16.0), 1)
+
     reasons: list[str] = []
     if covered:
         names = ", ".join(sorted(covered))
         reasons.append(f"Covers {len(covered)} needed skill(s): {names}.")
+    if is_preferred_discovered:
+        reasons.append(f"Real course from your preferred provider ({resource.provider}).")
     if resource.has_projects:
         reasons.append("Includes a practical project or lab.")
     if resource.has_assessments:

@@ -10,7 +10,7 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688.svg?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![AI: OllaBridge Cloud](https://img.shields.io/badge/AI-OllaBridge%20Cloud-15a05a.svg?style=flat-square)](https://github.com/ruslanmv/ollabridge-cloud)
 [![MCP](https://img.shields.io/badge/MCP-server-7c5cff.svg?style=flat-square)](scout_mcp/README.md)
-[![Tests](https://img.shields.io/badge/tests-61%20passing-2ea44f.svg?style=flat-square)](tests/)
+[![Tests](https://img.shields.io/badge/tests-86%20passing-2ea44f.svg?style=flat-square)](tests/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-0e7340.svg?style=flat-square)](LICENSE)
 
 **[Live demo](https://ruslanmv.com/scout/scout/)** · [Learning Navigator](#-learning-navigator--what-to-learn) · [My Learning](#-my-learning--follow--track) · [Quick start](#-quick-start) · [API](#-api-reference) · [MCP](#-mcp-server) · [Docs](#-documentation)
@@ -42,6 +42,40 @@ Run it locally in one line:
 ```bash
 uvicorn app.main:app --reload   # → http://127.0.0.1:8000/docs · /dashboard · /scout
 ```
+
+---
+
+<!-- SCOUT:TRENDS:START -->
+<!-- This section is regenerated every day by scripts/update_readme.py from the latest dataset. Do not edit by hand — changes here are overwritten. -->
+## 📈 Trending now — top skills & places
+
+> Auto-generated from Scout's latest signals · **updated 2026-08-04** · 6 tracked topics. Demand blends job postings, career value, growth, and ecosystem fit — [how it works](docs/DATA_SOURCES.md).
+
+### 🔥 Top skills to learn right now
+
+| # | Skill | Demand | Driven by |
+| :--: | --- | :--- | --- |
+| 1 | **Python** | `█████████░` 92 | AI Agents and Agentic Workflows +4 more |
+| 2 | **FastAPI** | `█████████░` 92 | AI Agents and Agentic Workflows +1 more |
+| 3 | **Docker** | `█████████░` 92 | AI Agents and Agentic Workflows +1 more |
+| 4 | **LangGraph** | `█████████░` 92 | AI Agents and Agentic Workflows |
+| 5 | **MCP** | `█████████░` 92 | AI Agents and Agentic Workflows |
+| 6 | **RAG** | `█████████░` 92 | AI Agents and Agentic Workflows |
+| 7 | **Vector databases** | `█████████░` 90 | Retrieval-Augmented Generation |
+| 8 | **Embeddings** | `█████████░` 90 | Retrieval-Augmented Generation |
+
+### 🌐 What's hot by place
+
+| Place | Leading topics |
+| --- | --- |
+| 🌍 Worldwide | AI Agents and Agentic Workflows · Retrieval-Augmented Generation · Cybersecurity Automation |
+| 🇺🇸 San Francisco | AI Agents and Agentic Workflows · LLM and Agent Evaluation · Cloud-Native AI Applications |
+| 🇮🇳 Bengaluru | Cloud-Native AI Applications · AI Agents and Agentic Workflows · Retrieval-Augmented Generation |
+| 🇮🇹 Milan | Cloud-Native AI Applications · AI Agents and Agentic Workflows · Retrieval-Augmented Generation |
+| 🇮🇹 Rome | AI Governance and Policy Automation · Retrieval-Augmented Generation · AI Agents and Agentic Workflows |
+
+> 🧭 Turn any of these into a verified, ordered learning path in the **[Learning Navigator](https://ruslanmv.com/scout/scout/learn/)**.
+<!-- SCOUT:TRENDS:END -->
 
 ---
 
@@ -173,7 +207,9 @@ SCOUT_AI_API_KEY   ·   SCOUT_LLM_API_KEY   ·   OB_TOKEN
 
 Set it in a local `.env` (gitignored) or a CI/deploy secret. **Never commit a key**; if one is ever exposed, rotate it in the OllaBridge dashboard.
 
-Scout is **fail‑safe**: if AI is off, unconfigured, or unreachable, every plan and path falls back to deterministic templates, so the API, the daily dataset, and the static site never break. The `source` field (`ollabridge-cloud` / `deterministic`) tells you which engine produced a result. Operators can switch provider/model, paste a key, and run a live **Test connection** from the admin page (`/dashboard/admin.html`, gated by `SCOUT_ADMIN_KEY`).
+**Serving order (Scout 2.0):** ① **live AI** (backend + gateway reachable) → ② **nightly AI‑batch** pre‑computed into the dataset → ③ **deterministic template** (true last resort). A nightly job (`scripts/narrate_batch.py`) narrates a plan per (location × goal × profile) cell into `datasets/ai_plans/`, so the **static GitHub Pages site serves real AI output from the latest dataset — no live backend, no exposed key**. Only cells whose ranking changed are re‑narrated (cost‑controlled by a content hash). See [docs/SCOUT_2.0_PLAN.md](docs/SCOUT_2.0_PLAN.md).
+
+Scout is **fail‑safe**: if AI is off, unconfigured, or unreachable, every plan and path falls back to deterministic templates, so the API, the daily dataset, and the static site never break. The `source` field (`ollabridge-cloud` / `ai-batch` / `deterministic`) tells you which engine produced a result. Operators can switch provider/model, paste a key, and run a live **Test connection** from the admin page (`/dashboard/admin.html`, gated by `SCOUT_ADMIN_KEY`).
 
 **Reference:** [docs/AI_AND_ADMIN.md](docs/AI_AND_ADMIN.md)
 
