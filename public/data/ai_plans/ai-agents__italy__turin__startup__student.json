@@ -1,0 +1,63 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:22:34.165848+00:00",
+  "headline": "Build AI agents in Turin's startup scene and turn your student project into a launchpad for your own company.",
+  "why_now": "GitHub activity (96) and Hugging Face activity (92) show explosive open-source momentum around agent frameworks, while job demand (85) and career value (95) signal employers are actively seeking agentic skills. Local relevance (82) in Turin means early-mover advantage in a growing EU tech hub, and project potential (96) indicates strong investor interest in agentic startups.",
+  "study": [
+    "Master LangChain and LangGraph by building a multi-step agent that uses tools and APIs",
+    "Complete Hugging Face courses on transformer agents and tool-use models",
+    "Study real-world agent architectures from GitHub trending repos (AutoGPT, BabyAGI, LangGraph examples)",
+    "Learn prompt engineering for agents including chain-of-thought and ReAct prompting",
+    "Build a local LLM agent using Ollama or Hugging Face transformers for cost-effective prototyping"
+  ],
+  "build": {
+    "title": "StartupScout Agent",
+    "description": "An AI agent that autonomously researches startup ideas, validates markets using web APIs, generates competitor analyses, and produces pitch decks - demonstrating real agentic workflow value that could bootstrap your own startup.",
+    "stack": [
+      "LangGraph",
+      "OpenAI API",
+      "SerpAPI",
+      "Hugging Face Transformers",
+      "Streamlit",
+      "GitHub Actions"
+    ],
+    "deliverables": [
+      "GitHub repo with modular agent code",
+      "Live demo showing multi-step task completion",
+      "Blog post explaining architecture and startup validation use case"
+    ]
+  },
+  "publish": [
+    "Write a detailed technical blog post and share on Hacker News and Reddit r/MachineLearning",
+    "Create a 3-minute demo video and post on LinkedIn targeting Turin startup community",
+    "Submit to Hugging Face Spaces and GitHub Trending under AI agents category",
+    "Present at local Turin tech meetups or university AI clubs to build local network"
+  ],
+  "skills": [
+    "Agentic workflow design",
+    "LLM tool integration",
+    "Multi-step task planning",
+    "Prompt engineering for agents",
+    "API orchestration",
+    "Startup market validation",
+    "Full-stack AI development",
+    "Technical writing and demo creation"
+  ],
+  "risks": [
+    "Agent reliability issues - models may fail on complex multi-step tasks requiring robust error handling",
+    "High API costs if not optimized - need to balance quality with budget constraints as a student",
+    "Rapid framework evolution - LangChain/LangGraph APIs change frequently, requiring continuous learning"
+  ],
+  "confidence": "This recommendation is very solid given the strong signal convergence across GitHub, Hugging Face, and job markets, with clear local opportunity in Turin's startup ecosystem.",
+  "content_hash": "3db75ea6d26ef7ef",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "startup",
+    "profile": "student"
+  }
+}

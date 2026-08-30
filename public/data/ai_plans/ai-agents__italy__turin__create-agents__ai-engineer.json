@@ -1,0 +1,63 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:20:52.837336+00:00",
+  "headline": "Turin is becoming a European AI hub—build the agentic workflows that Italian industry needs now and position yourself at the center of it.",
+  "why_now": "GitHub activity at 96 and Hugging Face activity at 92 show developers are actively building AI agents, while job demand at 85 signals companies are already hiring for these skills. The 96 project potential score means there's real room to create something that stands out before the market saturates.",
+  "study": [
+    "Master LangChain or LangGraph fundamentals by building a simple multi-step agent that calls at least two tools (e.g., web search + calculator)",
+    "Learn prompt engineering for agentic loops—study how ReAct, Plan-and-Execute, and Toolformer patterns differ in real benchmarks",
+    "Deepen into model routing and context management using libraries like LiteLLM or LlamaIndex to handle multi-API workflows efficiently",
+    "Study production concerns: token budgeting, error recovery strategies, and latency optimization for agent pipelines",
+    "Follow agentic workflow papers on arXiv weekly and reproduce one small experiment to understand evaluation methodology"
+  ],
+  "build": {
+    "title": "TurinMeet Agent—multi-source city event planner",
+    "description": "An agentic workflow that queries local event APIs, filters by user preferences, books time slots, and sends summaries via email or WhatsApp. Demonstrates tool orchestration, state management, and real-world utility—exactly what Italian SMEs need to automate customer-facing tasks.",
+    "stack": [
+      "LangGraph",
+      "FastAPI",
+      "OpenAI API",
+      "Twilio API",
+      "PostgreSQL",
+      "Vercel"
+    ],
+    "deliverables": [
+      "public GitHub repo with clean architecture",
+      "live demo with a short video walkthrough",
+      "technical write-up on dev.to or personal blog about the agentic design choices"
+    ]
+  },
+  "publish": [
+    "Push the repo and add it to GitHub topics like 'langgraph', 'ai-agent', and 'turin' to surface in search",
+    "Post a 3-minute demo video on LinkedIn tagged with #AI #AgenticAI #Turin, mentioning the local job market gap it addresses",
+    "Submit a short talk proposal to local meetups like Turin AI Meetup or Python Torino about building production-ready agents",
+    "Contribute a relevant insight or bug fix to a popular open-source agent framework on GitHub to build credibility in the ecosystem"
+  ],
+  "skills": [
+    "LangGraph / LangChain for orchestrating agentic pipelines",
+    "Tool-use API design and integration",
+    "FastAPI for building agent serving endpoints",
+    "Multi-step reasoning loop implementation",
+    "Error handling and retry strategies in AI pipelines",
+    "Prompt engineering for autonomous agents",
+    "Vector database retrieval for context augmentation",
+    "End-to-end agent deployment and monitoring"
+  ],
+  "risks": [
+    "API costs spiral quickly when agents loop unexpectedly—implement strict token budgets and test with mock responses first",
+    "The agent framework landscape (LangChain vs CrewAI vs AutoGen) is still unstable; choosing the wrong one means a rewrite within months",
+    "Portfolio projects that just chain LLMs without clear business logic are easily dismissed—your project needs a defensible real-world use case"
+  ],
+  "confidence": "The 96 project potential combined with 95 career value and strong community signals make this a high-confidence recommendation, provided you ship a working demo within 6 weeks.",
+  "content_hash": "68b426c8578c44cf",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "create_agents",
+    "profile": "ai_engineer"
+  }
+}

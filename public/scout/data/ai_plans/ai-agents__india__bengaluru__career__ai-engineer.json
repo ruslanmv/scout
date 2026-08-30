@@ -1,0 +1,42 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:37:51.193201+00:00",
+  "headline": "Career development: Leveraging AI and AGents in the Tech Industry",
+  "why_now": "Real trends in AI and AGents are driving the tech industry to improve collaboration and automation. By focusing on these areas, you can enhance your career prospects and contribute to the growth of the tech industry.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Creating a Personal AI Agent and AGents Portfolio",
+    "description": "This project will help you understand the current trends in AI and AGents, identify areas for improvement, and showcase your skills. You can use tools/libraries like Hugging Face and GitHub to build your AI agent.",
+    "stack": [
+      "tools/libraries"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "None"
+  ],
+  "confidence": "This recommendation is solid. By focusing on real trends in AI and AGents, you can leverage these areas to enhance your career prospects and contribute to the growth of the tech industry.",
+  "content_hash": "7c5ac7bfa405c025",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "career",
+    "profile": "ai_engineer"
+  }
+}

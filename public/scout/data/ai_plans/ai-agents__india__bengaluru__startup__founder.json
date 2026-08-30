@@ -1,0 +1,60 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:45:08.256380+00:00",
+  "headline": "Bengaluru's developer ecosystem is perfectly positioned for AI agents—your first agentic product could ride a wave of 96/100 project potential straight into a funded startup.",
+  "why_now": "GitHub activity and growth scores above 94 signal an accelerating technical frontier, while news mentions at 88 confirm mainstream attention is peaking. With job demand at 85 and community activity climbing, this is the narrow window where early builders capture outsized market positioning before saturation hits.",
+  "study": [
+    "Master LangChain or AutoGen by building a simple single-agent that completes a real task (file processing, API calls) end-to-end",
+    "Study multi-agent orchestration patterns—how agents delegate, share context, and resolve conflicts—usingcrewAI or Microsoft Semantic Kernel",
+    "Learn tool-use fundamentals: function calling, API integration, and retrieval-augmented generation with real data sources",
+    "Explore agentic evaluation frameworks—how to benchmark reliability, cost, and task completion rates across agent configurations",
+    "Dive into deployment patterns: serverless agent hosting, token cost optimization, and production-grade error handling"
+  ],
+  "build": {
+    "title": "TaskMind—An Autonomous Multi-Agent Project Manager",
+    "description": "Agents that break down a product spec into tasks, assign them to specialized sub-agents, call real APIs (GitHub, Slack, Linear), and report completion with audit trails. Demonstrates true end-to-end task completion without human intervention—exactly what investors want to see for agentic infrastructure.",
+    "stack": [
+      "LangChain",
+      "AutoGen",
+      "PostgreSQL",
+      "FastAPI",
+      "React"
+    ],
+    "deliverables": [
+      "github.com/yourname/taskmind repo with clean architecture",
+      "live demo URL showing agents negotiating and completing a sample sprint",
+      "technical write-up on agent orchestration decisions and failure modes"
+    ]
+  },
+  "publish": [
+    "Open-source the core framework and post a detailed README to Hacker News and X with a 90-second demo video",
+    "Speak at your local Bengaluru AI meetup or present at a conference like AI Engineer Summit—the community activity score of 84 shows strong appetite",
+    "Submit the write-up to Towards Data Science or TheSequence newsletter, targeting the 88 news-mentions audience",
+    "Angel outreach: target 5-7 Bengaluru founders who recently raised for AI infrastructure—frame TaskMind as infrastructure, not a toy"
+  ],
+  "skills": [
+    "Python",
+    "FastAPI",
+    "LangGraph",
+    "MCP",
+    "RAG",
+    "Docker"
+  ],
+  "risks": [
+    "Frameworks change quickly",
+    "Production reliability requires evaluation",
+    "Autonomy needs governance"
+  ],
+  "confidence": "High confidence, based on GitHub, Hugging Face, News/RSS.",
+  "content_hash": "5006d156d5b322a0",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "startup",
+    "profile": "founder"
+  }
+}

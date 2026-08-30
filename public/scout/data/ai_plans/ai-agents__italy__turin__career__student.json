@@ -1,0 +1,60 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:17:21.627636+00:00",
+  "headline": "Turin students are building the next generation of AI agents that turn complex workflows into seamless experiences.",
+  "why_now": "With 96/100 GitHub activity and 95/100 career value, AI agents are exploding in code and job demand. Turin's 82/100 local relevance means Italian tech hubs are already investing, giving you a first-mover edge in a market with 85/100 job demand and 96/100 project potential.",
+  "study": [
+    "Complete the 'Build AI Agents with LangGraph' course on LangChain Academy (2 weeks)",
+    "Build 3 tool-calling agents using OpenAI, Claude, and Hugging Face APIs to understand provider differences",
+    "Study production patterns: error handling, state management, and rate limiting from top GitHub repos like agentic/workflows",
+    "Join the Turin AI Meetup and attend at least 2 agent-focused sessions to network locally"
+  ],
+  "build": {
+    "title": "Turin Transit Assistant Agent",
+    "description": "A multi-step agent that plans door-to-door trips in Turin using real-time GTFS feeds, bike-sharing APIs, and restaurant reservations - it orchestrates 5+ APIs to solve a genuinely Italian urban mobility problem that tourists and locals both face.",
+    "stack": [
+      "LangGraph",
+      "OpenAI GPT-4o",
+      "GTFS Italy",
+      "Turin Bike Sharing API",
+      "Resas.it Restaurant API",
+      "Streamlit for demo"
+    ],
+    "deliverables": [
+      "github.com/yourname/turin-agent",
+      "streamlit.io/apps/turin-transit-agent",
+      "blog post on local Turin tech forums"
+    ]
+  },
+  "publish": [
+    "Write a detailed walkthrough on Medium titled 'Building an AI Agent for Turin's Complex Transit Ecosystem' with code snippets",
+    "Submit to the Turin AI Monthly Newsletter and Italian tech Slack communities (#ai-agents channel)",
+    "Present at Turin's 'AI in Italy' meetup with a live demo and recorded video for LinkedIn",
+    "Create a Twitter thread showing before/after using the agent vs manual planning, tag @LangChain and @HuggingFace"
+  ],
+  "skills": [
+    "Agentic workflow design",
+    "Multi-API orchestration",
+    "State management in LangGraph",
+    "Italian urban data integration",
+    "Production error handling",
+    "Technical communication for Italian audiences"
+  ],
+  "risks": [
+    "Over-engineering simple solutions - start with 2 APIs before scaling to 5",
+    "Ignoring Italian data privacy laws (GDPR) when handling user trip data",
+    "Focusing on tech over user experience - test with actual Turin residents"
+  ],
+  "confidence": "This path is exceptionally solid: 96% GitHub momentum meets 95% career value, and Turin's emerging AI scene gives you local visibility that remote learners can't match.",
+  "content_hash": "9891f4b777857a2a",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "career",
+    "profile": "student"
+  }
+}

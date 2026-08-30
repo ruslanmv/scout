@@ -1,0 +1,64 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:38:04.317111+00:00",
+  "headline": "Bengaluru's AI agent scene is exploding — your student years are the perfect window to ride it.",
+  "why_now": "With 96 GitHub activity and 96 project potential, AI agent frameworks like LangGraph, CrewAI, and AutoGen are seeing daily commits and forks, and Bengaluru's startup ecosystem is actively hiring for agent builders (job_demand 85). News mentions at 88 confirm mainstream awareness, meaning employers will soon expect portfolio-level agent work from new grads. Getting in now, while the tooling is still stabilizing, gives you a 6–12 month head start on peers.",
+  "study": [
+    "Spend 1 week on the LangChain + LangGraph docs, then build the ReAct agent tutorial end-to-end.",
+    "Read the CrewAI and AutoGen GitHub READMEs and replicate their quickstart examples to compare orchestration styles.",
+    "Take Hugging Face's free 'Agents in Hugging Face smol-course' and fine-tune one agent prompt against a real benchmark.",
+    "Study 3 production agent repos on GitHub (filter by Bengaluru authors or Indian contributors) and write notes on their architecture choices.",
+    "Read 2 recent arXiv papers on tool-using LLMs (e.g., ToolLLM, Gorilla) to understand the research frontier."
+  ],
+  "build": {
+    "title": "BangaloreBusConcierge — a multi-agent Bengaluru bus route planner",
+    "description": "An agentic app where one agent parses BMTC route queries, a second agent calls live transit APIs (or a scraped mock), and a third agent formats answers in Kannada/English/Hinglish. It demonstrates planning, tool use, multi-step reasoning, and API orchestration — exactly what Bengaluru startups like Sarvam and Krutrim are hiring for.",
+    "stack": [
+      "LangGraph or CrewAI",
+      "OpenAI/Gemini API",
+      "FastAPI",
+      "BMTC open data or mock REST API",
+      "Streamlit for UI",
+      "LangSmith for tracing"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README and architecture diagram",
+      "Live Streamlit demo URL",
+      "Medium/Hashnode write-up explaining the agent graph design choices",
+      "Short Loom/YouTube demo video (2–3 min)"
+    ]
+  },
+  "publish": [
+    "Post the project on r/LocalLLaMA and the LangChain Discord with a clear 'Bengaluru-focused use case' hook.",
+    "Submit a lightning talk proposal to Bengaluru meetups: PyBangalore, BlrDevops, or the GDG Bengaluru AI chapter.",
+    "Share the write-up on LinkedIn tagging recruiters at Bengaluru agent startups (Sarvam, Yellow.ai, Observe.AI, Krutrim) and your college placement cell.",
+    "Open-source it with a permissive license and add it to your resume as a featured project under a dedicated 'AI Agents' section."
+  ],
+  "skills": [
+    "LLM agent orchestration (LangGraph/CrewAI/AutoGen)",
+    "Tool-use and API integration patterns",
+    "Prompt engineering and evaluation",
+    "Python backend development (FastAPI)",
+    "Multi-agent system design",
+    "Observability and tracing (LangSmith)",
+    "Rapid prototyping with LLMs",
+    "Technical writing and demo storytelling"
+  ],
+  "risks": [
+    "Agent frameworks are evolving weekly — code you write today may break on library updates within 2–3 months, so pin versions and document assumptions.",
+    "API costs for repeated demos can surprise you; cap spend with usage alerts or switch to Gemini Flash / local Ollama models for iteration.",
+    "The 'agentic' label is hyped — some recruiters may dismiss it as prompt-wrapper work, so emphasize the system design and tool integration, not just the LLM call."
+  ],
+  "confidence": "High — multiple independent signals (GitHub, HF, news, job demand) all point the same direction, and Bengaluru is a concrete hiring market you can directly target.",
+  "content_hash": "b57ab8598a1a4d53",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "career",
+    "profile": "student"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:43:19.146757+00:00",
+  "headline": "Bengaluru's enterprise AI moment is agent-shaped — and your next move is to build, not just study.",
+  "why_now": "GitHub activity around AI agent frameworks has surged (96/100) and enterprise hiring demand sits at 85, meaning Bengaluru product companies are actively converting agent prototypes into paid features. With Hugging Face activity at 92 and news momentum near its peak, the window to position yourself as an in-house agent builder — rather than a late adopter — is the next 6–9 months. Local relevance (82) confirms Indian enterprise teams are already deploying these workflows against real compliance, support, and ops problems.",
+  "study": [
+    "Spend 3 days dissecting the Reuse / LangGraph and CrewAI repos on GitHub — read the orchestration code, not just the READMEs.",
+    "Complete one end-to-end tutorial using the OpenAI Agents SDK or Anthropic tool-use API against a real API (e.g., internal ticket system or Notion).",
+    "Read the AWS Bedrock Agents and Google Vertex AI Agent Builder docs to understand the enterprise deployment patterns your Bangalore peers will use.",
+    "Study evaluation: pick one agent benchmark (e.g., SWE-bench, tau-bench) and replicate a small eval harness locally.",
+    "Watch two talks from Bengaluru AI meetups or India-themed conferences (NASSCOM, Fifth Summit) on production agent failures."
+  ],
+  "build": {
+    "title": "Enterprise Contract-Review Agent for Indian SaaS Vendors",
+    "description": "A multi-agent system that ingests vendor SaaS contracts (PDF), extracts clauses, flags DPDP Act 2023 and RBI compliance risks, drafts redlines, and posts a summary to Slack/Teams. It demonstrates planning, tool use, retrieval, and human-in-the-loop approval — exactly the pattern enterprise buyers in Bengaluru want to deploy in legal, finance, and procurement teams.",
+    "stack": [
+      "LangGraph",
+      "Claude or GPT-4o via tool-use",
+      "Qdrant or pgvector for RAG",
+      "FastAPI",
+      "Next.js dashboard",
+      "Docker"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README and architecture diagram",
+      "5-minute Loom demo showing the agent reviewing a real contract end-to-end",
+      "Technical write-up on LinkedIn or Hashnode covering design choices and eval results",
+      "Hugging Face Space or hosted demo URL for recruiters to click"
+    ]
+  },
+  "publish": [
+    "Post the project repo to r/LocalLLaMA, r/MachineLearning, and the Bengaluru AI Builders Slack/Discord with a concise build-in-public thread.",
+    "Submit a 10-minute talk proposal to Bangalore AI Meetup, PyData Bengaluru, or Hasgeek — even an accepted lightning slot beats passive sharing.",
+    "Publish a LinkedIn carousel walking through the architecture, tagging 5–10 relevant Bengaluru AI leads and the framework maintainers.",
+    "Send a personal note (not a blast) to 3 senior engineers or PMs at Bengaluru enterprise-AI startups (Observe.AI, Yellow.ai, Krutrim, Sarvam) referencing your repo."
+  ],
+  "skills": [
+    "Multi-agent orchestration (LangGraph / CrewAI)",
+    "Tool-use and function-calling design",
+    "Retrieval-Augmented Generation at production scale",
+    "Enterprise compliance reasoning (DPDP, RBI, GDPR)",
+    "FastAPI + vector DB integration",
+    "Agent evaluation and reliability testing",
+    "Human-in-the-loop workflow design",
+    "Technical writing and developer evangelism"
+  ],
+  "risks": [
+    "Framework churn: LangGraph, CrewAI, and AutoGen are all changing fast — pinning versions and isolating business logic behind an interface prevents painful rewrites in 3 months.",
+    "Over-promising autonomy: enterprise buyers in regulated industries (BFSI, healthcare) will distrust fully autonomous agents; design for approval gates or the demo collapses in a real sales call.",
+    "Eval blindness: agents that look magical in a 30-second demo can silently fail on long-horizon tasks — without a proper eval harness, you cannot honestly claim production readiness."
+  ],
+  "confidence": "High — the signals are strong, locally relevant, and aligned with a buildable 4–6 week project that directly maps to enterprise hiring demand in Bengaluru.",
+  "content_hash": "fca1d52d5c8643f9",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "create_agents",
+    "profile": "enterprise"
+  }
+}

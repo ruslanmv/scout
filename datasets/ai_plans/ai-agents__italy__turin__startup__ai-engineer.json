@@ -1,0 +1,65 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:22:20.565155+00:00",
+  "headline": "From Turin to the frontier: ship an agentic workflow product and own the next wave of AI startups.",
+  "why_now": "GitHub activity (96), project potential (96), and career value (95) signal that agentic systems are the most actionable frontier for an AI engineer right now. Job demand (85) and news momentum (88) confirm companies are hiring for these skills, while Turin's growing AI ecosystem gives you a localized launchpad before the space saturates. The window is open for builders who can move from demos to reliable, multi-step products.",
+  "study": [
+    "Master the core agent loop: study Anthropic and LangChain docs on planning, tool use, memory, and reflection patterns over the first two weeks.",
+    "Reproduce two reference agents end-to-end (e.g., a research agent with web search and a coding agent with file/shell tools) and instrument every step with tracing.",
+    "Learn evaluation: implement offline evals on multi-step trajectories using LangSmith or Langfuse to measure success rate, cost, and latency.",
+    "Study production concerns: error recovery, human-in-the-loop, cost ceilings, and prompt-injection defenses in agentic systems.",
+    "Explore the Turin AI meetup and Politecnico di Torino networks to find collaborators and early users."
+  ],
+  "build": {
+    "title": "TurinConcierge — a multi-agent travel and local services planner for Turin",
+    "description": "An agent that takes a natural-language request like 'plan a Saturday in Turin for two foodies under €80' and orchestrates sub-agents (events, restaurants, transit, booking) using live APIs, persists user memory, and returns a bookable itinerary. It demonstrates planning, tool calling, parallel execution, fallback handling, and a clean UX — exactly the pattern VC-backed agent startups ship.",
+    "stack": [
+      "LangGraph or CrewAI",
+      "OpenAI or Anthropic APIs",
+      "FastAPI backend",
+      "Next.js or Streamlit frontend",
+      "Postgres + pgvector for memory",
+      "LangSmith or Langfuse for tracing",
+      "Tavily or SerpAPI for web search",
+      "Stripe for booking simulation"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and eval results",
+      "Live demo deployed on Vercel or Railway with a short Loom walkthrough",
+      "Technical write-up on Medium or your blog comparing agent frameworks and failure modes"
+    ]
+  },
+  "publish": [
+    "Post the demo on Hacker News (Show HN) and r/LocalLLama with a focused technical hook",
+    "Give a 15-minute lightning talk at a Turin AI meetup or PoliTo student group to recruit beta users and co-founders",
+    "Publish the write-up on LinkedIn and X with a short thread showing a real agent trace solving a real Turin query",
+    "Open-source the framework layer and submit to the Agents category on Hugging Face Spaces for discoverability"
+  ],
+  "skills": [
+    "Agentic system design and orchestration",
+    "Tool use, API integration, and function calling",
+    "Multi-agent collaboration patterns",
+    "Evaluation, tracing, and reliability engineering",
+    "Prompt engineering and structured outputs",
+    "Full-stack AI product development",
+    "Vector search and persistent memory",
+    "Cost and latency optimization for LLM workflows"
+  ],
+  "risks": [
+    "Agent reliability is still brittle: multi-step systems fail unpredictably and need robust evals before any real customer use.",
+    "API and inference costs can spike quickly with autonomous loops; budget ceilings and caching are essential or the unit economics break.",
+    "The space is crowded and moving fast — frameworks change monthly, so focus on durable patterns (planning, memory, evals) rather than specific libraries."
+  ],
+  "confidence": "This recommendation is solid: the signals are uniformly high across activity, demand, and project potential, and Turin offers a concrete, underserved niche to anchor your agent startup.",
+  "content_hash": "c023e0d785d38de4",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "startup",
+    "profile": "ai_engineer"
+  }
+}

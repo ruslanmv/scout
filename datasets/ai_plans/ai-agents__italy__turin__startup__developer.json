@@ -1,0 +1,66 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:22:11.106419+00:00",
+  "headline": "From Turin to autonomous: ship an AI agent startup before the agentic wave flattens.",
+  "why_now": "GitHub and Hugging Face are saturated with agent frameworks right now (activity 96 and 92), and Turin has the engineering talent and Politecnico network to compete globally. Job demand at 85 means companies are actively hiring agent builders, so early credibility converts fast. The local ecosystem around Industry 5.0 and manufacturing in Piedmont is begging for agentic automation, giving you a real first customer.",
+  "study": [
+    "Read Anthropic's 'Building Effective Agents' and OpenAI's function-calling docs end-to-end; build the reference patterns in Python.",
+    "Master one orchestration framework deeply: LangGraph or CrewAI. Replicate 3 reference architectures (researcher, coder, multi-agent debate) from their repos.",
+    "Study the ReAct, Plan-and-Execute, and Reflexion papers; implement each from scratch in 200 lines of Python without a framework to truly understand tool loops and memory.",
+    "Deep-dive on evaluation: build an eval harness using Promptfoo or your own, measuring tool-call accuracy and task completion on a real benchmark like SWE-bench-lite.",
+    "Attend at least one meetup or watch recordings from Turin's AI scene (Turin.AI, POLITO AI student group) and one global agent conference (e.g., AI Engineer World's Fair talks) to stay grounded."
+  ],
+  "build": {
+    "title": "AgentFactory Piemonte: an agent that monitors Turin SMB manufacturing KPIs and autonomously drafts optimization proposals",
+    "description": "A multi-agent system where a Planner agent ingests CSV/ERP exports from local manufacturers, a Researcher agent queries a RAG index of Italian regulations and supplier catalogs, and a Coder agent produces a concrete proposal (cost reduction, supplier swap, energy optimization). It runs on a schedule, logs every tool call, and posts summaries to Slack/email. It impresses because it targets a real, underserved Italian vertical, shows production-grade agent design with human-in-the-loop approval, and is cheap to demo.",
+    "stack": [
+      "LangGraph",
+      "OpenAI or Anthropic API",
+      "Qdrant or pgvector for RAG",
+      "FastAPI",
+      "SQLite",
+      "Docker",
+      "LangSmith or Helicone for tracing",
+      "Next.js for a simple dashboard"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and reproducible setup",
+      "Live demo: recorded Loom walking through a real Turin SME scenario",
+      "Technical write-up on your blog or dev.to explaining agent design choices and eval results",
+      "Short Italian-language LinkedIn post and English tweet thread linking to the repo"
+    ]
+  },
+  "publish": [
+    "Submit a talk abstract to Turin.AI, POLITO, and Milano JS/AI meetups; offer a 20-min build-in-public walkthrough.",
+    "Write a 'How I built an agent for a Turin factory' post on LinkedIn and tag Politecnico alumni, local Chamber of Commerce, and industry accounts.",
+    "Open-source it with a permissive license and post on Hacker News Show HN, Reddit r/LocalLLaMA and r/ItalyInformatica, and Product Hunt.",
+    "Reach out directly to 10 Piedmont-based SMEs and 3 accelerator programs (Tecnologie d'Impresa, I3P, B Heroes) with a 2-minute demo video."
+  ],
+  "skills": [
+    "Multi-agent system design and orchestration",
+    "Tool calling, function schemas, and API integration",
+    "RAG architecture and vector search",
+    "Agent evaluation and observability",
+    "Production deployment with tracing and guardrails",
+    "Italian/European manufacturing domain knowledge",
+    "Technical writing and public speaking",
+    "Rapid prototyping for a real customer vertical"
+  ],
+  "risks": [
+    "Agent frameworks are moving targets; choosing the wrong one now means rewrites in 6 months, so keep the core logic framework-agnostic.",
+    "Hallucinated tool calls can silently corrupt data for a real business; without solid evals and human-in-the-loop you risk harming a paying customer and your reputation.",
+    "The local SME angle is great for differentiation but sales cycles in Italy are slow; budget 3-6 months before the first paid pilot and don't quit your income too early."
+  ],
+  "confidence": "Very high: the signals show exceptional developer-side momentum, strong project potential, and a clear local wedge that few global competitors are targeting.",
+  "content_hash": "29048bd2f1ea37c3",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "startup",
+    "profile": "developer"
+  }
+}

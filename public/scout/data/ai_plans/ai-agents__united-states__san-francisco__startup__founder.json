@@ -1,0 +1,64 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:34:10.518373+00:00",
+  "headline": "Ship an AI agent that automates a real San Francisco startup workflow before your next investor meeting.",
+  "why_now": "With GitHub activity at 96, project potential at 96, and career value at 95, AI agents are moving from research demos to production tools that Bay Area founders are actively shipping. Job demand at 85 combined with strong local relevance in San Francisco means early builders here will define the category, not follow it.",
+  "study": [
+    "Build a deep, hands-on understanding of agent orchestration frameworks by implementing the LangChain and LangGraph documentation tutorials end-to-end, then replicate the same flows in the CrewAI and AutoGen quickstarts so you can compare architectures concretely",
+    "Read the ReAct, MRKL, and Toolformer papers plus Anthropic and OpenAI function-calling docs to learn the prompt patterns that make tool-using agents reliable",
+    "Study two real agent products like Cognition Devin and Multi-On, signing up for trials and reverse-engineering their UX, tool selection, and error recovery",
+    "Take the DeepLearning.AI 'AI Agents in LangGraph' short course and complete every assignment to get a structured foundation",
+    "Join the LangChain Discord, r/LocalLLaMA, and the AI Engineer Summit Slack to learn what production pitfalls people are hitting this month"
+  ],
+  "build": {
+    "title": "SF Startup Due Diligence Agent",
+    "description": "A multi-agent system that ingests a YC application PDF plus a startup's website, plans a research strategy, calls the Crunchbase API and a web search tool, then produces a scored due diligence report covering team, market, traction, and red flags. Built for solo investors and angels in SF who review dozens of deals per week.",
+    "stack": [
+      "LangGraph",
+      "OpenAI Function Calling",
+      "Firecrawl for web scraping",
+      "Crunchbase API",
+      "Next.js",
+      "Supabase",
+      "Tavily search API"
+    ],
+    "deliverables": [
+      "public GitHub repo with clean README and architecture diagram",
+      "live Streamlit or Next.js demo deployable on Vercel",
+      "5-minute Loom walkthrough and a 1,500-word technical write-up on agent design choices"
+    ]
+  },
+  "publish": [
+    "Demo the agent at the next SF AI Engineer Meetup or LangChain SF hackathon and post the recording on X and LinkedIn",
+    "Write a launch post for the LangChain community newsletter and submit to the 'AI Agent' topic on Hugging Face Spaces",
+    "Cold DM 10 SF-based angels and pre-seed VCs with a personalized example report on one of their portfolio companies",
+    "Publish a short case study on Medium and cross-post to Hacker News Show HN with the live demo URL"
+  ],
+  "skills": [
+    "Multi-agent system design and orchestration",
+    "Tool-use and function-calling implementation",
+    "LLM prompt engineering and evaluation",
+    "API integration and external data pipelines",
+    "Rapid prototyping for founder use cases",
+    "Technical writing and demo storytelling",
+    "Production deployment of AI products",
+    "User research with SF startup operators"
+  ],
+  "risks": [
+    "The agent frameworks are evolving weekly, so the stack you learn today may be rewritten in three months, making depth in the underlying patterns more valuable than framework loyalty",
+    "Building yet another agent demo puts you in a crowded category, so traction depends on solving one painful workflow exceptionally well rather than being broadly capable",
+    "San Francisco's agent scene moves fast, and copycats will clone your idea within weeks, so speed from demo to paying users matters more than polish"
+  ],
+  "confidence": "Very high: the signals are uniformly strong across code activity, model ecosystem, jobs, and local relevance, and the playbook for shipping a narrow agent product is well-trodden and repeatable for a technical founder.",
+  "content_hash": "246c2d36b6f81d60",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "startup",
+    "profile": "founder"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:45:15.233120+00:00",
+  "headline": "Bengaluru is fast becoming the AI-agent capital of India — and your enterprise background is the unfair advantage most agent builders lack.",
+  "why_now": "With GitHub and Hugging Face activity above 92, agentic workflows are the most-shipped category of the year, not a fringe experiment. Job demand at 85 confirms Indian employers and startups are actively hiring for it. Combined with Bengaluru's dense ecosystem of enterprise SaaS, fintech, and GCC R&D centers, the timing is right to build an agent product that speaks the language of B2B buyers.",
+  "study": [
+    "Read and rebuild examples from the LangChain, LangGraph, and CrewAI repos to internalize the planner–tool–memory loop.",
+    "Spend a weekend on the Model Context Protocol (MCP) spec and build a small tool server so you understand the standard every serious agent stack is converging on.",
+    "Master evaluation: study patterns from Braintrust, LangSmith, and Phoenix to instrument traces, costs, and success rates — this is what separates a demo from a product.",
+    "Take one structured course on multi-agent orchestration (e.g., DeepLearning.AI's agent track) and reproduce each assignment on real enterprise data.",
+    "Read 5 recent papers or blog posts on agent reliability, guardrails, and human-in-the-loop patterns from Anthropic, OpenAI, and Microsoft Research."
+  ],
+  "build": {
+    "title": "An Enterprise Sales-Co-Pilot Agent for Indian BFSI or GCC use-cases",
+    "description": "A multi-agent system that ingests a CRM (e.g., Zoho/HubSpot), email, and internal docs, then drafts RFP responses, qualifies leads against an ICP, and books meetings on the calendar — with full trace logs and a human-approval step. It impresses because it solves a real Bengaluru pain point, ships to a paying department, and showcases planning, tool use, memory, and eval — the four pillars employers screen for.",
+    "stack": [
+      "LangGraph",
+      "OpenAI or Anthropic APIs",
+      "Model Context Protocol (MCP)",
+      "FastAPI",
+      "Next.js",
+      "Postgres + pgvector",
+      "LangSmith or Phoenix for tracing",
+      "Docker"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and reproducible setup",
+      "Live demo deployment (Vercel + a small VPS) with a 90-second Loom walkthrough",
+      "Short case-study write-up: problem, design choices, eval metrics, cost-per-task, and lessons",
+      "Optional: post a 1-page teardown on your blog or LinkedIn"
+    ]
+  },
+  "publish": [
+    "Ship a launch post on Hacker News (Show HN) and LinkedIn tagging Bengaluru AI agent communities — tie it to a real BFSI or GCC pain point to attract enterprise readers.",
+    "Demo at a Bengaluru meetup: PyData Bangalore, Bangalore AI, or Hasgeek's Agent-related evenings; offer a 10-min live build.",
+    "Record a 2-minute Twitter/X demo video with the agent doing a real task end-to-end and reply to trending #AIAgents threads with your clip.",
+    "Pitch a 4-week pilot to one local SaaS or GCC partner in exchange for a logo and a testimonial — this converts attention into a startup customer signal."
+  ],
+  "skills": [
+    "Multi-agent orchestration (LangGraph/CrewAI)",
+    "Tool design and Model Context Protocol (MCP)",
+    "LLM evaluation, tracing, and reliability engineering",
+    "FastAPI + vector databases for production agents",
+    "Enterprise integration (CRM, email, calendars, SSO)",
+    "Cost and latency budgeting for LLM systems",
+    "Technical writing and demo storytelling",
+    "Founder skills: scoping, pricing, and pilot sales"
+  ],
+  "risks": [
+    "Agent demos look magical but production reliability is hard — without solid evals you'll ship something that fails quietly and erodes trust.",
+    "The ecosystem is moving weekly; over-investing in one framework (e.g., LangChain vs. raw tool calls) can date your portfolio fast.",
+    "Enterprise pilots in India move slowly on procurement and compliance — budget 2–3x longer than a SaaS timeline and don't quit your day job on a single LOI."
+  ],
+  "confidence": "Very high — the signal scores are uniformly strong, your enterprise profile maps directly to where agentic workflows create value, and Bengaluru gives you the customer density to validate fast.",
+  "content_hash": "edd521a7d011a6f1",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "startup",
+    "profile": "enterprise"
+  }
+}

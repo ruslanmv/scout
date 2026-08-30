@@ -1,0 +1,66 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:39:17.654595+00:00",
+  "headline": "Bengaluru's agent ecosystem is exploding—your move from AI builder to agent architect starts this week.",
+  "why_now": "GitHub and HugFace activity around AI agents are at peak scores (96 and 92), with 94% growth momentum and a 96 project potential reading. Bengaluru already hosts India's densest concentration of agent startups (Krutrim, Sarvam, Yellow.ai, and global GCCs building agent platforms), so the local relevance score of 82 reflects real hiring demand right now, not hype.",
+  "study": [
+    "Build a LangGraph or CrewAI agent that calls at least 3 tools (web search, code exec, RAG over a vector DB) and finishes a multi-step task end-to-end—run it locally, log every step.",
+    "Read the ReAct and MRKL papers plus the Anthropic tool-use docs; implement tool-calling from scratch against the OpenAI or Google Gemini API without using a framework.",
+    "Clone and break a popular open-source agent repo (e.g., AutoGen, LangGraph examples) on GitHub—submit one PR fixing a bug or adding a feature, so your name shows up in their contribution graph.",
+    "Take the DeepLearning.AI 'AI Agents in LangGraph' short course and replicate every lab with a Bengaluru-specific dataset (say, BMTC bus routes or Swiggy restaurant data) to stand out.",
+    "Join the Bengaluru LangChain/CrewAI meetup group and commit to attending at least two sessions in the next 45 days."
+  ],
+  "build": {
+    "title": "BharatAgent: A multi-agent system that plans a Bengaluru weekend (book tables via Swiggy API stub, check weather, suggest events from BookMyShow, optimize cab route via OSRM) and explains its reasoning.",
+    "description": "A working agent orchestration with a Planner agent, Tool-Use agents, and a Critic agent that validates outputs. Demonstrates tool calling, memory, multi-step planning, and human-in-the-loop approval—exactly what Bengaluru hiring managers for agent roles want to see.",
+    "stack": [
+      "LangGraph",
+      "CrewAI",
+      "OpenAI/Anthropic API",
+      "ChromaDB",
+      "FastAPI",
+      "Streamlit",
+      "OSRM",
+      "Python"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and tests",
+      "Streamlit demo deployed on HuggingFace Spaces or Railway",
+      "1500-word blog post on Medium showing 3 example runs with token/cost analysis",
+      "Loom video walkthrough (5 minutes)"
+    ]
+  },
+  "publish": [
+    "Post the demo on LinkedIn and Hacker News (Show HN) with a clear problem statement and cost-per-run benchmark.",
+    "Submit a talk proposal to the Bengaluru AI Meetup, PyConf India, or Hasgeek's Rootconf on agent evaluation patterns.",
+    "Publish a HuggingFace Space and cross-post to r/LocalLLaMA, r/MachineLearning, and the LangChain Discord.",
+    "DM 10 Bengaluru-based AI founders or hiring managers (Krutrim, Sarvam, Sprinto, Clari) with a 2-line pitch linking the repo and offering to walk through the code."
+  ],
+  "skills": [
+    "Multi-agent orchestration and planning",
+    "Tool use and API integration",
+    "LangGraph / CrewAI framework expertise",
+    "RAG and vector database design",
+    "Prompt engineering and agent evaluation",
+    "Production deployment (FastAPI + HF Spaces)",
+    "Cost and latency optimization for LLM calls",
+    "Open-source collaboration and technical writing"
+  ],
+  "risks": [
+    "API cost overruns while iterating—cap spend early with a $20 OpenAI budget and use smaller models (GPT-4o-mini, Gemini Flash) for non-critical steps.",
+    "Agent evaluation is unsolved; reviewers may dismiss demos as 'toy'—mitigate by adding real Bengaluru data sources and measuring success rate vs. a baseline.",
+    "Job market for 'agent engineer' titles is still loosely defined—some postings want traditional ML, not LLM agents—diversify your portfolio so 70% is agent-specific and 30% is adjacent (classic ML, backend)."
+  ],
+  "confidence": "Recommendation is high-confidence—the signal scores are uniformly strong (all 82+) and your agent profile matches the dominant demand pattern in Bengaluru's AI hiring data.",
+  "content_hash": "304d063c19c741ea",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "career",
+    "profile": "agent"
+  }
+}

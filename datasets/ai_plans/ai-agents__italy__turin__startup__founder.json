@@ -1,0 +1,64 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:23:00.584548+00:00",
+  "headline": "Build Turin's next AI agent startup by turning your GitHub-fueled momentum into a real agentic product that investors and developers are already hunting for.",
+  "why_now": "Agentic AI is exploding across GitHub (96 activity, 94 growth), Hugging Face (92), and job boards (85), with project potential (96) and career value (95) both near peak. Turin's local relevance (82) and growing community activity (84) mean you can launch with both global attention and local support. The convergence of open-source tooling and startup demand makes this the ideal moment to build and ship.",
+  "study": [
+    "Complete the OpenAI Agents SDK and LangGraph tutorials to master planning, tool use, and multi-agent orchestration.",
+    "Build small agent prototypes using Hugging Face tools and APIs to understand real-world integration patterns.",
+    "Study 3-5 recent open-source agentic repos on GitHub (top stars this year) to learn architecture and best practices.",
+    "Join the Turin AI meetup and online agentic AI communities to map local talent and early adopter opportunities.",
+    "Write a technical blog post summarizing your learnings to establish thought leadership and attract co-founders."
+  ],
+  "build": {
+    "title": "AgentForge: A Multi-Agent Startup Research Assistant",
+    "description": "An open-source agentic workflow that autonomously researches startup ideas, validates market demand, and generates pitch decks by orchestrating web-scraping, API calls, and LLM reasoning agents. It impresses because it solves a real founder pain point while showcasing planning, tool use, and collaboration between agents.",
+    "stack": [
+      "Python",
+      "OpenAI Agents SDK",
+      "LangGraph",
+      "Hugging Face Transformers",
+      "SerpAPI",
+      "FastAPI",
+      "Streamlit"
+    ],
+    "deliverables": [
+      "GitHub repo with modular agent code and docs",
+      "Live demo where users input an idea and get a research report",
+      "Medium article explaining the architecture and lessons learned"
+    ]
+  },
+  "publish": [
+    "Launch the repo on GitHub with clear README, examples, and a 'contributing' section to drive early stars and forks.",
+    "Post a demo video and thread on X/Twitter tagging agentic AI influencers and Turin tech accounts.",
+    "Submit to Hugging Face Spaces and write a detailed post on the Hugging Face blog to tap into their community.",
+    "Present at the next Turin AI or startup meetup to connect with local founders and potential early users."
+  ],
+  "skills": [
+    "Agentic workflow design",
+    "LLM orchestration with LangGraph and OpenAI SDK",
+    "Tool and API integration",
+    "Multi-agent collaboration",
+    "Open-source product development",
+    "Technical storytelling and documentation",
+    "Startup problem validation",
+    "Community engagement and growth"
+  ],
+  "risks": [
+    "Agentic systems can be unpredictable and hard to debug, leading to unreliable outputs that hurt user trust.",
+    "Rapidly evolving tooling means today's stack may be outdated in months, requiring constant learning and adaptation.",
+    "Building in public with a startup focus may attract copycats or distract from deep technical progress."
+  ],
+  "confidence": "This is a high-confidence recommendation: the signals are strong, the stack is mature, and the local-global opportunity in Turin is well-aligned with your founder profile.",
+  "content_hash": "d0aa36b3bf7e0132",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "startup",
+    "profile": "founder"
+  }
+}

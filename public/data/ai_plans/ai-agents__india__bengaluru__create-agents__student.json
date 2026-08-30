@@ -1,0 +1,64 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:42:37.977642+00:00",
+  "headline": "Bengaluru's student coder, it's your moment to build the AI agents that India's booming tech scene is hiring for.",
+  "why_now": "Agentic workflows are exploding — GitHub activity (96) and project potential (96) signal a fast-moving ecosystem with massive room for new contributors. Career value scores 95 and job demand sits at 85, meaning companies in Bengaluru and beyond are actively seeking people who can ship agent systems. With Hugging Face activity at 92, the open-source tooling has never been more accessible to students.",
+  "study": [
+    "Week 1-2: Master LLM fundamentals — read Karpathy's nanoGPT lectures and the 'Prompt Engineering' guide from DAIR.AI; build a Python wrapper around OpenAI or a local Ollama model.",
+    "Week 3-4: Learn the agent core patterns — complete the LangChain agents tutorial and the LlamaIndex agent docs; reproduce the ReAct paper's reasoning loop in a notebook.",
+    "Week 5-6: Study tool use and orchestration — read the Model Context Protocol (MCP) spec and build an agent that calls 3+ real APIs (weather, calendar, web search).",
+    "Week 7-8: Go deeper on multi-agent collaboration — implement AutoGen or CrewAI's group-chat pattern, and read Anthropic's 'Building Effective Agents' essay end-to-end."
+  ],
+  "build": {
+    "title": "BangaloreTransit Agent — A Multi-Agent Public Transport Concierge",
+    "description": "A multi-agent system that plans BMTC and Namma Metro trips in Bengaluru. One agent interprets natural-language queries, a second queries the BMTC open APIs for bus routes, a third checks Namma Metro schedules, and a fourth synthesizes a multimodal route with real-time disruption alerts from local news RSS feeds. It impresses because it solves a hyper-local problem while showcasing planning, tool calling, and inter-agent collaboration.",
+    "stack": [
+      "Python",
+      "LangGraph",
+      "OpenAI/Anthropic API",
+      "BMTC open data",
+      "BMRCL Metro API",
+      "CrewAI",
+      "FastAPI",
+      "Streamlit"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README and architecture diagram",
+      "Live Streamlit demo deployed on Hugging Face Spaces",
+      "Blog write-up on Hashnode or Dev.to explaining the design choices"
+    ]
+  },
+  "publish": [
+    "Post the demo on r/LocalLLama and r/IndiaInvestments with a 60-second screen recording.",
+    "Submit to the LangChain, CrewAI, and AutoGen community showcases — these get featured in their official newsletters.",
+    "Tag Bengaluru tech communities on LinkedIn and X (MeitY, Hasgeek, IEEE Bangalore) with a thread showing the agent solving a real commute problem.",
+    "Pitch a 5-minute lightning talk at a Bangalore meetup like PyData Bangalore or BlrDroid to get in-person feedback."
+  ],
+  "skills": [
+    "LLM orchestration and prompt engineering",
+    "Multi-agent system design (planner-executor, group-chat patterns)",
+    "Tool/function calling and API integration",
+    "Retrieval-Augmented Generation (RAG)",
+    "Python backend development (FastAPI, async workflows)",
+    "Working with open-source models on Hugging Face",
+    "Rapid prototyping and demo deployment",
+    "Technical writing and public speaking"
+  ],
+  "risks": [
+    "API costs can balloon fast during multi-agent experiments — always set hard token budgets and use smaller models for sub-tasks.",
+    "Agent loops can hallucinate or get stuck in cycles without proper guardrails; build max-iteration limits and human-in-the-loop checkpoints before shipping.",
+    "The agent framework space is shifting monthly (LangChain → LangGraph → CrewAI); tie your project to stable primitives like the OpenAI tool-calling spec rather than one vendor's SDK."
+  ],
+  "confidence": "Very high — every signal (GitHub momentum, Hugging Face activity, job demand, and Bengaluru's deep tech ecosystem) points to a strong bet on agentic skills for a student builder right now.",
+  "content_hash": "60ab5d1155e75b7c",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "create_agents",
+    "profile": "student"
+  }
+}

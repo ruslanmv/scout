@@ -1,0 +1,65 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:45:53.226243+00:00",
+  "headline": "Bengaluru's AI engineers are shipping agentic workflows at record speed — your research edge belongs in that wave.",
+  "why_now": "GitHub and Hugging Face activity around AI agents is in the 90s with growth nearly matching, signaling a fast-moving, well-funded frontier rather than a passing hype cycle. Bengaluru's dense AI talent pool and startup ecosystem make local relevance high, and research contributions here translate directly into career leverage. With job demand at 85, early serious work on agentic systems compounds quickly into speaking roles, papers, or hires.",
+  "study": [
+    "Re-read the ReAct, Toolformer, and Reflexion papers and map each idea to a concrete API-calling loop you can code in a weekend.",
+    "Study LangChain and LlamaIndex agent abstractions end-to-end, then rip one apart and rebuild a minimal version with raw OpenAI/Anthropic calls.",
+    "Build a small multi-agent setup (e.g., planner + executor + critic) using CrewAI or AutoGen and benchmark it against a single-prompt baseline.",
+    "Read Anthropic and DeepMind posts on tool use and computer-use agents, and replicate one evaluation locally with a public benchmark like SWE-bench-Lite.",
+    "Survey safety and failure modes: prompt injection, hallucinated tool calls, and cost runaway, and write a short internal note on mitigation patterns."
+  ],
+  "build": {
+    "title": "BangaloreBus: a multi-agent transit-research assistant for BMTC and metro data",
+    "description": "An agent that plans a research query, fetches live BMTC and Bengaluru Metro data via public APIs, cross-references news and Wikipedia, and returns a sourced brief with route comparisons, cost estimates, and citations. It demonstrates planning, tool use, multi-step reasoning, and grounded answers, which is exactly what hiring managers and research labs screen for.",
+    "stack": [
+      "Python",
+      "LangGraph or CrewAI",
+      "FastAPI",
+      "BMTC/open GTFS endpoints",
+      "Tavily or SerpAPI",
+      "ChromaDB",
+      "Streamlit"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and reproducible setup",
+      "Live Streamlit or Vercel demo with at least three example queries",
+      "Short technical write-up comparing single-agent vs multi-agent performance and cost",
+      "Recorded 3-minute Loom walkthrough of the agent reasoning trace"
+    ]
+  },
+  "publish": [
+    "Post the GitHub repo on r/LocalLLaMA, r/MachineLearning, and Hacker News with a results-first title.",
+    "Write a LinkedIn and X thread walking through one agent trace, the architecture diagram, and what failed before it worked, tagging Bengaluru AI and LLM communities.",
+    "Submit a talk proposal to PyConf Hyderabad, Bangpypers, or the Bengaluru Generative AI meetup, and pitch a demo slot at local AI builder nights.",
+    "Open-source the evaluation harness and invite two Indian AI researchers to co-author a short benchmark note on arXiv or Hugging Face papers."
+  ],
+  "skills": [
+    "Agent orchestration and tool-use design",
+    "Multi-agent collaboration patterns",
+    "Prompt engineering for planning and self-critique",
+    "API integration and retrieval-augmented reasoning",
+    "Evaluation, benchmarking, and cost analysis",
+    "Safety and failure-mode mitigation",
+    "FastAPI or equivalent backend deployment",
+    "Technical writing and public demo storytelling"
+  ],
+  "risks": [
+    "Agent stacks are evolving weekly, so the chosen framework may be outdated within months; design the project so the orchestration logic is framework-agnostic.",
+    "Tool-calling agents can rack up real API costs fast during demos; cap token spend and add cost telemetry before sharing publicly.",
+    "Research-grade novelty is hard to claim with a tutorial-style build; make sure the write-up contributes a real comparison or benchmark, not just another demo."
+  ],
+  "confidence": "Strong recommendation: signal strength is high and consistent across code, model, news, and hiring data, with a clear, buildable path from your current skills to visible research output in 6 to 10 weeks.",
+  "content_hash": "fb8f728b397cc6d7",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "research",
+    "profile": "ai_engineer"
+  }
+}

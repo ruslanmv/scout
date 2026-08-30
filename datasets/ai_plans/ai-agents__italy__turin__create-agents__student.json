@@ -1,0 +1,63 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:21:11.839345+00:00",
+  "headline": "Build AI agents in Turin and turn GitHub's fastest-growing AI field into your career edge.",
+  "why_now": "GitHub activity (96) and growth (94) show AI agents are the most rapidly expanding area, while Hugging Face activity (92) and project potential (96) mean the tools and datasets are mature enough to build real systems. Job demand (85) and career value (95) confirm employers are actively seeking agentic workflow skills, and local relevance (82) indicates Italian tech hubs like Turin are adopting these tools.",
+  "study": [
+    "Complete the OpenAI Agents SDK and LangGraph tutorials to understand agent architecture and tool use.",
+    "Study the AutoGen and Microsoft Copilot Studio documentation for multi-agent collaboration patterns.",
+    "Build a local RAG agent using LlamaIndex and a small open-source LLM to grasp planning and memory.",
+    "Implement a multi-step workflow agent that calls APIs and chains tool results using LangChain.",
+    "Review recent Hugging Face papers on agent evaluation and reinforcement learning for agents."
+  ],
+  "build": {
+    "title": "Turin Commuter Agent",
+    "description": "An AI agent that plans multi-modal commutes in Turin by chaining public transit APIs, weather data, and local event calendars to suggest optimal routes and timing, demonstrating real-world agentic workflow complexity.",
+    "stack": [
+      "Python",
+      "LangGraph",
+      "OpenAI API",
+      "Google Maps API",
+      "OpenWeatherMap API",
+      "Streamlit"
+    ],
+    "deliverables": [
+      "GitHub repo with modular agent code",
+      "Live Streamlit demo",
+      "Technical write-up on agent design choices"
+    ]
+  },
+  "publish": [
+    "Post the project on GitHub with clear documentation and tag it with 'ai-agent' and 'langgraph'.",
+    "Write a detailed LinkedIn article explaining the agent architecture and lessons learned.",
+    "Submit a demo to the Hugging Face Spaces platform and share it in relevant Discord communities.",
+    "Present at a local Turin tech meetup or university AI group to build local visibility."
+  ],
+  "skills": [
+    "Agent architecture design",
+    "Multi-tool API integration",
+    "LLM planning and memory",
+    "Workflow automation",
+    "Python and LangChain ecosystem",
+    "API orchestration",
+    "Technical documentation",
+    "Public presentation"
+  ],
+  "risks": [
+    "Over-engineering the agent early can lead to unmaintainable code; start simple and iterate.",
+    "Relying on paid APIs may limit long-term demo sustainability; plan for fallbacks.",
+    "The field moves quickly; focus on core concepts over specific framework versions."
+  ],
+  "confidence": "High confidence: the convergence of strong GitHub growth, mature tooling, and clear career demand makes this a timely and actionable path.",
+  "content_hash": "b4fa0e94a5cf24fd",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "create_agents",
+    "profile": "student"
+  }
+}

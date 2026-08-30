@@ -1,0 +1,64 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:35:46.163453+00:00",
+  "headline": "Become the AI Agent researcher Bay Area employers and labs are already hunting for.",
+  "why_now": "GitHub activity (96) and Hugging Face traction (92) show agent frameworks are exploding in tooling, while job demand (85) and career value (95) signal companies are hiring. With 82 local relevance and San Francisco being the global hub for agent startups (LangChain, AutoGen, Anthropic), a student researcher building here has direct access to meetups, founder talks, and beta access to new SDKs.",
+  "study": [
+    "Read the foundational papers: ReAct (Yao et al., 2022), Toolformer, and AutoGen/Multi-Agent debate papers to understand the paradigm shift from chatbots to planners.",
+    "Work through the LangChain and LlamaIndex documentation hands-on, then reproduce the LangGraph multi-agent tutorial end to end.",
+    "Study Anthropic's 'Building Effective Agents' essay and OpenAI's Swarm repo to internalize the difference between workflows and true agentic systems.",
+    "Build intuition by running open-source agents (AutoGen, CrewAI, LangGraph) against the GAIA benchmark and comparing failure modes.",
+    "Read 2-3 recent Hugging Face papers from the Agents course and replicate one inference pipeline locally."
+  ],
+  "build": {
+    "title": "Autonomous Research Agent that benchmarks LLM APIs",
+    "description": "An agentic system that takes a research question, decomposes it into sub-tasks, calls arXiv and Hugging Face APIs, runs code in a sandbox to verify claims, and produces a cited report. It demonstrates tool use, planning, memory, and self-evaluation - exactly what SF labs are hiring for.",
+    "stack": [
+      "LangGraph or AutoGen",
+      "LangChain tools",
+      "arXiv API",
+      "Hugging Face Hub API",
+      "Python sandbox (E2B or Docker)",
+      "Streamlit or Gradio for UI",
+      "GitHub Actions for CI"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README and architecture diagram",
+      "Live Gradio demo deployed on Hugging Face Spaces",
+      "Technical write-up on your blog or Medium (1500-2000 words)",
+      "5-minute demo video posted on LinkedIn and X"
+    ]
+  },
+  "publish": [
+    "Post the demo on r/LocalLLaMA, r/MachineLearning, and the Hugging Face Discord with a clear 'reproducible in 30 min' hook.",
+    "Submit a talk proposal to the next SF AI Agent meetup (LangChain, AI Tinkerers, or LlamaIndex SF) and to local events like AI Engineer World's Fair.",
+    "Share progress threads on X tagging @LangChainAI @huggingface @AnthropicAI and engage with their replies to get visibility.",
+    "Add the repo link to your resume and apply to the 3-5 most relevant agent roles (e.g., Anthropic, Sierra, Cognition, LangChain) within 30 days of shipping."
+  ],
+  "skills": [
+    "LLM orchestration and tool calling",
+    "Multi-agent system design",
+    "API integration and prompt engineering",
+    "Research methodology and benchmarking",
+    "Python and async programming",
+    "Technical writing and documentation",
+    "Open-source community engagement",
+    "Rapid prototyping under uncertainty"
+  ],
+  "risks": [
+    "The agent stack is moving so fast (LangGraph, AutoGen, CrewAI all changing weekly) that your project may use deprecated APIs by the time you finish - pin versions and document assumptions.",
+    "Building agents is currently more craft than science; benchmarks are flaky and demos can feel 'magical' but break on edge cases - be honest about limitations in your write-up to build credibility."
+  ],
+  "confidence": "Very high - every signal is in the 80-96 range and SF is the epicenter of this movement, giving you unfair access to mentors and hiring managers.",
+  "content_hash": "2dc174503c6cca6e",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "research",
+    "profile": "student"
+  }
+}

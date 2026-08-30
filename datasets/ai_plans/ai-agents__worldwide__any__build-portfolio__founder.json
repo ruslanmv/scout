@@ -1,0 +1,64 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T10:29:32.306775+00:00",
+  "headline": "Ship an AI agent portfolio piece this quarter — founders who own the agentic stack will outpace the competition in 2026.",
+  "why_now": "GitHub activity (96) and project potential (96) are at near-peak levels, signaling the ecosystem is exploding with reusable patterns. Hugging Face activity (92) and news mentions (88) confirm both tooling and public attention are there. For a founder building a portfolio, this is the rare window where a single well-documented agent project can carry disproportionate credibility.",
+  "study": [
+    "Spend 3 days on Anthropic's agent loop docs and LangChain's ReAct/Plan-and-Execute guides to internalize the planning-tool-memory pattern.",
+    "Build 5 throwaway agents in the LangGraph or CrewAI playground (web scraper, API orchestrator, code reviewer, research assistant, calendar bot) to feel tool-calling and error recovery.",
+    "Read 3 production agent repos on GitHub (e.g., LangChain's open-source multi-agent demos) and reverse-engineer their prompts, memory schemas, and fallback handling.",
+    "Study evaluation: 1 day on TruLens, LangSmith, or Braintrust so your portfolio project shows observability, not just a demo."
+  ],
+  "build": {
+    "title": "AgentOS — an open-source 'operating system' for solo founders that plans, executes, and logs multi-step workflows across email, CRM, and docs",
+    "description": "A LangGraph/CrewAI agent with a planner node, specialized worker agents (inbox triage, follow-up drafter, meeting prep, research), shared vector memory, and an eval dashboard. It impresses because it tackles a real founder pain (context-switching) with the full agentic pattern — planning, tool use, multi-agent collaboration, and self-critique — instead of a toy demo.",
+    "stack": [
+      "LangGraph",
+      "CrewAI",
+      "OpenAI/Anthropic API",
+      "FastAPI",
+      "Supabase or Postgres",
+      "LangSmith or TruLens",
+      "Next.js dashboard"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean architecture diagram, ADR (architecture decision record), and one-command Docker setup",
+      "Live demo deployed on Vercel/Railway with a sandbox dataset and a 60-second Loom walkthrough",
+      "Technical write-up on your blog or Dev.to covering the agent graph, failure modes, and eval results",
+      "Short README GIF showing the planner decomposing a real founder task end-to-end"
+    ]
+  },
+  "publish": [
+    "Post the demo on Product Hunt and Hacker News (Show HN) with a 'Show: AgentOS — open-source agent OS for founders' headline on a Tuesday or Wednesday morning.",
+    "Share a 5-tweet thread with architecture screenshots tagging LangChain, LangGraph, and a founder community like Lenny's Newsletter readers.",
+    "Submit a 4-minute talk proposal to AI Engineer World's Fair, LangChain's meetups, or a local AI meetup — speakers get 10x the inbound of lurkers.",
+    "Cross-post the write-up to Indie Hackers, Reddit r/LocalLLaMA, and r/MachineLearning with a results-first summary."
+  ],
+  "skills": [
+    "Agent orchestration (planner-executor patterns)",
+    "Multi-agent collaboration design",
+    "Tool/function calling and API integration",
+    "LLM evaluation and observability",
+    "Production-grade Python/FastAPI backend",
+    "Prompt and context engineering",
+    "Vector memory and retrieval design",
+    "Technical storytelling and open-source packaging"
+  ],
+  "risks": [
+    "API cost surprises during demos — a runaway agent loop can burn through budget; cap iterations and set hard token limits.",
+    "Over-engineering the agent graph before validating the user problem — start with a 3-node linear flow and add branching only after a real user tests it.",
+    "Demo rot: APIs and SDK versions shift weekly in this space; lock dependency versions in the README and add a 'last tested' badge so reviewers trust it still works."
+  ],
+  "confidence": "Very high — signals across code, model hubs, news, and hiring all point the same direction, and the build target is a tangible artifact a founder can demo in interviews and to investors.",
+  "content_hash": "d86c26769513e5f5",
+  "generated_for": {
+    "country": "Worldwide",
+    "city": null,
+    "goal": "build_portfolio",
+    "profile": "founder"
+  }
+}

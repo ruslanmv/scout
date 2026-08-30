@@ -1,0 +1,47 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:44:44.496491+00:00",
+  "headline": "Building a robust startup with AI and Agentic Workflows",
+  "why_now": "The startup's goal is to launch a new product or service, and the real signals indicate a high demand for AI and agentic workflows in the region.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "An AI-driven User Interface for Personalized Learning",
+    "description": "This project will leverage AI to create a personalized learning experience for students. It will use tools like natural language processing and machine learning to analyze student data and provide personalized learning paths.",
+    "stack": [
+      "Python",
+      "TensorFlow",
+      "Keras",
+      "NLP"
+    ],
+    "deliverables": [
+      "a user interface",
+      "a demo",
+      "a write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "No significant risks"
+  ],
+  "confidence": "The startup's goal is to launch a new product or service, and the real signals indicate a high demand for AI and agentic workflows in the region. The team has a solid understanding of the industry and can leverage these signals to build a successful startup.",
+  "content_hash": "9c3c73bdd8696323",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "startup",
+    "profile": "student"
+  }
+}

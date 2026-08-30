@@ -1,0 +1,64 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:34:46.139806+00:00",
+  "headline": "San Francisco is ground zero for AI agents — build the workflow tool every founder here will pay for this year.",
+  "why_now": "With GitHub activity at 96 and project potential at 96, agentic systems are exploding in open-source momentum, while job demand at 85 confirms founders are hiring for this skill in SF. Hugging Face activity (92) and news mentions (88) show the ecosystem and press are paying attention right now, so a well-timed portfolio piece lands in front of a paying market, not a saturated one.",
+  "study": [
+    "Read Anthropic's 'Building Effective Agents' and OpenAI's function-calling docs end-to-end; rebuild every example in a notebook.",
+    "Spend a week on the LangGraph and CrewAI repos — fork them, run the tutorials, and trace one multi-agent workflow until you can explain each step.",
+    "Build a thin wrapper around the OpenAI/Anthropic tool-use API that lets an agent call 3 external services (e.g., web search, email, calendar) with retry and cost tracking.",
+    "Study eval patterns from the LlamaIndex and Haystack repos — agents fail silently, so learn to log, trace, and score runs.",
+    "Ship one short post comparing 2 agent frameworks on the same task; teaching forces gaps to surface."
+  ],
+  "build": {
+    "title": "AgentOps Console — a debugging + cost dashboard for multi-agent workflows",
+    "description": "A local web app that ingests traces from any agent framework (LangGraph, CrewAI, raw function-calling loops) and visualizes the agent's plan, tool calls, latency, token cost, and failure points per step. Founders in SF will instantly recognize the pain: their agent demos work once, then break in production with zero observability. Showing you can ship the missing ops layer is more impressive than another chatbot demo.",
+    "stack": [
+      "LangGraph or CrewAI",
+      "FastAPI",
+      "Next.js or Streamlit",
+      "SQLite + DuckDB",
+      "OpenAI / Anthropic APIs",
+      "LangSmith SDK or custom tracing",
+      "Docker"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and one-click Docker run",
+      "Live demo on Vercel or a hosted VM with a recorded 3-minute walkthrough",
+      "Technical write-up on dev.to or your blog explaining the agent-tracing data model"
+    ]
+  },
+  "publish": [
+    "Demo it at an SF AI meetup (AI Engineer Summit, LangChain SF, AI Tinkerers) within 6 weeks — submit a 5-minute lightning talk.",
+    "Post the demo video on X and LinkedIn tagging the maintainers of LangGraph, CrewAI, and LangSmith; builders reshare tools that solve their pain.",
+    "Write a launch post on Hacker News showing a real agent run with annotated traces — the ops angle is under-covered and will hit the front page.",
+    "Reach out to 10 SF-based agent startups (Sema4, MultiOn, Cognosys, etc.) offering a free trial and asking for a testimonial or integration partnership."
+  ],
+  "skills": [
+    "LLM tool-use and function-calling design",
+    "Multi-agent orchestration (planner-executor, supervisor, handoff patterns)",
+    "Agent observability, tracing, and evaluation",
+    "FastAPI + async Python services",
+    "Frontend for technical dashboards (Next.js or Streamlit)",
+    "Prompt engineering under cost/latency budgets",
+    "Production deployment with Docker and cloud hosting",
+    "Technical writing and developer evangelism"
+  ],
+  "risks": [
+    "Agent frameworks are churning fast — picking LangGraph today and betting the portfolio on its API could age the project in 6 months; keep the core (tracing schema) framework-agnostic.",
+    "Eval and observability is real work but is a less 'sexy' demo than a flashy agent, so it may get fewer casual likes even though founders will respect it more — calibrate expectations.",
+    "API costs from running real agents during demos can balloon; gate demos with cached traces and a 'replay' mode so you're not paying per viewer."
+  ],
+  "confidence": "Very high — the signals are uniformly strong across code, community, hiring, and press, and the SF startup ecosystem has a clear, unfilled gap around agent observability.",
+  "content_hash": "022d2af4cda26798",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "startup",
+    "profile": "agent"
+  }
+}

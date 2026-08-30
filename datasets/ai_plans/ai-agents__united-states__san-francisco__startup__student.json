@@ -1,0 +1,42 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:33:57.684831+00:00",
+  "headline": "Investing in AI Agents and Agentic Workflows: A Personal Action Plan",
+  "why_now": "The real signals indicate a growing trend in the tech industry, particularly in the areas of AI and agentic workflows, which are essential for startups in San Francisco.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "A Personal Action Plan for AI Agents and Agentic Workflows",
+    "description": "The plan outlines a specific portfolio project that showcases the importance of AI and agentic workflows in startups in San Francisco. It also includes a detailed stack of tools/libraries, a deliverable of a demo, and a write-up.",
+    "stack": [
+      "tools/libraries"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "No risks"
+  ],
+  "confidence": "This recommendation is solid as it aligns with the real signals and provides actionable steps to improve the startup's visibility and success.",
+  "content_hash": "3e614b2803d6f1cb",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "startup",
+    "profile": "student"
+  }
+}

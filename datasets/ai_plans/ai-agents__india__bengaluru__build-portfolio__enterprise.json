@@ -1,0 +1,65 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:40:38.276707+00:00",
+  "headline": "Bengaluru's AI agent wave is the moment to turn your enterprise experience into a portfolio that commands attention.",
+  "why_now": "With GitHub activity at 96, Hugging Face momentum at 92, and job demand at 85 in India's tech capital, AI agents have moved from research demos to production-grade enterprise workflows. Local SaaS and fintech companies in Bengaluru are actively hiring engineers who can architect agentic systems, making this the rare trend where building in public directly translates to interviews.",
+  "study": [
+    "Master the ReAct and tool-use prompting patterns by implementing LangChain and LlamaIndex agents that call real APIs (calendar, CRM, SQL) end-to-end.",
+    "Build 3 deep-dive projects on top of Anthropic Claude and OpenAI function calling to understand planning loops, memory, and error recovery hands-on.",
+    "Study multi-agent orchestration using CrewAI and AutoGen, focusing on role assignment, message passing, and conflict resolution between agents.",
+    "Read the LangGraph and Haystack documentation on stateful agent workflows, then replicate one production-grade pattern such as retrieval-augmented decisioning.",
+    "Review Bengaluru enterprise case studies on agent observability with LangSmith or Helicone to understand what hiring managers actually look for."
+  ],
+  "build": {
+    "title": "Enterprise Contract Intelligence Agent",
+    "description": "A multi-agent system that ingests PDF contracts, extracts clauses via RAG, flags compliance risks against a configurable policy library, drafts redlines, and posts summaries to Slack or a REST endpoint your team already uses. It demonstrates planning, tool use, human-in-the-loop review, and audit logging, exactly the patterns Bengaluru enterprise CTOs are hiring for.",
+    "stack": [
+      "LangGraph",
+      "Claude API or GPT-4o",
+      "Pinecone or Weaviate",
+      "FastAPI",
+      "Next.js dashboard",
+      "LangSmith observability",
+      "Docker"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture, and tests",
+      "Live Streamlit or Vercel demo with a sample contract",
+      "Technical write-up on Hashnode or Medium explaining design choices",
+      "Short Loom or YouTube walkthrough for non-technical reviewers"
+    ]
+  },
+  "publish": [
+    "Post the repo on r/LocalLLaMA, r/MachineLearning, and the LangChain Discord with a concise demo GIF to surface in Bengaluru AI communities.",
+    "Submit a talk proposal to PyConf India, Bengaluru Open Source, or Hasgeek and share the slide deck on Speaker Deck.",
+    "Tag 5 Bengaluru AI hiring managers and founders on LinkedIn with a one-line demo video and the GitHub link, then repurpose the write-up as a LinkedIn carousel.",
+    "List the project on your resume and share in the Bengaluru AI Agents WhatsApp and Telegram groups where enterprise roles are frequently posted."
+  ],
+  "skills": [
+    "LLM orchestration and tool-use design",
+    "Multi-agent system architecture",
+    "Retrieval-augmented generation at production scale",
+    "FastAPI and Next.js full-stack delivery",
+    "Prompt engineering and evaluation",
+    "Agent observability and cost optimization",
+    "Enterprise-grade security and audit logging",
+    "Public technical communication"
+  ],
+  "risks": [
+    "Agent frameworks are evolving weekly, so a project built only on raw API calls may date faster than one emphasizing durable patterns and clear abstractions.",
+    "Enterprise buyers in Bengaluru often require on-prem or VPC deployment; a cloud-only demo may not resonate with the strictest enterprise interviewers, so plan a Dockerized variant early.",
+    "Tool-use loops can rack up API costs during demos, which can embarrass a live presentation, so add caching and a token budget guard before recording."
+  ],
+  "confidence": "This is a high-confidence recommendation because every signal is consistently strong across GitHub, Hugging Face, news, and Bengaluru-specific hiring data.",
+  "content_hash": "2f1b4183bb818a7c",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "build_portfolio",
+    "profile": "enterprise"
+  }
+}

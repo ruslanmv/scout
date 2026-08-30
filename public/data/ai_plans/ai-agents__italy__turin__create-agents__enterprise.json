@@ -1,0 +1,67 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:21:38.996827+00:00",
+  "headline": "In Turin's industrial heartland, mastering AI agents puts you at the center of enterprise automation demand that's exploding right now.",
+  "why_now": "GitHub activity for agent frameworks sits at 96 with 94% growth, and Hugging Face engagement hits 92, meaning the tooling and community are maturing fast. Job demand at 85 and career value at 95 confirm enterprises in Turin's manufacturing and logistics sectors are actively hiring for this skill.",
+  "study": [
+    "1",
+    "Master the agent paradigm by studying LangGraph and CrewAI architectures, focusing on stateful multi-step workflows",
+    "2",
+    "Learn tool-calling patterns and API integration by building MCP (Model Context Protocol) server clients",
+    "3",
+    "Study retrieval-augmented generation and memory systems so agents can ground decisions in enterprise data"
+  ],
+  "build": {
+    "title": "Supply Chain Orchestrator Agent",
+    "description": "An enterprise-grade multi-agent system that monitors inventory, predicts demand, negotiates with supplier APIs, and autonomously reorders stock — demonstrating planning, tool use, and inter-agent collaboration.",
+    "stack": [
+      "LangGraph",
+      "CrewAI",
+      "FastAPI",
+      "PostgreSQL",
+      "LangSmith",
+      "MCP SDK",
+      "OpenAI/Anthropic APIs"
+    ],
+    "deliverables": [
+      "GitHub repo with full agent codebase",
+      "Live Streamlit demo with dashboard",
+      "Technical write-up comparing single-agent vs. multi-agent approaches"
+    ]
+  },
+  "publish": [
+    "1",
+    "Publish the repo on GitHub with a detailed README and architecture diagram targeting enterprise developers",
+    "2",
+    "Write a case study on Medium or Dev.to framing the project around Turin's manufacturing supply chain challenges",
+    "3",
+    "Present a lightning talk at a local Turin meetup or a virtual event hosted by an Italian tech community"
+  ],
+  "skills": [
+    "multi-agent orchestration design",
+    "tool-calling and API integration",
+    "retrieval-augmented agent workflows",
+    "enterprise system observability and evaluation",
+    "MCP protocol implementation",
+    "stateful workflow management",
+    "supply chain automation logic",
+    "production-grade agent deployment"
+  ],
+  "risks": [
+    "Agent frameworks evolve rapidly, so specific library choices may become outdated within months — focus on architectural patterns over syntax",
+    "Enterprise deployment requires robust guardrails and human-in-the-loop oversight, which adds complexity that demo projects often ignore",
+    "Over-engineering a multi-agent system when a simpler single-agent or script would suffice can waste time and confuse evaluators"
+  ],
+  "confidence": "This recommendation is highly solid given the near-universal high scores across every signal dimension, especially the 96 project potential and 95 career value, which strongly validate this path for an enterprise-focused builder in Turin.",
+  "content_hash": "225ca9c6e2822d0c",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "create_agents",
+    "profile": "enterprise"
+  }
+}

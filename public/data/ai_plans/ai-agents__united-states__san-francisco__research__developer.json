@@ -1,0 +1,50 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:35:23.710272+00:00",
+  "headline": "AI Agents and Agentic Workflows: A Personal Action Plan",
+  "why_now": "Real trends in AI and work flow automation are driving the need for developers and AI engineers to focus on agentic workflows and systems that plan, use tools, call APIs, collaborate, and complete multi-step tasks.",
+  "study": [
+    "3-5 concrete, ordered learning steps",
+    "4-6 actionable steps"
+  ],
+  "build": {
+    "title": "A Personal Action Plan for Agentic Workflows",
+    "description": "1. Research: Identify real trends in AI and work flow automation, focusing on agentic workflows.",
+    "stack": [
+      "tools/libraries",
+      "language"
+    ],
+    "deliverables": [
+      "project report",
+      "case study",
+      "white paper"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people",
+    "5-6 concrete steps to get this seen by the right people",
+    "7-8 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "6-8 skills this demonstrates",
+    "7-9 skills this demonstrates"
+  ],
+  "risks": [
+    "1-3 risks or pitfalls to consider",
+    "2-4 risks or pitfalls to consider",
+    "5-6 risks or pitfalls to consider"
+  ],
+  "confidence": "This recommendation is solid, as it addresses the real trends in AI and work flow automation, focusing on agentic workflows and providing concrete learning steps and actionable deliverables.",
+  "content_hash": "9f4bbcffedc6550a",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "research",
+    "profile": "developer"
+  }
+}

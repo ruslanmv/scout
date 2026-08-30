@@ -1,0 +1,65 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-30T11:39:29.401355+00:00",
+  "headline": "Bengaluru's AI agent wave is your chance to ship a portfolio that lands interviews, not just résumé bullets.",
+  "why_now": "Agentic workflows are exploding across GitHub and Hugging Face with growth scores above 92, and Bengaluru is the hub where companies are hiring for exactly this. With job demand at 85 and project potential at 96, building a public agent project now puts you ahead of most local developers who are still doing static LLM demos.",
+  "study": [
+    "Week 1: Read Anthropic's 'Building Effective Agents' and LangChain's agent tutorials; map out the planner–tool–memory loop on paper.",
+    "Week 2: Complete the LangGraph or CrewAI quickstart and replicate one reference agent (e.g., research assistant) end-to-end.",
+    "Week 3: Study function calling and structured tool use with the OpenAI/Anthropic SDKs; build a small agent that calls 3+ real APIs.",
+    "Week 4: Learn evaluation basics — tracing with LangSmith or Helicone, plus how to write test cases for non-deterministic agents.",
+    "Week 5: Skim 2–3 papers/blog posts on ReAct, MRKL, and multi-agent collaboration to deepen the mental model."
+  ],
+  "build": {
+    "title": "BangaloreBizAgent — a multi-agent system that helps SMB owners in Bengaluru find vendors, check compliance, and draft outreach",
+    "description": "An agentic app where a planner agent coordinates a researcher (search + scrape JustDial/Sulekha-style sources), a compliance checker (calls a local rules KB), and a copywriter (drafts WhatsApp-ready messages in English + Kannada). It demos real tool use, multi-agent orchestration, and a domain that Indian hiring managers instantly understand.",
+    "stack": [
+      "LangGraph",
+      "CrewAI",
+      "OpenAI/Anthropic API",
+      "FastAPI",
+      "Postgres + pgvector",
+      "Tavily/SerpAPI",
+      "Streamlit",
+      "LangSmith for tracing"
+    ],
+    "deliverables": [
+      "public GitHub repo with clean README and architecture diagram",
+      "live Streamlit demo or 2-minute Loom walkthrough",
+      "blog write-up on Hashnode or dev.to explaining design choices and trade-offs"
+    ]
+  },
+  "publish": [
+    "Post the demo on LinkedIn and X tagging Bengaluru AI communities (Bangalore AI, Hasgeek, Swyx India) — local_relevance is high, lean into it.",
+    "Submit a short talk proposal to PyConf Hyderabad or BangaloreOpenAI meetups; even a 10-minute lightning talk creates signal.",
+    "Share in r/LocalLLaMA, r/MachineLearning, and the LangChain Discord with a clear problem statement, not just 'look at my project'.",
+    "Open 3–5 well-structured issues in your repo inviting contributors; visible collaboration beats solo work in recruiter scans."
+  ],
+  "skills": [
+    "LLM tool-use and function calling",
+    "Multi-agent orchestration (planner/worker patterns)",
+    "API integration and error handling",
+    "Prompt engineering and structured outputs",
+    "Agent evaluation and tracing",
+    "FastAPI backend development",
+    "RAG with vector databases",
+    "Public technical writing and demo storytelling"
+  ],
+  "risks": [
+    "Agents are non-deterministic; without solid eval harness your demo can break live and hurt credibility — budget time for guardrails.",
+    "API costs can spike fast during demos; rate-limit and cache or you may burn money before the project impresses anyone.",
+    "Saturated space — 'another AI agent project' won't stand out; the Bengaluru SMB angle is your differentiator, don't drop it for a generic chatbot."
+  ],
+  "confidence": "Very high — every signal (GitHub 96, HuggingFace 92, job demand 85, local relevance 82) lines up with a concrete, buildable plan for a Bengaluru-based developer targeting portfolio impact.",
+  "content_hash": "d1b6ff185576f8cd",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "build_portfolio",
+    "profile": "developer"
+  }
+}
