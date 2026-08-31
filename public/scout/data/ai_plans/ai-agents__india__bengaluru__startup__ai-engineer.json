@@ -1,0 +1,42 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:49:00.614795+00:00",
+  "headline": "Building a Personal Action Plan for a Startup",
+  "why_now": "The real signals suggest that AI agents and agentic workflows are in high demand in the tech industry, and the location of Bengaluru, India, offers a promising startup environment.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "An AI Agent for Project Management",
+    "description": "This project will leverage tools like GitHub, Hugging Face, and News RSS to plan, use tools, call APIs, collaborate, and complete multi-step tasks.",
+    "stack": [
+      "tools/libraries"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "This recommendation is solid as it leverages the real signals and offers concrete steps to get noticed by the right people in the tech industry.",
+  "content_hash": "d3b1a1dd912d1a5d",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "startup",
+    "profile": "ai_engineer"
+  }
+}

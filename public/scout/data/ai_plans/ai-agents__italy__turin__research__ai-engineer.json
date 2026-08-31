@@ -1,0 +1,42 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:31:19.308751+00:00",
+  "headline": "Researching AI Agents and Agentic Workflows",
+  "why_now": "The trend of AI agents and agentic workflows is growing, and understanding their applications and potential is crucial for developers and AI engineers.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "A project to explore and analyze AI agents and agentic workflows",
+    "description": "This project will involve researching, analyzing, and applying the latest trends in AI agents and agentic workflows.",
+    "stack": [
+      "tools/libraries"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "The research and analysis will provide valuable insights into the future of AI agents and agentic workflows, enabling developers and AI engineers to make informed decisions and contribute to the development of new technologies.",
+  "content_hash": "8e65a71953b0a0ef",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "research",
+    "profile": "ai_engineer"
+  }
+}

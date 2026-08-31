@@ -1,0 +1,47 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:36:03.108664+00:00",
+  "headline": "Developing a Personal Action Plan for Career Success",
+  "why_now": "The real-world trend signals indicate a growing demand for AI agents and agentic workflows in the tech industry, making this topic crucial for agents and developers.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Personal AI Agent and Agentic Workflow Portfolio",
+    "description": "This portfolio will showcase my skills, tools, and projects that demonstrate my ability to plan, use tools, call APIs, collaborate, and complete multi-step tasks.",
+    "stack": [
+      "tools/libraries",
+      "language-agnostic",
+      "data-structures",
+      "machine-learning-algorithms",
+      "web-development",
+      "AI-ML"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "I am confident in this recommendation as the real-world trend signals indicate a growing demand for AI agents and agentic workflows in the tech industry.",
+  "content_hash": "91ce818a637e8e5d",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "career",
+    "profile": "agent"
+  }
+}

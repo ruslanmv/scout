@@ -1,0 +1,62 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:50:47.424079+00:00",
+  "headline": "Bengaluru's AI ecosystem is demanding agentic systems expertise right now—position yourself as the go-to researcher building the tools that replace manual workflows.",
+  "why_now": "GitHub activity (96) and Hugging Face activity (92) show developers are actively building agentic frameworks, while job demand (85) is climbing as companies seek to automate multi-step processes. Your research goal aligns perfectly with the local relevance signal (82) that Bengaluru companies want these capabilities. The timing is now because the tooling ecosystem has matured enough to build serious projects.",
+  "study": [
+    "Master LangChain or AutoGPT fundamentals by building a simple agent that chains reasoning steps together",
+    "Learn tool-use patterns: connect your agent to real APIs (weather, search, calendar) via LangChain tools or custom functions",
+    "Study multi-agent architectures—read papers and repo code on how agents collaborate, negotiate, and divide labor",
+    "Implement memory and state management patterns so agents persist context across sessions",
+    "Review recent research on agent safety, tool injection attacks, and evaluation metrics for agentic workflows"
+  ],
+  "build": {
+    "title": "Multi-Step Research Agent with Tool Orchestration",
+    "description": "An agent that plans research tasks, calls multiple APIs (arXiv, PubMed, web search), synthesizes findings, and outputs structured reports. Impresses because it demonstrates full agentic loop: planning, tool execution, reflection, and iterative refinement.",
+    "stack": [
+      "LangChain",
+      "OpenAI API",
+      "SerpAPI",
+      "Streamlit",
+      "FAISS"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean code and README",
+      "Live demo URL (Streamlit Cloud)",
+      "Technical blog post on architecture decisions"
+    ]
+  },
+  "publish": [
+    "Submit to Bengaluru AI/ML meetup groups (HasGeek, Bleeding Edge Web) for a talk on your agent build",
+    "Post detailed thread on LinkedIn showing your agent solving a real research problem step-by-step",
+    "Contribute a PR or tool to an open-source agent framework on GitHub to get community visibility",
+    "Write a case study on how your agent outperforms manual research workflows, target Towards Data Science or personal blog"
+  ],
+  "skills": [
+    "Agent framework design (LangChain/AutoGen)",
+    "Tool-use and API integration",
+    "Prompt engineering for planning agents",
+    "Vector database retrieval (FAISS)",
+    "Multi-agent collaboration patterns",
+    "Agent evaluation and benchmarking",
+    "Research workflow automation",
+    "Streamlit deployment"
+  ],
+  "risks": [
+    "The agent framework landscape is fragmented—your chosen stack may become obsolete within 6-12 months",
+    "Building a demo is easy; proving real reliability in production is much harder and may require compute budget you don't have",
+    "High competition from experienced engineers means you need a very specific niche or exceptional write-up to stand out"
+  ],
+  "confidence": "The signals are exceptionally strong (96/94/92) and your research profile is well-matched to the multi-step task completion focus of agentic AI, making this a high-confidence recommendation.",
+  "content_hash": "57a3b425482461c2",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "research",
+    "profile": "agent"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:38:24.722779+00:00",
+  "headline": "AI agents and agentic workflows: A personal action plan",
+  "why_now": "Real trends in AI and automation are driving the development of more efficient and personalized workflows, and these trends are particularly relevant in San Francisco, USA.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "A portfolio project that integrates AI agents and agentic workflows",
+    "description": "This project will leverage AI to plan multi-step tasks and tools, and then use these tools to collaborate with users and complete tasks.",
+    "stack": [
+      "tools/libraries",
+      "AI agents",
+      "agentic workflows"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "1-2 risks that could impact the success of the project",
+    "1-2 risks that could impact the success of the project"
+  ],
+  "confidence": "The personal action plan is solid, leveraging the real trends in AI and automation while keeping the project practical and relevant.",
+  "content_hash": "7a31465bb764733e",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "build_portfolio",
+    "profile": "agent"
+  }
+}

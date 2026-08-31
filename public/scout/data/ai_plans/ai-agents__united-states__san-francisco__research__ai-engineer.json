@@ -1,0 +1,63 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:42:27.643239+00:00",
+  "headline": "San Francisco AI engineers who ignore agentic workflows in 2024 will watch the next platform shift happen from the sidelines",
+  "why_now": "With 96 GitHub activity and 96 project potential, AI agents are exploding in real implementations, not just demos. Job demand at 85 confirms employers in the Bay Area are already hiring for these skills. Hugging Face activity at 92 means the open-source tooling has matured enough to build production systems today.",
+  "study": [
+    "Read Anthropic's Claude tool-use docs and the ReAct paper to understand planning + tool-calling fundamentals",
+    "Study the LangChain and LlamaIndex agent frameworks, then build a simple ReAct agent that calls 2-3 APIs",
+    "Review OpenAI's function calling guide and implement a multi-step research agent using GPT-4o",
+    "Examine real agent repos on GitHub like AutoGPT, BabyAGI, and CrewAI to learn orchestration patterns",
+    "Watch at least one talk from the SF AI Engineer Summit or similar local meetup on production agent systems"
+  ],
+  "build": {
+    "title": "Multi-Agent Market Research Assistant",
+    "description": "A system where 3 specialized agents (a planner, a web researcher using search APIs, and a synthesizer) collaborate to produce investment thesis reports on public companies. The planner agent decomposes the query, the researcher agent fetches and cites sources, and the synthesizer produces a structured markdown report with risk flags. This impresses because it demonstrates real orchestration, tool use, memory, and evaluation—all the hard parts of agentic systems.",
+    "stack": [
+      "LangGraph",
+      "OpenAI or Anthropic API",
+      "Tavily or SerpAPI for search",
+      "FastAPI for serving",
+      "Pinecone or Chroma for vector memory",
+      "Docker for deployment"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README and architecture diagram",
+      "Live demo on Streamlit or Gradio",
+      "Technical write-up on Medium or your blog explaining design tradeoffs",
+      "Short Loom video walking through a sample query"
+    ]
+  },
+  "publish": [
+    "Post the demo on Hacker News with a substantive technical comment, not just a link drop",
+    "Share in the LangChain Discord and r/LocalLLaMA with context on what you learned",
+    "Submit a talk proposal to SF Bay Area ML meetups like MLOps Community or AI Tinkerers",
+    "Tag relevant researchers and engineers on Twitter/X with a specific question to invite discussion"
+  ],
+  "skills": [
+    "Agent orchestration and multi-step planning",
+    "Tool calling and function schema design",
+    "Prompt engineering for decomposition and synthesis",
+    "API integration and error handling in agent loops",
+    "Vector database usage for agent memory",
+    "Evaluation and observability of non-deterministic systems",
+    "FastAPI deployment and containerization"
+  ],
+  "risks": [
+    "Agent systems are non-deterministic and expensive—budget $50-200 in API costs during development and build eval harnesses early",
+    "The framework landscape (LangChain, LlamaIndex, LangGraph, CrewAI) is shifting rapidly; focus on transferable concepts over specific APIs to avoid lock-in",
+    "Scope creep is the #1 killer of agent projects—start with 2 agents doing 2 jobs, not 5 agents doing 10"
+  ],
+  "confidence": "This recommendation is highly solid—the signals consistently rank 82+ across all dimensions and the SF ecosystem has the density of hiring and community activity to support real career returns.",
+  "content_hash": "716c67c3e6ca5695",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "research",
+    "profile": "ai_engineer"
+  }
+}

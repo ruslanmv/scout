@@ -1,0 +1,65 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:47:42.616232+00:00",
+  "headline": "Bengaluru's AI agent momentum is exploding—your moment to ship real agentic systems is right now.",
+  "why_now": "With GitHub activity at 96, project potential at 96, and career value at 95, agentic workflows are the hottest hands-on AI trend in 2026. Bengaluru is India's deep-tech hub, and job demand at 85 signals companies are actively hiring agent builders. Strong Hugging Face activity (92) and community buzz (84) give you a ready ecosystem to learn from and contribute to.",
+  "study": [
+    "Master the LLM tool-use fundamentals: read OpenAI function calling docs, Anthropic's tool use guide, and the ReAct paper to understand planning + action loops.",
+    "Build with a production framework: pick LangGraph or CrewAI and complete their official quickstart plus 2 tutorial projects end-to-end.",
+    "Study agent architectures: implement ReAct, Plan-and-Execute, and multi-agent collaboration patterns in a Jupyter notebook using LangChain.",
+    "Learn evaluation and reliability: read DeepEval and AgentBench papers, then add tracing with Langfuse or Arize Phoenix to a sample agent.",
+    "Join Bengaluru meetups: attend a PyData Bangalore, Bangalore AI, or LlamaIndex/CrewAI local workshop to find collaborators."
+  ],
+  "build": {
+    "title": "Bengaluru CivicOps: Multi-Agent Urban Issue Resolver",
+    "description": "A multi-agent system where a Planner agent triages Bengaluru civic complaints (potholes, power outages, garbage), a Researcher agent pulls data from BBMP and BESCOM public APIs and news feeds, and a Reporter agent drafts a citizen-ready response with action steps. It demonstrates agent orchestration, tool calling, memory, and real-world API integration—exactly what Bengaluru startups and civic-tech teams are building.",
+    "stack": [
+      "LangGraph",
+      "OpenAI/Anthropic API",
+      "FastAPI",
+      "Tavily or SerpAPI for search",
+      "Pinecone or Chroma for memory",
+      "Streamlit for UI",
+      "Langfuse for tracing"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and setup instructions",
+      "Live Streamlit demo deployed on Hugging Face Spaces or Railway",
+      "Blog write-up on Hashnode or Dev.to showing agent traces and a before/after comparison",
+      "Short 2-minute Loom demo video walking through a real complaint scenario"
+    ]
+  },
+  "publish": [
+    "Post the project on Hacker News (Show HN) with a clear headline and the live demo link—agent projects regularly hit the front page.",
+    "Share a build-in-public thread on X and LinkedIn tagging LangChain, LangGraph, and Bengaluru AI community accounts; Bengaluru founders scroll LinkedIn heavily.",
+    "Submit a talk proposal to Bangalore AI Meetup, PyData Bangalore, or JSConf India—offering to demo live builds gets accepted faster than slides.",
+    "Contribute a PR or tutorial to LangGraph or CrewAI docs and mention it in your README; maintainer visibility transfers credibility to you."
+  ],
+  "skills": [
+    "LLM tool use and function calling",
+    "Multi-agent orchestration and planning",
+    "Prompt engineering for reasoning loops",
+    "API integration and web scraping",
+    "Vector databases and agent memory",
+    "Agent evaluation and observability",
+    "FastAPI / Python backend development",
+    "Technical writing and demo presentation"
+  ],
+  "risks": [
+    "Agent frameworks are shifting fast—LangGraph, CrewAI, and AutoGen all compete, so avoid over-investing in one proprietary pattern; keep your core logic framework-agnostic.",
+    "Real-world API reliability (BBMP/BESCOM endpoints can be flaky or undocumented) may force scope cuts—have a mocked-data fallback from day one.",
+    "Evaluation is still an open problem; without good traces and assertions, your agent will silently regress as you iterate—budget time for evals, not just features."
+  ],
+  "confidence": "Very high—signals are strong across GitHub, Hugging Face, jobs, and Bengaluru's ecosystem, and 'create_agents' is a clear, achievable scope for someone with an agent-builder profile.",
+  "content_hash": "aada950486e79bf7",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "create_agents",
+    "profile": "agent"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:49:47.871182+00:00",
+  "headline": "Bengaluru's founder scene is betting hard on AI agents—your research can shape the next wave of agentic products built here.",
+  "why_now": "With GitHub activity at 96 and project potential at 96, agentic workflows are exploding in both code and commercial interest. Career value scores 95 and news mentions hit 88, meaning founders who deeply research this space now will have first-mover advantage as Bengaluru's agent ecosystem matures. Local relevance at 82 confirms the demand is real in your immediate network, not just Silicon Valley hype.",
+  "study": [
+    "Read the LangChain, AutoGen, and CrewAI documentation end-to-end and replicate their quickstart agents to understand orchestration patterns",
+    "Study Anthropic's tool-use papers and OpenAI's function-calling spec to ground yourself in how agents plan, reason, and call APIs",
+    "Survey 20 production agent projects on GitHub tagged Bengaluru or built by Indian founders to map the local landscape and identify gaps",
+    "Build a small comparison benchmark of 3 agent frameworks on a single task (e.g., web research + summarization) to internalize tradeoffs",
+    "Read the recent IndiaAI Mission papers and NASSCOM reports on agentic AI to align your research with national strategy"
+  ],
+  "build": {
+    "title": "Bengaluru Agentic Startup Scout",
+    "description": "A multi-agent system that monitors GitHub, Product Hunt, LinkedIn, and Indian tech news for new agent-based startups in Bengaluru, enriches each with founder background and funding signals, scores them on a rubric, and writes a weekly digest. It demonstrates tool use, multi-step planning, collaborative agents, and real-world utility for an investor or fellow founder.",
+    "stack": [
+      "LangGraph",
+      "CrewAI",
+      "OpenAI/Anthropic APIs",
+      "Tavily or SerpAPI for search",
+      "Firecrawl for scraping",
+      "FastAPI",
+      "Postgres",
+      "Streamlit or Next.js dashboard"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README and architecture diagram",
+      "Live demo deployed on Vercel or Hugging Face Spaces",
+      "Blog post or Notion write-up documenting methodology, agent roles, and benchmark results"
+    ]
+  },
+  "publish": [
+    "Post the project on Hacker News with a 'Show HN' focusing on the agentic architecture choices",
+    "Share a thread on X and LinkedIn tagging Bengaluru AI communities like Bengaluru AI Builders, IndiaAI, and YourStory",
+    "Submit a talk proposal to Rootconf, PyConf Hyderabad, or the Bengaluru AI Meetup and demo live",
+    "Cross-post the write-up to Hashnode and dev.to with SEO keywords like 'agentic AI India' and pitch to AIM or Analytics India Magazine for feature coverage"
+  ],
+  "skills": [
+    "Multi-agent orchestration and role design",
+    "Tool use and API integration at scale",
+    "Prompt engineering and LLM reasoning patterns",
+    "Production deployment of AI systems",
+    "Research synthesis and competitive analysis",
+    "Technical writing and public communication",
+    "Rapid prototyping with modern AI frameworks",
+    "Founder-level product judgment and market mapping"
+  ],
+  "risks": [
+    "API costs and rate caps may break a live demo—budget for caching and fallback models",
+    "The agent ecosystem is shifting weekly; frameworks you pick today may be deprecated in 6 months, so abstract them behind interfaces",
+    "Research without a paying user or customer can stall; commit to sharing findings with 5 real founders weekly to stay grounded"
+  ],
+  "confidence": "Very high—signals across code activity, news, jobs, and local community all converge strongly, and the proposed project is scoped to ship in 4-6 weeks by a single founder.",
+  "content_hash": "54d3535eb5b0feb8",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "research",
+    "profile": "founder"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:45:52.423251+00:00",
+  "headline": "Building a Personal Portfolio: A Systematic Approach",
+  "why_now": "The real signals indicate that building a portfolio is crucial for personal and professional growth, especially in the tech industry.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Personal Portfolio",
+    "description": "This project will help you showcase your skills, projects, and achievements. It will serve as a roadmap for your career progression.",
+    "stack": [
+      "tools/libraries"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "Building a personal portfolio is a proven strategy for personal and professional growth, especially in the tech industry.",
+  "content_hash": "f90ac358e1b00eca",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "build_portfolio",
+    "profile": "student"
+  }
+}

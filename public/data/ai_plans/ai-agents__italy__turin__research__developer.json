@@ -1,0 +1,42 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:30:54.528720+00:00",
+  "headline": "Trends in AI Agents and Agentic Workflows: A Personal Action Plan",
+  "why_now": "Investing in AI technologies and their applications is crucial for the future of work and personal development. This plan helps to stay ahead of the curve by researching and implementing relevant tools and platforms.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Personal Portfolio Project",
+    "description": "This project will focus on developing a system that can plan, use tools, call APIs, collaborate, and complete multi-step tasks. It will leverage real-world data sources like GitHub, Hugging Face, and local news to gather insights and make informed decisions.",
+    "stack": [
+      "tools/libraries"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "This plan is solid and practical, leveraging real-world trends to stay ahead in the AI world.",
+  "content_hash": "602cde927b5c068d",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "research",
+    "profile": "developer"
+  }
+}

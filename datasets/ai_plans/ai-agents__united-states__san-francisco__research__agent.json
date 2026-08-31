@@ -1,0 +1,42 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:43:59.419898+00:00",
+  "headline": "Investigate and build a personal action plan for AI agents and agentic workflows",
+  "why_now": "The real signals indicate a growing interest in AI agents and agentic workflows in San Francisco, USA, which is a significant market and location for technology trends.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Develop a personal action plan for AI agents and agentic workflows",
+    "description": "Research trends, identify key areas of interest, and create a detailed plan for personal projects.",
+    "stack": [
+      "tools/libraries"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "The personal action plan is solid and can be implemented with the right steps and skills.",
+  "content_hash": "51be3f487e44b8a0",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "research",
+    "profile": "agent"
+  }
+}

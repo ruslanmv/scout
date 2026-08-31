@@ -1,0 +1,65 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:44:14.054373+00:00",
+  "headline": "Bengaluru's developer scene is sprinting toward agentic AI — your next move is to build, not just watch.",
+  "why_now": "With AI Agents ranking at 96 on GitHub activity and 94 on growth, plus 85 job demand in a city already dense with product startups, this is the moment where hands-on builders separate from spectators. The local relevance score of 82 confirms Bengaluru employers and communities are actively recruiting agent-fluent developers, not theorizing about them.",
+  "study": [
+    "Spend 2 weeks reading the LangChain and LlamaIndex docs end-to-end, then replicate their tool-calling and ReAct agent tutorials from scratch.",
+    "Build a multi-agent orchestration demo using CrewAI or AutoGen with at least 3 specialized agents (e.g., researcher, coder, reviewer) collaborating on a task.",
+    "Study the Anthropic tool-use and OpenAI function-calling APIs in depth; implement a single agent that plans, calls external APIs, retries on failure, and logs reasoning traces.",
+    "Watch the full 'Agentic Design Patterns' talk by Andrew Ng and the LangChain Interrupt conference sessions, then take notes on every architectural pattern mentioned.",
+    "Read 3 production case studies of agent systems on the LangChain blog and Hugging Face Spaces; reverse-engineer their evaluation harnesses."
+  ],
+  "build": {
+    "title": "BengaluruCommuteOps — A Multi-Agent City Assistant",
+    "description": "An agentic system that takes a natural-language goal like 'get me from Indiranagar to Whitefield by 9am with under ₹300 spent' and orchestrates specialized agents (BMTC transit fetcher, Google Maps routing, weather checker, budget calculator, summarizer) to plan, execute API calls, handle failures, and return an optimized multi-modal commute plan with reasoning traces shown. It impresses because it mirrors real product problems Bengaluru teams are solving, demonstrates true tool-use and agent collaboration, and produces visible evidence of planning loops.",
+    "stack": [
+      "LangGraph",
+      "OpenAI function-calling",
+      "FastAPI",
+      "Redis",
+      "BMTC/open transit APIs",
+      "Streamlit",
+      "LangSmith"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and reproducible setup",
+      "Live Streamlit demo deployed on Hugging Face Spaces",
+      "Technical write-up on Medium or dev.to with the prompt, traces, and lessons learned",
+      "Short 3-minute Loom video walking through one full agent run"
+    ]
+  },
+  "publish": [
+    "Post the demo on Hacker News Show HN with a strong technical hook about multi-agent orchestration; aim for the front page.",
+    "Share in Bengaluru-focused communities: r/bangalore, the Bangalore Devs Slack, and the local LangChain India Discord, offering to help others replicate the project.",
+    "Publish the write-up on Hashnode and cross-post to LinkedIn tagging Bengaluru AI meetups (Bangalore AI, MLblr) and recruiters at companies like Flipkart, Razorpay, and Swiggy actively hiring agent engineers.",
+    "Submit a talk proposal to PyConf Hyderabad and Bangalore Open Source Meetups; even a 10-minute lightning talk dramatically boosts visibility."
+  ],
+  "skills": [
+    "Multi-agent orchestration and design patterns (ReAct, Plan-and-Execute, supervisor-worker)",
+    "Tool calling and API integration with retry/error handling",
+    "Prompt engineering for planning and self-correction",
+    "FastAPI backend development and async workflows",
+    "Observability and evaluation of LLM systems (tracing, cost, latency)",
+    "Production deployment on Hugging Face Spaces and Streamlit",
+    "Technical writing and public demonstration of AI systems",
+    "Working with real-world Indian data sources and localization"
+  ],
+  "risks": [
+    "API costs can spike fast during agent loops — set hard token budgets per request and use cheaper models for sub-agents before scaling demos.",
+    "Agent systems are notoriously flaky; an impressive demo that fails once publicly can hurt credibility, so build a solid evaluation harness with at least 20 golden test cases before showcasing.",
+    "The space is moving so quickly (96 GitHub activity) that a project older than that can feel dated — commit to one meaningful iteration per month and document the evolution."
+  ],
+  "confidence": "Recommendation is high-confidence: every signal aligns strongly with developer career growth in Bengaluru, and the concrete project ties directly to local market demand.",
+  "content_hash": "fa512717bce89e56",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "career",
+    "profile": "developer"
+  }
+}

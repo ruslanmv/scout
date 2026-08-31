@@ -1,0 +1,47 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:30:26.609313+00:00",
+  "headline": "Accelerate your startup journey with AI-powered AGents and Agentic Workflows",
+  "why_now": "The real signals indicate that your startup is growing and attracting interest, making it a prime time to invest in AGents and Agentic Workflows.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Create a personalized AGents and Agentic Workflows portfolio",
+    "description": "This portfolio will showcase your AGents and Agentic Workflows skills, attract potential clients, and demonstrate your expertise.",
+    "stack": [
+      "tools/libraries",
+      "AI models",
+      "agentic workflows"
+    ],
+    "deliverables": [
+      "demo",
+      "repo",
+      "write-up",
+      "case studies"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "AI skills",
+    "agentic workflows"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "One sentence on how solid this recommendation is: With the right investments and expertise, you can accelerate your startup journey and attract the right clients.",
+  "content_hash": "57f3e31874fece74",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "startup",
+    "profile": "agent"
+  }
+}

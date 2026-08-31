@@ -1,0 +1,67 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:46:55.703929+00:00",
+  "headline": "Bengaluru's AI engineering scene is sprinting toward agentic systems—time to build the agents everyone will be hiring for next quarter.",
+  "why_now": "With GitHub activity at 96 and project potential at 96, agentic workflows are exploding in open-source momentum, and Bengaluru's job demand signal at 85 confirms local teams are actively hiring builders who can ship multi-step AI agents. Hugging Face activity at 92 and news mentions at 88 show both research and industry coverage are converging—early movers will define the patterns others copy.",
+  "study": [
+    "Master LLM tool-use fundamentals: function calling, JSON-mode outputs, and structured prompting with OpenAI/Anthropic APIs and open models via vLLM or Ollama.",
+    "Learn agent orchestration frameworks hands-on—build with LangGraph, CrewAI, and the OpenAI Agents SDK; compare state management, memory, and multi-agent handoffs.",
+    "Study MCP (Model Context Protocol) for tool interoperability and implement at least one custom MCP server.",
+    "Ship a ReAct/Plan-and-Execute agent that uses tools (web search, code execution, file I/O) with proper error handling, retries, and observability via LangSmith/Langfuse.",
+    "Read recent papers and production postmortems: Anthropic's 'Building Effective Agents', the LangChain State of Agents report, and top posts from r/LocalLLaMA and the LangChain Discord."
+  ],
+  "build": {
+    "title": "BengaluruOps: A Multi-Agent Ops Co-Pilot for Local SaaS Teams",
+    "description": "An agentic system where a Planner agent decomposes ops requests (e.g., 'onboard new customer Acme Corp') and dispatches specialist sub-agents—Billing, Ticketing (Zoho Desk API), CRM (HubSpot API), and Slack Notifier—to execute real API calls, handle failures, and report back. Designed to be sold to Bengaluru startups and impress with real-world tool use, multi-agent collaboration, and cost-tracked execution logs.",
+    "stack": [
+      "Python",
+      "LangGraph",
+      "OpenAI/Anthropic APIs",
+      "FastAPI",
+      "SQLite/Postgres",
+      "Langfuse for tracing",
+      "Zoho Desk + HubSpot + Slack MCP servers",
+      "Docker",
+      "Streamlit UI"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and .env.example",
+      "Live demo deployed on Railway/Render with a 2-minute Loom walkthrough",
+      "Technical write-up on Medium or Hashnode covering design trade-offs",
+      "Hugging Face Space showing the agent reasoning traces"
+    ]
+  },
+  "publish": [
+    "Post the build-in-public journey on X and LinkedIn with weekly threads tagging Bengaluru AI communities (#BengaluruAI, #BuildInPublic) and the LangChain/CrewAI founders.",
+    "Submit a talk proposal to Bengaluru meetups: PyConf Bengaluru, BangPypers, Bangalore AI, and HasGeek's Rootconf AI track.",
+    "Publish a Hugging Face Space and share in the Hugging Face Discord; cross-post to r/LocalLLaMA and r/MachineLearning with concrete results.",
+    "Contribute one PR or example back to LangGraph or CrewAI and reference it in your resume—this signals peer recognition faster than any self-promotion."
+  ],
+  "skills": [
+    "LLM function calling and tool/function schema design",
+    "Multi-agent orchestration and state management",
+    "MCP protocol implementation and custom server authoring",
+    "Production observability (tracing, token cost tracking, eval pipelines)",
+    "API integration patterns (REST, webhooks, rate limiting)",
+    "Prompt engineering for planning and self-correction loops",
+    "FastAPI backend deployment and Docker packaging",
+    "Agent evaluation, regression testing, and safety guardrails"
+  ],
+  "risks": [
+    "Agent stacks are shifting fast (LangGraph vs CrewAI vs OpenAI Agents SDK)—skills may need re-platforming within 6 months, so prioritize transferable concepts over framework syntax.",
+    "Tool-calling agents can rack up token costs quickly and hallucinate API parameters; without proper budgets and validation layers your demo could fail or burn money.",
+    "Real API integrations hit sandbox/credential friction (Zoho, HubSpot) that pure-LLM demos avoid—budget time for the unglamorous plumbing."
+  ],
+  "confidence": "Very high—signals are uniformly strong across GitHub, Hugging Face, news, and Bengaluru-specific job demand, and your existing AI engineer profile aligns directly with the build plan.",
+  "content_hash": "0b7896f7f91e14b0",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "create_agents",
+    "profile": "ai_engineer"
+  }
+}

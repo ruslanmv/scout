@@ -1,0 +1,63 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:49:36.465721+00:00",
+  "headline": "Bengaluru's student engineers are turning agentic AI into the next wave of startups—your research edge starts now.",
+  "why_now": "Agentic AI systems that plan, call APIs, and complete multi-step tasks are exploding across GitHub (96 activity) and Hugging Face (92), with job demand at 85 and 88 news mentions confirming mainstream momentum. As a Bengaluru student, you're in India's deepest AI talent pool, where local_relevance at 82 and project_potential at 96 mean hands-on agent work will stand out on applications, internships, and research portfolios. Career value at 95 signals this is a rare window where learning curves directly translate to opportunity.",
+  "study": [
+    "Read Anthropic's 'Building Effective Agents' and the LangChain ReAct paper to ground yourself in planning + tool-use fundamentals.",
+    "Complete the LangGraph or CrewAI quickstart course on YouTube (free) and replicate the multi-agent research assistant example end-to-end.",
+    "Study the top 20 agentic repos on GitHub by stars this quarter (focus on architectures, not just READMEs)—clone two and trace the code.",
+    "Read 3 recent Hugging Face blog entries on tool-using LLMs and small-model agents to understand the efficiency frontier.",
+    "Join the LangChain Discord and r/LocalLLaMA to follow real discussions on agent failure modes and eval practices."
+  ],
+  "build": {
+    "title": "Bengaluru Civic Research Agent",
+    "description": "A multi-agent system that takes a question like 'What are BMTC bus complaints in Indiranagar this week?' and routes it through a planner agent, web-scraping tool, summarizer agent, and citation checker. It impresses because it demonstrates real tool orchestration on a hyper-local Bengaluru dataset, not a toy example, and shows you can ship an agent that handles ambiguity and self-critique.",
+    "stack": [
+      "LangGraph",
+      "OpenAI or Gemini API",
+      "Tavily or SerpAPI for search",
+      "Streamlit for UI",
+      "DuckDB for local caching",
+      "pytest for eval"
+    ],
+    "deliverables": [
+      "public GitHub repo with clean README and architecture diagram",
+      "hosted Streamlit demo with a 60-second Loom walkthrough",
+      "blog write-up on Medium or Hashnode covering one failure mode you engineered around"
+    ]
+  },
+  "publish": [
+    "Post the project on Hacker News as 'Show HN: A multi-agent research assistant for Bengaluru civic data' with a crisp demo GIF.",
+    "Share a build-in-public thread on X tagging @LangChainAI and @huggingface with a short architecture sketch.",
+    "Submit a talk proposal to Bangalore AI Meetup or PyConf India showcasing the failure-mode write-up—this audience hires and collaborates heavily.",
+    "Add the repo link and demo to your LinkedIn 'Featured' section and DM 5 Bengaluru AI founders or researchers with a specific question about their agent stack."
+  ],
+  "skills": [
+    "LLM orchestration and tool-use design",
+    "Multi-agent coordination patterns (planner-executor, reflection)",
+    "Prompt engineering and structured output (JSON schemas, function calling)",
+    "API integration and error handling for non-deterministic systems",
+    "Evaluation and debugging of agent traces",
+    "Python async workflows",
+    "Reading and writing research papers",
+    "Public technical communication"
+  ],
+  "risks": [
+    "Agent stacks (LangGraph, CrewAI, AutoGen) are evolving weekly—code you write today can break next month, so pin versions and avoid over-investing in one framework.",
+    "Bengaluru's LLM API latency can make demos feel slow; budget for caching and smaller models or you'll burn time polishing UX instead of agent logic.",
+    "It's easy to build a flashy demo that fails on real evaluation—commit to a small eval set early or you'll ship something that doesn't generalize beyond the example."
+  ],
+  "confidence": "The signals are unusually consistent across GitHub, Hugging Face, news, and job demand, and your Bengaluru + student profile aligns perfectly with the local research and project-potential scores, making this a high-conviction bet.",
+  "content_hash": "b74be86f045daa77",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "research",
+    "profile": "student"
+  }
+}

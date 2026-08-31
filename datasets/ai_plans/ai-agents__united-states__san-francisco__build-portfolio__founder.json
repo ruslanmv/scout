@@ -1,0 +1,49 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:37:11.115497+00:00",
+  "headline": "Building a Personal Portfolio in AI and Agentic Workflows",
+  "why_now": "The real signals show the importance of building a portfolio in AI and agentic workflows, especially in a location like San Francisco.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Build a Personal Portfolio in AI and Agentic Workflows",
+    "description": "This project will help you showcase your expertise in AI and agentic workflows, and provide concrete examples of how you can apply your skills to real-world projects.",
+    "stack": [
+      "tools/libraries",
+      "models",
+      "frameworks",
+      "integrations",
+      "APIs"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up",
+      "presentation"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "no specific risks"
+  ],
+  "confidence": "The project is a practical action plan that can be completed in 3-4 steps, with a high likelihood of success.",
+  "content_hash": "bb0a44319702f4e1",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "build_portfolio",
+    "profile": "founder"
+  }
+}

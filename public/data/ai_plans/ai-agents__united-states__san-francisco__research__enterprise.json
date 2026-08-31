@@ -1,0 +1,48 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:43:26.412834+00:00",
+  "headline": "Investigate and build a personal action plan for AI Agents and Agentic Workflows",
+  "why_now": "The real signals suggest that the field of AI Agents and Agentic Workflows is highly relevant and growing in the tech industry. This topic is crucial for developers and AI engineers as it involves systems that plan, use tools, call APIs, collaborate, and complete multi-step tasks.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Develop a personal action plan for AI Agents and Agentic Workflows",
+    "description": "This plan outlines a structured approach to researching, building a portfolio project, and engaging with the right audience.",
+    "stack": [
+      "tools/libraries",
+      "programming languages",
+      "data analysis tools",
+      "project management tools"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "coding",
+    "data analysis",
+    "project management",
+    "AI agents and agentic workflows"
+  ],
+  "risks": [
+    "no specific risks"
+  ],
+  "confidence": "The personal action plan for AI Agents and Agentic Workflows is solid, as it addresses the real signals and provides concrete learning steps.",
+  "content_hash": "3a76bb3a34479140",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "research",
+    "profile": "enterprise"
+  }
+}

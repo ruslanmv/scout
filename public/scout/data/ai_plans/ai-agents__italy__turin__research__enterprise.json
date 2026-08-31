@@ -1,0 +1,63 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-08-31T12:32:37.320756+00:00",
+  "headline": "Turin's enterprise engineers will own the agentic workflow layer—start building research-grade AI agents now and lead the next automation wave.",
+  "why_now": "With project_potential at 96 and career_value at 95, AI agents represent the highest-leverage skill shift for enterprise architects in 2026. GitHub activity (96) and Hugging Face momentum (92) confirm that agentic tooling—LangGraph, CrewAI, MCP servers—is maturing into production-ready stacks. Turin hosts enterprise and automotive hubs actively exploring multi-step automation, making local research into agentic workflows directly applicable.",
+  "study": [
+    "Read Anthropic's 'Building Effective Agents' and OpenAI's function-calling guides to ground yourself in planner-executor vs. workflow patterns.",
+    "Build a hands-on notebook using LangChain or LangGraph: connect an LLM to 3-4 tools (web search, SQL, file I/O, a custom API) and trace a multi-step task end-to-end.",
+    "Study Hugging Face's smolagents and CrewAI repos—clone them, run the examples, and dissect how roles, memory, and handoffs are implemented.",
+    "Review the Model Context Protocol (MCP) spec and build a minimal MCP server so you understand the emerging standard for agent-to-tool communication.",
+    "Survey enterprise case studies (SAP, Siemens, automotive Tier-1s) on retrieval-augmented and tool-using systems to anchor research in real deployment constraints."
+  ],
+  "build": {
+    "title": "TurinEnterprise-ResearchAgent",
+    "description": "An autonomous research agent that takes a business question (e.g., 'compare EV battery supply chains across Northern Italy'), decomposes it into sub-tasks, calls web search and a local document store, cross-references sources, and produces a cited briefing—demonstrating planning, tool use, multi-step reasoning, and enterprise-grade output formatting.",
+    "stack": [
+      "LangGraph",
+      "OpenAI or open-source LLM via Hugging Face Inference",
+      "Tavily or Serper for web search",
+      "SQLite + embeddings",
+      "MCP server",
+      "Streamlit or Gradio for UI"
+    ],
+    "deliverables": [
+      "public GitHub repo with clean architecture and docs",
+      "live demo (Streamlit Cloud or Hugging Face Space)",
+      "technical write-up on LinkedIn or a blog detailing design choices and failure modes"
+    ]
+  },
+  "publish": [
+    "Post the write-up on LinkedIn tagging Turin AI, enterprise architecture, and automotive communities; cross-post to Hugging Face community discussions.",
+    "Submit a short talk proposal to local meetups (Turin.AI, Torino Tech, PyData Turin) or the AI Festival events in Italy.",
+    "Open-source the MCP server component so it gets starred and cited by other agent developers.",
+    "Share a demo video on X/YouTube and submit the project to 'awesome-agents' lists and LangChain's community showcase."
+  ],
+  "skills": [
+    "LLM orchestration and prompt engineering",
+    "Multi-step planning and agent loop design",
+    "Tool/function calling and API integration",
+    "Retrieval-augmented generation (RAG)",
+    "Model Context Protocol (MCP) implementation",
+    "Multi-agent collaboration patterns",
+    "Production observability and evaluation of agent traces",
+    "Enterprise architecture for AI workflows"
+  ],
+  "risks": [
+    "Agent loops can hallucinate or get stuck in infinite tool calls—budget for eval harnesses and guardrails from day one, or your research demo will look flaky.",
+    "The agentic stack is consolidating fast; committing to one framework (LangGraph vs. CrewAI vs. smolagents) too early may require costly rewrites as standards solidify.",
+    "Enterprise buyers care about data residency and compliance—if your demo ignores GDPR and on-premise deployment, it won't resonate with Turin's regulated enterprise audience."
+  ],
+  "confidence": "Recommendation is strong: signal scores are uniformly above 82 with no weak dimensions, and agentic workflows align directly with both your enterprise profile and Turin's industrial R&D demand.",
+  "content_hash": "7d63dec35bed2b22",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "research",
+    "profile": "enterprise"
+  }
+}
