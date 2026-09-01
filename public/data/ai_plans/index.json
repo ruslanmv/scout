@@ -45,6 +45,24 @@
       "profile": "developer",
       "generated_at": "2026-08-30T10:33:18.317590+00:00"
     },
+    "ai-agents__italy__milan__startup__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "c20d56bf75782d89",
+      "country": "Italy",
+      "city": "Milan",
+      "goal": "startup",
+      "profile": "developer",
+      "generated_at": "2026-09-01T10:44:49.426130+00:00"
+    },
+    "ai-agents__italy__milan__startup__student": {
+      "topic_id": "ai-agents",
+      "content_hash": "39bbff56a60398fa",
+      "country": "Italy",
+      "city": "Milan",
+      "goal": "startup",
+      "profile": "student",
+      "generated_at": "2026-09-01T10:45:23.234766+00:00"
+    },
     "ai-agents__italy__turin__career__student": {
       "topic_id": "ai-agents",
       "content_hash": "9891f4b777857a2a",
@@ -153,6 +171,15 @@
       "profile": "ai_engineer",
       "generated_at": "2026-08-31T12:31:19.308751+00:00"
     },
+    "ai-agents__italy__turin__research__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "7d3f647cb86c3184",
+      "country": "Italy",
+      "city": "Turin",
+      "goal": "research",
+      "profile": "founder",
+      "generated_at": "2026-09-01T10:56:47.445744+00:00"
+    },
     "ai-agents__italy__turin__research__enterprise": {
       "topic_id": "ai-agents",
       "content_hash": "7d63dec35bed2b22",
@@ -161,6 +188,24 @@
       "goal": "research",
       "profile": "enterprise",
       "generated_at": "2026-08-31T12:32:37.320756+00:00"
+    },
+    "ai-agents__italy__turin__research__agent": {
+      "topic_id": "ai-agents",
+      "content_hash": "d35a61d35a0d8dab",
+      "country": "Italy",
+      "city": "Turin",
+      "goal": "research",
+      "profile": "agent",
+      "generated_at": "2026-09-01T10:56:51.587411+00:00"
+    },
+    "ai-agents__united-states__san-francisco__career__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "e780a4ab08ac6a76",
+      "country": "United States",
+      "city": "San Francisco",
+      "goal": "career",
+      "profile": "developer",
+      "generated_at": "2026-09-01T10:57:02.731791+00:00"
     },
     "ai-agents__united-states__san-francisco__career__student": {
       "topic_id": "ai-agents",
@@ -171,6 +216,15 @@
       "profile": "student",
       "generated_at": "2026-08-31T12:34:57.822781+00:00"
     },
+    "ai-agents__united-states__san-francisco__career__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "c485ec2b2932ab97",
+      "country": "United States",
+      "city": "San Francisco",
+      "goal": "career",
+      "profile": "founder",
+      "generated_at": "2026-09-01T10:57:24.019890+00:00"
+    },
     "ai-agents__united-states__san-francisco__career__agent": {
       "topic_id": "ai-agents",
       "content_hash": "91ce818a637e8e5d",
@@ -179,6 +233,15 @@
       "goal": "career",
       "profile": "agent",
       "generated_at": "2026-08-31T12:36:03.108664+00:00"
+    },
+    "ai-agents__united-states__san-francisco__build-portfolio__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "7fd3cf8365a0f774",
+      "country": "United States",
+      "city": "San Francisco",
+      "goal": "build_portfolio",
+      "profile": "developer",
+      "generated_at": "2026-09-01T10:57:45.280656+00:00"
     },
     "ai-agents__united-states__san-francisco__build-portfolio__founder": {
       "topic_id": "ai-agents",
@@ -197,6 +260,42 @@
       "goal": "build_portfolio",
       "profile": "agent",
       "generated_at": "2026-08-31T12:38:24.722779+00:00"
+    },
+    "ai-agents__united-states__san-francisco__create-agents__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "44af7eb1c62aeda2",
+      "country": "United States",
+      "city": "San Francisco",
+      "goal": "create_agents",
+      "profile": "founder",
+      "generated_at": "2026-09-01T10:59:21.971302+00:00"
+    },
+    "ai-agents__united-states__san-francisco__create-agents__enterprise": {
+      "topic_id": "ai-agents",
+      "content_hash": "68b9d8615c0ff5be",
+      "country": "United States",
+      "city": "San Francisco",
+      "goal": "create_agents",
+      "profile": "enterprise",
+      "generated_at": "2026-09-01T10:59:30.288519+00:00"
+    },
+    "ai-agents__united-states__san-francisco__create-agents__agent": {
+      "topic_id": "ai-agents",
+      "content_hash": "a2c13b3dc97b2c1e",
+      "country": "United States",
+      "city": "San Francisco",
+      "goal": "create_agents",
+      "profile": "agent",
+      "generated_at": "2026-09-01T10:59:54.195649+00:00"
+    },
+    "ai-agents__united-states__san-francisco__startup__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "2da2b328296bd166",
+      "country": "United States",
+      "city": "San Francisco",
+      "goal": "startup",
+      "profile": "developer",
+      "generated_at": "2026-09-01T10:59:57.108564+00:00"
     },
     "ai-agents__united-states__san-francisco__startup__ai-engineer": {
       "topic_id": "ai-agents",
@@ -224,6 +323,15 @@
       "goal": "startup",
       "profile": "founder",
       "generated_at": "2026-08-30T11:34:10.518373+00:00"
+    },
+    "ai-agents__united-states__san-francisco__startup__enterprise": {
+      "topic_id": "ai-agents",
+      "content_hash": "3de53c6f24e79740",
+      "country": "United States",
+      "city": "San Francisco",
+      "goal": "startup",
+      "profile": "enterprise",
+      "generated_at": "2026-09-01T11:00:10.112600+00:00"
     },
     "ai-agents__united-states__san-francisco__startup__agent": {
       "topic_id": "ai-agents",
@@ -260,6 +368,15 @@
       "goal": "research",
       "profile": "student",
       "generated_at": "2026-08-30T11:35:46.163453+00:00"
+    },
+    "ai-agents__united-states__san-francisco__research__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "ca36640b31d812ac",
+      "country": "United States",
+      "city": "San Francisco",
+      "goal": "research",
+      "profile": "founder",
+      "generated_at": "2026-09-01T11:00:13.140617+00:00"
     },
     "ai-agents__united-states__san-francisco__research__enterprise": {
       "topic_id": "ai-agents",
@@ -315,6 +432,15 @@
       "profile": "founder",
       "generated_at": "2026-08-31T12:44:49.660889+00:00"
     },
+    "ai-agents__india__bengaluru__career__enterprise": {
+      "topic_id": "ai-agents",
+      "content_hash": "eb87f14e396b6869",
+      "country": "India",
+      "city": "Bengaluru",
+      "goal": "career",
+      "profile": "enterprise",
+      "generated_at": "2026-09-01T11:00:16.386306+00:00"
+    },
     "ai-agents__india__bengaluru__career__agent": {
       "topic_id": "ai-agents",
       "content_hash": "304d063c19c741ea",
@@ -351,6 +477,15 @@
       "profile": "student",
       "generated_at": "2026-08-31T12:45:52.423251+00:00"
     },
+    "ai-agents__india__bengaluru__build-portfolio__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "36c3764f12537b65",
+      "country": "India",
+      "city": "Bengaluru",
+      "goal": "build_portfolio",
+      "profile": "founder",
+      "generated_at": "2026-09-01T11:00:20.325067+00:00"
+    },
     "ai-agents__india__bengaluru__build-portfolio__enterprise": {
       "topic_id": "ai-agents",
       "content_hash": "2f1b4183bb818a7c",
@@ -378,6 +513,15 @@
       "profile": "student",
       "generated_at": "2026-08-30T11:42:37.977642+00:00"
     },
+    "ai-agents__india__bengaluru__create-agents__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "508b973e968d4d39",
+      "country": "India",
+      "city": "Bengaluru",
+      "goal": "create_agents",
+      "profile": "founder",
+      "generated_at": "2026-09-01T11:01:09.257421+00:00"
+    },
     "ai-agents__india__bengaluru__create-agents__enterprise": {
       "topic_id": "ai-agents",
       "content_hash": "fca1d52d5c8643f9",
@@ -395,6 +539,15 @@
       "goal": "create_agents",
       "profile": "agent",
       "generated_at": "2026-08-31T12:47:42.616232+00:00"
+    },
+    "ai-agents__india__bengaluru__startup__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "bc903f418e3b6dbb",
+      "country": "India",
+      "city": "Bengaluru",
+      "goal": "startup",
+      "profile": "developer",
+      "generated_at": "2026-09-01T11:01:26.738612+00:00"
     },
     "ai-agents__india__bengaluru__startup__ai-engineer": {
       "topic_id": "ai-agents",
@@ -478,7 +631,7 @@
       "generated_at": "2026-08-31T12:50:47.424079+00:00"
     }
   },
-  "generated_at": "2026-08-31T12:50:47.424344+00:00",
+  "generated_at": "2026-09-01T11:02:04.876142+00:00",
   "ai_enabled": true,
-  "count": 53
+  "count": 70
 }

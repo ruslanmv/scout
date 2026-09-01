@@ -1,0 +1,65 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-01T10:59:30.288519+00:00",
+  "headline": "San Francisco enterprises are hiring builders who can ship agentic AI systems — your move is to design and ship one in the next 90 days.",
+  "why_now": "With GitHub and project_potential scores above 94 and job_demand at 85 in the SF enterprise market, agentic workflows have moved from research demos to production priorities. Local relevance at 82 confirms Bay Area companies are actively translating multi-step AI agents into customer-facing products. Sitting this out means watching peers capture the most visible AI engineering roles of the cycle.",
+  "study": [
+    "Read Anthropic's 'Building Effective Agents' and the LangChain ReAct paper to internalize planning, tool-use, and reflection patterns.",
+    "Complete the LangGraph or CrewAI quickstart and rebuild the example agent from scratch without copy-pasting, then add error handling.",
+    "Study MCP (Model Context Protocol) and OpenAI function-calling/tool-use specs; build a small agent that calls at least three real tools (search, SQL, email).",
+    "Spend two evenings on evaluation: implement a simple eval harness using Braintrust or plain pytest to grade agent traces and outputs.",
+    "Review 3-5 production agent architectures on GitHub (e.g., LangChain templates, AutoGen samples) and write notes on trade-offs."
+  ],
+  "build": {
+    "title": "Enterprise Sales-Research Agent Swarm",
+    "description": "A multi-agent system where a Planner agent decomposes a target-account brief, a Researcher agent pulls web/news/SEC filings, an Analyst agent scores fit against your ICP, and a Writer agent produces a one-page memo — all coordinated through a shared scratchpad and evaluated end-to-end. This impresses because it mirrors the exact agentic architecture SF enterprise teams (Glean, Harvey, Decagon) are hiring to build.",
+    "stack": [
+      "LangGraph",
+      "OpenAI or Anthropic APIs",
+      "Tavily or SerpAPI for search",
+      "Pinecone or pgvector for memory",
+      "FastAPI",
+      "Next.js dashboard",
+      "Braintrust or LangSmith for evals"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and reproducible setup",
+      "Live demo deployed on Vercel or Railway with a 90-second Loom walkthrough",
+      "Technical write-up on Medium or your blog covering architecture decisions, failure modes, and eval results",
+      "Recorded agent trace (JSON + visualized graph) showing one full run end-to-end"
+    ]
+  },
+  "publish": [
+    "Post the Loom demo and repo link on LinkedIn and X tagging @LangChainAI, @AnthropicAI, and relevant SF AI builders; pin it to your profile for two weeks.",
+    "Submit a talk proposal to the next SF AI Engineer Summit, AI Tinkerers SF meetup, or a local LangChain/CrewAI community event.",
+    "Write a launch post on Hacker News (Show HN) framing it as 'How I built an enterprise research agent in X days' to capture technical credibility.",
+    "DM 5 SF-based AI engineering hiring managers at companies like Glean, Decagon, and Harvey with a 3-sentence pitch plus the demo link."
+  ],
+  "skills": [
+    "Agent orchestration and multi-step planning",
+    "Tool/function-calling and API integration",
+    "Retrieval-augmented generation and vector search",
+    "Prompt engineering for reliability and reflection loops",
+    "Agent evaluation and observability",
+    "FastAPI + Next.js full-stack shipping",
+    "System design for production AI systems",
+    "Technical writing and demo storytelling"
+  ],
+  "risks": [
+    "Agent systems can be flaky and expensive in production — without a solid eval harness you will ship demos that break under load and quietly hemorrhage API budget.",
+    "The space is moving fast; a framework you learn today (LangGraph, CrewAI, AutoGen) may be obsolete in 6 months, so invest in the underlying patterns rather than the syntax.",
+    "Enterprise buyers care about security, latency, and audit trails more than clever prompts — a flashy demo without observability and guardrails will not survive a security review."
+  ],
+  "confidence": "Very high — the signals are uniformly strong across GitHub activity, project potential, career value, and SF-specific enterprise demand, and the build project directly maps to roles being filled in the Bay Area right now.",
+  "content_hash": "68b9d8615c0ff5be",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "create_agents",
+    "profile": "enterprise"
+  }
+}

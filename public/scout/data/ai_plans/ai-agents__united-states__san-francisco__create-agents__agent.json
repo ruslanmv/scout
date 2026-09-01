@@ -1,0 +1,64 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-01T10:59:54.195649+00:00",
+  "headline": "Ship a working AI agent in San Francisco before the market floods—your proximity to the industry and the signal strength here are your unfair advantages.",
+  "why_now": "GitHub activity at 96 and project potential at 96 show this is not a hype cycle but a tooling inflection point. With job demand at 85 and career value at 95, the window to position yourself as an early practitioner closes fast as the Bay Area's top companies are actively building agentic systems right now.",
+  "study": [
+    "Complete the LangChain or LangGraph fundamentals course and understand tool-calling, memory, and multi-agent orchestration patterns",
+    "Build and deploy a simple ReAct agent that calls at least 3 external APIs (weather, news, or a database) end-to-end",
+    "Study open-source agent frameworks on GitHub (AutoGPT, CrewAI, AutoGen) by reading their architecture docs and contributing a meaningful PR or fork",
+    "Learn evaluation methods for agent outputs—trace debugging, success rate metrics, and cost/latency profiling",
+    "Deep-dive into Hugging Face's agent tooling (Transformers Agents 2.0) to understand the open-source alternative to proprietary stacks"
+  ],
+  "build": {
+    "title": "Multi-Tool Research Agent",
+    "description": "An agentic workflow that plans a research query, calls multiple web and API tools in sequence, synthesizes findings, and produces a structured report with citations. It demonstrates tool-use discipline, error recovery, and real multi-step reasoning—exactly what Bay Area hiring teams want to see working, not as a slide deck.",
+    "stack": [
+      "Python",
+      "LangChain/LangGraph",
+      "OpenAI API",
+      "SerpAPI",
+      "Pinecone or Chroma",
+      "FastAPI",
+      "Streamlit"
+    ],
+    "deliverables": [
+      "A public GitHub repo with clean architecture and comprehensive README",
+      "A live demo URL (Streamlit or Gradio) where anyone can input a query and watch the agent work",
+      "A technical write-up on Medium or personal blog explaining the design decisions, failure modes encountered, and how you evaluated output quality"
+    ]
+  },
+  "publish": [
+    "Post the repo and demo on X with a short video loop and tags #AI #Agents—target Bay Area AI engineering accounts for early traction",
+    "Submit the write-up to relevant Hacker News or Lobsters, focusing on the practical evaluation methodology, not the hype",
+    "Contribute the agent as an example or tutorial to the LangChain or CrewAI Discord/community—their community activity is 84 and maintainers actively highlight community projects",
+    "Apply to AI engineer roles at SF-based startups and companies explicitly, referencing the agent as a portfolio piece in your cover letter"
+  ],
+  "skills": [
+    "Agentic workflow design and orchestration",
+    "Tool-calling and API integration",
+    "ReAct and planning loop implementation",
+    "Vector store and memory management",
+    "LLM API cost and latency optimization",
+    "Agent evaluation and trace debugging",
+    "FastAPI and deployment pipelines",
+    "Technical writing for technical audiences"
+  ],
+  "risks": [
+    "LLM API costs can spiral with poorly scoped agents—budget for and track token usage from day one",
+    "Agent reliability drops sharply on edge cases; a flashy demo can look broken fast if not thoroughly tested",
+    "The field is moving so fast that frameworks you build on today may be deprecated in 6 months—prioritize understanding over specific tooling lock-in"
+  ],
+  "confidence": "With project potential and GitHub activity both at 96, career value at 95, and San Francisco's agentic AI hiring concentrated within a 20-mile radius, this is one of the strongest signal-to-effort ratios you will find right now.",
+  "content_hash": "a2c13b3dc97b2c1e",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "create_agents",
+    "profile": "agent"
+  }
+}

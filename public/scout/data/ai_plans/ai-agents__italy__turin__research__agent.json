@@ -1,0 +1,60 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-01T10:56:51.587411+00:00",
+  "headline": "AI Agents and Agentic Workflows is your strongest move in Turin, Italy right now.",
+  "why_now": "Agent systems are becoming a practical interface for automation, enterprise workflows, coding, research, and multi-agent orchestration.",
+  "study": [
+    "Tool calling",
+    "Agent orchestration",
+    "Memory and retrieval"
+  ],
+  "build": {
+    "title": "Local trend scout agent",
+    "description": "It creates visible proof that you can convert a trend into a working product artifact.",
+    "stack": [
+      "Python",
+      "FastAPI",
+      "LangGraph",
+      "MCP",
+      "RAG",
+      "Docker"
+    ],
+    "deliverables": [
+      "GitHub repo",
+      "live demo",
+      "short write-up"
+    ]
+  },
+  "publish": [
+    "GitHub repository",
+    "Hugging Face Space",
+    "short technical article",
+    "Create a clean GitHub README with screenshots and architecture.",
+    "Publish a working demo or notebook."
+  ],
+  "skills": [
+    "Python",
+    "FastAPI",
+    "LangGraph",
+    "MCP",
+    "RAG",
+    "Docker"
+  ],
+  "risks": [
+    "Frameworks change quickly",
+    "Production reliability requires evaluation",
+    "Autonomy needs governance"
+  ],
+  "confidence": "High confidence, based on GitHub, Hugging Face, News/RSS.",
+  "content_hash": "d35a61d35a0d8dab",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "research",
+    "profile": "agent"
+  }
+}

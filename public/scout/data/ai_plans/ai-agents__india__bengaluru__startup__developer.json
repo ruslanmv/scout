@@ -1,0 +1,63 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-01T11:01:26.738612+00:00",
+  "headline": "Bengaluru's AI agent surge is your launchpad—turn developer skills into a startup before the wave crests.",
+  "why_now": "With project_potential at 96, career_value at 95, and GitHub activity at 96, AI agent frameworks like LangGraph, CrewAI, and AutoGen are exploding in repos and HF Spaces right now. Bengaluru already hosts India's densest concentration of agent startups (Krutrim, Yellow.ai, multiple YC-backed teams), meaning local hiring demand is real and pilot customers are within reach. The window for an Indian agentic-AI founder to claim category-defining mindshare is narrow—12 to 18 months before the space consolidates.",
+  "study": [
+    "Build deep LLM fundamentals: read Andrej Karpathy's 'Zero to Hero' series and reproduce a small GPT from scratch in PyTorch to internalize tokenization, attention, and sampling.",
+    "Ship a single-agent tool-use loop using the OpenAI Agents SDK or Anthropic's tool-use docs—wire it to a real API (e.g., Gmail, Notion, or a custom FastAPI endpoint) and debug failure modes yourself.",
+    "Study multi-agent orchestration patterns by rebuilding one CrewAI or LangGraph tutorial end-to-end, then swapping in your own agents; read the LangGraph whitepaper and the 'Communicative Agents' paper for the theory.",
+    "Profile latency and cost obsessively: instrument your agent with LangSmith or Helicone, learn to spot prompt-bloat vs. genuine reasoning, and read Lilian Weng's 'LLM-Powered Autonomous Agents' blog post for architectural patterns.",
+    "Survey the Bengaluru agent ecosystem—read case studies from Krutrim, Sarvam, and Yellow.ai, attend one Bangalore AI meetup (e.g., PyData Bangalore or Bengaluru LLM meetup), and identify which verticals (fintech support, dev tooling, healthcare triage) are underserved."
+  ],
+  "build": {
+    "title": "Local trend scout agent",
+    "description": "It creates visible proof that you can convert a trend into a working product artifact.",
+    "stack": [
+      "Python",
+      "FastAPI",
+      "LangGraph",
+      "MCP",
+      "RAG",
+      "Docker"
+    ],
+    "deliverables": [
+      "GitHub repo",
+      "live demo",
+      "short write-up"
+    ]
+  },
+  "publish": [
+    "Open-source the build project on GitHub with a polished README, a 90-second Loom demo, and a clean license (MIT or Apache-2.0); pin it on your profile and submit to Hacker News 'Show HN'.",
+    "Write a technical teardown post on your learnings—publish on your own blog and cross-post to Medium and dev.to, titled around a real pain point (e.g., 'Why my multi-agent startup-pitch screener hallucinates 30% of the time and how I fixed it').",
+    "Record a 5-minute walkthrough for YouTube or X/Twitter showing the agent solving a real task live, tag key accounts (LangChain, Anthropic, Indian AI founders), and engage in the comment threads.",
+    "Reach out to 10 Bengaluru-based founders or PMs at agent startups for a 20-minute chat, share your repo, and ask who in their network would find it useful—this builds the warm intros you'll need pre-launch."
+  ],
+  "skills": [
+    "LLM orchestration and tool/function-calling design",
+    "Multi-agent architecture (planner-executor, supervisor-worker, debate/consensus patterns)",
+    "Prompt engineering and structured-output enforcement (JSON schema, guardrails)",
+    "Python async patterns and production observability (LangSmith, Helicone, OpenTelemetry)",
+    "FastAPI for agent tool backends and webhook integrations",
+    "Evaluation and benchmarking of agent traces (success rate, token cost, latency)",
+    "Cost-aware inference design—caching, model routing, embedding-based retrieval",
+    "Founder skills: customer discovery, MVP scoping, and technical writing for non-engineers"
+  ],
+  "risks": [
+    "Agent demos look magical but production reliability is brutal—expect 60–80% task success rates out of the box and budget 2–3 months hardening evaluation before any paying customer trusts it.",
+    "The Bengaluru agent market is heating up fast; if your idea targets horizontal agent infra, you'll compete with well-funded US teams—picking a sharp vertical wedge (e.g., 'agents for Indian D2C customer support in Hindi + English') matters more than the tech.",
+    "Token costs and API rate limits can silently bankrupt a prototype; without instrumentation from day one, you'll discover runaway spend only after the bill arrives."
+  ],
+  "confidence": "High—the signals are strong (96/96/95 on project, activity, and career value), the ecosystem in Bengaluru is concrete and hiring, and the learning path is well-trodden enough that 4–6 months of focused work can produce a fundable artifact.",
+  "content_hash": "bc903f418e3b6dbb",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "startup",
+    "profile": "developer"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-01T10:57:02.731791+00:00",
+  "headline": "San Francisco's AI agent ecosystem is exploding—position yourself as the developer who ships agentic systems, not just calls them.",
+  "why_now": "GitHub activity around agentic workflows sits at 96 with 94% growth, and Hugging Face mirrors that at 92—meaning the tooling and reference implementations are mature enough to build on today. Job demand at 85 confirms SF employers are already hiring for it, and news mentions at 88 show it's the current conversation topic at meetups and interviews. With project potential and career value both above 95, the window to establish credibility is this quarter, not next year.",
+  "study": [
+    "Read the Anthropic and LangChain docs on tool-use and ReAct patterns end-to-end; rebuild their minimal agent in a notebook",
+    "Clone the top 3 starred 'agentic-workflow' repos on GitHub this week, run them locally, and modify one to fail-then-recover so you understand the failure modes",
+    "Work through the Hugging Face smolagents and AutoGen tutorials to compare orchestration styles (centralized vs. multi-agent)",
+    "Build a small LangGraph state machine that plans, calls an API, inspects the result, and re-plans—write up the design tradeoffs",
+    "Read two recent papers or engineering blogs (e.g., 'Why Agentic Systems Need Memory' and an OpenAI function-calling deep dive) and summarize them in a public note"
+  ],
+  "build": {
+    "title": "Local-First Research Agent that Books Your SF Errands",
+    "description": "An agentic CLI/UI that takes a natural-language goal like 'plan a half-day tech meetup crawl in SoMa with two coffee stops and one bookstore' and autonomously searches the web, calls Maps and Yelp APIs, checks SF Muni transit times, and returns an optimized itinerary with reservations stubbed in. It impresses because it shows real tool orchestration, error recovery when an API is down, and human-in-the-loop confirmation—exactly what SF AI teams are hiring for.",
+    "stack": [
+      "Python",
+      "LangGraph",
+      "OpenAI or Anthropic API",
+      "FastAPI",
+      "Yelp & Google Maps APIs",
+      "SQLite for memory",
+      "Streamlit or Next.js UI"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README and architecture diagram",
+      "5-minute Loom demo walking through a real SF task",
+      "Technical write-up on Medium or your blog comparing orchestration choices"
+    ]
+  },
+  "publish": [
+    "Post the demo on LinkedIn and X tagging SF AI communities (LangChain SF, AI Tinkerers, Cursor/SF Devs) with a concrete clip of the agent recovering from a failed API call",
+    "Submit a 5-minute lightning talk to an SF meetup (AI Tinkerers, Bay Area AI, or a PyData chapter)",
+    "Open-source the repo and post it in r/LocalLLaMA and the HuggingFace Discord with a clear 'looking for collaborators' note",
+    "Send the write-up to two SF-based AI engineering leads you admire, asking for feedback not a job—this builds the network before you need it"
+  ],
+  "skills": [
+    "LLM tool-use and function-calling design",
+    "Agent orchestration patterns (ReAct, planner-executor, multi-agent)",
+    "API integration and error handling at scale",
+    "Prompt engineering and structured outputs (JSON schemas, tool specs)",
+    "State management with LangGraph or similar frameworks",
+    "Shipping production-shaped AI projects quickly",
+    "Technical writing and demo storytelling",
+    "Navigating SF's AI community and meetup circuit"
+  ],
+  "risks": [
+    "API costs and rate limits can burn time and budget during demos—pin a cheap model and cache aggressively while iterating",
+    "Agent demos are flashy but flaky; reviewers may discount the work if failure modes aren't handled gracefully, so invest in logging and retry logic visibly",
+    "The space is moving so fast that any framework choice (e.g., LangGraph vs. AutoGen) may look dated in 6 months—anchor your write-up on patterns, not frameworks"
+  ],
+  "confidence": "High—this is a direct, well-signal-backed recommendation: the tooling is mature, SF demand is concrete, and the project scope is achievable in 2-3 weeks.",
+  "content_hash": "e780a4ab08ac6a76",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "career",
+    "profile": "developer"
+  }
+}

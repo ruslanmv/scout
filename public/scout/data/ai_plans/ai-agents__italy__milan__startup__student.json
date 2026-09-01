@@ -1,0 +1,62 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-01T10:45:23.234766+00:00",
+  "headline": "Milan student: Build AI agent workflows that plan, execute, and ship—turn local buzz into startup traction now.",
+  "why_now": "With 96 GitHub activity, 92 Hugging Face engagement, and 88 news mentions, AI agents are exploding in technical depth and public awareness. Milan's 82 local relevance score means early adopters and potential co-founders are nearby, while 95 career value and 96 project potential make this a rare high-impact, low-barrier entry point for a student founder.",
+  "study": [
+    "Complete the 'Build Agents with LangGraph' tutorial series on LangChain docs (3 days)",
+    "Build and run 3 mini agent demos from recent Hugging Face Spaces (5 days)",
+    "Read 5 top GitHub trending repos in 'AI-agents' topic and fork one to experiment (4 days)",
+    "Take the 'Modern LLM Ops' course on Hugging Face and deploy an agent to Hugging Face Inference Endpoints (5 days)"
+  ],
+  "build": {
+    "title": "Milan Agent Concierge: Multi-tool workflow that books restaurants, schedules tours, and generates personalized travel itineraries for tourists in Milan",
+    "description": "A conversational agent that plans a complete Milan experience by calling Google Maps API, TheFork API, and Airbnb Experiences API, then produces a shareable PDF itinerary. Impressive because it demonstrates real-world tool use, API orchestration, and local relevance—all core startup skills.",
+    "stack": [
+      "LangGraph",
+      "LangChain",
+      "OpenAI GPT-4o",
+      "Google Maps API",
+      "TheFork API",
+      "WeasyPrint for PDF generation"
+    ],
+    "deliverables": [
+      "GitHub repo with modular agent code",
+      "Live demo on Streamlit",
+      "3-minute Loom walkthrough + Notion write-up"
+    ]
+  },
+  "publish": [
+    "Tweet the demo link with #AIAgents #MadeInMilan and tag @lancaster_ai, @huggingface, and @MilanStartup (Day 1)",
+    "Submit to 'Awesome AI Agents' curated list on GitHub (Day 3)",
+    "Write a Medium post titled 'Building a Milan Travel Agent with LangGraph' and cross-post to Hugging Face blog (Day 5)",
+    "Pitch at Milan's weekly AI Meetup (AIMLMilano) for live feedback and networking (Week 2)"
+  ],
+  "skills": [
+    "Agentic workflow design",
+    "LangGraph orchestration",
+    "Multi-API integration",
+    "Prompt engineering at scale",
+    "Startup MVP shipping",
+    "Technical content creation",
+    "Product-localization thinking",
+    "Python + async tooling"
+  ],
+  "risks": [
+    "Over-engineering the first version—keep it to 3 APIs and ship fast",
+    "Getting stuck on API key onboarding—use mock servers initially",
+    "Missing the local founder signal—prioritize in-person meetups over online posts"
+  ],
+  "confidence": "This path is battle-tested: 96/100 GitHub momentum, 95 career upside, and a clear local advantage make it a high-probability launchpad for a Milan-based AI startup.",
+  "content_hash": "39bbff56a60398fa",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Milan",
+    "goal": "startup",
+    "profile": "student"
+  }
+}
