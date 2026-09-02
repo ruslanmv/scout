@@ -1,0 +1,62 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-02T10:28:21.360605+00:00",
+  "headline": "Turin's enterprise AI scene is hiring agent-builders — your portfolio can lead that conversation.",
+  "why_now": "GitHub activity for agent frameworks is at 96 and growing at 94, with Hugging Face following at 92 and news momentum at 88 — the tooling has matured faster than enterprise adoption, creating a window where demonstrable agent projects stand out. Job demand at 85 confirms Italian enterprises (banking, automotive, manufacturing) are actively recruiting for this skill, and local relevance at 82 means Turin-based meetups and Fiat/Stellantis-adjacent networks are paying attention.",
+  "study": [
+    "Week 1-2: Build a solid foundation in LLM APIs, function calling, and the ReAct/plan-execute patterns using LangChain and LlamaIndex; complete one short course on agent design.",
+    "Week 3-4: Study two production agent frameworks end-to-end — LangGraph for stateful workflows and CrewAI/AutoGen for multi-agent collaboration — by reproducing their tutorial projects locally.",
+    "Week 5-6: Learn evaluation and observability for agents (tracing with LangSmith or OpenTelemetry, success metrics, cost tracking) — this is what separates demos from enterprise-ready work.",
+    "Week 7: Pick one enterprise domain relevant to Turin (automotive predictive maintenance, banking compliance, industrial document processing) and research its real workflows and pain points."
+  ],
+  "build": {
+    "title": "Multi-Agent Compliance Review System for Italian Banking Documents",
+    "description": "An agentic system where a planner agent decomposes an incoming Italian regulatory document (e.g., a Banca d'Italia circular), a research agent pulls relevant EU/Italian law via RAG, a critic agent flags inconsistencies and gaps, and a writer agent produces a structured compliance memo. It impresses because it tackles a real Turin-relevant enterprise problem, demonstrates multi-agent orchestration with guardrails, and shows you understand regulated workflows — exactly what Italian banks and consultancies need.",
+    "stack": [
+      "Python",
+      "LangGraph",
+      "OpenAI or open-source LLM via Hugging Face Inference",
+      "ChromaDB or Qdrant",
+      "LangSmith",
+      "Streamlit",
+      "Docling or Unstructured for PDF parsing"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and reproducible setup",
+      "Live Streamlit or Gradio demo with 2-3 sample documents",
+      "Write-up on LinkedIn or a personal blog explaining design choices, costs, and failure modes"
+    ]
+  },
+  "publish": [
+    "Post the demo video and repo link on LinkedIn targeting Turin-based AI, fintech, and enterprise tech groups; tag local communities like Torino AI and Caffe20XX.",
+    "Submit a short talk proposal to a Turin meetup (e.g., Torino Python, PyData Turin, or AWS User Group Turin) walking through the architecture.",
+    "Publish the technical write-up on Hashnode or Medium and cross-share to Dev.to and the Italian AI community on Slack/Discord.",
+    "Reach out directly to 5-10 Turin enterprise architects and AI leads at companies like Intesa Sanpaolo, Reply, and Mylan with a concise demo link."
+  ],
+  "skills": [
+    "LLM orchestration and function/tool calling",
+    "Multi-agent system design with LangGraph",
+    "Retrieval-Augmented Generation for domain documents",
+    "Agent evaluation, tracing, and cost optimization",
+    "Enterprise-grade Python engineering (typing, testing, packaging)",
+    "Domain modeling for regulated industries",
+    "Technical writing and demo storytelling"
+  ],
+  "risks": [
+    "Agent demos can look impressive but break on edge cases — invest real time in evaluation harnesses or reviewers will lose trust quickly.",
+    "Open-source LLM quality for Italian-language nuance may underperform; budget time to test Mistral and IT-Tuned models before committing to a stack.",
+    "Enterprise buyers care about data privacy and on-prem deployment — if your portfolio only shows cloud API calls, it won't resonate with Turin's banking and manufacturing buyers."
+  ],
+  "confidence": "High — the signal scores are uniformly strong across GitHub, Hugging Face, news, and job demand, and the recommendation aligns with concrete enterprise demand in Turin.",
+  "content_hash": "f4c7cced0830f59e",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "build_portfolio",
+    "profile": "enterprise"
+  }
+}

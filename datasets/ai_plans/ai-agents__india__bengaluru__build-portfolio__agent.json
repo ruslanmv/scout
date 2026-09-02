@@ -1,0 +1,65 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-02T10:32:43.870842+00:00",
+  "headline": "Bengaluru's agent boom is your chance to ship a portfolio piece that actually talks to the world — not just another chatbot demo.",
+  "why_now": "With project_potential at 96 and career_value at 95, AI agents are the single hottest buildable trend in your location, and the 96 GitHub activity score confirms the tooling and reference repos are exploding right now. Bengaluru's dense startup ecosystem plus 85 job demand means an agent portfolio project translates directly into interviews and freelance leads within months, not years.",
+  "study": [
+    "Read the LangGraph and CrewAI docs end-to-end, then clone and run their quickstart repos to feel how tool-calling loops actually behave.",
+    "Study Anthropic's 'Building Effective Agents' essay and the ReAct paper to ground your design in patterns, not vibes.",
+    "Spend a weekend wiring an agent against 2-3 real Bengaluru-relevant tools — Swiggy/Zomato public APIs, a weather API, and a local news scraper — to learn the boring reliability layer.",
+    "Watch 3 deep-dive YouTube builds (e.g., Sam Witteveen, LangChain channel) on multi-agent collaboration, then rebuild one from scratch.",
+    "Read the source of one top trending agent repo on GitHub (>1k stars) and note 5 patterns you want to steal."
+  ],
+  "build": {
+    "title": "PlanBang — a multi-agent Bengaluru trip & errand planner",
+    "description": "A planner where a 'Researcher' agent scrapes local events/hikes, a 'Logistics' agent checks BMTC and Metro timings via public APIs, and a 'Budget' agent optimizes itinerary cost — orchestrated through LangGraph with shared memory, tool-calling, and a Gradio UI. It impresses because it solves a hyper-local Bengaluru problem end-to-end instead of a generic 'chat with docs' demo, and shows you can handle real API failures and retries.",
+    "stack": [
+      "LangGraph",
+      "CrewAI",
+      "OpenAI/Anthropic API",
+      "Gradio",
+      "DuckDuckGo Search API",
+      "BMTC/Metro public endpoints",
+      "SQLite for memory",
+      "Docker"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and setup-in-3-steps",
+      "Live Gradio demo on Hugging Face Spaces or a deployed Docker image on Render/Railway",
+      "Blog write-up on Hashnode or your own site walking through agent design tradeoffs",
+      "3-minute Loom demo video posted on LinkedIn"
+    ]
+  },
+  "publish": [
+    "Post the Loom demo on LinkedIn with tags like #AI #Bengaluru #BuildInPublic — Bengaluru AI groups (Bangalore AI Builders, Agents in Bengaluru) are very active and repost good builds.",
+    "Submit to awesome-agent lists on GitHub and share on r/LocalLLaMA and the LangChain Discord showcase channel.",
+    "Give a 10-minute lightning talk at a Bengaluru meetup — try PyBangalore, Bangalore AI meetups via Meetup.com, or IEEE CS Bangalore chapter.",
+    "Write a Hacker News 'Show HN' post framed around 'I built a multi-agent system that plans my Nandi Hills trip and survived real Indian API failures' — specificity wins HN."
+  ],
+  "skills": [
+    "Multi-agent orchestration (LangGraph, CrewAI)",
+    "Tool calling and API integration",
+    "Prompt design and ReAct/chain-of-thought patterns",
+    "Error handling, retries, and agent reliability",
+    "Local-domain research and web scraping",
+    "Rapid prototyping with Gradio/HF Spaces",
+    "Shipping a project end-to-end (Docker, deployment)",
+    "Technical writing and demo storytelling"
+  ],
+  "risks": [
+    "API costs and rate limits can silently drain a demo budget — set hard token caps and a mock-mode fallback before going live.",
+    "Agent demos look magical but break in 10 subtle ways; if you can't show at least 3 successful end-to-end runs on screen in the video, the polish backfires and signals unreliability to hiring managers."
+  ],
+  "confidence": "This recommendation is very solid — the signal scores are uniformly top-tier, Bengaluru has dense local demand, and an agent portfolio project maps cleanly to the most active GitHub/HuggingFace ecosystem right now.",
+  "content_hash": "d768afdef510dcbb",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "build_portfolio",
+    "profile": "agent"
+  }
+}

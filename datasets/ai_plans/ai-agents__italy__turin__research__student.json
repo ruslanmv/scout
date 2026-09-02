@@ -1,0 +1,66 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-02T10:29:36.585795+00:00",
+  "headline": "Turin, this is your moment to research AI agents while the ecosystem is still being written",
+  "why_now": "AI agents sit at the intersection of fast-growing open-source work on GitHub and Hugging Face, rising job demand, and heavy news coverage, which makes the next 12 months the cheapest time to build research credibility in the space. With local relevance strong in Italy and project potential near maximum, a student building original work now will be early to a category that is still defining its best papers and benchmarks.",
+  "study": [
+    "Read the foundational agent papers: ReAct, Toolformer, AutoGPT, BabyAGI, and the recent surveys on agentic workflows, taking notes on evaluation methods.",
+    "Work through the LangChain and LlamaIndex agent tutorials, then reproduce at least two single-agent tool-use examples from scratch without the frameworks to understand what they abstract away.",
+    "Study Anthropic's and OpenAI's documentation on function calling and the Model Context Protocol, then read the LangGraph and CrewAI source code on GitHub to map how multi-agent coordination is implemented.",
+    "Pick one Italian-relevant use case (e.g., public administration Q&A, tourism itinerary planning, or industrial-manufacturing data from Turin's automotive sector) and survey existing agent solutions to find the research gap.",
+    "Write a 1-page problem statement and proposed evaluation protocol for your own agent project before writing any code."
+  ],
+  "build": {
+    "title": "A benchmark and open-source agent for Italian public-service navigation",
+    "description": "A modular agent that plans multi-step tasks to help users navigate Italian public services (INPS, SPID, municipal portals), grounded in retrieved documents and able to call external APIs. It ships with a reproducible evaluation harness comparing it against baseline single-prompt LLMs on a curated Italian-language dataset, plus an ablation study on planning strategies. This impresses because it combines real-world Italian utility, rigorous evaluation, and modern agent architecture in one repo.",
+    "stack": [
+      "Python",
+      "LangGraph or CrewAI",
+      "OpenAI or open models on Hugging Face",
+      "LlamaIndex for retrieval",
+      "FastAPI",
+      "Docker",
+      "Hydra for experiment config",
+      "Weights & Biases for tracking"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and Italian-language docs",
+      "Live demo deployed on Hugging Face Spaces or a Turin university cloud",
+      "Technical write-up in English (2-4 pages) plus an Italian summary for local visibility",
+      "Evaluation dataset and benchmark script released on Hugging Face Datasets"
+    ]
+  },
+  "publish": [
+    "Post a clear, visual project thread on X and LinkedIn tagging LangChain, Hugging Face, and Italian AI communities; pin it to your profile.",
+    "Submit a short talk proposal to local meetups such as Torino Tech, PyData Turin, and the Italian Association for AI (AIxIA) student chapter.",
+    "Publish a 1-page extended abstract on arXiv and cross-post to the Hugging Face community tab and r/LocalLLaMA.",
+    "Reach out to two Italian AI researchers whose work you cite, offering to share your benchmark and asking for feedback, which often turns into collaboration or visibility."
+  ],
+  "skills": [
+    "LLM agent orchestration and tool/function calling",
+    "Retrieval-augmented generation pipeline design",
+    "Multi-agent coordination patterns",
+    "Experimental design and benchmark creation",
+    "Italian-language NLP and document grounding",
+    "FastAPI deployment and containerization",
+    "Research writing and technical communication",
+    "Open-source project hygiene (docs, evals, reproducibility)"
+  ],
+  "risks": [
+    "The field moves so quickly that any framework-heavy project risks looking dated within months, so keep the core logic framework-agnostic and lean on evaluation rather than novelty.",
+    "Italian public-service sites change structure and terms often, which can silently break retrieval and tool calls and quietly destroy benchmark numbers, so build a robust data refresh and monitoring loop from day one.",
+    "Scope creep into a 'do everything' agent is the most common failure mode; cap the first version at two or three well-defined tasks and expand only after the benchmark passes."
+  ],
+  "confidence": "This is a high-confidence recommendation: every major signal is strong, the timing favors early movers, and the project is concrete enough to execute within a student semester.",
+  "content_hash": "08cdce1d733864dd",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "research",
+    "profile": "student"
+  }
+}

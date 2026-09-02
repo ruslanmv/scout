@@ -1,0 +1,66 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-02T10:29:49.997097+00:00",
+  "headline": "San Francisco's AI engineer hub is racing toward agentic systems—time to make agent design your edge.",
+  "why_now": "GitHub activity (96) and project potential (96) show this is the fastest-moving topic in your stack, while career value (95) signals it directly translates to senior roles. With 96% growth on GitHub and 92% Hugging Face activity, the community is actively shipping tooling and benchmarks you can learn from today. Job demand (85) confirms employers in SF are already hiring for this—waiting six months puts you behind local competition.",
+  "study": [
+    "Build a LangGraph or CrewAI agent that uses tools, retries on failure, and persists memory across runs.",
+    "Study Anthropic's and OpenAI's function-calling/tool-use docs, then replicate a ReAct loop from scratch in Python.",
+    "Read the AutoGPT, BabyAGI, and LangChain agent papers/posts and map each concept to a minimal code experiment.",
+    "Pick one production agent framework (LangGraph, CrewAI, or AutoGen) and build three small agents to compare orchestration patterns.",
+    "Read 5–10 recent agent eval papers or posts (AgentBench, SWE-bench, ToolBench) to learn what 'good' looks like.",
+    "Join the LangChain Discord, r/LocalLLaMA, and SF AI meetups to stay plugged into signal."
+  ],
+  "build": {
+    "title": "Multi-Agent Research-to-Code Pipeline",
+    "description": "A system where a Planner agent decomposes a research question, a Researcher agent fetches and summarizes sources via APIs, and a Coder agent produces a runnable notebook or script. It demonstrates planning, tool use, inter-agent communication, error recovery, and evaluation—exactly the capabilities SF teams are hiring for.",
+    "stack": [
+      "LangGraph or CrewAI",
+      "OpenAI or Anthropic tool-use API",
+      "Tavily or SerpAPI for web search",
+      "Chroma or FAISS for retrieval",
+      "Streamlit for UI",
+      "LangSmith or Helicone for observability",
+      "GitHub Actions for CI"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and eval results",
+      "Live Streamlit or Gradio demo deployed on Hugging Face Spaces",
+      "Blog write-up or Twitter/X thread showing before/after vs. single-agent baseline",
+      "Short Loom or YouTube walkthrough of the agent loop"
+    ]
+  },
+  "publish": [
+    "Post the GitHub repo to r/MachineLearning, r/LocalLLaMA, and Hacker News with a results-focused title.",
+    "Ship the demo to Hugging Face Spaces and submit it to the HF community Discord and relevant agent leaderboards.",
+    "Publish a write-up on Medium or your personal blog, then cross-post to LinkedIn targeting SF AI hiring managers.",
+    "Give a lightning talk at an SF meetup (AI Engineer Summit, SF AI Builders, or a LangChain/CrewAI local event) within 60 days."
+  ],
+  "skills": [
+    "Agent orchestration and multi-step planning",
+    "Tool/API integration and function calling",
+    "Retrieval-augmented generation (RAG)",
+    "Prompt engineering and eval design",
+    "Python async and error handling",
+    "Observability and debugging of LLM systems",
+    "Shipping ML demos end-to-end",
+    "Technical writing for an engineering audience"
+  ],
+  "risks": [
+    "Agent frameworks are shifting fast—picking one today may feel dated in 6 months, so build on transferable concepts (planning loops, tool schemas) rather than a single API.",
+    "Eval is genuinely hard for agents; without good metrics your demo may not convince senior engineers you're production-ready.",
+    "Cost and latency of multi-agent systems can balloon—be ready to discuss tradeoffs or you'll get grilled in SF interviews."
+  ],
+  "confidence": "Very high—signals are strong, the gap between current SF job demand and supply of skilled agent engineers is real, and the build plan maps directly to that gap.",
+  "content_hash": "4a01f18701c60cad",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "career",
+    "profile": "ai_engineer"
+  }
+}

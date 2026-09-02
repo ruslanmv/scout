@@ -1,0 +1,62 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-02T10:31:44.248942+00:00",
+  "headline": "San Francisco is where the AI agent revolution is being built right now, and your profile is primed to lead it.",
+  "why_now": "GitHub activity at 96 and Hugging Face activity at 92 show developers are actively building agentic systems, while job demand at 85 signals companies are actively hiring for these roles. The convergence of multi-step task completion, tool use, and API orchestration is moving from research papers into production systems this year.",
+  "study": [
+    "Master LangGraph or AutoGen for multi-step agent orchestration with state management and memory",
+    "Build proficiency in tool-use patterns: function calling, API integration, and retrieval-augmented generation",
+    "Study multi-agent collaboration architectures for task decomposition and agent-to-agent communication",
+    "Learn agent evaluation frameworks: tracing, benchmarking, and safety guardrails",
+    "Deep-dive into production patterns: streaming, error recovery, and human-in-the-loop checkpoints"
+  ],
+  "build": {
+    "title": "Open-Source Research Agent Swarm",
+    "description": "A multi-agent system where specialized agents (web search, code execution, document analysis) collaborate to complete complex research tasks, with human oversight at key decision points. Demonstrates orchestration, tool chaining, and result synthesis.",
+    "stack": [
+      "LangGraph",
+      "LangChain",
+      "OpenAI/Anthropic APIs",
+      "Pinecone",
+      "FastAPI",
+      "Streamlit"
+    ],
+    "deliverables": [
+      "GitHub repo with clean architecture and documentation",
+      "Live demo with sample research queries",
+      "Technical write-up on agent collaboration patterns and lessons learned"
+    ]
+  },
+  "publish": [
+    "Open-source the project with a detailed README and contribute to LangGraph/LangChain discussions",
+    "Publish a technical blog post on multi-agent patterns with benchmarks and architecture diagrams",
+    "Submit a talk proposal to SF AI meetups or AI Engineer Summit about agentic workflows",
+    "Share the demo on X with a short video and tag relevant AI communities in SF"
+  ],
+  "skills": [
+    "Agent orchestration and state management",
+    "Tool-use and function calling integration",
+    "Multi-agent system design",
+    "LLM API optimization and cost management",
+    "Agent evaluation and observability",
+    "Production deployment and streaming",
+    "Technical writing and open-source contribution"
+  ],
+  "risks": [
+    "LLM API costs can spiral with complex multi-agent workflows, requiring careful budget monitoring",
+    "The agent framework landscape (LangChain vs CrewAI vs Custom) is still maturing, risking architecture rewrites",
+    "Building agents that reliably handle errors and edge cases takes significantly more time than the happy path"
+  ],
+  "confidence": "With project potential at 96 and career value at 95, combined with your AI engineer profile in the SF ecosystem, this is one of the highest-confidence moves you can make right now.",
+  "content_hash": "fe57701f440ebbae",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "create_agents",
+    "profile": "ai_engineer"
+  }
+}

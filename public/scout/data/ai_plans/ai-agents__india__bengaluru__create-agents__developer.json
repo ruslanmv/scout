@@ -1,0 +1,67 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-02T10:32:57.918495+00:00",
+  "headline": "Bengaluru's AI agent scene is exploding—build your own autonomous workflow this quarter and ride the wave",
+  "why_now": "With 96% project potential and 95% career value signals, agentic workflows are rapidly moving from research demos to production tools, and Bengaluru's developer community is among the most active on GitHub and Hugging Face. The 96 GitHub activity score and 88 news mentions show this isn't a passing trend—frameworks like LangGraph, CrewAI, and AutoGen are shipping weekly. Acting now positions you ahead of the 85% job demand curve while it's still rising.",
+  "study": [
+    "Master LLM fundamentals: prompt engineering, function calling, and tool use with OpenAI/Anthropic APIs and Ollama for local models (1 week)",
+    "Build core agent patterns with LangChain and LangGraph—study ReAct, plan-and-execute, and multi-agent orchestration (1-2 weeks)",
+    "Explore specialized frameworks: CrewAI for role-based teams, AutoGen for conversational agents, and HugFlow's smolagents for lightweight builds (3-5 days)",
+    "Study real-world architectures from Hugging Face's agent course and replicate 2-3 reference projects from GitHub trending repos (1 week)",
+    "Learn evaluation and observability: LangSmith, AgentOps, and tracing multi-step agent runs to debug reliability (ongoing)"
+  ],
+  "build": {
+    "title": "Bengaluru Urban Intelligence Agent",
+    "description": "A multi-agent system that ingests live Bengaluru data (BMTC bus APIs, BMRCL metro status, OpenWeather, local Reddit/BengaluruTraffic Twitter feeds) and plans optimized multi-modal commutes, answers civic queries, and alerts on disruptions. It impresses because it solves a hyperlocal problem using cutting-edge agentic patterns, demonstrates real API orchestration across 4+ tools, and showcases memory and planning loops.",
+    "stack": [
+      "LangGraph",
+      "CrewAI",
+      "FastAPI",
+      "Redis",
+      "OpenAI GPT-4o",
+      "Tavily Search API",
+      "BMTC/BMRCL public APIs",
+      "Streamlit",
+      "Docker"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and setup instructions",
+      "Live Streamlit demo deployed on Hugging Face Spaces",
+      "Technical write-up on Hashnode or Dev.to explaining the agent design choices and lessons learned",
+      "Loom video walkthrough demonstrating a real commute-planning query"
+    ]
+  },
+  "publish": [
+    "Post the project on Hacker News Show HN and Bengaluru developer communities (r/bangalore, IndianDevs Discord, Bengaluru Tech Slack groups)",
+    "Submit a talk proposal to PyConf Hyderabad, Bangalore Open Source Summit, or FOSSMeet on building the agent",
+    "Share progress threads on X/LinkedIn tagging @LangChainAI, @CrewAIInc, and Bengaluru AI founders; publish a Hugging Face model card if you fine-tune any components",
+    "Contribute a PR or tutorial to one agent framework's docs—gets you visible to maintainers and early adopters"
+  ],
+  "skills": [
+    "LLM orchestration and prompt engineering",
+    "Multi-agent system design (role-based and graph-based)",
+    "API integration and tool calling",
+    "Python async programming and FastAPI",
+    "Vector databases and retrieval-augmented generation (RAG)",
+    "Agent evaluation, debugging, and observability",
+    "Production deployment with Docker and cloud platforms",
+    "Technical writing and open-source collaboration"
+  ],
+  "risks": [
+    "The agent framework landscape shifts fast—code may need refactoring as LangGraph/CrewAI evolve; pin versions and document the stack clearly",
+    "Multi-agent systems can be expensive and unreliable; budget for API costs and design fallback handlers to avoid broken demos in interviews",
+    "Over-engineering is tempting—start with a single agent doing one task well, then expand; recruiters value shipped reliability over architectural complexity"
+  ],
+  "confidence": "Very high—these signals (96 project potential, 95 career value, Bengaluru's strong dev ecosystem) and your developer profile make this a low-regret, high-upside bet for the next 3-6 months.",
+  "content_hash": "601fc5d57246ba3a",
+  "generated_for": {
+    "country": "India",
+    "city": "Bengaluru",
+    "goal": "create_agents",
+    "profile": "developer"
+  }
+}

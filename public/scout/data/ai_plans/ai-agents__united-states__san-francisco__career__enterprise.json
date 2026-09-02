@@ -1,0 +1,66 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-02T10:30:09.785102+00:00",
+  "headline": "In the heart of San Francisco's AI scene, mastering AI Agents is the fastest way to position yourself as an enterprise-grade builder who ships, not just prototypes.",
+  "why_now": "GitHub activity is at 96 and growing at 94, meaning agent frameworks are being actively extended weekly. Hugging Face activity (92) shows the model and tool ecosystem is exploding. With job demand at 85 in the Bay Area and career value rated 95, the market is signaling that agent-literate engineers will define the next wave of enterprise automation.",
+  "study": [
+    "Read Anthropic's 'Building Effective Agents' and the LangGraph docs end-to-end, then reproduce the examples in a notebook.",
+    "Pick one framework (LangGraph, CrewAI, or AutoGen) and build a planner-executor agent that calls 2-3 real APIs (e.g., calendar, CRM, docs search).",
+    "Study MCP (Model Context Protocol) and tool-use schemas; implement a custom tool server and connect it to an agent.",
+    "Review 3 production agent repos on GitHub (e.g., langflow, llama_index agent runners) and write a critique of their architecture.",
+    "Learn evaluation: build a small eval harness using Promptfoo or Braintrust to score your agent on accuracy, cost, and latency."
+  ],
+  "build": {
+    "title": "Enterprise Workflow Agent for Sales Ops",
+    "description": "A multi-agent system that triages inbound leads, enriches them via Clearbit-style APIs, drafts personalized outreach, and schedules follow-ups in HubSpot/Salesforce. It demonstrates planning, tool use, memory, and human-in-the-loop approval, which mirrors real enterprise pain points and impresses hiring managers because it solves a workflow they already understand.",
+    "stack": [
+      "LangGraph",
+      "OpenAI or Anthropic API",
+      "FastAPI",
+      "Postgres + pgvector",
+      "HubSpot/Salesforce sandbox API",
+      "Tavily or SerpAPI for research",
+      "Docker",
+      "LangSmith or Braintrust for evals"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and setup",
+      "Live demo (Gradio or hosted Streamlit) showing the agent end-to-end",
+      "Technical write-up on Medium or your blog covering design tradeoffs",
+      "2-minute Loom walkthrough for recruiters"
+    ]
+  },
+  "publish": [
+    "Post the repo to Hacker News 'Show HN' with a concrete demo link and a comment thread you actively engage in.",
+    "Share a build-in-public thread on X/LinkedIn tagging SF AI communities (@SFBAI, @Latent.Space, @swyx) and tag the framework authors.",
+    "Submit a 5-minute talk proposal to a SF meetup (AI Engineer Summit, MLOps Community, Bay Area LangChain meetup) or host one at your company.",
+    "Add the project as a pinned repo on your profile and update LinkedIn 'Featured' with the demo and write-up."
+  ],
+  "skills": [
+    "Agent orchestration and multi-step planning",
+    "Tool/function calling and API integration",
+    "RAG and vector search (pgvector)",
+    "Evaluation, observability, and cost optimization for LLM apps",
+    "Production engineering: FastAPI, Docker, CI/CD",
+    "Prompt and context engineering with MCP",
+    "Human-in-the-loop design patterns",
+    "Enterprise systems thinking (CRM, sales workflows)"
+  ],
+  "risks": [
+    "Agent stacks are shifting monthly; committing too deep to one framework (e.g., LangGraph) may need rewrites as patterns solidify.",
+    "API costs and rate limits can blow up during demos, so build caching and a fallback model from day one.",
+    "Enterprise buyers care about security, auth, and audit logs; skipping these makes the project feel like a toy rather than enterprise-grade."
+  ],
+  "confidence": "This recommendation is highly solid: the signals are strongly aligned across GitHub, Hugging Face, news, and job demand, and the project maps directly to a well-funded enterprise use case hiring managers in SF are actively recruiting for.",
+  "content_hash": "c36529c5757b5392",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "career",
+    "profile": "enterprise"
+  }
+}

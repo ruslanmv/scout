@@ -1,0 +1,62 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-02T10:30:51.240523+00:00",
+  "headline": "San Francisco is ground zero for the AI agent revolution, and your portfolio should be too.",
+  "why_now": "GitHub activity (96) and Hugging Face activity (92) are near-peak, signaling that the open-source tooling for building agents is mature and ready to use. Job demand (85) and career value (95) scores confirm that companies are actively hiring for agentic workflow skills right now, not later. Local relevance (82) means SF-based startups and labs are actively building this, making in-person visibility a real advantage.",
+  "study": [
+    "Master LangChain or AutoGen fundamentals by completing their official tutorials and reproducing one example end-to-end.",
+    "Learn tool-use and API-calling patterns by studying multi-step agent notebooks on Hugging Face Spaces.",
+    "Deepen into planning and memory architectures by reading recent papers on ReAct, Reflexion, and persistent agent state.",
+    "Study real agentic pipelines on GitHub trending repos to understand how production systems chain tools, APIs, and LLM calls.",
+    "Take a short course or workshop on multi-agent collaboration to understand how agents delegate and share context."
+  ],
+  "build": {
+    "title": "Open-Source AI Task Router Agent",
+    "description": "A web app where users submit a goal, the agent plans sub-steps, calls real APIs (weather, news, code execution), iterates on failures, and returns a structured result. It directly demonstrates tool use, planning, and self-correction — the core of agentic workflows — and runs fully in a browser demo, which is what impresses hiring teams in SF.",
+    "stack": [
+      "LangChain",
+      "OpenAI API",
+      "Streamlit",
+      "ReAct prompt pattern",
+      "GitHub Actions for CI/CD"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README and architecture diagram",
+      "Live Streamlit demo URL deployed on Hugging Face Spaces or Render",
+      "Technical write-up on dev.to or Medium covering the agentic design decisions"
+    ]
+  },
+  "publish": [
+    "Push the repo and star trending agentic repos to signal relevance on your GitHub profile.",
+    "Post the demo link and a short thread on X/Twitter tagging LangChain or AutoGen — SF-based communities amplify these posts.",
+    "Submit a short talk or lightning talk proposal to a local AI meetup group in SF (check Meetup.com for groups with community_activity=84).",
+    "Contribute one meaningful PR or issue response to a top agentic framework repo to build traceable open-source credibility."
+  ],
+  "skills": [
+    "Multi-step planning with tool-use orchestration",
+    "LLM API integration and prompt engineering",
+    "Error handling and iterative self-correction in agents",
+    "Full-stack web deployment (Streamlit + hosting)",
+    "Git version control and open-source collaboration",
+    "Technical writing and project documentation",
+    "CI/CD pipeline setup with GitHub Actions",
+    "Breaking down open-ended goals into executable sub-tasks"
+  ],
+  "risks": [
+    "LLM API costs can accumulate quickly during heavy agent testing, so set usage budgets early.",
+    "Agent reliability is still inconsistent — overpromising a demo that fails live will hurt more than a simpler one that works.",
+    "The agentic tooling space is evolving fast; a stack chosen today may have a dominant competitor in six months, so build modularly."
+  ],
+  "confidence": "With github_activity and project_potential both at 96, this recommendation is backed by the strongest signal combination in the dataset, and the high career_value (95) means the effort pays off directly in the SF job market.",
+  "content_hash": "a27de115dc5b2304",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "build_portfolio",
+    "profile": "student"
+  }
+}

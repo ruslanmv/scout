@@ -1,0 +1,65 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-02T10:28:51.316499+00:00",
+  "headline": "Turin's growing AI scene is hungry for developers who can build real agentic systems — and you can ship one in 90 days.",
+  "why_now": "Agent frameworks are exploding on GitHub and Hugging Face, with news coverage and job demand surging in tandem. Turin is emerging as a Northern Italian hub for applied AI, making this the ideal moment to position yourself as a local agent-builder rather than yet another LLM-prompt tinkerer.",
+  "study": [
+    "Spend 1 week on Anthropic's 'Building Effective Agents' and LangChain's agent docs to learn the planning-tool-memory loop pattern",
+    "Build 2 small LangGraph or CrewAI prototypes: one single-agent (web research) and one multi-agent (researcher + writer)",
+    "Read 5 production agent repos on GitHub (e.g., openhands, autogpt variants) and study their tool-calling and error-recovery patterns",
+    "Complete one course module on tool-use evaluation and observability (LangSmith, AgentOps, or Phoenix)",
+    "Study FastAPI + async patterns so your agents can expose production-ready endpoints"
+  ],
+  "build": {
+    "title": "Turin Local Concierge Agent",
+    "description": "A multi-agent system that answers practical questions about Turin (restaurants, transit, events, opening hours) by planning tasks, calling real APIs (Google Places, GTT transit, OpenWeather), and citing sources. Demonstrates planning, tool use, collaboration between specialized agents, and grounded responses — far more impressive than a chatbot wrapper.",
+    "stack": [
+      "LangGraph",
+      "OpenAI or open-source LLM via Ollama",
+      "FastAPI",
+      "Tavily/SerpAPI search",
+      "Google Places API",
+      "GTT/open data",
+      "LangSmith",
+      "Docker"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean architecture diagram and tests",
+      "Live demo deployed on Fly.io or Railway",
+      "Blog post or dev.to write-up explaining the agent graph and one failure mode you fixed"
+    ]
+  },
+  "publish": [
+    "Post a 60-second screen-recording demo on LinkedIn and X tagging Turin AI / Politecnico communities",
+    "Submit a short talk proposal to local meetups like Torino Coding Society or AI Torino",
+    "Publish the write-up on dev.to and cross-post to Hashnode with a strong diagram",
+    "Share the repo in r/LocalLLaMA, LangChain Discord, and Hacker News Show HN"
+  ],
+  "skills": [
+    "Agent orchestration and planning",
+    "Tool/function calling design",
+    "Multi-agent collaboration patterns",
+    "API integration and async Python",
+    "Prompt and response evaluation",
+    "Observability and debugging of LLM systems",
+    "Production deployment with Docker and FastAPI",
+    "Technical writing and demo storytelling"
+  ],
+  "risks": [
+    "Scope creep — building five agents instead of one solid two-agent pipeline; cap at 2-3 agents",
+    "API cost surprises during demos; cache aggressively and use a small model for routing",
+    "Over-relying on a single framework lock-in; keep the core logic framework-agnostic so it survives the next LangChain rewrite"
+  ],
+  "confidence": "Very solid — the signal stack (96 GitHub activity, 95 career value, strong local relevance) is unusually consistent, and the project is scoped tightly enough to be finished by a working developer.",
+  "content_hash": "db87a679221988fa",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "create_agents",
+    "profile": "developer"
+  }
+}
