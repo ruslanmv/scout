@@ -28,10 +28,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - uses: actions/configure-pages@v5
-      - run: python scripts/export_for_github_pages.py
-      - uses: actions/upload-pages-artifact@v3
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6
+      - name: Export static site
+        run: python scripts/export_for_github_pages.py
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
         with:
           path: public
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
