@@ -315,6 +315,15 @@
       "profile": "founder",
       "generated_at": "2026-08-31T12:37:11.115497+00:00"
     },
+    "ai-agents__united-states__san-francisco__build-portfolio__enterprise": {
+      "topic_id": "ai-agents",
+      "content_hash": "02b59fde804ab116",
+      "country": "United States",
+      "city": "San Francisco",
+      "goal": "build_portfolio",
+      "profile": "enterprise",
+      "generated_at": "2026-09-03T10:44:24.799028+00:00"
+    },
     "ai-agents__united-states__san-francisco__build-portfolio__agent": {
       "topic_id": "ai-agents",
       "content_hash": "7a31465bb764733e",
@@ -323,6 +332,15 @@
       "goal": "build_portfolio",
       "profile": "agent",
       "generated_at": "2026-08-31T12:38:24.722779+00:00"
+    },
+    "ai-agents__united-states__san-francisco__create-agents__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "423acd6f6edf5d9f",
+      "country": "United States",
+      "city": "San Francisco",
+      "goal": "create_agents",
+      "profile": "developer",
+      "generated_at": "2026-09-03T10:44:55.570907+00:00"
     },
     "ai-agents__united-states__san-francisco__create-agents__ai-engineer": {
       "topic_id": "ai-agents",
@@ -730,7 +748,7 @@
       "generated_at": "2026-08-31T12:50:47.424079+00:00"
     }
   },
-  "generated_at": "2026-09-02T10:34:26.684017+00:00",
+  "generated_at": "2026-09-03T10:45:31.221441+00:00",
   "ai_enabled": true,
-  "count": 81
+  "count": 83
 }
