@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T11:37:51.375478+00:00",
+  "generated_at": "2026-09-03T11:36:04.984310+00:00",
   "overall": "up",
   "counts": {
     "up": 32,
@@ -32,10 +32,10 @@
       "category": "signal_source",
       "url": "https://api.github.com",
       "role": "developer activity signals",
-      "checked_at": "2026-09-02T11:37:50.049413+00:00",
+      "checked_at": "2026-09-03T11:36:03.825257+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 95,
+      "latency_ms": 72,
       "detail": "HTTP 200"
     },
     {
@@ -43,10 +43,10 @@
       "category": "signal_source",
       "url": "https://huggingface.co/api/models?limit=1",
       "role": "AI builder activity signals",
-      "checked_at": "2026-09-02T11:37:50.049728+00:00",
+      "checked_at": "2026-09-03T11:36:03.825574+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 124,
+      "latency_ms": 127,
       "detail": "HTTP 200"
     },
     {
@@ -54,10 +54,10 @@
       "category": "ai_gateway",
       "url": "https://ruslanmv-ollabridge.hf.space/v1/models",
       "role": "live AI plan narration",
-      "checked_at": "2026-09-02T11:37:50.049940+00:00",
+      "checked_at": "2026-09-03T11:36:03.825804+00:00",
       "status": "up",
       "http_status": 401,
-      "latency_ms": 140,
+      "latency_ms": 249,
       "detail": "HTTP 401 — reachable, auth required"
     },
     {
@@ -65,10 +65,10 @@
       "category": "course_provider",
       "url": "https://learn.microsoft.com/en-us/training/",
       "role": "official training & certs",
-      "checked_at": "2026-09-02T11:37:50.050243+00:00",
+      "checked_at": "2026-09-03T11:36:03.826119+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 103,
+      "latency_ms": 129,
       "detail": "HTTP 200"
     },
     {
@@ -76,10 +76,10 @@
       "category": "course_provider",
       "url": "https://www.edx.org/",
       "role": "structured course catalog",
-      "checked_at": "2026-09-02T11:37:50.050605+00:00",
+      "checked_at": "2026-09-03T11:36:03.826384+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 261,
+      "latency_ms": 211,
       "detail": "HTTP 200"
     },
     {
@@ -87,7 +87,7 @@
       "category": "course_provider",
       "url": "https://www.googleapis.com/youtube/v3/videos",
       "role": "video course discovery",
-      "checked_at": "2026-09-02T11:37:50.050885+00:00",
+      "checked_at": "2026-09-03T11:36:03.826780+00:00",
       "status": "skipped",
       "http_status": null,
       "latency_ms": null,
@@ -98,7 +98,7 @@
       "category": "search_provider",
       "url": "https://api.tavily.com",
       "role": "AI course discovery",
-      "checked_at": "2026-09-02T11:37:50.051065+00:00",
+      "checked_at": "2026-09-03T11:36:03.827086+00:00",
       "status": "skipped",
       "http_status": null,
       "latency_ms": null,
@@ -109,7 +109,7 @@
       "category": "search_provider",
       "url": "https://api.search.brave.com/res/v1/web/search",
       "role": "site-restricted course discovery",
-      "checked_at": "2026-09-02T11:37:50.051095+00:00",
+      "checked_at": "2026-09-03T11:36:03.827113+00:00",
       "status": "skipped",
       "http_status": null,
       "latency_ms": null,
@@ -120,10 +120,10 @@
       "category": "course_url",
       "url": "https://docs.python.org/3/tutorial/",
       "role": "resource · openedx",
-      "checked_at": "2026-09-02T11:37:50.051427+00:00",
+      "checked_at": "2026-09-03T11:36:03.827377+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 48,
+      "latency_ms": 91,
       "detail": "HTTP 200"
     },
     {
@@ -131,10 +131,10 @@
       "category": "course_url",
       "url": "https://docs.github.com/get-started",
       "role": "resource · youtube",
-      "checked_at": "2026-09-02T11:37:50.051479+00:00",
+      "checked_at": "2026-09-03T11:36:03.827564+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 140,
+      "latency_ms": 109,
       "detail": "HTTP 200"
     },
     {
@@ -142,10 +142,10 @@
       "category": "course_url",
       "url": "https://docs.pytest.org/en/stable/",
       "role": "resource · youtube",
-      "checked_at": "2026-09-02T11:37:50.051708+00:00",
+      "checked_at": "2026-09-03T11:36:03.827624+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 436,
+      "latency_ms": 403,
       "detail": "HTTP 200"
     },
     {
@@ -153,10 +153,10 @@
       "category": "course_url",
       "url": "https://fastapi.tiangolo.com/tutorial/",
       "role": "resource · openedx",
-      "checked_at": "2026-09-02T11:37:50.151180+00:00",
+      "checked_at": "2026-09-03T11:36:03.962115+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 214,
+      "latency_ms": 174,
       "detail": "HTTP 200"
     },
     {
@@ -164,10 +164,10 @@
       "category": "course_url",
       "url": "https://learn.microsoft.com/training/paths/python-first-steps/",
       "role": "resource · microsoft_learn",
-      "checked_at": "2026-09-02T11:37:50.193567+00:00",
+      "checked_at": "2026-09-03T11:36:03.991643+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 363,
+      "latency_ms": 223,
       "detail": "HTTP 200"
     },
     {
@@ -175,10 +175,10 @@
       "category": "course_url",
       "url": "https://www.postgresql.org/docs/current/tutorial.html",
       "role": "resource · openedx",
-      "checked_at": "2026-09-02T11:37:50.202573+00:00",
+      "checked_at": "2026-09-03T11:36:04.012789+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 244,
+      "latency_ms": 276,
       "detail": "HTTP 200"
     },
     {
@@ -186,10 +186,10 @@
       "category": "course_url",
       "url": "https://learn.microsoft.com/training/paths/develop-ai-solutions-azure-openai/",
       "role": "resource · microsoft_learn",
-      "checked_at": "2026-09-02T11:37:50.223286+00:00",
+      "checked_at": "2026-09-03T11:36:04.017988+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 364,
+      "latency_ms": 208,
       "detail": "HTTP 200"
     },
     {
@@ -197,10 +197,10 @@
       "category": "course_url",
       "url": "https://learn.microsoft.com/training/modules/fundamentals-generative-ai/",
       "role": "resource · microsoft_learn",
-      "checked_at": "2026-09-02T11:37:50.239297+00:00",
+      "checked_at": "2026-09-03T11:36:04.024632+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 147,
+      "latency_ms": 197,
       "detail": "HTTP 200"
     },
     {
@@ -208,10 +208,10 @@
       "category": "course_url",
       "url": "https://learn.microsoft.com/training/modules/use-own-data-azure-openai/",
       "role": "resource · youtube",
-      "checked_at": "2026-09-02T11:37:50.244859+00:00",
+      "checked_at": "2026-09-03T11:36:04.108469+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 510,
+      "latency_ms": 122,
       "detail": "HTTP 200"
     },
     {
@@ -219,10 +219,10 @@
       "category": "course_url",
       "url": "https://learn.microsoft.com/training/",
       "role": "resource · openedx",
-      "checked_at": "2026-09-02T11:37:50.362266+00:00",
+      "checked_at": "2026-09-03T11:36:04.137114+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 144,
+      "latency_ms": 80,
       "detail": "HTTP 200"
     },
     {
@@ -230,10 +230,10 @@
       "category": "course_url",
       "url": "https://learn.microsoft.com/training/paths/create-machine-learn-models/",
       "role": "resource · microsoft_learn",
-      "checked_at": "2026-09-02T11:37:50.365930+00:00",
+      "checked_at": "2026-09-03T11:36:04.140043+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 196,
+      "latency_ms": 135,
       "detail": "HTTP 200"
     },
     {
@@ -241,10 +241,10 @@
       "category": "course_url",
       "url": "https://learn.microsoft.com/training/paths/responsible-ai-business-principles/",
       "role": "resource · microsoft_learn",
-      "checked_at": "2026-09-02T11:37:50.387785+00:00",
+      "checked_at": "2026-09-03T11:36:04.215594+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 244,
+      "latency_ms": 239,
       "detail": "HTTP 200"
     },
     {
@@ -252,10 +252,10 @@
       "category": "course_url",
       "url": "https://modelcontextprotocol.io/introduction",
       "role": "resource · youtube",
-      "checked_at": "2026-09-02T11:37:50.447286+00:00",
+      "checked_at": "2026-09-03T11:36:04.218201+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 222,
+      "latency_ms": 233,
       "detail": "HTTP 200"
     },
     {
@@ -263,10 +263,10 @@
       "category": "course_url",
       "url": "https://developers.google.com/tech-writing",
       "role": "resource · youtube",
-      "checked_at": "2026-09-02T11:37:50.507503+00:00",
+      "checked_at": "2026-09-03T11:36:04.224207+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 268,
+      "latency_ms": 621,
       "detail": "HTTP 200"
     },
     {
@@ -274,10 +274,10 @@
       "category": "course_url",
       "url": "https://learn.microsoft.com/training/paths/azure-fundamentals/",
       "role": "resource · microsoft_learn",
-      "checked_at": "2026-09-02T11:37:50.540953+00:00",
+      "checked_at": "2026-09-03T11:36:04.226877+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 566,
+      "latency_ms": 313,
       "detail": "HTTP 200"
     },
     {
@@ -285,10 +285,10 @@
       "category": "course_url",
       "url": "https://learn.microsoft.com/training/paths/secure-your-cloud-data/",
       "role": "resource · microsoft_learn",
-      "checked_at": "2026-09-02T11:37:50.557515+00:00",
+      "checked_at": "2026-09-03T11:36:04.231399+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 241,
+      "latency_ms": 312,
       "detail": "HTTP 200"
     },
     {
@@ -296,10 +296,10 @@
       "category": "course_url",
       "url": "https://anthropic.skilljar.com/",
       "role": "resource · anthropic",
-      "checked_at": "2026-09-02T11:37:50.563075+00:00",
+      "checked_at": "2026-09-03T11:36:04.276675+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 416,
+      "latency_ms": 393,
       "detail": "HTTP 200"
     },
     {
@@ -307,10 +307,10 @@
       "category": "course_url",
       "url": "https://docs.anthropic.com/en/docs/claude-code/overview",
       "role": "resource · anthropic",
-      "checked_at": "2026-09-02T11:37:50.588674+00:00",
+      "checked_at": "2026-09-03T11:36:04.292204+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 118,
+      "latency_ms": 189,
       "detail": "HTTP 200"
     },
     {
@@ -318,10 +318,10 @@
       "category": "course_url",
       "url": "https://github.com/anthropics/anthropic-cookbook",
       "role": "resource · anthropic",
-      "checked_at": "2026-09-02T11:37:50.632770+00:00",
+      "checked_at": "2026-09-03T11:36:04.305257+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 495,
+      "latency_ms": 539,
       "detail": "HTTP 200"
     },
     {
@@ -329,10 +329,10 @@
       "category": "course_url",
       "url": "https://github.com/anthropics/anthropic-quickstarts",
       "role": "resource · anthropic",
-      "checked_at": "2026-09-02T11:37:50.670904+00:00",
+      "checked_at": "2026-09-03T11:36:04.452678+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 563,
+      "latency_ms": 523,
       "detail": "HTTP 200"
     },
     {
@@ -340,10 +340,10 @@
       "category": "course_url",
       "url": "https://docs.anthropic.com/en/api/overview",
       "role": "resource · anthropic",
-      "checked_at": "2026-09-02T11:37:50.708466+00:00",
+      "checked_at": "2026-09-03T11:36:04.455728+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 430,
+      "latency_ms": 303,
       "detail": "HTTP 200"
     },
     {
@@ -351,10 +351,10 @@
       "category": "course_url",
       "url": "https://docs.anthropic.com/en/docs/agents-and-tools/mcp",
       "role": "resource · anthropic",
-      "checked_at": "2026-09-02T11:37:50.755748+00:00",
+      "checked_at": "2026-09-03T11:36:04.483557+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 613,
+      "latency_ms": 494,
       "detail": "HTTP 200"
     },
     {
@@ -362,10 +362,10 @@
       "category": "course_url",
       "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
       "role": "resource · anthropic",
-      "checked_at": "2026-09-02T11:37:50.776335+00:00",
+      "checked_at": "2026-09-03T11:36:04.541179+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 388,
+      "latency_ms": 352,
       "detail": "HTTP 200"
     },
     {
@@ -373,10 +373,10 @@
       "category": "course_url",
       "url": "https://www.anthropic.com/learn",
       "role": "resource · anthropic",
-      "checked_at": "2026-09-02T11:37:50.798913+00:00",
+      "checked_at": "2026-09-03T11:36:04.544454+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 256,
+      "latency_ms": 197,
       "detail": "HTTP 200"
     },
     {
@@ -384,10 +384,10 @@
       "category": "course_url",
       "url": "https://www.anthropic.com/partners",
       "role": "resource · anthropic",
-      "checked_at": "2026-09-02T11:37:50.979457+00:00",
+      "checked_at": "2026-09-03T11:36:04.670523+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 217,
+      "latency_ms": 210,
       "detail": "HTTP 200"
     },
     {
@@ -395,10 +395,10 @@
       "category": "certification",
       "url": "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
       "role": "official blueprint · Amazon Web Services",
-      "checked_at": "2026-09-02T11:37:51.056053+00:00",
+      "checked_at": "2026-09-03T11:36:04.743209+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 238,
+      "latency_ms": 197,
       "detail": "HTTP 200"
     },
     {
@@ -406,10 +406,10 @@
       "category": "certification",
       "url": "https://learn.microsoft.com/credentials/certifications/azure-ai-engineer/",
       "role": "official blueprint · Microsoft",
-      "checked_at": "2026-09-02T11:37:51.107665+00:00",
+      "checked_at": "2026-09-03T11:36:04.760720+00:00",
       "status": "up",
       "http_status": 200,
-      "latency_ms": 218,
+      "latency_ms": 97,
       "detail": "HTTP 200"
     }
   ],
@@ -419,28 +419,28 @@
       "ok": true,
       "mode": "static",
       "detail": "30 curated offline resources available.",
-      "checked_at": "2026-09-02T11:37:51.375396+00:00"
+      "checked_at": "2026-09-03T11:36:04.984231+00:00"
     },
     {
       "provider": "web_search",
       "ok": false,
       "mode": "disabled",
       "detail": "Set TAVILY_API_KEY, BRAVE_API_KEY, or SCOUT_ENABLE_WEB_DISCOVERY=1.",
-      "checked_at": "2026-09-02T11:37:51.375427+00:00"
+      "checked_at": "2026-09-03T11:36:04.984260+00:00"
     },
     {
       "provider": "udemy",
       "ok": false,
       "mode": "disabled",
       "detail": "Set TAVILY_API_KEY, BRAVE_API_KEY, or SCOUT_ENABLE_WEB_DISCOVERY=1.",
-      "checked_at": "2026-09-02T11:37:51.375437+00:00"
+      "checked_at": "2026-09-03T11:36:04.984271+00:00"
     },
     {
       "provider": "coursera",
       "ok": false,
       "mode": "disabled",
       "detail": "Set TAVILY_API_KEY, BRAVE_API_KEY, or SCOUT_ENABLE_WEB_DISCOVERY=1.",
-      "checked_at": "2026-09-02T11:37:51.375446+00:00"
+      "checked_at": "2026-09-03T11:36:04.984280+00:00"
     }
   ]
 }
