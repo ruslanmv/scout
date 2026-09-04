@@ -49,7 +49,7 @@ uvicorn app.main:app --reload   # → http://127.0.0.1:8000/docs · /dashboard �
 <!-- This section is regenerated every day by scripts/update_readme.py from the latest dataset. Do not edit by hand — changes here are overwritten. -->
 ## 📈 Trending now — top skills & places
 
-> Auto-generated from Scout's latest signals · **updated 2026-09-03** · 6 tracked topics. Demand blends job postings, career value, growth, and ecosystem fit — [how it works](docs/DATA_SOURCES.md).
+> Auto-generated from Scout's latest signals · **updated 2026-09-04** · 6 tracked topics. Demand blends job postings, career value, growth, and ecosystem fit — [how it works](docs/DATA_SOURCES.md).
 
 ### 🔥 Top skills to learn right now
 

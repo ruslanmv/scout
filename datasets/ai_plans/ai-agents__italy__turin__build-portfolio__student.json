@@ -1,0 +1,63 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-04T10:21:17.008164+00:00",
+  "headline": "Turin's next AI agent builder could be you—start shipping agentic workflows before the rest of Politecnico catches on.",
+  "why_now": "AI Agents is the highest-signal topic in your stack: project_potential (96) and career_value (95) are off the charts, and GitHub activity (96) plus Hugging Face activity (92) show the tooling ecosystem is exploding right now. With job_demand at 85 and news_mentions at 88, employers are already hunting for people who can actually build these systems, not just talk about them.",
+  "study": [
+    "Master the foundations: read 'ReAct' and 'Toolformer' papers, then the LangChain and LlamaIndex docs to understand how agents reason, retrieve, and call tools.",
+    "Build a local agent playground in Python using the OpenAI or Hugging Face API plus LangGraph; add tool-calling (web search, calculator, file I/O) and a simple memory module.",
+    "Study one multi-agent pattern end-to-end: try CrewAI or AutoGen to coordinate two or three specialized agents on a shared task (e.g., research + write + edit).",
+    "Learn the eval side: read about trajectories, success rates, and how to benchmark agents with tools like LangSmith or Phoenix, so your portfolio work looks rigorous.",
+    "Browse the top 20 AI-agent repos on GitHub tagged this month and clone+modify two of them to internalize patterns."
+  ],
+  "build": {
+    "title": "Turin Local AI Agent: a multilingual tourist concierge that plans a Turin itinerary end-to-end",
+    "description": "An agent that takes a tourist's interests, dates, and budget, then autonomously calls tools to check weather, look up opening hours of museums (via APIs or scraping), reserve a slot at Museo Egizio, suggest a Piedmont restaurant, and compose a day-by-day plan in Italian or English. Why it impresses: it combines tool use, multi-step planning, API integration, memory, and a real local angle that makes it memorable to recruiters in Turin and beyond.",
+    "stack": [
+      "Python",
+      "LangChain or LangGraph",
+      "OpenAI or open-source model from Hugging Face",
+      "FastAPI for the backend",
+      "Streamlit for the demo UI",
+      "SQLite for memory of past trips"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and setup instructions",
+      "Live Streamlit demo or short Loom video showing a real Turin itinerary",
+      "Technical write-up (Medium or personal blog) explaining agent design choices and what failed"
+    ]
+  },
+  "publish": [
+    "GitHub repository",
+    "Hugging Face Space",
+    "short technical article",
+    "Create a clean GitHub README with screenshots and architecture.",
+    "Publish a working demo or notebook."
+  ],
+  "skills": [
+    "LLM tool-calling and function calling",
+    "Multi-step agent design (ReAct / planner-executor)",
+    "LangChain or LlamaIndex",
+    "API integration and web scraping",
+    "Prompt engineering and prompt debugging",
+    "Agent evaluation and observability",
+    "FastAPI backend development",
+    "Deploying AI demos end-to-end"
+  ],
+  "risks": [
+    "Tool-use loops can rack up API costs and get stuck in infinite reasoning; cap iterations and set budgets in code.",
+    "Agent demos often break under live API changes—pin dependencies and add retries so your portfolio piece stays runnable months from now."
+  ],
+  "confidence": "Recommendation is very strong: every signal supports AI agents as a high-leverage, buildable, and hireable direction for a student in Turin right now.",
+  "content_hash": "0b4d537da3224579",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "build_portfolio",
+    "profile": "student"
+  }
+}

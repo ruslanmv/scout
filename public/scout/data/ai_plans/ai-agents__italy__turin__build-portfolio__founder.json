@@ -1,0 +1,67 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-04T10:21:42.880614+00:00",
+  "headline": "Turin founders who ship agentic AI in public this quarter will own the next funding narrative.",
+  "why_now": "AI Agents and Agentic Workflows are exploding across GitHub (96) and Hugging Face (92) with news momentum (88) and strong job demand (85) signaling real market pull, not just hype. As a founder in Turin, your edge comes from combining local industry strengths (automotive, manufacturing, fintech) with this global shift toward autonomous, multi-step AI systems. The 96 project_potential score confirms there is a wide-open lane for portfolio work that stands out.",
+  "study": [
+    "Read Anthropic's 'Building Effective Agents' and the LangChain ReAct and LangGraph docs end-to-end in week 1",
+    "Clone and run the top 5 agent repos on GitHub filtered by stars in the last 90 days; instrument each with tracing",
+    "Complete the DeepLearning.AI 'Agentic Workflows' short course plus the Hugging Face smol-course on tool-using agents",
+    "Build a small eval harness using inspect-ai or promptfoo to measure tool-call accuracy and step efficiency",
+    "Study 2 Turin-relevant use cases deeply: multilingual customer ops for FCA/Stellantis suppliers and compliance triage for local fintechs"
+  ],
+  "build": {
+    "title": "PiùAgent - a Turin-aware operations copilot",
+    "description": "A multi-agent system that takes a natural-language ops request from a Turin SME (e.g., a supplier to the automotive or fashion-tech cluster), plans the steps, calls real tools (calendar, email, inventory API, web search in Italian), and ships a verifiable action with receipts. It impresses because it is agentic end-to-end, not a chatbot wrapper, and it speaks the local language and respects EU/GDPR constraints.",
+    "stack": [
+      "LangGraph",
+      "OpenAI or open-source model via Ollama",
+      "FastAPI",
+      "Postgres + pgvector",
+      "Tavily or Brave Search API",
+      "Composio or custom tool adapters",
+      "LangSmith or Helicone for tracing",
+      "Docker",
+      "GitHub Actions"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean architecture diagram, tests, and CI",
+      "Live demo deployed on a Turin-region VPS or Fly.io with a recorded Loom walkthrough",
+      "Technical write-up on Hashnode or your blog with eval numbers and cost-per-task",
+      "One-page case study PDF in English and Italian aimed at investors and local SMBs"
+    ]
+  },
+  "publish": [
+    "Post a 60-second build-in-public video on LinkedIn and X every Friday for 4 weeks showing one new tool integration",
+    "Submit a talk proposal to Turin AI Meetup, Codemotion Italy, and PyData Turin; offer a free hands-on workshop",
+    "Publish a thread on X breaking down an open-source agent repo with your own benchmarks, tagging the maintainers",
+    "Reach out to 10 Turin-based founders and 5 EU VCs with a personalized Loom and the case-study PDF"
+  ],
+  "skills": [
+    "Agent orchestration and tool-use design",
+    "Multi-step planning with retrieval and reflection",
+    "LLM evaluation, tracing, and cost optimization",
+    "FastAPI backend engineering with vector search",
+    "EU data privacy and GDPR-aware system design",
+    "Technical writing and public demos",
+    "Italian-language product UX",
+    "Founder-level go-to-market storytelling"
+  ],
+  "risks": [
+    "Vendor lock-in if you over-optimize for one model provider; design with a model-agnostic layer from day one",
+    "Eval theater: shipping agents without a real eval harness will not survive technical due diligence from anyone hiring or funding you",
+    "Burnout from chasing every new agent framework; pick LangGraph + one open-source model and stick with them for the quarter"
+  ],
+  "confidence": "Very high: the signals are strong, the stack is mature, and a Turin-specific agent demo is a credible wedge for both a portfolio and a fundable company.",
+  "content_hash": "60ed7ff58da14a0c",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "build_portfolio",
+    "profile": "founder"
+  }
+}
