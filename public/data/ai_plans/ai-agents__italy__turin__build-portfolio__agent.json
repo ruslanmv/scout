@@ -1,0 +1,66 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-05T09:45:53.311498+00:00",
+  "headline": "Turin, your agentic-AI moment is now—turn the city's industrial-data strengths into a portfolio that hiring managers actually notice.",
+  "why_now": "GitHub and Hugging Face activity around AI agents is surging (scores 96 and 92) while news mentions and job demand are rising fast (88 and 85). For an agent-focused builder in Turin, where manufacturing and mobility data are abundant, this is the rare window where the tooling, the demand, and the portfolio impact all peak together.",
+  "study": [
+    "Read the LangChain and LlamaIndex agent tutorials end-to-end, then replicate their ReAct and tool-calling examples locally with Ollama.",
+    "Build a small function-calling agent in Python using OpenAI/Anthropic APIs plus a vector store (Qdrant or Chroma) over a public Turin dataset (e.g., GTT transit or Piedmont open data).",
+    "Study Anthropic's 'Building Effective Agents' and the AutoGen + CrewAI docs to compare single-agent vs. multi-agent orchestration patterns.",
+    "Implement one multi-agent workflow (planner + researcher + critic) with CrewAI or AutoGen, instrumenting every step with logging.",
+    "Review 2-3 open-source agent repos on GitHub trending in Turin-relevant domains (manufacturing, logistics, mobility) and write notes on their architecture."
+  ],
+  "build": {
+    "title": "TorinoMobilityAgent",
+    "description": "A multi-agent system that answers natural-language questions about Turin public transit and air quality: a planner agent decomposes the query, a retrieval agent queries Piedmont open-data APIs (GTT, ARPA Piemonte), and a critic agent validates the answer before returning a cited response. It demonstrates tool calling, planning, retrieval-augmented generation, and multi-agent collaboration on a hyper-local dataset that European employers instantly recognize.",
+    "stack": [
+      "Python",
+      "LangChain or LlamaIndex",
+      "CrewAI or AutoGen",
+      "Qdrant or Chroma",
+      "Piedmont Open Data APIs (GTT, ARPA)",
+      "Streamlit or Gradio",
+      "Docker",
+      "GitHub Actions for CI"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README and architecture diagram",
+      "Live Gradio/Streamlit demo deployable on Hugging Face Spaces",
+      "Technical write-up (1,000-1,500 words) on Medium or your blog",
+      "Short Loom/YouTube demo video (2-3 minutes)"
+    ]
+  },
+  "publish": [
+    "Post the demo on Hacker News (Show HN) and r/LocalLLaMA with a focused title and a Turin-specific hook.",
+    "Submit a talk proposal to the Torino Python Meetup, AI Conf Turin, or an ODSC Europe lightning session.",
+    "Cross-post the write-up to LinkedIn tagging Turin tech community accounts and the Piedmont open-data team.",
+    "Open-source a reusable 'Italian open-data agent template' so other Italian devs star and fork it, boosting visibility."
+  ],
+  "skills": [
+    "LLM tool-use and function calling",
+    "Multi-agent orchestration (planner/executor/critic)",
+    "Retrieval-augmented generation (RAG)",
+    "Working with public APIs and open-data pipelines",
+    "Prompt and agent evaluation",
+    "Python backend engineering and containerization",
+    "Technical writing and demo storytelling",
+    "Domain modeling for mobility and environmental data"
+  ],
+  "risks": [
+    "Open-data APIs for GTT/ARPA can change or rate-limit, so budget time for schema drift and caching.",
+    "Multi-agent setups are easy to over-engineer—recruiters value a working single-agent version more than a flaky five-agent one.",
+    "GPU/API costs for live demos can spike; pin to small models via Ollama or Hugging Face Inference to keep it free to run."
+  ],
+  "confidence": "Very high—the signals are strong, the local angle is differentiated, and the project is shippable in 2-3 weeks by a focused agent developer.",
+  "content_hash": "5132a641f0db3307",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "build_portfolio",
+    "profile": "agent"
+  }
+}

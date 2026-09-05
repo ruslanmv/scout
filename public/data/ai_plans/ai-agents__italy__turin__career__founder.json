@@ -1,0 +1,65 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-05T09:45:05.962547+00:00",
+  "headline": "Turin founders building AI agents right now will own the next wave of European automation startups.",
+  "why_now": "AI agents are exploding across GitHub (96 activity, 94 growth) and Hugging Face (92), with strong news coverage (88) and hiring demand (85). For a founder in Turin—where automotive, manufacturing, and industrial automation clusters are deep—this is a rare chance to combine frontier AI tooling with regional industry strengths before the market saturates.",
+  "study": [
+    "Complete the Anthropic 'Building Effective Agents' course and replicate each pattern (router, ReAct, multi-agent) in a local repo.",
+    "Read the LangGraph and CrewAI docs end-to-end; build a 3-agent workflow that researches a topic, drafts a report, and critiques itself.",
+    "Study the Model Context Protocol spec; implement a custom MCP server exposing a Turin public-transport or port-of-Savona logistics API to an agent.",
+    "Clone and dissect 2 top starred agent repos from the past 90 days (filter by language you know); document architecture trade-offs in a public notes repo.",
+    "Take a short course on evals (e.g. LangSmith or DeepEval) and learn to measure agent reliability before shipping anything."
+  ],
+  "build": {
+    "title": "Turin Industrial Ops Agent",
+    "description": "A multi-agent system that ingests unstructured supplier emails, maintenance logs, and sensor exports from a Turin-area manufacturing client, plans follow-up actions, calls internal APIs to update ERP/CMMS records, and emails a human supervisor with a confidence-scored summary. It demonstrates tool use, planning, fallback handling, and human-in-the-loop—exactly what European industrial buyers will pay for.",
+    "stack": [
+      "LangGraph",
+      "OpenAI or Anthropic API",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis (queue)",
+      "LangSmith for evals",
+      "Docker",
+      "n8n or Temporal for orchestration"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README and architecture diagram",
+      "5-minute Loom demo walking through a real supplier-email → ERP update flow",
+      "Technical write-up (1,500 words) on LinkedIn or your blog covering evals, failure modes, and cost per task",
+      "Live hosted demo on a free Render/Fly.io instance"
+    ]
+  },
+  "publish": [
+    "Post the write-up on Hacker News (Show HN) and LinkedIn with a hook aimed at Turin/Italian industrial operators; tag Politecnico di Torino AI labs and Italian AI communities.",
+    "Submit a 10-minute talk proposal to meetups like Torino AI, Codemotion Italy, and PyData Turin; offer a live demo.",
+    "Publish a short thread on X/Twitter and a cross-post in the Italian r/MachineLearning and local founder Slack/Discord groups, then DM 10 Turin-based CTOs at manufacturing scaleups offering a free pilot.",
+    "Open-source a small reusable piece—an MCP server or eval harness—and submit it to Hugging Face Spaces and awesome-agent lists for discoverability."
+  ],
+  "skills": [
+    "LLM orchestration and agent design patterns",
+    "Tool/function calling and API integration",
+    "Model Context Protocol (MCP) implementation",
+    "Evaluation, observability, and cost optimization of agent systems",
+    "Production deployment (FastAPI, Docker, cloud hosting)",
+    "Domain modeling for industrial/manufacturing workflows",
+    "Technical writing and demo storytelling",
+    "Founder-level go-to-market for AI products in Italy"
+  ],
+  "risks": [
+    "Agent reliability is still brittle, and a flaky demo to industrial buyers can kill credibility—invest seriously in evals before any client pilot.",
+    "The space is moving so fast that frameworks you learn today may be obsolete in 6 months; prioritize transferable patterns over specific libraries."
+  ],
+  "confidence": "High confidence—signals are strongly aligned with founder career goals, your local industrial ecosystem, and a market with proven willingness to pay.",
+  "content_hash": "53ecea7e90f12031",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "career",
+    "profile": "founder"
+  }
+}

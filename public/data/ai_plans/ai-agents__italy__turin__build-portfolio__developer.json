@@ -1,0 +1,65 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-05T09:45:30.550875+00:00",
+  "headline": "Build an agentic AI portfolio in Turin and become the developer local teams call when workflows need to think for themselves.",
+  "why_now": "With GitHub activity at 96 and Hugging Face momentum at 92, agentic workflows have moved from research demos to production patterns in the last few months. News mentions (88) and job demand (85) confirm hiring teams in Italy are actively seeking engineers who can orchestrate tools and APIs, not just call them. Your location in Turin gives you a clean angle: the city’s strong manufacturing and automotive base needs AI copilots that plug into legacy systems.",
+  "study": [
+    "Read the ReAct and Toolformer papers end-to-end, then replicate a minimal reasoning loop in Python without frameworks.",
+    "Build a single-agent prototype using LangChain or the OpenAI Assistants API that calls two real APIs (e.g., weather + calendar) and recovers from one tool failure.",
+    "Study Anthropic’s prompt caching and Anthropic/MCP-style tool routing concepts, then implement a tiny multi-agent dispatcher where a planner agent delegates to a researcher and a writer.",
+    "Fork a popular open-source agent repo from GitHub (e.g., AutoGPT, CrewAI, or LangGraph examples), run it locally, break it, and document the failure modes in a public gist.",
+    "Spend one evening on the EU AI Act overview and Turin’s local AI meetups (search ‘AI Torino’ and ‘DataBeer’) to ground your portfolio in regional context."
+  ],
+  "build": {
+    "title": "Turin Mobility Concierge – a multi-agent assistant for local transport",
+    "description": "A planner agent interprets a user goal like ‘get me from Porta Susa to the airport before 9 AM with my bike’. It delegates to a transit agent (queries GTT/Trenitalia APIs), a weather agent, and a routing agent, then synthesizes a single recommendation with explanations. It also exposes a simple FastAPI endpoint and a Streamlit chat UI. The project shows real tool use, API orchestration, agent collaboration, and graceful degradation when an API fails.",
+    "stack": [
+      "LangGraph",
+      "OpenAI or Anthropic API",
+      "FastAPI",
+      "Streamlit",
+      "Tavily or SerpAPI for live web lookups",
+      "SQLite for conversation memory",
+      "GitHub Actions for CI",
+      "pytest for agent behavior tests"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, architecture diagram, and one-command Docker run",
+      "Live Streamlit demo deployed on Hugging Face Spaces or Render",
+      "Write-up on LinkedIn or personal blog explaining the agent graph and one honest failure case"
+    ]
+  },
+  "publish": [
+    "Post the repo on r/LocalLLaMA and the ‘AI Agents’ Discord servers with a 30-second demo GIF.",
+    "Give a lightning talk at a Torino AI meetup or submit to the next PyData Turin meetup.",
+    "Tag 3–5 Italian AI builders on LinkedIn with a specific ask (‘feedback on the planner prompt’) rather than a generic share.",
+    "Publish a short thread on X/Twitter walking through one tool-call trace with a screenshot."
+  ],
+  "skills": [
+    "LLM tool-use and function calling",
+    "Multi-agent system design",
+    "API orchestration and error handling",
+    "Python backend development (FastAPI)",
+    "Prompt engineering and evaluation",
+    "Hugging Face model integration",
+    "CI/CD and containerization",
+    "Technical writing and public demos"
+  ],
+  "risks": [
+    "API costs can balloon during demos; cap per-session token spend and cache results to keep the project reproducible.",
+    "Agent demos are notoriously flaky in live presentations; record a polished video as a backup to a live Streamlit demo.",
+    "The agent space is crowded on GitHub – differentiation comes from domain depth (Turin mobility) and clean engineering, not just another LangChain wrapper."
+  ],
+  "confidence": "This recommendation is highly solid: every signal (GitHub 96, HuggingFace 92, jobs 85, career value 95) points to the same bet, and the build path is concrete and shippable in 3–4 weeks.",
+  "content_hash": "11ae516ee2d7ff65",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "build_portfolio",
+    "profile": "developer"
+  }
+}

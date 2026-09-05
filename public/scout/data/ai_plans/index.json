@@ -63,6 +63,15 @@
       "profile": "student",
       "generated_at": "2026-09-01T10:45:23.234766+00:00"
     },
+    "ai-agents__italy__turin__career__ai-engineer": {
+      "topic_id": "ai-agents",
+      "content_hash": "e3a011d9f5daee56",
+      "country": "Italy",
+      "city": "Turin",
+      "goal": "career",
+      "profile": "ai_engineer",
+      "generated_at": "2026-09-05T09:44:50.892947+00:00"
+    },
     "ai-agents__italy__turin__career__student": {
       "topic_id": "ai-agents",
       "content_hash": "9891f4b777857a2a",
@@ -72,6 +81,24 @@
       "profile": "student",
       "generated_at": "2026-08-30T11:17:21.627636+00:00"
     },
+    "ai-agents__italy__turin__career__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "53ecea7e90f12031",
+      "country": "Italy",
+      "city": "Turin",
+      "goal": "career",
+      "profile": "founder",
+      "generated_at": "2026-09-05T09:45:05.962547+00:00"
+    },
+    "ai-agents__italy__turin__career__enterprise": {
+      "topic_id": "ai-agents",
+      "content_hash": "c59f03b0b418c65b",
+      "country": "Italy",
+      "city": "Turin",
+      "goal": "career",
+      "profile": "enterprise",
+      "generated_at": "2026-09-05T09:45:13.854460+00:00"
+    },
     "ai-agents__italy__turin__career__agent": {
       "topic_id": "ai-agents",
       "content_hash": "8edc46aa92313b0a",
@@ -80,6 +107,15 @@
       "goal": "career",
       "profile": "agent",
       "generated_at": "2026-09-04T10:19:46.739275+00:00"
+    },
+    "ai-agents__italy__turin__build-portfolio__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "11ae516ee2d7ff65",
+      "country": "Italy",
+      "city": "Turin",
+      "goal": "build_portfolio",
+      "profile": "developer",
+      "generated_at": "2026-09-05T09:45:30.550875+00:00"
     },
     "ai-agents__italy__turin__build-portfolio__student": {
       "topic_id": "ai-agents",
@@ -107,6 +143,15 @@
       "goal": "build_portfolio",
       "profile": "enterprise",
       "generated_at": "2026-09-02T10:28:21.360605+00:00"
+    },
+    "ai-agents__italy__turin__build-portfolio__agent": {
+      "topic_id": "ai-agents",
+      "content_hash": "5132a641f0db3307",
+      "country": "Italy",
+      "city": "Turin",
+      "goal": "build_portfolio",
+      "profile": "agent",
+      "generated_at": "2026-09-05T09:45:53.311498+00:00"
     },
     "ai-agents__italy__turin__create-agents__developer": {
       "topic_id": "ai-agents",
@@ -323,6 +368,15 @@
       "goal": "build_portfolio",
       "profile": "developer",
       "generated_at": "2026-09-01T10:57:45.280656+00:00"
+    },
+    "ai-agents__united-states__san-francisco__build-portfolio__ai-engineer": {
+      "topic_id": "ai-agents",
+      "content_hash": "a5a91194c1cfc5c1",
+      "country": "United States",
+      "city": "San Francisco",
+      "goal": "build_portfolio",
+      "profile": "ai_engineer",
+      "generated_at": "2026-09-05T09:46:28.158843+00:00"
     },
     "ai-agents__united-states__san-francisco__build-portfolio__student": {
       "topic_id": "ai-agents",
@@ -784,7 +838,7 @@
       "generated_at": "2026-08-31T12:50:47.424079+00:00"
     }
   },
-  "generated_at": "2026-09-04T10:23:55.021139+00:00",
+  "generated_at": "2026-09-05T09:46:49.924629+00:00",
   "ai_enabled": true,
-  "count": 87
+  "count": 93
 }

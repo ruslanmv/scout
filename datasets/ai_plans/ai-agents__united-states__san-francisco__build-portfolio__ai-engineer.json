@@ -1,0 +1,64 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-05T09:46:28.158843+00:00",
+  "headline": "Ship a multi-agent portfolio piece from SF and become the local go-to for agentic systems.",
+  "why_now": "AI Agents and Agentic Workflows are exploding: GitHub and Hugging Face activity are both above 92, project_potential sits at 96, and Bay Area job demand is at 85. With this much momentum in the SF ecosystem, the next 90 days are a rare window to publish a portfolio piece that recruiters and founders actively search for.",
+  "study": [
+    "Read Anthropic's 'Building Effective Agents' and OpenAI's function-calling docs to ground yourself in tool-use patterns.",
+    "Build a LangGraph or CrewAI tutorial locally: one planner agent that calls a web search tool, a calculator, and a file writer, with a LangSmith or Phoenix trace of each step.",
+    "Reproduce a small open-source agent (e.g., a ReAct research agent) from Hugging Face, swap its tools, and benchmark it on a 20-question task set.",
+    "Study MCP (Model Context Protocol) and add at least one MCP server to your agent so it can connect to a real data source.",
+    "Write a short eval harness using inspect-ai or simple assertions to grade your agent's tool calls and final answers."
+  ],
+  "build": {
+    "title": "AgentOps: a self-improving research agent with traceable tool use",
+    "description": "A multi-agent app where a planner agent decomposes a user query, a researcher agent fetches and cites sources, and a critic agent scores outputs and feeds failures back into the planner. The repo ships with a Replay UI that visualizes the trace graph, making it immediately obvious why it stands out.",
+    "stack": [
+      "LangGraph",
+      "OpenAI or Anthropic API",
+      "Tavily or Serper search",
+      "MCP",
+      "Phoenix or LangSmith tracing",
+      "Next.js for the replay UI",
+      "Postgres for eval history"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README, eval results, and a trace screenshot",
+      "Live Replay UI demo on Vercel",
+      "Blog write-up on Medium or your personal site with the eval numbers and trace GIF"
+    ]
+  },
+  "publish": [
+    "Post a 60-second Replay UI demo on X and tag @LangChainAI, @crewAIInc, and Bay Area AI builders.",
+    "Submit the project to the 'AI Agents' channel on Hugging Face Spaces and share it in the SF AI Agents meetup.",
+    "Cold-DM 5 SF founders or hiring managers at LangChain, Anthropic, and Sierra with a 3-bullet summary and the live demo link.",
+    "Cross-post the write-up to LinkedIn with a clear hook for AI engineer recruiters in the Bay Area."
+  ],
+  "skills": [
+    "Multi-agent orchestration",
+    "Tool and API integration",
+    "MCP server implementation",
+    "Agent tracing and observability",
+    "Evaluation and benchmarking",
+    "Full-stack shipping (API + UI)",
+    "Prompt engineering for planners and critics",
+    "Technical writing and demo storytelling"
+  ],
+  "risks": [
+    "Agent demos are notoriously flaky; a single bad run can undermine the whole pitch if you do not lock down evals.",
+    "Tool API costs can balloon quickly during testing without rate limits and caching.",
+    "The space is moving so fast that a pattern you learn today (e.g., raw function calling) may be obsolete within months, so favor abstractions like LangGraph or MCP that absorb the churn."
+  ],
+  "confidence": "Signals are unusually strong and aligned to your profile and location, so this is a high-conviction bet to ship within 6 weeks.",
+  "content_hash": "a5a91194c1cfc5c1",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "build_portfolio",
+    "profile": "ai_engineer"
+  }
+}
