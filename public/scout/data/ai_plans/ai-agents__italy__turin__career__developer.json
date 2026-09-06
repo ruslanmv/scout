@@ -1,0 +1,64 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-06T10:13:34.260619+00:00",
+  "headline": "Turin developers building AI agents today will lead Europe's agentic automation wave by 2026",
+  "why_now": "With GitHub activity at 96 and project potential at 96, agentic workflows are exploding in open-source momentum, and your developer profile in Turin positions you perfectly as Italian enterprises begin piloting agent systems. Career value signals 95 confirm this is one of the highest-leverage skill shifts available right now. Job demand at 85 locally means companies are already hiring, but the talent pool is still thin.",
+  "study": [
+    "Master the agent loop fundamentals: read the LangGraph and AutoGen docs end-to-end, then replicate a ReAct agent from scratch in 200 lines of Python",
+    "Build tool-use fluency by integrating 3 different APIs (e.g., web search, code execution, calendar) into a single OpenAI/Anthropic function-calling agent",
+    "Study multi-agent collaboration patterns by implementing a 2-agent researcher-writer workflow with shared memory and message passing",
+    "Learn evaluation: instrument your agents with LangSmith or custom tracing to measure tool-call accuracy and token cost per task",
+    "Explore Turin-relevant verticals: pick one Italian industry (manufacturing, fashion, logistics) and research 5 real workflows an agent could automate"
+  ],
+  "build": {
+    "title": "Turino - A multi-agent system that monitors Turin municipal RSS feeds, classifies civic issues, and drafts responses for council review",
+    "description": "Three specialized agents collaborate: a scraper agent monitors 10+ Turin city sources, a classifier agent routes items to departments using RAG over municipal documents, and a drafter agent generates Italian-language response letters. It demonstrates planning, tool use, multi-agent orchestration, and domain-specific RAG, impressing because it solves a real local problem and could actually be deployed.",
+    "stack": [
+      "LangGraph",
+      "OpenAI or Anthropic API",
+      "FastAPI",
+      "Qdrant or Chroma for RAG",
+      "SQLite",
+      "GitHub Actions for scheduled runs"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean architecture, tests, and a README in English and Italian",
+      "Live Streamlit demo deployed on Hugging Face Spaces showing live agent traces",
+      "Technical write-up on Medium or your blog explaining the agent graph, tradeoffs, and cost analysis",
+      "Short Loom/YouTube walkthrough of the system handling a real Turin municipal topic"
+    ]
+  },
+  "publish": [
+    "Post the GitHub repo to r/LocalLLaMA, Hacker News (Show HN), and the Italian AI community on LinkedIn with a focus on the civic-tech angle",
+    "Write a Twitter/X thread showing before/after of the agent handling a real Turin bulletin, tag Italian open-source accounts like @italia_open_source",
+    "Submit a talk proposal to Turin tech meetups (Turin AI, PyData Turin) and Italian conferences like Codemotion or AI Festival",
+    "Engage Hugging Face by publishing the RAG dataset and a model card, cross-linking to your repo for discoverability"
+  ],
+  "skills": [
+    "Agent orchestration with LangGraph/AutoGen",
+    "Tool-use and function-calling design",
+    "Retrieval-Augmented Generation (RAG) pipelines",
+    "Multi-agent collaboration patterns",
+    "Python API development with FastAPI",
+    "LLM evaluation and observability",
+    "Italian-language NLP handling",
+    "Production deployment of AI systems"
+  ],
+  "risks": [
+    "Agent systems are token-expensive and can hallucinate tool calls; without proper guardrails and cost ceilings, a demo can burn budget and break trust with potential employers",
+    "The agent framework landscape is moving fast (LangGraph, CrewAI, AutoGen, Swarm), so deep investment in one may need pivoting within 6-12 months",
+    "Local civic-tech adoption in Turin may be slower than enterprise demand, so don't over-index on municipal use cases if your real goal is a corporate role"
+  ],
+  "confidence": "High confidence: the signals are exceptionally strong across multiple independent sources (GitHub 96, HuggingFace 92, news 88, career value 95) and your developer profile is the ideal background to capitalize now.",
+  "content_hash": "a5caea78e859da35",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "career",
+    "profile": "developer"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-06T10:09:40.273831+00:00",
+  "headline": "Creating AI Agents and Agentic Workflows: A Personal Action Plan",
+  "why_now": "The real signals suggest a need for developers and AI engineers to create systems that plan, use tools, call APIs, collaborate, and complete multi-step tasks.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Personal AI Agent Development",
+    "description": "This project will involve building a system that can plan, use tools, call APIs, collaborate, and complete multi-step tasks.",
+    "stack": [
+      "tools/libraries",
+      "programming languages",
+      "data structures",
+      "machine learning algorithms"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "programming languages",
+    "data structures",
+    "machine learning algorithms",
+    "tools/libraries",
+    "project management"
+  ],
+  "risks": [
+    "no specific risks mentioned"
+  ],
+  "confidence": "The personal action plan is solid and practical, aligned with the real signals.",
+  "content_hash": "c67bb12347628525",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Milan",
+    "goal": "create_agents",
+    "profile": "founder"
+  }
+}

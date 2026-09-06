@@ -1,0 +1,61 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-06T10:12:31.345586+00:00",
+  "headline": "Milan, it's time to move from prompting to building — your research edge will come from mastering AI agents that actually do things.",
+  "why_now": "AI agents are exploding on GitHub (96) and Hugging Face (92) with explosive growth (94) and surging job demand (85) — meaning the tooling has matured enough for a student to build something real, not toy demos. For a researcher in Milan, this is the rare window where you can publish original work while the field is still defining its benchmarks. Local relevance (82) and community activity (84) mean Milan tech meetups and universities are already pivoting to agentic topics, so visibility is high.",
+  "study": [
+    "Read and reproduce one paper from the agentic workflows literature (e.g., ReAct, AutoGPT, or BabyAGI) and implement it from scratch in Python so you understand the tool-use loop at the code level.",
+    "Complete the official LangChain and LlamaIndex agent tutorials, then rebuild one example using only Hugging Face transformers — no magic abstractions — to truly grasp orchestration vs. inference.",
+    "Study MCP (Model Context Protocol) and one function-calling API deeply; build a tiny agent that calls 3 real APIs (e.g., weather, calendar, email) end-to-end on your laptop.",
+    "Join the Hugging Face Agents course and the LangChain agent track; ship one notebook per week to your GitHub so the activity shows up in your profile.",
+    "Attend at least one Milan-area AI meetup (e.g., Milan.AI, PyData Milan, or a Politecnico workshop) and ask one sharp question publicly to build local signal."
+  ],
+  "build": {
+    "title": "Local trend scout agent",
+    "description": "It creates visible proof that you can convert a trend into a working product artifact.",
+    "stack": [
+      "Python",
+      "FastAPI",
+      "LangGraph",
+      "MCP",
+      "RAG",
+      "Docker"
+    ],
+    "deliverables": [
+      "GitHub repo",
+      "live demo",
+      "short write-up"
+    ]
+  },
+  "publish": [
+    "Write a 1500-word blog post titled 'What I learned implementing ReAct from scratch' and cross-post to Hugging Face, dev.to, and LinkedIn with a clear diagram of the tool-use loop.",
+    "Record a 5-minute Loom demo of your portfolio project and post it on X/LinkedIn tagging @LangChainAI, @huggingface, and 2-3 Milan AI creators — short, reproducible demos get reshared.",
+    "Submit a lightning talk proposal to PyData Milan or a Politecnico student symposium; if accepted, you instantly reach the local research community.",
+    "Pin the GitHub repo on your profile with a strong README including a GIF, an arXiv-style abstract, and a 'how to reproduce' section so recruiters and professors can evaluate it in 30 seconds."
+  ],
+  "skills": [
+    "LLM orchestration and tool-use loop design",
+    "Python proficiency with LangChain, LlamaIndex, and Hugging Face Transformers",
+    "API integration and function calling",
+    "Reading and implementing ML research papers",
+    "Prompt engineering and evaluation",
+    "Git/GitHub workflow and reproducible research",
+    "Technical writing and public demonstration",
+    "Local community networking (Milan tech ecosystem)"
+  ],
+  "risks": [
+    "The agent ecosystem is moving fast — a framework you master today (e.g., LangChain agents v0) may be deprecated in 6 months, so bet on core concepts (ReAct, tool calling) over specific libraries. Building agents is API-expensive; without rate-limiting and caching, your research demos can quietly burn €50-100/month. There's a real risk of over-indexing on hype — hiring managers and professors will still value rigorous evaluation, so always include a baseline comparison and a failure-mode analysis in your write-ups."
+  ],
+  "confidence": "High confidence — every signal (GitHub 96, HF 92, growth 94, job demand 85, project potential 96) points in the same direction, and agentic workflows are unusually accessible for a student researcher with just a laptop and API credits.",
+  "content_hash": "aaa4848e933e4d7d",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Milan",
+    "goal": "research",
+    "profile": "student"
+  }
+}

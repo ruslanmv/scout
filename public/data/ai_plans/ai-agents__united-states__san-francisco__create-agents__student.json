@@ -1,0 +1,62 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-06T10:14:28.258134+00:00",
+  "headline": "San Francisco is the nerve center for AI agent innovation—your next portfolio project could put you in the room where it happens.",
+  "why_now": "GitHub activity and Hugging Face adoption for agentic systems are both scoring in the 92-96 range, signaling a developer gold rush. Job demand for agentic AI skills is at 85 and climbing as companies automate multi-step workflows. Project potential is at a near-perfect 96, meaning the window to stand out by shipping something real is right now.",
+  "study": [
+    "1. Master the fundamentals of LLM prompting, tool use, and function calling with OpenAI's Assistants API or Anthropic's Claude.",
+    "2. Learn an agentic framework (LangChain, AutoGen, or CrewAI) by building a simple single-agent that completes one multi-step task end-to-end.",
+    "3. Study memory, planning, and reflection patterns—implement a REACT-style loop in your agent from scratch.",
+    "4. Explore multi-agent collaboration: have two or more agents specialize and delegate tasks to each other.",
+    "5. Read recent papers on agentic workflows (e.g., Voyager, AutoGPT) and follow top GitHub repos in the space for patterns and benchmark updates."
+  ],
+  "build": {
+    "title": "TaskPilot — A Multi-Tool Research Agent",
+    "description": "An agentic app that takes a research query, searches the web, fetches APIs, summarizes findings, and outputs a structured report. It demonstrates planning, tool orchestration, and error recovery—exactly what hiring teams in SF want to see.",
+    "stack": [
+      "Python",
+      "LangChain",
+      "OpenAI API",
+      "SerpAPI",
+      "GitHub Actions"
+    ],
+    "deliverables": [
+      "A well-documented GitHub repo with clean architecture and inline comments",
+      "A live demo URL (Streamlit or Gradio) where anyone can type a query and watch the agent work",
+      "A technical write-up on dev.to or personal blog covering the agent's design decisions, failures, and how you solved them"
+    ]
+  },
+  "publish": [
+    "Submit the repo to LangChain's and AutoGen's community showcases via their Discord or GitHub Discussion boards.",
+    "Post a short demo video on LinkedIn with a one-paragraph summary tagged with #AI #Agents #LangChain—SF recruiters actively monitor these tags.",
+    "Publish the write-up to Towards Data Science or Hacker News Show; both have high traffic from SF-based engineers and investors.",
+    "Attend a local meetup (e.g., SF AI Builders or AI Hackathon at the Mill) and demo it live to get direct feedback and contacts."
+  ],
+  "skills": [
+    "LangChain or similar agentic framework",
+    "LLM tool-use and function calling",
+    "Multi-step task planning and orchestration",
+    "API integration and error handling",
+    "Python software engineering",
+    "Prompt engineering for agents",
+    "Documentation and technical communication",
+    "Basic CI/CD with GitHub Actions"
+  ],
+  "risks": [
+    "Scope creep is real—multi-agent systems can balloon quickly; start with one reliable tool chain before adding complexity.",
+    "Model costs can spiral on repeated agentic loops; set usage budgets and log every API call from day one.",
+    "The field moves fast; a stack that is hot today (e.g., a specific framework) may shift, so focus on transferable concepts over framework specifics."
+  ],
+  "confidence": "Given the near-perfect scores on project potential (96), GitHub activity (96), and career value (95), this is one of the strongest, most actionable recommendations for a student in SF right now.",
+  "content_hash": "a3eaddd531ba0c68",
+  "generated_for": {
+    "country": "United States",
+    "city": "San Francisco",
+    "goal": "create_agents",
+    "profile": "student"
+  }
+}

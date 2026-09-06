@@ -1,0 +1,44 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-06T10:12:54.972536+00:00",
+  "headline": "Trend signals in AI Agents and Agentic Workflows: Research and a Personal Action Plan",
+  "why_now": "Real trends in AI Agents and Agentic Workflows are driving innovation and collaboration in the technology industry. This topic is particularly relevant as a founder in the field, and it's essential to stay ahead of the curve.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Personal Action Plan",
+    "description": "To enhance my skills in AI Agents and Agentic Workflows, I will focus on improving my tools/libraries, building a demo, and writing a detailed report.",
+    "stack": [
+      "tools/libraries"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "I am confident that this recommendation is solid, as I am a founder in the field and have experience in AI and agentic workflows.",
+  "content_hash": "67b041c4bd46df2e",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Milan",
+    "goal": "research",
+    "profile": "founder"
+  }
+}

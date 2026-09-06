@@ -1,0 +1,65 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-06T10:13:23.095427+00:00",
+  "headline": "Milan's AI agent wave is the perfect moment to research, build, and publish a portfolio piece that proves your edge in agentic workflows.",
+  "why_now": "With GitHub activity at 96, project potential at 96, and career value at 95, AI agents are clearly the highest-leverage area to invest research time right now. Hugging Face activity (92) and news momentum (88) confirm both the tooling and public conversation are mature enough to build something credible in weeks, not months. Job demand at 85 combined with strong local relevance in Milan (82) means your work will land in a market actively hiring for these skills.",
+  "study": [
+    "Read Anthropic's 'Building Effective Agents' and OpenAI's function-calling docs end-to-end, taking notes on planner-executor vs. router patterns.",
+    "Replicate LangChain and LlamaIndex agent tutorials on your machine, then swap in a local Ollama model to understand the mechanics without API costs.",
+    "Study 3 high-quality open-source agent repos on GitHub (e.g., AutoGen, CrewAI, LangGraph) by reading their source and running their example workflows.",
+    "Read 5 recent arXiv papers on tool-using agents and ReAct-style reasoning, focusing on evaluation methods.",
+    "Attend or watch recordings of Milan-area AI meetups (e.g., AI Milano, Codemotion talks) to map the local community."
+  ],
+  "build": {
+    "title": "Milan Commute Concierge: a multi-agent planner that orchestrates transit, weather, and local events APIs to propose optimized daily routes",
+    "description": "An agentic system where a planner agent delegates to specialist sub-agents (transit, weather, events) that call real APIs, share state, and self-correct when a tool fails. It demonstrates planning, tool use, multi-agent collaboration, error recovery, and evaluation - exactly the patterns hiring teams want to see. Built around Milan means the demo is tangible and locally relevant.",
+    "stack": [
+      "Python",
+      "LangGraph or CrewAI",
+      "OpenAI or Anthropic API",
+      "FastAPI",
+      "SQLite for memory",
+      "Streamlit or Gradio for demo UI",
+      "GitHub Actions for CI"
+    ],
+    "deliverables": [
+      "Public GitHub repo with clean README and architecture diagram",
+      "Live Streamlit demo deployable to Hugging Face Spaces",
+      "Technical write-up (1500-2000 words) on architecture and failure modes",
+      "Short Loom or YouTube walkthrough (5-7 min)"
+    ]
+  },
+  "publish": [
+    "Post the demo on r/AI/MachineLearning and Hacker News with a concise 'Show HN' framing focused on the multi-agent architecture.",
+    "Share progress threads on LinkedIn and X tagging Milan's AI meetup organizers (AI Milano, Codemotion Italy) and engage with their communities.",
+    "Submit a talk proposal to a local meetup (Codemotion, AI Milano, PyData Milan) presenting the architecture and lessons learned.",
+    "Publish the write-up on Medium or your personal blog and cross-post to Hugging Face community discussions."
+  ],
+  "skills": [
+    "Agent orchestration and multi-step planning",
+    "Tool use and API integration",
+    "Multi-agent collaboration patterns",
+    "Prompt engineering and ReAct-style reasoning",
+    "Evaluation and error handling in LLM systems",
+    "Python and async API design",
+    "Documentation and technical writing",
+    "Public speaking and community engagement"
+  ],
+  "risks": [
+    "Agent workflows can be brittle and expensive to debug at scale - budget API credits carefully and log every tool call from day one.",
+    "The ecosystem changes monthly; avoid over-investing in one framework's API surface so your work remains portable.",
+    "Shipping a polished demo takes longer than expected - aim for a minimal end-to-end version in two weeks before adding features."
+  ],
+  "confidence": "Recommendation is high confidence - signals are strong, the skill is in demand, and a focused 6-8 week build will produce a credible portfolio artifact.",
+  "content_hash": "fecb55a38b327237",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Milan",
+    "goal": "research",
+    "profile": "agent"
+  }
+}
