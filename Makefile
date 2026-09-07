@@ -29,18 +29,14 @@ snapshot:
 site:
 	$(PY) scripts/build_scout_site.py
 
-# Legacy full static export (dashboard at root, Scout under public/scout/).
-# This is intentionally NOT the GitHub Pages publishing source for this project.
 export-pages:
 	$(PY) scripts/export_for_github_pages.py
 
-build-pages: site
+build-pages: export-pages
 
 # Traditional GitHub Pages deployment.
-# The repository is a project site, so the CONTENTS of scout/ must be the root
-# of gh-pages. Publishing public/scout/ would incorrectly create /scout/scout/.
-# Commit generated changes in scout/ before deploying so the published branch is
-# reproducible from Git history.
+# Scout is a project site, so publish the CONTENTS of scout/ at the root of
+# gh-pages. Publishing public/scout/ would incorrectly create /scout/scout/.
 deploy-pages:
 	@if [ -n "$$(git status --porcelain -- scout)" ]; then \
 		echo "ERROR: scout/ has uncommitted changes."; \
