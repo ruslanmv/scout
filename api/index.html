@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#08170f" />
+  <title>Scout API Documentation</title>
+  <meta name="description" content="REST API and MCP intelligence layer for developers." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../scout.css" />
+  <link rel="stylesheet" href="../scout-site.css" />
+</head>
+<body class="site">
+  <header class="tool-header">
+    <div class="tool-header__in">
+      <a class="tool-header__back" href="../">← <span>Home</span></a>
+      <a class="tool-header__title" href="../" style="color:#fff"><span class="gl">◇</span> Scout</a>
+      <div class="tool-header__user"><span class="live"><span class="dot"></span>LIVE</span><span class="avatar">RM</span></div>
+    </div>
+  </header>
+  <main class="pagewrap">
+    <div class="pagehead reveal">
+      <div class="crumbs"><a data-keepq href="../">Home</a><span>/</span><span>API</span></div>
+      <div class="meta">Developers</div>
+      <h1>API Documentation</h1>
+      <p class="lede">Scout is a public REST API and MCP-ready intelligence layer. Explore endpoints, request and response formats, and copy-ready examples.</p>
+      <div class="doc-toc"><span class="tag">Getting started</span><span class="tag">Authentication</span><span class="tag">Endpoints</span><span class="tag">Errors</span><span class="tag">Rate limits</span></div>
+    </div>
+    <div class="prose">
+      <h2>Getting started</h2>
+      <p>The base URL is your Scout deployment, for example <code style="font-family:var(--mono)">https://your-host/api/v1</code>. All responses are JSON.</p>
+      <h2>Authentication</h2>
+      <p>Public read endpoints need no key. Admin and write endpoints use an <code style="font-family:var(--mono)">X-Admin-Key</code> header. Never embed secrets in client code.</p>
+      <h2>Endpoints</h2>
+    </div>
+    <article class="card endpoint"><div class="ep-h"><span class="method get">GET</span><span class="path">/api/v1/health</span></div><p>Service health check.</p><pre class="code">{ "status": "ok" }</pre></article><article class="card endpoint"><div class="ep-h"><span class="method get">GET</span><span class="path">/api/v1/trends?country=Italy&city=Rome</span></div><p>Ranked trending topics for a location.</p><pre class="code">{
+  "topics": [
+    { "id": "ai-agents", "score": 94, "trust": "High" }
+  ]
+}</pre></article><article class="card endpoint"><div class="ep-h"><span class="method get">GET</span><span class="path">/api/v1/topics/{topic}/deep-dive</span></div><p>Full detail for one topic: signals, study plan, projects, risks.</p><pre class="code">{
+  "topic": "ai-agents",
+  "study_plan": ["Tool calling", "Orchestration"],
+  "projects": ["Local trend scout agent"]
+}</pre></article><article class="card endpoint"><div class="ep-h"><span class="method post">POST</span><span class="path">/api/v1/ai/plan</span></div><p>Generate a study → build → publish plan for a topic and profile.</p><pre class="code">curl -X POST /api/v1/ai/plan \
+  -H "Content-Type: application/json" \
+  -d '{ "topic_id": "ai-agents", "profile": "developer" }'</pre></article><article class="card endpoint"><div class="ep-h"><span class="method get">GET</span><span class="path">/api/v1/datasets/latest</span></div><p>The latest published dataset snapshot.</p><pre class="code">{ ... }</pre></article>
+    <div class="prose">
+      <h2>Errors &amp; status codes</h2>
+      <ul><li><b>200</b> — success</li><li><b>400</b> — invalid parameters</li><li><b>401</b> — missing or invalid admin key</li><li><b>404</b> — unknown topic or resource</li><li><b>429</b> — rate limited</li></ul>
+      <h2>Rate limits</h2>
+      <p>Public endpoints are rate limited per IP. For higher volume, self-host or use the published dataset directly.</p>
+      <h2>Dataset &amp; MCP</h2>
+      <p>Prefer bulk access? Use the <a data-keepq href="../dataset/">dataset</a> endpoints, or expose Scout as MCP tools for agents.</p>
+    </div>
+    <div class="backrow"><a class="btn ghost" href="../">← Home</a></div>
+  </main>
+  <footer class="foot">
+    <div class="wrap row">
+      <div class="brand"><span style="color:var(--green)">◇</span> Scout</div>
+      <div class="links">
+        <a href="../api/">API</a>
+        <a href="../dataset/">Dataset</a>
+        <a href="../admin/">Admin</a>
+        <a href="https://github.com/ruslanmv/scout" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+      <div class="copy">Public developer layer of Matrix Scout · ruslanmv.com</div>
+    </div>
+  </footer>
+  <script>window.SCOUT_PAGE = { type: "doc", rel: "../" };</script>
+  <script src="../scout-data.js"></script>
+  <script src="../scout-site.js"></script>
+</body>
+</html>

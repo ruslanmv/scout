@@ -1,0 +1,112 @@
+/* ===========================================================================
+   SCOUT — multi-page site shell (report dashboard, sections, topics, docs).
+   Builds on scout.css (design system). Loaded by every non-landing page.
+   =========================================================================== */
+
+/* page canvas */
+.site{min-height:100vh;display:flex;flex-direction:column}
+.site main{flex:1}
+.pagewrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,4vw,34px)}
+
+/* ---------- report sub-navigation ---------- */
+.subnav{position:sticky;top:calc(64px + env(safe-area-inset-top));z-index:20;background:#0b1c14;border-bottom:1px solid rgba(120,200,160,.14)}
+.subnav__in{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,4vw,34px);display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.subnav__in::-webkit-scrollbar{display:none}
+.subnav a{font-family:var(--mono);font-size:12.5px;font-weight:600;color:#9fbdb0;padding:13px 13px;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.subnav a:hover{color:#eaf3ee}
+.subnav a.active{color:var(--green-on-dark);border-bottom-color:var(--green)}
+
+/* ---------- light page header ---------- */
+.pagehead{margin:36px 0 6px}
+.pagehead .crumbs{font-family:var(--mono);font-size:12px;color:var(--faint);margin-bottom:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pagehead .crumbs a{color:var(--green-700);font-weight:600}
+.pagehead .crumbs a:hover{color:var(--green-600)}
+.pagehead .meta{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:8px}
+.pagehead h1{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:clamp(2rem,4.4vw,3.1rem);line-height:1.02;margin:0;letter-spacing:-.6px}
+.pagehead p.lede{color:var(--muted);font-size:1.05rem;line-height:1.55;margin:12px 0 0;max-width:64ch}
+.chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+
+/* ---------- report dashboard: section navigation grid ---------- */
+.navgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:8px}
+.navcard{display:flex;flex-direction:column;gap:8px;padding:22px;text-decoration:none;color:inherit;transition:transform .16s,box-shadow .16s,border-color .16s}
+.navcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--line-2)}
+.navcard .nc-top{display:flex;align-items:center;gap:12px}
+.navcard .nc-ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--green-soft);color:var(--green-700);flex:none;font-size:18px}
+.navcard h3{font-family:var(--serif);font-weight:600;font-size:1.2rem;color:var(--ink);margin:0}
+.navcard p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.5}
+.navcard .go{margin-top:auto;font-family:var(--mono);font-size:12px;color:var(--green-700);font-weight:600}
+
+/* ---------- generic content prose ---------- */
+.prose{max-width:none}
+.prose h2{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:1.5rem;margin:34px 0 12px;letter-spacing:-.3px}
+.prose h3{font-size:1.1rem;color:var(--ink);margin:22px 0 8px}
+.prose p{color:var(--muted);line-height:1.7;margin:0 0 12px}
+.prose ul{margin:0 0 14px;padding-left:18px;color:var(--muted);line-height:1.75}
+.prose a{color:var(--green-700);font-weight:600}
+
+/* ---------- action plan (numbered, richer than move-rows) ---------- */
+.plan{display:grid;gap:14px}
+.plan .pstep{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:22px;align-items:start}
+.plan .pn{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;font-size:15px;flex:none}
+.plan .pt{font-family:var(--serif);font-weight:600;font-size:1.2rem;color:var(--ink);margin:0 0 4px}
+.plan .pd{color:var(--muted);line-height:1.6;margin:0 0 12px}
+.plan .pmeta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:10px}
+.plan .pk{border:1px solid var(--line);border-radius:10px;background:var(--surface-2);padding:10px 12px}
+.plan .pk .k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-700)}
+.plan .pk .v{font-size:.9rem;color:var(--text);font-weight:600;margin-top:3px}
+.plan .pcheck{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--faint)}
+.plan .pcheck .box{width:16px;height:16px;border-radius:4px;border:2px solid var(--line-2)}
+
+/* ---------- map (local radar) ---------- */
+.mapwrap{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(120,200,160,.16);background:linear-gradient(155deg,#0c2417,#08170f 70%);min-height:280px;padding:22px}
+.mapwrap .pin{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--green-on-dark);box-shadow:0 0 0 6px rgba(84,217,140,.18),0 0 14px var(--green-on-dark)}
+.mapwrap .maplabel{position:absolute;bottom:16px;left:20px;color:#cfe0d6;font-family:var(--mono);font-size:12px}
+
+/* ---------- world dots (global pulse) ---------- */
+.worldwrap{border-radius:var(--radius);overflow:hidden;border:1px solid rgba(120,200,160,.16);background:linear-gradient(155deg,#0c2417,#08170f 70%);padding:22px;display:flex;justify-content:center}
+.worldwrap svg{max-width:100%;height:auto}
+
+/* ---------- api docs ---------- */
+.endpoint{padding:20px 22px;margin-bottom:14px}
+.endpoint .ep-h{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.method{font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.06em;padding:4px 10px;border-radius:7px;background:var(--green-soft);color:var(--green-700)}
+.method.get{background:#e7f0ff;color:#175cd3}
+.path{font-family:var(--mono);font-size:14px;color:var(--ink);font-weight:600}
+.endpoint p{color:var(--muted);margin:10px 0 0;line-height:1.55}
+pre.code{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:#eaf3ee;background:#08170f;border:1px solid rgba(120,200,160,.18);border-radius:12px;padding:16px;overflow:auto;margin:14px 0 0}
+pre.code .c{color:#7fae9d}
+.doc-toc{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 8px}
+
+/* ---------- dataset fields ---------- */
+.fields{display:grid;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.fields .frow{display:grid;grid-template-columns:200px 1fr;gap:16px;padding:14px 18px;border-bottom:1px solid var(--line);background:var(--surface)}
+.fields .frow:last-child{border-bottom:0}
+.fields .fk{font-family:var(--mono);font-size:13px;color:var(--green-700);font-weight:600}
+.fields .fv{color:var(--muted);font-size:.92rem;line-height:1.5}
+@media(max-width:640px){.fields .frow{grid-template-columns:1fr;gap:4px}}
+
+/* ---------- admin ---------- */
+.admin-shell{display:grid;grid-template-columns:220px 1fr;gap:22px;margin-top:8px}
+.admin-side{display:grid;gap:4px;align-content:start}
+.admin-side a{display:flex;align-items:center;gap:10px;padding:11px 13px;border-radius:10px;color:var(--text);font-weight:600;font-size:.92rem}
+.admin-side a:hover{background:var(--green-tint)}
+.admin-side a.active{background:var(--green);color:#fff}
+.admin-panel{display:grid;gap:16px}
+.locked{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border:1px solid #f0e0b0;background:#fff8e5;border-radius:14px}
+.locked .ri{color:var(--amber);font-size:20px;flex:none}
+.locked p{margin:0;color:#5c4a12;line-height:1.5}
+@media(max-width:760px){.admin-shell{grid-template-columns:1fr}.admin-side{grid-auto-flow:column;overflow-x:auto}}
+
+/* ---------- topic detail ---------- */
+.topic-hero{padding:clamp(24px,3vw,34px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.topic-hero .th-l{min-width:0}
+.topic-two{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;margin-top:22px;align-items:start}
+@media(max-width:860px){.topic-hero{grid-template-columns:1fr}.topic-two{grid-template-columns:1fr}}
+
+/* ---------- small helpers ---------- */
+.stat-inline{display:flex;flex-wrap:wrap;gap:22px;margin-top:18px}
+.stat-inline .si .n{font-family:var(--mono);font-weight:800;font-size:1.6rem;color:var(--ink);line-height:1}
+.stat-inline .si .l{font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-top:5px}
+.section-lead{color:var(--muted);margin:.35rem 0 0;font-size:.96rem;line-height:1.55}
+.muted-note{font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:10px}
+.backrow{margin:26px 0 0}

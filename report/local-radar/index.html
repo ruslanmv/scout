@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#08170f" />
+  <title>Local Radar — Scout Report</title>
+  <meta name="description" content="Local Radar for your Scout report." />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../scout.css" />
+  <link rel="stylesheet" href="../../scout-site.css" />
+</head>
+<body class="site">
+  <header class="tool-header">
+    <div class="tool-header__in">
+      <a class="tool-header__back" href="../../">← <span>Home</span></a>
+      <a class="tool-header__title" href="../../" style="color:#fff"><span class="gl">◇</span> Scout</a>
+      <div class="tool-header__user"><span class="live"><span class="dot"></span>LIVE</span><span class="avatar">RM</span></div>
+    </div>
+  </header>
+    <nav class="subnav"><div class="subnav__in"><a data-keepq href="../../report/">Report</a><a data-keepq href="../../report/overview/">Overview</a><a data-keepq href="../../report/ai-plan/">AI Plan</a><a data-keepq href="../../report/local-radar/" class="active">Local Radar</a><a data-keepq href="../../report/global-pulse/">Global Pulse</a><a data-keepq href="../../report/projects/">Projects</a><a data-keepq href="../../report/visibility/">Visibility</a></div></nav>
+  <main class="pagewrap">
+    <div class="pagehead reveal">
+      <div class="crumbs"><a data-keepq href="../../">Home</a><span>/</span><a data-keepq href="../../report/">Report</a><span>/</span><span>Local Radar</span></div>
+      <div class="meta" data-bind="loc">Scout Report</div>
+      <h1>Local Radar</h1>
+      <p class="lede">Opportunities and demand in your area.</p>
+    </div>
+    
+    <div class="mapwrap reveal"><span class="pin" style="left:28%;top:42%"></span><span class="pin" style="left:54%;top:30%"></span><span class="pin" style="left:46%;top:62%"></span><span class="pin" style="left:70%;top:52%"></span><span class="pin" style="left:36%;top:74%"></span><span class="maplabel" data-bind="loc">Your area</span></div>
+    <section class="section"><div class="section-head"><h3>Opportunities near you</h3></div>
+      <div class="opgrid" id="local-cards"></div></section>
+    <div class="split" style="margin-top:26px">
+      <article class="card" style="padding:22px"><div class="section-head compact"><h3>Hiring demand</h3><p>Roles asking for these skills.</p></div>
+        <div class="radarbars" id="local-hiring" style="margin-top:14px"></div></article>
+      <article class="card" style="padding:22px"><div class="section-head compact"><h3>Recommended local actions</h3></div>
+        <ul class="prose" style="margin-top:12px"><li>Join a local AI / developer meetup and present a demo.</li>
+        <li>Follow nearby companies hiring for these skills.</li>
+        <li>Publish a project tagged to your city to surface local interest.</li></ul></article>
+    </div>
+    <p class="muted-note">Local indicators are directional; salary and demand figures are shown only where reliable data is available.</p>
+    <div class="backrow"><a class="btn ghost" data-keepq href="../../report/">← Back to report</a></div>
+  </main>
+  <footer class="foot">
+    <div class="wrap row">
+      <div class="brand"><span style="color:var(--green)">◇</span> Scout</div>
+      <div class="links">
+        <a href="../../api/">API</a>
+        <a href="../../dataset/">Dataset</a>
+        <a href="../../admin/">Admin</a>
+        <a href="https://github.com/ruslanmv/scout" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+      <div class="copy">Public developer layer of Matrix Scout · ruslanmv.com</div>
+    </div>
+  </footer>
+  <script>window.SCOUT_PAGE = { type: "local-radar", rel: "../../" };</script>
+  <script src="../../scout-data.js"></script>
+  <script src="../../scout-site.js"></script>
+</body>
+</html>
