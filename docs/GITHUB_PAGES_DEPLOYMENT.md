@@ -1,47 +1,95 @@
 # GitHub Pages Deployment
 
-Scout exports a static dashboard that can be served from the repository root or from `/scout/`.
+Scout uses the traditional GitHub Pages branch model.
 
-> The static Pages build has no backend, so live AI plans (`/api/v1/ai/plan`) and the admin Settings page work only on the hosted app; Pages uses the deterministic dataset. See [AI_AND_ADMIN.md](AI_AND_ADMIN.md).
+The static multi-page application lives under `scout/` on `master`. GitHub
+Pages must publish the **contents** of that directory at the root of the
+`gh-pages` branch so the project is served at `/scout/`, not `/scout/scout/`.
 
-## Landing page — Unified UI
+> The static Pages build has no backend, so live API/admin functionality only
+> works on the hosted application. Static pages continue to use their bundled
+> deterministic data and client-side fallbacks. See [AI_AND_ADMIN.md](AI_AND_ADMIN.md).
 
-The page served at the site root (<https://ruslanmv.com/scout/>) is the
-**Scout Unified UI**: a single, self-contained bundle that unifies Discover,
-Report, the Learning Navigator and My Learning behind one theme, with no CDN or
-backend dependency. It lives at [`dashboard/index.html`](../dashboard/index.html)
-(exported to `public/index.html` and `public/404.html`); its editable source and
-rebuild notes are in [`ui/unified/`](../ui/unified/README.md).
+## Required branch layout
 
-The previous one-page landing is preserved but **deprecated** at
-[`dashboard/classic.html`](../dashboard/classic.html) → `/scout/classic.html`.
-The deeper multi-page product (`/scout/scout/…`: report sections, topics, admin)
-is unchanged.
+```text
+master
+└── scout/
+    ├── index.html
+    ├── assets/
+    ├── vendor/
+    ├── learn/
+    ├── my-learning/
+    └── report/
 
-## Local export
+            git subtree
+                 ↓
 
-```bash
-python scripts/export_for_github_pages.py
+gh-pages
+├── .nojekyll
+├── index.html
+├── assets/
+├── vendor/
+├── learn/
+├── my-learning/
+└── report/
 ```
 
-The export writes:
+Do **not** publish `public/scout/` as a nested directory. This repository is
+already the `scout` GitHub Pages project, so another `scout/` directory would
+produce the incorrect `/scout/scout/` path.
 
-- `public/index.html`
-- `public/Scout Report.html`
-- `public/data/latest.json`
-- `public/scout/index.html`
-- `public/scout/Scout Report.html`
-- `public/scout/data/latest.json`
+## GitHub Pages settings
 
-## GitHub Actions deployment
+Open **Settings → Pages → Build and deployment** and configure:
 
-The `deploy_pages.yml` workflow publishes the generated `public/` directory to the `gh-pages` branch. This avoids the GitHub Pages API failure that happens when `actions/configure-pages` or `actions/deploy-pages` runs before Pages is enabled for the repository.
+1. **Source:** Deploy from a branch
+2. **Branch:** `gh-pages`
+3. **Folder:** `/(root)`
+4. Save
 
-After the first successful workflow run, enable Pages once in GitHub:
+No custom Pages deployment workflow is required.
 
-1. Open **Settings → Pages**.
-2. Set **Source** to **Deploy from a branch**.
-3. Select branch **gh-pages** and folder **/**.
-4. Save.
+The normal GitHub project-site URL is:
 
-Future pushes to `main` or `master` will rebuild the static bundle and force-publish `gh-pages` automatically.
+```text
+https://ruslanmv.github.io/scout/
+```
+
+Because the account site uses `ruslanmv.com`, the project is expected at:
+
+```text
+https://ruslanmv.com/scout/
+```
+
+Do not add `ruslanmv.com/scout` to a `CNAME` file. A Pages `CNAME` contains a
+hostname, not a URL path.
+
+## Publishing
+
+Generate the Scout static site, review and commit the generated changes, then
+publish the subtree:
+
+```bash
+make site
+git add scout
+git commit -m "build: refresh Scout static site"
+git push origin master
+make deploy-pages
+```
+
+`make deploy-pages` checks that `scout/` has no uncommitted changes and runs:
+
+```bash
+git subtree push --prefix scout origin gh-pages
+```
+
+The `scout/.nojekyll` file becomes `/.nojekyll` on the publishing branch so
+GitHub Pages serves the static files without Jekyll processing.
+
+## Legacy full export
+
+`scripts/export_for_github_pages.py` and `make export-pages` still create the
+legacy `public/` bundle for local/export use. That bundle contains Scout under
+`public/scout/` and is **not** the publishing source for the branch-based Pages
+site described above.
