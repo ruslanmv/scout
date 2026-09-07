@@ -37,11 +37,17 @@
       Scout ships pointed at the public <strong>OllaBridge Cloud</strong> gateway. Change the provider, model, or paste
       your own API key below — saved settings take effect immediately, no redeploy.</p>
 
-    <!-- Admin disabled notice -->
-    <section id="disabled" class="admin-card hidden">
-      <span class="badge off">Admin locked</span>
-      <p class="hint" style="margin-top:14px">The admin area is disabled. Set the <code>SCOUT_ADMIN_KEY</code>
-        environment variable (a secret of your choice) and restart Scout to enable this page.</p>
+    <!-- One-time owner setup -->
+    <section id="setup" class="admin-card hidden">
+      <span class="badge">First-time setup</span>
+      <h2>Create your admin password</h2>
+      <p class="hint">This screen is available only until the first administrator is created. Use at least 12 characters.</p>
+      <div class="admin-grid two">
+        <div class="field"><label for="setup-password">Password</label><input id="setup-password" type="password" autocomplete="new-password" /></div>
+        <div class="field"><label for="setup-confirm">Confirm password</label><input id="setup-confirm" type="password" autocomplete="new-password" /></div>
+      </div>
+      <div class="row-actions"><button id="setup-btn" class="primary">Create administrator</button></div>
+      <div id="setup-msg" class="msg err"></div>
     </section>
 
     <!-- Login -->
@@ -128,6 +134,15 @@
         <code>SCOUT_AI_BASE_URL</code>, <code>SCOUT_AI_MODEL</code>, <code>SCOUT_AI_API_KEY</code>,
         <code>SCOUT_AI_ENABLED</code> — and use this page only for runtime tweaks.
       </p>
+
+      <hr style="border:0;border-top:1px solid #285245;margin:26px 0" />
+      <h2>Security</h2>
+      <div class="admin-grid two">
+        <div class="field"><label for="new-password">New admin password</label><input id="new-password" type="password" autocomplete="new-password" /></div>
+        <div class="field"><label for="confirm-password">Confirm password</label><input id="confirm-password" type="password" autocomplete="new-password" /></div>
+      </div>
+      <div class="row-actions"><button id="password-btn" class="secondary">Change password</button></div>
+      <div id="password-msg" class="msg"></div>
     </section>
   </div>
 

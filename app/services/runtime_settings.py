@@ -18,9 +18,12 @@ full — callers get a masked hint instead.
 """
 from __future__ import annotations
 
+import hashlib
+import hmac
 import json
 import os
 import re
+import secrets
 import threading
 from pathlib import Path
 from typing import Any
@@ -49,6 +52,69 @@ _lock = threading.Lock()
 
 def _config_path() -> Path:
     return Path(os.getenv("SCOUT_RUNTIME_CONFIG", "runtime/settings.json"))
+
+
+def _admin_path() -> Path:
+    """Credential store kept beside (but separate from) the AI settings."""
+    configured = os.getenv("SCOUT_ADMIN_CONFIG", "").strip()
+    return Path(configured) if configured else _config_path().with_name("admin.json")
+
+
+def _read_admin_record() -> dict[str, str]:
+    path = _admin_path()
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _password_record(password: str) -> dict[str, str]:
+    salt = secrets.token_bytes(16)
+    digest = hashlib.pbkdf2_hmac("sha256", password.encode(), salt, 310_000)
+    return {"salt": salt.hex(), "password_hash": digest.hex()}
+
+
+def set_admin_password(password: str, *, initial: bool = False) -> None:
+    """Persist a salted admin password; initial creation is strictly one-shot."""
+    if len(password) < 12:
+        raise ValueError("Admin password must be at least 12 characters.")
+    with _lock:
+        if initial and (admin_enabled() or _admin_path().exists()):
+            raise FileExistsError("Admin setup has already been completed.")
+        path = _admin_path()
+        path.parent.mkdir(parents=True, exist_ok=True)
+        record = _password_record(password)
+        payload = json.dumps(record)
+        if initial:
+            # O_EXCL also enforces one-time setup across multiple server workers.
+            try:
+                descriptor = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+            except FileExistsError:
+                raise FileExistsError("Admin setup has already been completed.") from None
+            with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
+                handle.write(payload)
+            return
+        temporary = path.with_suffix(path.suffix + ".tmp")
+        temporary.write_text(payload, encoding="utf-8")
+        os.chmod(temporary, 0o600)
+        temporary.replace(path)
+
+
+def verify_admin_password(password: str | None) -> bool:
+    if not password:
+        return False
+    record = _read_admin_record()
+    if record.get("salt") and record.get("password_hash"):
+        try:
+            actual = hashlib.pbkdf2_hmac(
+                "sha256", password.encode(), bytes.fromhex(record["salt"]), 310_000
+            ).hex()
+        except ValueError:
+            return False
+        return hmac.compare_digest(actual, record["password_hash"])
+    legacy = os.getenv("SCOUT_ADMIN_KEY", "").strip()
+    return bool(legacy) and hmac.compare_digest(password, legacy)
 
 
 def _env_bool(name: str, default: bool) -> bool:
@@ -149,13 +215,18 @@ def get_settings() -> dict[str, Any]:
 
 
 def admin_key() -> str | None:
-    """Admin gate. Env-only; if unset the admin area stays disabled."""
+    """Legacy environment credential, retained for existing deployments."""
     key = os.getenv("SCOUT_ADMIN_KEY", "").strip()
     return key or None
 
 
 def admin_enabled() -> bool:
-    return admin_key() is not None
+    return bool(_read_admin_record()) or admin_key() is not None
+
+
+def admin_setup_required() -> bool:
+    """True only before either a stored credential or legacy env key exists."""
+    return not admin_enabled()
 
 
 def _mask(secret: str) -> str:

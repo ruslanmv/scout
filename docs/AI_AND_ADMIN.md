@@ -81,15 +81,18 @@ A non-technical admin can configure everything from the browser — no redeploy.
 http://127.0.0.1:8000/dashboard/admin.html
 ```
 
-1. Set the gate (any secret of your choice) and restart Scout:
+1. On a fresh installation, open the page and create a strong password. This
+   setup form is disabled permanently as soon as the first password is saved.
+   Existing deployments may instead keep setting the legacy environment gate:
    ```bash
    export SCOUT_ADMIN_KEY="choose-a-strong-secret"
    ```
-2. Open the page and unlock it with that key.
+2. Open the page and unlock it with that password/key.
 3. Change the provider, model, gateway URL, or paste an API key; toggle AI on/off.
 4. Click **Test connection** for a live round-trip check.
 5. **Save** — new plans use the values immediately. **Reset** reverts to the
    environment defaults.
+6. Rotate the admin password at any time from the **Security** section.
 
 If `SCOUT_ADMIN_KEY` is unset the page shows a "locked" notice and the admin API
 returns `503` — the safe default for public deployments.
@@ -98,8 +101,11 @@ returns `503` — the safe default for public deployments.
 
 - The API key is stored server-side and **never returned to the browser** — the
   admin API exposes only `ai_api_key_set` and a masked hint (last 4 chars).
-- The admin gate (`SCOUT_ADMIN_KEY`) is **env-only**; it cannot be changed from
-  the UI, so the UI can never lock you out or rotate its own gate.
+- First-time setup stores only a PBKDF2-SHA256 salted password hash in
+  `runtime/admin.json` (mode `0600`), never the plaintext password. Setup is
+  one-shot, and authenticated admins can rotate the password from the UI.
+- `SCOUT_ADMIN_KEY` remains supported as a legacy/deployment bootstrap. Once a
+  password is stored, it replaces the environment key for authentication.
 - Runtime overrides live in `runtime/settings.json`, which is gitignored.
 - Auth is a shared admin key sent as the `X-Admin-Key` header, compared with a
   constant-time check.
@@ -161,10 +167,12 @@ When AI is off or unavailable the same shape is returned with
 
 ```text
 GET  /api/v1/admin/enabled    # unauthenticated: is the admin area configured?
+POST /api/v1/admin/setup      # one-time password creation (fresh installs only)
 GET  /api/v1/admin/settings   # current settings (key masked) + status + defaults
 POST /api/v1/admin/settings   # update settings (omit ai_api_key to keep it)
 POST /api/v1/admin/test       # live connection test (optionally against proposed values)
 POST /api/v1/admin/reset      # clear runtime overrides, revert to env defaults
+POST /api/v1/admin/password   # rotate password (authenticated)
 ```
 
 Example:

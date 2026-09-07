@@ -78,6 +78,37 @@ async function unlock() {
   }
 }
 
+async function setup() {
+  const password = $('setup-password').value;
+  if (password.length < 12) return message('setup-msg', 'Use at least 12 characters.', 'err');
+  if (password !== $('setup-confirm').value) return message('setup-msg', 'Passwords do not match.', 'err');
+  $('setup-btn').disabled = true;
+  try {
+    const res = await fetch('/api/v1/admin/setup', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password }) });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data.detail || `Request failed (${res.status})`);
+    sessionStorage.setItem(SS_KEY, password);
+    hide('setup');
+    await loadSettings();
+  } catch (e) { message('setup-msg', e.message, 'err'); }
+  finally { $('setup-btn').disabled = false; }
+}
+
+async function changePassword() {
+  const password = $('new-password').value;
+  if (password.length < 12) return message('password-msg', 'Use at least 12 characters.', 'err');
+  if (password !== $('confirm-password').value) return message('password-msg', 'Passwords do not match.', 'err');
+  $('password-btn').disabled = true;
+  try {
+    await api('/admin/password', { method: 'POST', body: { password } });
+    sessionStorage.setItem(SS_KEY, password);
+    $('new-password').value = '';
+    $('confirm-password').value = '';
+    message('password-msg', '✓ Password changed. Your current session has been updated.', 'ok');
+  } catch (e) { message('password-msg', e.message, 'err'); }
+  finally { $('password-btn').disabled = false; }
+}
+
 async function save() {
   $('save-btn').disabled = true;
   try {
@@ -133,7 +164,7 @@ async function init() {
   try {
     enabled = (await (await fetch('/api/v1/admin/enabled')).json()).enabled;
   } catch (_) { /* server down */ }
-  if (!enabled) return show('disabled');
+  if (!enabled) return show('setup');
   if (adminKey()) {
     try { return await loadSettings(); } catch (_) { sessionStorage.removeItem(SS_KEY); }
   }
@@ -141,6 +172,8 @@ async function init() {
 }
 
 $('login-btn').addEventListener('click', unlock);
+$('setup-btn').addEventListener('click', setup);
+$('password-btn').addEventListener('click', changePassword);
 $('admin-key').addEventListener('keydown', (e) => { if (e.key === 'Enter') unlock(); });
 $('save-btn').addEventListener('click', save);
 $('test-btn').addEventListener('click', test);
