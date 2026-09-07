@@ -14,4 +14,5 @@ htmlcov/
 
 # Runtime admin overrides (AI settings saved from the Settings page)
 runtime/
+admin.json
 *.local.json

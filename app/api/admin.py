@@ -4,14 +4,11 @@ Lets the operator configure the AI provider (OllaBridge Cloud by default) at
 runtime: base URL, API key, model, and an on/off switch. Defaults come from
 environment variables; this just lets an admin adjust them without a redeploy.
 
-Auth is a single shared admin key supplied via the ``SCOUT_ADMIN_KEY``
-environment variable and sent on each request as the ``X-Admin-Key`` header. If
-that variable is unset, the whole admin area stays disabled (locked), so a fresh
-deploy is never accidentally open.
+On a fresh install the owner creates a password once; only its salted hash is
+stored. ``SCOUT_ADMIN_KEY`` remains a backwards-compatible bootstrap option.
+The credential is sent on each request as the ``X-Admin-Key`` header.
 """
 from __future__ import annotations
-
-import hmac
 
 from fastapi import APIRouter, Header, HTTPException
 from pydantic import BaseModel
@@ -22,13 +19,12 @@ router = APIRouter(tags=["admin"])
 
 
 def require_admin(x_admin_key: str | None = Header(default=None)) -> None:
-    expected = runtime_settings.admin_key()
-    if not expected:
+    if not runtime_settings.admin_enabled():
         raise HTTPException(
             status_code=503,
-            detail="Admin area is disabled. Set the SCOUT_ADMIN_KEY environment variable to enable it.",
+            detail="Admin setup is required. Open /dashboard/admin.html to create the first password.",
         )
-    if not x_admin_key or not hmac.compare_digest(x_admin_key, expected):
+    if not runtime_settings.verify_admin_password(x_admin_key):
         raise HTTPException(status_code=401, detail="Invalid admin key.")
 
 
@@ -43,10 +39,37 @@ class SettingsUpdate(BaseModel):
     ai_max_tokens: int | None = None
 
 
+class PasswordRequest(BaseModel):
+    password: str
+
+
 @router.get("/admin/enabled")
 def admin_is_enabled():
     """Unauthenticated: lets the login screen know if admin is configured."""
-    return {"enabled": runtime_settings.admin_enabled()}
+    enabled = runtime_settings.admin_enabled()
+    return {"enabled": enabled, "setup_required": not enabled}
+
+
+@router.post("/admin/setup", status_code=201)
+def initial_setup(request: PasswordRequest):
+    """Create the administrator exactly once on a fresh installation."""
+    try:
+        runtime_settings.set_admin_password(request.password, initial=True)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+    except FileExistsError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+    return {"created": True}
+
+
+@router.post("/admin/password")
+def change_password(request: PasswordRequest, x_admin_key: str | None = Header(default=None)):
+    require_admin(x_admin_key)
+    try:
+        runtime_settings.set_admin_password(request.password)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+    return {"changed": True}
 
 
 @router.get("/admin/settings")

@@ -12,6 +12,7 @@ client = TestClient(app)
 def runtime_env(tmp_path, monkeypatch):
     """Isolate runtime overrides to a temp file and disable real AI calls."""
     monkeypatch.setenv("SCOUT_RUNTIME_CONFIG", str(tmp_path / "settings.json"))
+    monkeypatch.setenv("SCOUT_ADMIN_CONFIG", str(tmp_path / "admin.json"))
     monkeypatch.setenv("SCOUT_AI_ENABLED", "0")  # force deterministic fallback (no network)
     runtime_settings.reset_overrides()
     yield monkeypatch
@@ -45,13 +46,13 @@ def test_ai_plan_unknown_topic_404(runtime_env):
 
 def test_admin_locked_without_key(runtime_env):
     runtime_env.delenv("SCOUT_ADMIN_KEY", raising=False)
-    assert client.get("/api/v1/admin/enabled").json() == {"enabled": False}
+    assert client.get("/api/v1/admin/enabled").json() == {"enabled": False, "setup_required": True}
     assert client.get("/api/v1/admin/settings").status_code == 503
 
 
 def test_admin_requires_valid_key(runtime_env):
     runtime_env.setenv("SCOUT_ADMIN_KEY", "s3cret")
-    assert client.get("/api/v1/admin/enabled").json() == {"enabled": True}
+    assert client.get("/api/v1/admin/enabled").json() == {"enabled": True, "setup_required": False}
     assert client.get("/api/v1/admin/settings").status_code == 401
     assert client.get("/api/v1/admin/settings", headers={"X-Admin-Key": "wrong"}).status_code == 401
 
@@ -93,3 +94,24 @@ def test_admin_save_normalizes_space_page_url(runtime_env):
     saved = client.post("/api/v1/admin/settings", headers=headers,
                         json={"ai_base_url": "https://huggingface.co/spaces/ruslanmv/ollabridge"})
     assert saved.json()["settings"]["ai_base_url"] == "https://ruslanmv-ollabridge.hf.space/v1"
+
+
+def test_one_time_setup_and_password_change(runtime_env):
+    runtime_env.delenv("SCOUT_ADMIN_KEY", raising=False)
+    created = client.post("/api/v1/admin/setup", json={"password": "a-secure-first-password"})
+    assert created.status_code == 201
+    assert client.post("/api/v1/admin/setup", json={"password": "another-secure-password"}).status_code == 409
+
+    first = {"X-Admin-Key": "a-secure-first-password"}
+    assert client.get("/api/v1/admin/settings", headers=first).status_code == 200
+    changed = client.post("/api/v1/admin/password", headers=first,
+                          json={"password": "a-new-secure-password"})
+    assert changed.status_code == 200
+    assert client.get("/api/v1/admin/settings", headers=first).status_code == 401
+    assert client.get("/api/v1/admin/settings",
+                      headers={"X-Admin-Key": "a-new-secure-password"}).status_code == 200
+
+
+def test_setup_rejects_short_password(runtime_env):
+    runtime_env.delenv("SCOUT_ADMIN_KEY", raising=False)
+    assert client.post("/api/v1/admin/setup", json={"password": "too-short"}).status_code == 422
