@@ -1,0 +1,48 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-08T10:22:31.097127+00:00",
+  "headline": "Empowering AI Agents: A Personal Action Plan",
+  "why_now": "The rise of AI and the need for personal agents that can plan, use tools, and collaborate in complex tasks.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Personal AI Agent",
+    "description": "Create an AI agent in Python that can plan, use tools, and collaborate on multi-step tasks.",
+    "stack": [
+      "Python",
+      "AI",
+      "Machine Learning",
+      "Natural Language Processing"
+    ],
+    "deliverables": [
+      "GitHub repo",
+      "live demo",
+      "short write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "Python",
+    "AI",
+    "Machine Learning",
+    "Natural Language Processing"
+  ],
+  "risks": [
+    "No specific risks"
+  ],
+  "confidence": "This plan is solid as it leverages the real signals from the given data points.",
+  "content_hash": "502aa737f89d16c9",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Turin",
+    "goal": "create_agents",
+    "profile": "founder"
+  }
+}

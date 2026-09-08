@@ -234,6 +234,15 @@
       "profile": "student",
       "generated_at": "2026-08-30T11:21:11.839345+00:00"
     },
+    "ai-agents__italy__turin__create-agents__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "502aa737f89d16c9",
+      "country": "Italy",
+      "city": "Turin",
+      "goal": "create_agents",
+      "profile": "founder",
+      "generated_at": "2026-09-08T10:22:31.097127+00:00"
+    },
     "ai-agents__italy__turin__create-agents__enterprise": {
       "topic_id": "ai-agents",
       "content_hash": "225ca9c6e2822d0c",
@@ -901,7 +910,7 @@
       "generated_at": "2026-08-31T12:50:47.424079+00:00"
     }
   },
-  "generated_at": "2026-09-06T10:14:28.278276+00:00",
+  "generated_at": "2026-09-08T10:22:31.120309+00:00",
   "ai_enabled": true,
-  "count": 100
+  "count": 101
 }
