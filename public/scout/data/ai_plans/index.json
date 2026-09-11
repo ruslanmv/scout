@@ -36,6 +36,15 @@
       "profile": "enterprise",
       "generated_at": "2026-08-30T10:32:42.600072+00:00"
     },
+    "ai-agents__worldwide__any__research__agent": {
+      "topic_id": "ai-agents",
+      "content_hash": "1c2b50d5bb0c17b5",
+      "country": "Worldwide",
+      "city": null,
+      "goal": "research",
+      "profile": "agent",
+      "generated_at": "2026-09-11T09:45:32.061848+00:00"
+    },
     "ai-agents__italy__rome__career__developer": {
       "topic_id": "ai-agents",
       "content_hash": "aa3e72a01965c934",
@@ -910,7 +919,7 @@
       "generated_at": "2026-08-31T12:50:47.424079+00:00"
     }
   },
-  "generated_at": "2026-09-10T10:24:29.861689+00:00",
+  "generated_at": "2026-09-11T10:13:05.301077+00:00",
   "ai_enabled": true,
-  "count": 101
+  "count": 102
 }

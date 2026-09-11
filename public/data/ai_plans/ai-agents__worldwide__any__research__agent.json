@@ -1,0 +1,61 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-11T09:45:32.061848+00:00",
+  "headline": "Scout, the worldwide AI engineering community needs your expertise to build the next generation of autonomous agents.",
+  "why_now": "The surge in GitHub activity (96) and rapid growth (94) shows developers are actively experimenting with agentic workflows, while news mentions (88) and high job demand (85) confirm market momentum. This convergence makes now the optimal time to deepen your research and create tangible agentic projects.",
+  "study": [
+    "Read the seminal paper on AutoGPT and related agent frameworks to understand planning and tool use.",
+    "Set up a local environment with LangChain and a LLM API to prototype simple agents.",
+    "Design a multi‑step task (e.g., automated literature review) and implement a planner that calls search and summarization tools.",
+    "Iterate by adding memory and evaluation metrics, then benchmark against baseline."
+  ],
+  "build": {
+    "title": "Automated Research Assistant",
+    "description": "A Python‑based agent that takes a research question, searches arXiv, summarizes papers, and compiles a concise report, demonstrating end‑to‑end planning, tool use, and API integration.",
+    "stack": [
+      "Python",
+      "LangChain",
+      "OpenAI GPT‑4 API",
+      "arXiv API",
+      "Pinecone vector store",
+      "GitHub Actions CI"
+    ],
+    "deliverables": [
+      "GitHub repository with clean code and README",
+      "Live demo video showing the full workflow",
+      "Technical write‑up explaining architecture and results"
+    ]
+  },
+  "publish": [
+    "Push the repo to a public GitHub repository and tag a release.",
+    "Write a 1,200‑word blog post on Medium or Dev.to detailing the design, challenges, and performance metrics.",
+    "Share the demo video and key findings on X (Twitter) and relevant AI engineering Discord channels.",
+    "Submit the project to the Hugging Face Hub as a Spaces demo to reach the community."
+  ],
+  "skills": [
+    "Multi‑step reasoning and planning",
+    "Tool use and API integration",
+    "Prompt engineering for autonomous agents",
+    "System design for scalable workflows",
+    "Data retrieval and summarization",
+    "Performance benchmarking and evaluation",
+    "Open‑source community engagement"
+  ],
+  "risks": [
+    "Complex agent logic can become hard to maintain and debug, leading to technical debt.",
+    "Reliance on external APIs may cause intermittent failures or cost overruns.",
+    "Insufficient evaluation may overstate the agent’s capabilities, harming credibility."
+  ],
+  "confidence": "The strong activity and demand signals make this a highly actionable and trustworthy recommendation.",
+  "content_hash": "1c2b50d5bb0c17b5",
+  "generated_for": {
+    "country": "Worldwide",
+    "city": null,
+    "goal": "research",
+    "profile": "agent"
+  }
+}
