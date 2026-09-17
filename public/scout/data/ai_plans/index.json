@@ -54,6 +54,15 @@
       "profile": "developer",
       "generated_at": "2026-08-30T10:33:18.317590+00:00"
     },
+    "ai-agents__italy__rome__research__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "9584f9b8de469fbb",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "research",
+      "profile": "founder",
+      "generated_at": "2026-09-17T10:14:18.473626+00:00"
+    },
     "ai-agents__italy__milan__create-agents__ai-engineer": {
       "topic_id": "ai-agents",
       "content_hash": "bf71800706eae0ef",
@@ -1018,7 +1027,7 @@
       "generated_at": "2026-08-31T12:50:47.424079+00:00"
     }
   },
-  "generated_at": "2026-09-16T10:17:51.967559+00:00",
+  "generated_at": "2026-09-17T10:20:29.452030+00:00",
   "ai_enabled": true,
-  "count": 113
+  "count": 114
 }
