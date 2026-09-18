@@ -9,6 +9,15 @@
       "profile": "founder",
       "generated_at": "2026-08-30T10:29:32.306775+00:00"
     },
+    "ai-agents__worldwide__any__startup__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "85f87abf3bcd31ac",
+      "country": "Worldwide",
+      "city": null,
+      "goal": "startup",
+      "profile": "founder",
+      "generated_at": "2026-09-18T09:48:59.663013+00:00"
+    },
     "ai-agents__worldwide__any__research__student": {
       "topic_id": "ai-agents",
       "content_hash": "9b093fc8c7173847",
@@ -1027,7 +1036,7 @@
       "generated_at": "2026-08-31T12:50:47.424079+00:00"
     }
   },
-  "generated_at": "2026-09-17T10:20:29.452030+00:00",
+  "generated_at": "2026-09-18T10:12:05.179417+00:00",
   "ai_enabled": true,
-  "count": 114
+  "count": 115
 }
