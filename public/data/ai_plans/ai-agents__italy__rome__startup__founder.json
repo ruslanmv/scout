@@ -1,0 +1,50 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T09:59:32.130306+00:00",
+  "headline": "Rome, Italy: Building an AI Agent for Multi-Step Tasks",
+  "why_now": "Rome, Italy is a unique location with a rich history and potential for AI advancements, making it an ideal place for startups focusing on multi-step tasks.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "AI Agent for Multi-Step Tasks",
+    "description": "This project will leverage the expertise of the founder, focusing on building an AI agent that can plan, use tools, call APIs, collaborate, and complete multi-step tasks.",
+    "stack": [
+      "tools/libraries",
+      "machine learning",
+      "deep learning",
+      "natural language processing",
+      "data analysis"
+    ],
+    "deliverables": [
+      "demo",
+      "write-up",
+      "repo"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "tools/libraries",
+    "machine learning",
+    "deep learning",
+    "natural language processing",
+    "data analysis"
+  ],
+  "risks": [
+    "No known risks"
+  ],
+  "confidence": "The founder's expertise and the potential for multi-step tasks in Rome make this a feasible and promising project.",
+  "content_hash": "1e781000e7fc5af4",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "startup",
+    "profile": "founder"
+  }
+}

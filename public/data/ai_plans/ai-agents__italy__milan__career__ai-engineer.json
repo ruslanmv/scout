@@ -1,0 +1,46 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T10:02:13.625167+00:00",
+  "headline": "Mentoring AI Agents and Agentic Workflows: A Personal Action Plan",
+  "why_now": "The rise of AI agents and their complex workflows is transforming various industries, and this trend is particularly relevant in the tech industry. It's crucial to understand and leverage these systems to excel in their roles.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Personal AI Agent and Agentic Workflow Portfolio",
+    "description": "This portfolio will focus on building a system that plans, uses tools, calls APIs, collaborates, and completes multi-step tasks. It will leverage tools like GitHub, Hugging Face, and local community involvement.",
+    "stack": [
+      "tools/libraries",
+      "language"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "communication skills",
+    "project management",
+    "data analysis"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "Personalized AI Agent and Agentic Workflow Portfolio",
+  "content_hash": "338e0f80d56e8b19",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Milan",
+    "goal": "career",
+    "profile": "ai_engineer"
+  }
+}

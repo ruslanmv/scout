@@ -1,0 +1,54 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T10:04:11.829490+00:00",
+  "headline": "Building a Personal Portfolio in AI Agents and Agentic Workflows",
+  "why_now": "Real-world trends in AI agents and agentic workflows are driving innovation and growth in the tech industry. This project will help you showcase your skills and knowledge in these areas, making you more competitive in the job market.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "A project portfolio",
+    "description": "This project will help you showcase your skills in AI agents and agentic workflows, such as building a portfolio of projects, demonstrating your expertise in these areas, and providing evidence of your skills and knowledge.",
+    "stack": [
+      "tools/libraries",
+      "project management tools"
+    ],
+    "deliverables": [
+      "a portfolio of projects",
+      "a demo",
+      "a write-up"
+    ]
+  },
+  "publish": [
+    "GitHub repository",
+    "Hugging Face Space",
+    "short technical article",
+    "Create a clean GitHub README with screenshots and architecture.",
+    "Publish a working demo or notebook."
+  ],
+  "skills": [
+    "Python",
+    "FastAPI",
+    "LangGraph",
+    "MCP",
+    "RAG",
+    "Docker"
+  ],
+  "risks": [
+    "Frameworks change quickly",
+    "Production reliability requires evaluation",
+    "Autonomy needs governance"
+  ],
+  "confidence": "High confidence, based on GitHub, Hugging Face, News/RSS.",
+  "content_hash": "eef903ac1524f409",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Milan",
+    "goal": "build_portfolio",
+    "profile": "student"
+  }
+}

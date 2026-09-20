@@ -1,0 +1,47 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T09:55:20.637918+00:00",
+  "headline": "Building a Personal Portfolio: A Comprehensive Plan",
+  "why_now": "Real trends in the tech industry such as AI agents and agentic workflows are crucial for developers and AI engineers. This plan will help you build a portfolio that showcases your skills and projects.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Personal Portfolio",
+    "description": "A portfolio that showcases your skills, projects, and achievements. It should be easy to read and understand.",
+    "stack": [
+      "tools/libraries",
+      "data structures",
+      "database management",
+      "version control"
+    ],
+    "deliverables": [
+      "personal website",
+      "CV",
+      "project portfolio"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "This plan is solid, and real trends in the tech industry will help you build a portfolio that showcases your skills and projects.",
+  "content_hash": "df114ea6aae69fa5",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "build_portfolio",
+    "profile": "developer"
+  }
+}

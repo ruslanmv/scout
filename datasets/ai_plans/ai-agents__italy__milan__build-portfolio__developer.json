@@ -1,0 +1,42 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T10:03:37.917940+00:00",
+  "headline": "Building a Personal Portfolio: A Systematic Approach",
+  "why_now": "Real trends like GitHub Activity, News/Mentions, Community Activity, Local Relevance, Project Potential, Career Value, and Job Demand are crucial for developers and AI agents.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "A Personal AI Agent Portfolio",
+    "description": "This project demonstrates how to plan, use tools, call APIs, collaborate, and complete multi-step tasks.",
+    "stack": [
+      "tools/libraries"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "This recommendation is solid as it aligns with real trends and provides concrete steps to build a personal portfolio.",
+  "content_hash": "075314ce52286a28",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Milan",
+    "goal": "build_portfolio",
+    "profile": "developer"
+  }
+}

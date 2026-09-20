@@ -1,0 +1,53 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T09:58:21.118458+00:00",
+  "headline": "Creating AI Agents and Agentic Workflows",
+  "why_now": "To leverage the latest trends in AI and work with real-world projects",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Agent Framework",
+    "description": "A framework that automates the planning, using tools, calling APIs, collaborating, and completing multi-step tasks.",
+    "stack": [
+      "Python",
+      "Django",
+      "PyTorch",
+      "Keras",
+      "SQL",
+      "AWS"
+    ],
+    "deliverables": [
+      "agent",
+      "APIs",
+      "API documentation",
+      "demo"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "Python",
+    "Django",
+    "PyTorch",
+    "Keras",
+    "SQL",
+    "AWS"
+  ],
+  "risks": [
+    "No risks"
+  ],
+  "confidence": "The personal action plan is solid and practical.",
+  "content_hash": "77d818c34c45dfbd",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "create_agents",
+    "profile": "agent"
+  }
+}

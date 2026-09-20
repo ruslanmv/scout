@@ -1,0 +1,47 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T10:03:23.518098+00:00",
+  "headline": "Accelerating AI Agent Development: A Career Path in Milan",
+  "why_now": "The rise of AI and its integration into various industries is shaping the future of work, and Milan is a prime location for AI talent.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "AI Agent Development Portfolio",
+    "description": "This project will focus on building a robust AI agent system that can plan, use tools, call APIs, collaborate, and complete multi-step tasks.",
+    "stack": [
+      "Python",
+      "TensorFlow",
+      "Docker"
+    ],
+    "deliverables": [
+      "AI agent system",
+      "API integration",
+      "API documentation",
+      "Demo"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "Python",
+    "TensorFlow",
+    "Docker"
+  ],
+  "risks": [
+    "No specific risks mentioned"
+  ],
+  "confidence": "This recommendation is solid, as it aligns with the current trends and signals for AI and agent development in Milan.",
+  "content_hash": "4897dd0ff08186a4",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Milan",
+    "goal": "career",
+    "profile": "agent"
+  }
+}

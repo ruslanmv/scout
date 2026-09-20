@@ -1,0 +1,47 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T09:58:57.131271+00:00",
+  "headline": "Rome, Italy: Leveraging AI Agents and Agentic Workflows to Drive Multi-Step Tasks",
+  "why_now": "The startup in Rome, Italy, is focusing on AI agents and agentic workflows to streamline their multi-step tasks and improve their productivity.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "AI-powered task automation platform",
+    "description": "This platform utilizes AI to plan, use tools, call APIs, collaborate, and complete multi-step tasks. It leverages tools from Hugging Face and GitHub to facilitate seamless integration and collaboration.",
+    "stack": [
+      "tools/libraries",
+      "Hugging Face",
+      "GitHub"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "6-8 skills this demonstrates",
+    "7-10 skills this demonstrates",
+    "8-12 skills this demonstrates"
+  ],
+  "risks": [
+    "No known risks"
+  ],
+  "confidence": "The startup in Rome, Italy, is well-prepared to leverage AI agents and agentic workflows to drive multi-step tasks and improve productivity.",
+  "content_hash": "5925e4852de66763",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "startup",
+    "profile": "ai_engineer"
+  }
+}

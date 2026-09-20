@@ -1,0 +1,49 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T09:58:05.231524+00:00",
+  "headline": "Creating an AI Agent for Multi-Step Tasks: A Personal Action Plan",
+  "why_now": "Real-world trends like the growth in AI agents and the increasing importance of multi-step tasks are crucial for developers and AI engineers today.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Creating an AI Agent for Multi-Step Tasks",
+    "description": "This project will involve designing a system that can plan, use tools, call APIs, collaborate, and complete multi-step tasks. The system will be built using the real-world trends like the growth in AI agents and the increasing importance of multi-step tasks.",
+    "stack": [
+      "tools/libraries",
+      "programming languages",
+      "data structures",
+      "machine learning algorithms",
+      "web development tools"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "programming languages",
+    "data structures",
+    "machine learning algorithms",
+    "web development tools"
+  ],
+  "risks": [
+    "no specific risks"
+  ],
+  "confidence": "This recommendation is solid as it demonstrates the importance of real-world trends like the growth in AI agents and the increasing importance of multi-step tasks.",
+  "content_hash": "0b04952adb961c91",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "create_agents",
+    "profile": "enterprise"
+  }
+}

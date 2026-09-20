@@ -1,0 +1,45 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T10:04:28.618935+00:00",
+  "headline": "Building a Personal Action Plan for AI Agents and Agentic Workflows",
+  "why_now": "The rise of AI agents and their potential to automate complex tasks and streamline operations makes this topic crucial for developers and AI engineers.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "A portfolio project to showcase AI agents and agentic workflows",
+    "description": "This project will demonstrate the power of AI agents in various scenarios, such as task automation, data analysis, and decision-making.",
+    "stack": [
+      "tools/libraries",
+      "programming languages",
+      "data analysis tools"
+    ],
+    "deliverables": [
+      "demo",
+      "write-up",
+      "presentation"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "communication skills"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "This recommendation is solid as it showcases the potential of AI agents and their versatility in various fields.",
+  "content_hash": "6991502bfb0131d9",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Milan",
+    "goal": "build_portfolio",
+    "profile": "founder"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T09:56:58.426551+00:00",
+  "headline": "Building a Personal AI Agent System",
+  "why_now": "The real signals show that developing an AI agent system is a key area of interest, especially in the context of the Italian city of Rome.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "AI Agent System",
+    "description": "This project aims to create a system that can plan, use tools, call APIs, collaborate, and complete multi-step tasks.",
+    "stack": [
+      "Python",
+      "Django",
+      "TensorFlow"
+    ],
+    "deliverables": [
+      "AI agent system",
+      "API integration",
+      "API documentation",
+      "Demo application"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "Python",
+    "Django",
+    "TensorFlow",
+    "API design",
+    "AI agent development"
+  ],
+  "risks": [
+    "No specific risks mentioned in the signal data"
+  ],
+  "confidence": "The project is well-documented and has a clear plan, making it a solid recommendation.",
+  "content_hash": "38373f56968746f4",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "create_agents",
+    "profile": "developer"
+  }
+}

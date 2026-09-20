@@ -1,0 +1,43 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T10:03:53.423056+00:00",
+  "headline": "Building a Personal Portfolio: A Comprehensive AI Agent System",
+  "why_now": "Real trends such as AI agents and their workflows are crucial for personal development and career advancement.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "A Personal AI Agent System",
+    "description": "This project will help you build a portfolio of AI agents and agentic workflows, showcasing your skills and expertise.",
+    "stack": [
+      "tools/libraries",
+      "programming languages"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "This recommendation is solid, as it aligns with current trends and provides concrete steps to build a portfolio.",
+  "content_hash": "dcdbabd7fa0361db",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Milan",
+    "goal": "build_portfolio",
+    "profile": "ai_engineer"
+  }
+}

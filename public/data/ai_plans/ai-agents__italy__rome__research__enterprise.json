@@ -1,0 +1,48 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T10:01:21.217879+00:00",
+  "headline": "Mastering the Art of Multi-Step Tasks with AI Agents and Agentic Workflows",
+  "why_now": "The real-world trend signals indicate a growing demand for AI agents and agentic workflows in the tech industry, making this topic relevant now.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "A comprehensive AI agent and agentic workflow project",
+    "description": "This project will focus on developing an AI agent that can plan, use tools, call APIs, and collaborate on multi-step tasks. The project will showcase the integration of these tools and workflows in a real-world scenario.",
+    "stack": [
+      "tools/libraries",
+      "APIs",
+      "continuous integration/continuous deployment (CI/CD) tools"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "programming languages: Python, Java, JavaScript",
+    "data structures: arrays, linked lists, stacks",
+    "algorithmic thinking",
+    "continuous integration/continuous deployment (CI/CD) tools"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "The real-world trend signals indicate a growing demand for AI agents and agentic workflows in the tech industry, making this topic relevant now.",
+  "content_hash": "3ace26a762ca3391",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "research",
+    "profile": "enterprise"
+  }
+}

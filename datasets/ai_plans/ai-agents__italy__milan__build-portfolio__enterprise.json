@@ -1,0 +1,49 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T10:04:46.116542+00:00",
+  "headline": "Building a Personal Portfolio: A Comprehensive Plan",
+  "why_now": "The real-world trends in AI agents and agentic workflows are driving the need for robust portfolio projects. By focusing on building a portfolio that excels in these areas, you'll be well-positioned to stand out in the job market.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "A Personal AI Portfolio",
+    "description": "This project showcases your expertise in AI, agentic workflows, collaborative tools, and real-world applications.",
+    "stack": [
+      "tools/libraries",
+      "APIs",
+      "Collaboration tools",
+      "Project management tools"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "Agentic workflows",
+    "Collaborative tools",
+    "Real-world applications",
+    "Project management"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "This personal portfolio project is a solid recommendation, demonstrating your expertise and the real-world applications of AI and agentic workflows.",
+  "content_hash": "07da19a963246007",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Milan",
+    "goal": "build_portfolio",
+    "profile": "enterprise"
+  }
+}

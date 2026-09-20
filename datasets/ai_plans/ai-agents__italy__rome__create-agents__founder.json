@@ -1,0 +1,48 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T09:57:46.924266+00:00",
+  "headline": "Creating AI Agents and Agentic Workflows",
+  "why_now": "Real trends like the growth of AI and the rise of agentic workflows in tech are key to the future of AI and work.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Creating AI Agents and Agentic Workflows",
+    "description": "This project will focus on developing systems that plan, use tools, call APIs, collaborate, and complete multi-step tasks.",
+    "stack": [
+      "tools/libraries",
+      "machine learning",
+      "data analysis",
+      "cloud services"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "coding skills",
+    "data analysis",
+    "AI programming"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "I am confident that this recommendation is solid as it aligns with the current trends and will help developers and AI engineers create more effective workflows.",
+  "content_hash": "1d283fb883f0e15d",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "create_agents",
+    "profile": "founder"
+  }
+}

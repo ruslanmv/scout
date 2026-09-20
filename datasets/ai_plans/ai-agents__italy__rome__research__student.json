@@ -1,0 +1,46 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T10:01:01.222826+00:00",
+  "headline": "Rome, Italy: Researching AI Agents and Agentic Workflows",
+  "why_now": "The real signals indicate a growing interest in AI agents and their applications in the field of agentic workflows, which is relevant for the student's research goals.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Researching AI Agents and Agentic Workflows",
+    "description": "This project will involve researching the current state of AI agents and their applications in agentic workflows, understanding the tools, APIs, and collaboration capabilities available, and proposing practical solutions.",
+    "stack": [
+      "tools/libraries",
+      "AI agents",
+      "agentic workflows"
+    ],
+    "deliverables": [
+      "GitHub repo",
+      "live demo",
+      "short write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "The student has a solid understanding of the topic and is well-prepared for the research.",
+  "content_hash": "512916a493075882",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "research",
+    "profile": "student"
+  }
+}

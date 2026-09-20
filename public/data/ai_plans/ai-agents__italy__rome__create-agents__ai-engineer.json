@@ -1,0 +1,49 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T09:57:14.816426+00:00",
+  "headline": "Create an AI Agent System for Multi-Step Tasks",
+  "why_now": "The real signals indicate that creating an AI agent system is crucial for multi-step tasks and collaboration.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "AI Agent System",
+    "description": "This system will plan, use tools, call APIs, collaborate, and complete multi-step tasks.",
+    "stack": [
+      "tools/libraries",
+      "machine learning",
+      "data analysis",
+      "natural language processing"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "programming",
+    "data analysis",
+    "machine learning",
+    "AI"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "The real signals show that creating an AI agent system is essential for personal and professional growth.",
+  "content_hash": "0a816565c40de5e9",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "create_agents",
+    "profile": "ai_engineer"
+  }
+}

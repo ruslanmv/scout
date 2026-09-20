@@ -1,0 +1,46 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T09:58:38.318355+00:00",
+  "headline": "Accelerate AI Agent Development with Multi-Step Tasks and Collaborative Tools",
+  "why_now": "Real trends in AI and automation are driving the need for more efficient and collaborative systems, which is crucial for startups looking to innovate and scale.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Multi-Step AI Agent System",
+    "description": "This project will involve building a system that can plan, use tools, call APIs, collaborate, and complete multi-step tasks.",
+    "stack": [
+      "Python",
+      "Django",
+      "Rome, Italy"
+    ],
+    "deliverables": [
+      "API integration",
+      "AI agent training",
+      "AI agent development"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "Python",
+    "Django",
+    "Rome, Italy"
+  ],
+  "risks": [
+    "Collaborative tools and APIs are not yet widely available in Italy"
+  ],
+  "confidence": "This project demonstrates the potential of AI agents and collaborative tools for startups looking to accelerate their innovation and growth.",
+  "content_hash": "f82bacb19fab3be7",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "startup",
+    "profile": "developer"
+  }
+}

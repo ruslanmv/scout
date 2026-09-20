@@ -1,0 +1,47 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T10:02:29.234013+00:00",
+  "headline": "Career Development: Personal Action Plan for AI Agents and Agentic Workflows",
+  "why_now": "The real signals suggest that AI agents and agentic workflows are in high demand and are becoming increasingly relevant in the tech industry.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "Personal Action Plan",
+    "description": "To become a more effective AI agent and agentic workflow developer, I will focus on improving my GitHub activity, Hugging Face activity, and local relevance.",
+    "stack": [
+      "tools/libraries",
+      "programming languages",
+      "web development tools"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "coding",
+    "data analysis",
+    "machine learning",
+    "web development"
+  ],
+  "risks": [
+    "Lack of experience and knowledge in AI and agentic workflows"
+  ],
+  "confidence": "This plan is solid and can help me achieve my career goals.",
+  "content_hash": "9eb1711d483f151c",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Milan",
+    "goal": "career",
+    "profile": "student"
+  }
+}

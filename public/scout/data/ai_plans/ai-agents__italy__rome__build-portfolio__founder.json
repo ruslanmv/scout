@@ -1,0 +1,47 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T09:56:09.419540+00:00",
+  "headline": "Rome, Italy: Building a portfolio for a founder who is passionate about AI and agentic workflows",
+  "why_now": "The real signals indicate a growing interest in AI and its applications in various industries. This location offers a perfect blend of technological advancements and cultural diversity.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "AI portfolio",
+    "description": "This project will help the founder showcase their expertise in AI and agentic workflows.",
+    "stack": [
+      "tools/libraries",
+      "APIs",
+      "Hugo",
+      "GitHub"
+    ],
+    "deliverables": [
+      "GitHub repository",
+      "AI portfolio",
+      "Demo video"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "Communication skills",
+    "Project management"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "The founder's passion and the real signals indicate a solid recommendation.",
+  "content_hash": "70e8a5a109e207c0",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "build_portfolio",
+    "profile": "founder"
+  }
+}

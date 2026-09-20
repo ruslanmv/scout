@@ -1,0 +1,50 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T10:01:55.437230+00:00",
+  "headline": "Career development: Building an AI-powered project management system in Milan",
+  "why_now": "The real signals show that AI agents and agentic workflows are in high demand in the tech industry, making this a key topic for developers and AI engineers.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "AI-powered project management system",
+    "description": "This project will use tools like GitHub, Hugging Face, and NewsRSS to plan, use tools, call APIs, collaborate, and complete multi-step tasks.",
+    "stack": [
+      "tools/libraries",
+      "APIs",
+      "GitHub",
+      "Hugging Face",
+      "NewsRSS"
+    ],
+    "deliverables": [
+      "repository",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "Programming",
+    "Data analysis",
+    "AI development",
+    "Project management"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "This recommendation is solid as it aligns with the real signals and demonstrates the potential for AI agents and agentic workflows in the tech industry.",
+  "content_hash": "9a4474a8030aaa32",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Milan",
+    "goal": "career",
+    "profile": "developer"
+  }
+}

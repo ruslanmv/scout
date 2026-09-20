@@ -1,0 +1,47 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T09:55:53.615248+00:00",
+  "headline": "Build a portfolio project that leverages AI agents and agentic workflows",
+  "why_now": "The real signals indicate a high demand for AI agents and agentic workflows in the tech industry, and the location of Rome, Italy, offers a unique context for building a portfolio.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "A portfolio project that uses AI agents and agentic workflows",
+    "description": "This project will use the real signals to showcase the power of AI agents and agentic workflows in the tech industry, and the location of Rome, Italy, to attract a diverse audience.",
+    "stack": [
+      "tools/libraries",
+      "AI agents",
+      "agentic workflows"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates",
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "No specific risks mentioned"
+  ],
+  "confidence": "The recommendation is solid as it leverages the real signals and location to build a portfolio that impresses potential employers.",
+  "content_hash": "f228c5d2ee61e96a",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "build_portfolio",
+    "profile": "student"
+  }
+}

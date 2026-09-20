@@ -63,6 +63,195 @@
       "profile": "developer",
       "generated_at": "2026-08-30T10:33:18.317590+00:00"
     },
+    "ai-agents__italy__rome__build-portfolio__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "df114ea6aae69fa5",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "build_portfolio",
+      "profile": "developer",
+      "generated_at": "2026-09-20T09:55:20.637918+00:00"
+    },
+    "ai-agents__italy__rome__build-portfolio__ai-engineer": {
+      "topic_id": "ai-agents",
+      "content_hash": "abadd51773368061",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "build_portfolio",
+      "profile": "ai_engineer",
+      "generated_at": "2026-09-20T09:55:35.333545+00:00"
+    },
+    "ai-agents__italy__rome__build-portfolio__student": {
+      "topic_id": "ai-agents",
+      "content_hash": "f228c5d2ee61e96a",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "build_portfolio",
+      "profile": "student",
+      "generated_at": "2026-09-20T09:55:53.615248+00:00"
+    },
+    "ai-agents__italy__rome__build-portfolio__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "70e8a5a109e207c0",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "build_portfolio",
+      "profile": "founder",
+      "generated_at": "2026-09-20T09:56:09.419540+00:00"
+    },
+    "ai-agents__italy__rome__build-portfolio__enterprise": {
+      "topic_id": "ai-agents",
+      "content_hash": "bd05d153fdb7ef10",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "build_portfolio",
+      "profile": "enterprise",
+      "generated_at": "2026-09-20T09:56:26.920277+00:00"
+    },
+    "ai-agents__italy__rome__build-portfolio__agent": {
+      "topic_id": "ai-agents",
+      "content_hash": "32163fc312a54766",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "build_portfolio",
+      "profile": "agent",
+      "generated_at": "2026-09-20T09:56:42.231033+00:00"
+    },
+    "ai-agents__italy__rome__create-agents__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "38373f56968746f4",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "create_agents",
+      "profile": "developer",
+      "generated_at": "2026-09-20T09:56:58.426551+00:00"
+    },
+    "ai-agents__italy__rome__create-agents__ai-engineer": {
+      "topic_id": "ai-agents",
+      "content_hash": "0a816565c40de5e9",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "create_agents",
+      "profile": "ai_engineer",
+      "generated_at": "2026-09-20T09:57:14.816426+00:00"
+    },
+    "ai-agents__italy__rome__create-agents__student": {
+      "topic_id": "ai-agents",
+      "content_hash": "2fcd03020e05e259",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "create_agents",
+      "profile": "student",
+      "generated_at": "2026-09-20T09:57:29.615218+00:00"
+    },
+    "ai-agents__italy__rome__create-agents__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "1d283fb883f0e15d",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "create_agents",
+      "profile": "founder",
+      "generated_at": "2026-09-20T09:57:46.924266+00:00"
+    },
+    "ai-agents__italy__rome__create-agents__enterprise": {
+      "topic_id": "ai-agents",
+      "content_hash": "0b04952adb961c91",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "create_agents",
+      "profile": "enterprise",
+      "generated_at": "2026-09-20T09:58:05.231524+00:00"
+    },
+    "ai-agents__italy__rome__create-agents__agent": {
+      "topic_id": "ai-agents",
+      "content_hash": "77d818c34c45dfbd",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "create_agents",
+      "profile": "agent",
+      "generated_at": "2026-09-20T09:58:21.118458+00:00"
+    },
+    "ai-agents__italy__rome__startup__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "f82bacb19fab3be7",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "startup",
+      "profile": "developer",
+      "generated_at": "2026-09-20T09:58:38.318355+00:00"
+    },
+    "ai-agents__italy__rome__startup__ai-engineer": {
+      "topic_id": "ai-agents",
+      "content_hash": "5925e4852de66763",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "startup",
+      "profile": "ai_engineer",
+      "generated_at": "2026-09-20T09:58:57.131271+00:00"
+    },
+    "ai-agents__italy__rome__startup__student": {
+      "topic_id": "ai-agents",
+      "content_hash": "97f9afbfb5287230",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "startup",
+      "profile": "student",
+      "generated_at": "2026-09-20T09:59:14.725834+00:00"
+    },
+    "ai-agents__italy__rome__startup__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "1e781000e7fc5af4",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "startup",
+      "profile": "founder",
+      "generated_at": "2026-09-20T09:59:32.130306+00:00"
+    },
+    "ai-agents__italy__rome__startup__enterprise": {
+      "topic_id": "ai-agents",
+      "content_hash": "7b41bace9a4d4f0d",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "startup",
+      "profile": "enterprise",
+      "generated_at": "2026-09-20T09:59:46.540105+00:00"
+    },
+    "ai-agents__italy__rome__startup__agent": {
+      "topic_id": "ai-agents",
+      "content_hash": "d20cf68e138c2c72",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "startup",
+      "profile": "agent",
+      "generated_at": "2026-09-20T10:00:06.335063+00:00"
+    },
+    "ai-agents__italy__rome__research__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "ef117f89ab0ebfad",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "research",
+      "profile": "developer",
+      "generated_at": "2026-09-20T10:00:26.331638+00:00"
+    },
+    "ai-agents__italy__rome__research__ai-engineer": {
+      "topic_id": "ai-agents",
+      "content_hash": "cc333671904ddc4e",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "research",
+      "profile": "ai_engineer",
+      "generated_at": "2026-09-20T10:00:44.431068+00:00"
+    },
+    "ai-agents__italy__rome__research__student": {
+      "topic_id": "ai-agents",
+      "content_hash": "512916a493075882",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "research",
+      "profile": "student",
+      "generated_at": "2026-09-20T10:01:01.222826+00:00"
+    },
     "ai-agents__italy__rome__research__founder": {
       "topic_id": "ai-agents",
       "content_hash": "9584f9b8de469fbb",
@@ -71,6 +260,141 @@
       "goal": "research",
       "profile": "founder",
       "generated_at": "2026-09-17T10:14:18.473626+00:00"
+    },
+    "ai-agents__italy__rome__research__enterprise": {
+      "topic_id": "ai-agents",
+      "content_hash": "3ace26a762ca3391",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "research",
+      "profile": "enterprise",
+      "generated_at": "2026-09-20T10:01:21.217879+00:00"
+    },
+    "ai-agents__italy__rome__research__agent": {
+      "topic_id": "ai-agents",
+      "content_hash": "e27a3d8dd8c2414f",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "research",
+      "profile": "agent",
+      "generated_at": "2026-09-20T10:01:38.027546+00:00"
+    },
+    "ai-agents__italy__milan__career__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "9a4474a8030aaa32",
+      "country": "Italy",
+      "city": "Milan",
+      "goal": "career",
+      "profile": "developer",
+      "generated_at": "2026-09-20T10:01:55.437230+00:00"
+    },
+    "ai-agents__italy__milan__career__ai-engineer": {
+      "topic_id": "ai-agents",
+      "content_hash": "338e0f80d56e8b19",
+      "country": "Italy",
+      "city": "Milan",
+      "goal": "career",
+      "profile": "ai_engineer",
+      "generated_at": "2026-09-20T10:02:13.625167+00:00"
+    },
+    "ai-agents__italy__milan__career__student": {
+      "topic_id": "ai-agents",
+      "content_hash": "9eb1711d483f151c",
+      "country": "Italy",
+      "city": "Milan",
+      "goal": "career",
+      "profile": "student",
+      "generated_at": "2026-09-20T10:02:29.234013+00:00"
+    },
+    "ai-agents__italy__milan__career__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "cbffc2c1363f27e8",
+      "country": "Italy",
+      "city": "Milan",
+      "goal": "career",
+      "profile": "founder",
+      "generated_at": "2026-09-20T10:02:47.326257+00:00"
+    },
+    "ai-agents__italy__milan__career__enterprise": {
+      "topic_id": "ai-agents",
+      "content_hash": "5a8247d11b513bc1",
+      "country": "Italy",
+      "city": "Milan",
+      "goal": "career",
+      "profile": "enterprise",
+      "generated_at": "2026-09-20T10:03:06.118094+00:00"
+    },
+    "ai-agents__italy__milan__career__agent": {
+      "topic_id": "ai-agents",
+      "content_hash": "4897dd0ff08186a4",
+      "country": "Italy",
+      "city": "Milan",
+      "goal": "career",
+      "profile": "agent",
+      "generated_at": "2026-09-20T10:03:23.518098+00:00"
+    },
+    "ai-agents__italy__milan__build-portfolio__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "075314ce52286a28",
+      "country": "Italy",
+      "city": "Milan",
+      "goal": "build_portfolio",
+      "profile": "developer",
+      "generated_at": "2026-09-20T10:03:37.917940+00:00"
+    },
+    "ai-agents__italy__milan__build-portfolio__ai-engineer": {
+      "topic_id": "ai-agents",
+      "content_hash": "dcdbabd7fa0361db",
+      "country": "Italy",
+      "city": "Milan",
+      "goal": "build_portfolio",
+      "profile": "ai_engineer",
+      "generated_at": "2026-09-20T10:03:53.423056+00:00"
+    },
+    "ai-agents__italy__milan__build-portfolio__student": {
+      "topic_id": "ai-agents",
+      "content_hash": "eef903ac1524f409",
+      "country": "Italy",
+      "city": "Milan",
+      "goal": "build_portfolio",
+      "profile": "student",
+      "generated_at": "2026-09-20T10:04:11.829490+00:00"
+    },
+    "ai-agents__italy__milan__build-portfolio__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "6991502bfb0131d9",
+      "country": "Italy",
+      "city": "Milan",
+      "goal": "build_portfolio",
+      "profile": "founder",
+      "generated_at": "2026-09-20T10:04:28.618935+00:00"
+    },
+    "ai-agents__italy__milan__build-portfolio__enterprise": {
+      "topic_id": "ai-agents",
+      "content_hash": "07da19a963246007",
+      "country": "Italy",
+      "city": "Milan",
+      "goal": "build_portfolio",
+      "profile": "enterprise",
+      "generated_at": "2026-09-20T10:04:46.116542+00:00"
+    },
+    "ai-agents__italy__milan__build-portfolio__agent": {
+      "topic_id": "ai-agents",
+      "content_hash": "df237eb5e6523ad8",
+      "country": "Italy",
+      "city": "Milan",
+      "goal": "build_portfolio",
+      "profile": "agent",
+      "generated_at": "2026-09-20T10:05:01.221406+00:00"
+    },
+    "ai-agents__italy__milan__create-agents__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "fd6d6839a70c481f",
+      "country": "Italy",
+      "city": "Milan",
+      "goal": "create_agents",
+      "profile": "developer",
+      "generated_at": "2026-09-20T10:05:16.919423+00:00"
     },
     "ai-agents__italy__milan__create-agents__ai-engineer": {
       "topic_id": "ai-agents",
@@ -1036,7 +1360,7 @@
       "generated_at": "2026-08-31T12:50:47.424079+00:00"
     }
   },
-  "generated_at": "2026-09-19T09:54:13.238296+00:00",
+  "generated_at": "2026-09-20T10:05:16.961361+00:00",
   "ai_enabled": true,
-  "count": 115
+  "count": 151
 }

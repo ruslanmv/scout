@@ -1,0 +1,42 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T10:00:26.331638+00:00",
+  "headline": "Rome, Italy: Researching the Impact of AI Agents and Agentic Workflows",
+  "why_now": "The real signals indicate that the topic of AI agents and agentic workflows is becoming increasingly relevant in the field of technology and AI.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "A personal action plan to research the impact of AI agents and agentic workflows in Rome, Italy",
+    "description": "1. Identify key trends in the field of AI agents and agentic workflows.",
+    "stack": [
+      "tools/libraries"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "The real signals indicate that the topic of AI agents and agentic workflows is becoming increasingly relevant in the field of technology and AI. By researching the impact of this topic, I can contribute to the field and help developers and AI engineers make informed decisions.",
+  "content_hash": "ef117f89ab0ebfad",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "research",
+    "profile": "developer"
+  }
+}

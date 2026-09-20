@@ -1,0 +1,42 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-20T10:03:06.118094+00:00",
+  "headline": "Accelerate Your Career with AI Agents and Agentic Workflows",
+  "why_now": "The real signals indicate a growing demand for AI agents and agentic workflows in the tech industry, particularly in the tech industry in Milan, Italy.",
+  "study": [
+    "3-5 concrete, ordered learning steps"
+  ],
+  "build": {
+    "title": "A Personal Action Plan",
+    "description": "I will focus on improving my skills in AI agents and agentic workflows, which are highly valued in the tech industry. I will start by learning about the real signals, which indicate a growing demand for these technologies. I will then build a portfolio project that demonstrates my expertise in AI agents and agentic workflows. I will also build deliverables such as a repo, a demo, and a write-up.",
+    "stack": [
+      "tools/libraries"
+    ],
+    "deliverables": [
+      "repo",
+      "demo",
+      "write-up"
+    ]
+  },
+  "publish": [
+    "3-4 concrete steps to get this seen by the right people"
+  ],
+  "skills": [
+    "5-8 skills this demonstrates"
+  ],
+  "risks": [
+    "2-3 honest risks or pitfalls"
+  ],
+  "confidence": "I am confident in this recommendation as it aligns with the real signals indicating a growing demand for AI agents and agentic workflows in the tech industry.",
+  "content_hash": "5a8247d11b513bc1",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Milan",
+    "goal": "career",
+    "profile": "enterprise"
+  }
+}
