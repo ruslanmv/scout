@@ -1,5 +1,14 @@
 {
   "cells": {
+    "ai-agents__worldwide__any__build-portfolio__student": {
+      "topic_id": "ai-agents",
+      "content_hash": "1fe789906832d3c6",
+      "country": "Worldwide",
+      "city": null,
+      "goal": "build_portfolio",
+      "profile": "student",
+      "generated_at": "2026-09-21T10:44:03.062962+00:00"
+    },
     "ai-agents__worldwide__any__build-portfolio__founder": {
       "topic_id": "ai-agents",
       "content_hash": "d86c26769513e5f5",
@@ -8,6 +17,15 @@
       "goal": "build_portfolio",
       "profile": "founder",
       "generated_at": "2026-08-30T10:29:32.306775+00:00"
+    },
+    "ai-agents__worldwide__any__create-agents__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "4d2af775f05b6c63",
+      "country": "Worldwide",
+      "city": null,
+      "goal": "create_agents",
+      "profile": "developer",
+      "generated_at": "2026-09-21T10:44:15.452179+00:00"
     },
     "ai-agents__worldwide__any__startup__founder": {
       "topic_id": "ai-agents",
@@ -1360,7 +1378,7 @@
       "generated_at": "2026-08-31T12:50:47.424079+00:00"
     }
   },
-  "generated_at": "2026-09-20T10:05:16.961361+00:00",
+  "generated_at": "2026-09-21T10:45:46.256420+00:00",
   "ai_enabled": true,
-  "count": 151
+  "count": 153
 }
