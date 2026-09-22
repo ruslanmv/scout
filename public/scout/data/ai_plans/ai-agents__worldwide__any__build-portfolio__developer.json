@@ -1,0 +1,64 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-22T09:58:02.434438+00:00",
+  "headline": "Turn the AI agent boom into a showcase project that lands you high‑impact dev roles worldwide",
+  "why_now": "AI agents are exploding: GitHub activity (96) and growth (94) show massive open‑source momentum, while job demand (85) signals hiring spikes. News mentions (88) and community buzz (84) confirm that employers now expect hands‑on agentic workflow experience.",
+  "study": [
+    "Read the LangChain and CrewAI docs; run the official “Hello Agent” notebooks to grasp planning, tool use, and memory.",
+    "Complete a focused tutorial on OpenAI function calling and tool‑integration (e.g., building a calculator or web‑search tool).",
+    "Build a mini‑project: an AI‑driven email triage bot that reads, categorizes, and drafts replies using the Gmail API.",
+    "Study production patterns: logging, error handling, and prompt versioning; replicate them in a sandbox repo.",
+    "Review recent agentic workflow case studies on Hugging Face Spaces to see deployment best practices."
+  ],
+  "build": {
+    "title": "Agentic Personal Task Manager (APTM)",
+    "description": "A multi‑step AI agent that ingests a daily to‑do list, prioritizes tasks, calls external APIs (Google Calendar, Todoist, weather), and generates a concise action plan with optional execution. It demonstrates end‑to‑end planning, tool use, and stateful memory—exactly what recruiters are hunting for.",
+    "stack": [
+      "Python 3.11",
+      "LangChain",
+      "OpenAI GPT‑4o / function calling",
+      "FastAPI for the agent server",
+      "Docker & GitHub Actions CI/CD",
+      "Google Calendar & Todoist APIs",
+      "React (optional) for a simple UI demo"
+    ],
+    "deliverables": [
+      "GitHub repo with clean README, tests, and CI badge",
+      "Live demo on Railway or Render (public URL)",
+      "Technical write‑up on Medium + LinkedIn post summarizing architecture and lessons learned"
+    ]
+  },
+  "publish": [
+    "Write a concise LinkedIn carousel highlighting the problem, architecture diagram, and demo video; tag @LangChainAI, @OpenAI, and relevant AI‑agent hashtags.",
+    "Post the repo on Hacker News (Show HN) and the r/LocalAI subreddit, referencing the high‑growth signals.",
+    "Submit the project to the LangChain Community Showcase and Hugging Face Spaces with a short description.",
+    "Add the repo to your personal portfolio site and include a QR code in your résumé."
+  ],
+  "skills": [
+    "Prompt engineering for planning & function calling",
+    "API integration & authentication (OAuth2)",
+    "State management & memory in autonomous agents",
+    "Backend development with FastAPI & Docker",
+    "CI/CD pipelines using GitHub Actions",
+    "Production‑grade logging & error handling",
+    "Frontend prototyping (React) for user interaction",
+    "Technical communication & documentation"
+  ],
+  "risks": [
+    "API rate limits or credential leaks can stall the demo; use mock services for early testing.",
+    "LLM hallucinations may produce unsafe actions; always sandbox tool calls with validation.",
+    "Rapid changes in agent frameworks could require quick refactoring; keep dependencies version‑pinned."
+  ],
+  "confidence": "Given the strong signal scores and clear market demand, this plan is a high‑confidence pathway to a standout portfolio piece.",
+  "content_hash": "daaf8134fdda5c8b",
+  "generated_for": {
+    "country": "Worldwide",
+    "city": null,
+    "goal": "build_portfolio",
+    "profile": "developer"
+  }
+}

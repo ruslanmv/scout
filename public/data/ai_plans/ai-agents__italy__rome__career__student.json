@@ -1,0 +1,62 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-22T09:59:46.304728+00:00",
+  "headline": "Turn Rome’s booming AI‑agent scene into your launchpad for a cutting‑edge tech career",
+  "why_now": "AI agents are exploding—GitHub activity (96) and growth (94) show a flood of open‑source tooling, while Hugging Face (92) and news mentions (88) confirm industry hype. Employers in Italy are already hunting talent (job demand 85), and the local community (84) is buzzing, making this the perfect moment to specialize.",
+  "study": [
+    "1. Master the fundamentals of prompt engineering and LLM APIs (OpenAI, Anthropic, Cohere).",
+    "2. Learn agent frameworks: LangChain, CrewAI, and AutoGPT – follow their official tutorials and replicate the example notebooks.",
+    "3. Dive into tool‑integration patterns: function calling, tool use plugins, and retrieval‑augmented generation.",
+    "4. Study workflow orchestration with Temporal or LangGraph to chain multi‑step agents.",
+    "5. Explore security & evaluation: prompt injection defenses, benchmark suites (OpenAI Evals, LM‑Eval)."
+  ],
+  "build": {
+    "title": "Rome‑SmartTour: an autonomous multi‑modal travel assistant",
+    "description": "A conversational AI agent that plans a personalized 2‑day itinerary for tourists in Rome, books museum tickets via public APIs, suggests hidden‑gem restaurants, and generates a shareable PDF guide. It showcases end‑to‑end planning, tool use, and multi‑step reasoning—exactly what recruiters look for in agentic workflow engineers.",
+    "stack": [
+      "Python",
+      "LangChain + LangGraph",
+      "OpenAI GPT‑4o (or Claude 3.5)",
+      "FastAPI for the backend",
+      "React + Vite for the UI",
+      "Google Maps API, Ticketmaster API, PDFKit"
+    ],
+    "deliverables": [
+      "GitHub repo with clean README and CI",
+      "Live demo hosted on Railway or Render",
+      "Technical write‑up (Medium article) describing architecture, challenges, and evaluation results"
+    ]
+  },
+  "publish": [
+    "1. Post the repo and demo link in the Rome AI meetup Slack and the #agentic-workflows channel on Hugging Face Spaces.",
+    "2. Write a concise LinkedIn carousel explaining the problem, solution, and tech stack; tag @OpenAI, @LangChainAI, and local AI groups.",
+    "3. Submit a short video walkthrough to the weekly “AI Agents” newsletter on Hacker News and to the “AI Agents” subreddit.",
+    "4. Reach out to a local startup accelerator (e.g., Luiss EnLabs) offering a 5‑minute pitch; attach the PDF guide as a portfolio piece."
+  ],
+  "skills": [
+    "Prompt engineering & LLM API integration",
+    "Agentic workflow design with LangChain/LangGraph",
+    "Multi‑modal tool calling (maps, ticketing, PDF generation)",
+    "Backend development with FastAPI",
+    "Frontend prototyping in React",
+    "CI/CD and cloud deployment",
+    "Evaluation & safety testing of autonomous agents"
+  ],
+  "risks": [
+    "API rate limits or cost can stall rapid iteration; mitigate with mock services early.",
+    "Agent hallucinations may produce inaccurate itineraries; implement verification steps and fallback prompts.",
+    "Keeping the project up‑to‑date with fast‑moving LLM APIs requires ongoing maintenance."
+  ],
+  "confidence": "Given the high signal scores and local demand, this plan is a very strong, actionable path toward a career in AI agents.",
+  "content_hash": "4bfbfe6a3c73c617",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "career",
+    "profile": "student"
+  }
+}
