@@ -1,0 +1,61 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-23T09:59:02.838265+00:00",
+  "headline": "Become a go‑to AI‑Agent engineer and future‑proof your dev career worldwide",
+  "why_now": "AI agents are exploding: GitHub activity (96) and growth (94) show massive open‑source momentum, while Hugging Face (92) and news mentions (88) confirm industry buzz. Employers are already hunting talent (job demand 85) and the ecosystem offers high career value (95).",
+  "study": [
+    "1. Master the fundamentals of prompt engineering and LLM APIs (OpenAI, Anthropic, Cohere).",
+    "2. Learn agent frameworks: LangChain, CrewAI, and AutoGPT – follow their official tutorials and build simple notebooks.",
+    "3. Dive into tool‑use patterns: function calling, retrieval‑augmented generation, and external API integration.",
+    "4. Study real‑world agentic workflows on GitHub (search top‑starred repos, read their READMEs, replicate key pipelines).",
+    "5. Complete a short capstone: design a multi‑step agent that plans, fetches data, and executes a business task."
+  ],
+  "build": {
+    "title": "AI‑Agent Personal Finance Assistant",
+    "description": "An autonomous agent that ingests a user's bank CSV, categorizes expenses, queries a budgeting API, and generates a weekly spending report with visualizations. It showcases planning, tool use, API calls, and multi‑step reasoning—exactly what recruiters look for in agentic work.",
+    "stack": [
+      "Python",
+      "LangChain",
+      "OpenAI GPT‑4o",
+      "FastAPI",
+      "Pandas & Plotly",
+      "Docker"
+    ],
+    "deliverables": [
+      "GitHub repo with clean README and CI badge",
+      "Live demo on Render or Railway (public URL)",
+      "Technical write‑up + blog post on Medium linking to the repo"
+    ]
+  },
+  "publish": [
+    "1. Write a concise LinkedIn post with a GIF of the report generation, tag LangChain and OpenAI, and use #AIAgents #LLM #FinTech.",
+    "2. Submit the repo to the LangChain community showcase and the Hugging Face Spaces gallery.",
+    "3. Post a 5‑minute walkthrough video on YouTube and share it in the r/LocalLLaMA and r/MachineLearning subreddits.",
+    "4. Reach out to three recruiters specializing in AI/ML roles with a personalized message and link to the demo."
+  ],
+  "skills": [
+    "Prompt engineering & LLM API mastery",
+    "Agentic workflow design (planning, tool use, memory)",
+    "Python data processing (Pandas) and visualization",
+    "FastAPI backend & Docker containerization",
+    "CI/CD basics and cloud deployment",
+    "Technical writing & community outreach"
+  ],
+  "risks": [
+    "LLM cost can balloon if the demo isn’t throttled; set usage limits early.",
+    "Rapidly changing agent frameworks may deprecate functions—pin versions and stay updated.",
+    "Security of financial data: ensure you never push real credentials or personal CSVs to public repos."
+  ],
+  "confidence": "Given the strong signal scores and clear market demand, this recommendation is highly solid for a developer aiming to specialize in AI agents.",
+  "content_hash": "88f6dd6a767f570f",
+  "generated_for": {
+    "country": "Worldwide",
+    "city": null,
+    "goal": "career",
+    "profile": "developer"
+  }
+}
