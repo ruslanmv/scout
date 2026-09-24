@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T09:58:57.741402+00:00",
+  "generated_at": "2026-09-24T10:00:41.508187+00:00",
   "batch_count": 180,
   "goals": [
     "career",
@@ -19,7 +19,7 @@
   "reports": [
     {
       "report_id": "worldwide-global-career-developer",
-      "generated_at": "2026-09-23T09:58:57.697130+00:00",
+      "generated_at": "2026-09-24T10:00:41.465241+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -884,7 +884,7 @@
     },
     {
       "report_id": "worldwide-global-career-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.697423+00:00",
+      "generated_at": "2026-09-24T10:00:41.465513+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -1749,7 +1749,7 @@
     },
     {
       "report_id": "worldwide-global-career-student",
-      "generated_at": "2026-09-23T09:58:57.697662+00:00",
+      "generated_at": "2026-09-24T10:00:41.465747+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -2614,7 +2614,7 @@
     },
     {
       "report_id": "worldwide-global-career-founder",
-      "generated_at": "2026-09-23T09:58:57.697898+00:00",
+      "generated_at": "2026-09-24T10:00:41.465979+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -3479,7 +3479,7 @@
     },
     {
       "report_id": "worldwide-global-career-enterprise",
-      "generated_at": "2026-09-23T09:58:57.698190+00:00",
+      "generated_at": "2026-09-24T10:00:41.466225+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -4344,7 +4344,7 @@
     },
     {
       "report_id": "worldwide-global-career-agent",
-      "generated_at": "2026-09-23T09:58:57.698429+00:00",
+      "generated_at": "2026-09-24T10:00:41.466462+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -5209,7 +5209,7 @@
     },
     {
       "report_id": "worldwide-global-build_portfolio-developer",
-      "generated_at": "2026-09-23T09:58:57.698661+00:00",
+      "generated_at": "2026-09-24T10:00:41.466690+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -6074,7 +6074,7 @@
     },
     {
       "report_id": "worldwide-global-build_portfolio-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.698902+00:00",
+      "generated_at": "2026-09-24T10:00:41.466923+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -6939,7 +6939,7 @@
     },
     {
       "report_id": "worldwide-global-build_portfolio-student",
-      "generated_at": "2026-09-23T09:58:57.699228+00:00",
+      "generated_at": "2026-09-24T10:00:41.467219+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -7804,7 +7804,7 @@
     },
     {
       "report_id": "worldwide-global-build_portfolio-founder",
-      "generated_at": "2026-09-23T09:58:57.699458+00:00",
+      "generated_at": "2026-09-24T10:00:41.467455+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -8669,7 +8669,7 @@
     },
     {
       "report_id": "worldwide-global-build_portfolio-enterprise",
-      "generated_at": "2026-09-23T09:58:57.699695+00:00",
+      "generated_at": "2026-09-24T10:00:41.467687+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -9534,7 +9534,7 @@
     },
     {
       "report_id": "worldwide-global-build_portfolio-agent",
-      "generated_at": "2026-09-23T09:58:57.699969+00:00",
+      "generated_at": "2026-09-24T10:00:41.467918+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -10399,7 +10399,7 @@
     },
     {
       "report_id": "worldwide-global-create_agents-developer",
-      "generated_at": "2026-09-23T09:58:57.700209+00:00",
+      "generated_at": "2026-09-24T10:00:41.468162+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -11264,7 +11264,7 @@
     },
     {
       "report_id": "worldwide-global-create_agents-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.700449+00:00",
+      "generated_at": "2026-09-24T10:00:41.468400+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -12129,7 +12129,7 @@
     },
     {
       "report_id": "worldwide-global-create_agents-student",
-      "generated_at": "2026-09-23T09:58:57.700670+00:00",
+      "generated_at": "2026-09-24T10:00:41.468617+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -12994,7 +12994,7 @@
     },
     {
       "report_id": "worldwide-global-create_agents-founder",
-      "generated_at": "2026-09-23T09:58:57.700891+00:00",
+      "generated_at": "2026-09-24T10:00:41.468831+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -13859,7 +13859,7 @@
     },
     {
       "report_id": "worldwide-global-create_agents-enterprise",
-      "generated_at": "2026-09-23T09:58:57.701159+00:00",
+      "generated_at": "2026-09-24T10:00:41.469046+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -14724,7 +14724,7 @@
     },
     {
       "report_id": "worldwide-global-create_agents-agent",
-      "generated_at": "2026-09-23T09:58:57.701384+00:00",
+      "generated_at": "2026-09-24T10:00:41.469285+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -15589,7 +15589,7 @@
     },
     {
       "report_id": "worldwide-global-startup-developer",
-      "generated_at": "2026-09-23T09:58:57.701606+00:00",
+      "generated_at": "2026-09-24T10:00:41.469501+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -16454,7 +16454,7 @@
     },
     {
       "report_id": "worldwide-global-startup-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.701836+00:00",
+      "generated_at": "2026-09-24T10:00:41.469721+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -17319,7 +17319,7 @@
     },
     {
       "report_id": "worldwide-global-startup-student",
-      "generated_at": "2026-09-23T09:58:57.702096+00:00",
+      "generated_at": "2026-09-24T10:00:41.469940+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -18184,7 +18184,7 @@
     },
     {
       "report_id": "worldwide-global-startup-founder",
-      "generated_at": "2026-09-23T09:58:57.702317+00:00",
+      "generated_at": "2026-09-24T10:00:41.470167+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -19049,7 +19049,7 @@
     },
     {
       "report_id": "worldwide-global-startup-enterprise",
-      "generated_at": "2026-09-23T09:58:57.702538+00:00",
+      "generated_at": "2026-09-24T10:00:41.470388+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -19914,7 +19914,7 @@
     },
     {
       "report_id": "worldwide-global-startup-agent",
-      "generated_at": "2026-09-23T09:58:57.702763+00:00",
+      "generated_at": "2026-09-24T10:00:41.470608+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -20779,7 +20779,7 @@
     },
     {
       "report_id": "worldwide-global-research-developer",
-      "generated_at": "2026-09-23T09:58:57.703042+00:00",
+      "generated_at": "2026-09-24T10:00:41.470822+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -21644,7 +21644,7 @@
     },
     {
       "report_id": "worldwide-global-research-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.703275+00:00",
+      "generated_at": "2026-09-24T10:00:41.471035+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -22509,7 +22509,7 @@
     },
     {
       "report_id": "worldwide-global-research-student",
-      "generated_at": "2026-09-23T09:58:57.703497+00:00",
+      "generated_at": "2026-09-24T10:00:41.471287+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -23374,7 +23374,7 @@
     },
     {
       "report_id": "worldwide-global-research-founder",
-      "generated_at": "2026-09-23T09:58:57.703724+00:00",
+      "generated_at": "2026-09-24T10:00:41.471504+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -24239,7 +24239,7 @@
     },
     {
       "report_id": "worldwide-global-research-enterprise",
-      "generated_at": "2026-09-23T09:58:57.703970+00:00",
+      "generated_at": "2026-09-24T10:00:41.471710+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -25104,7 +25104,7 @@
     },
     {
       "report_id": "worldwide-global-research-agent",
-      "generated_at": "2026-09-23T09:58:57.704248+00:00",
+      "generated_at": "2026-09-24T10:00:41.471969+00:00",
       "location": {
         "country": "Worldwide",
         "city": null
@@ -25969,7 +25969,7 @@
     },
     {
       "report_id": "italy-rome-career-developer",
-      "generated_at": "2026-09-23T09:58:57.704483+00:00",
+      "generated_at": "2026-09-24T10:00:41.472216+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -26831,7 +26831,7 @@
     },
     {
       "report_id": "italy-rome-career-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.704707+00:00",
+      "generated_at": "2026-09-24T10:00:41.472439+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -27695,7 +27695,7 @@
     },
     {
       "report_id": "italy-rome-career-student",
-      "generated_at": "2026-09-23T09:58:57.704949+00:00",
+      "generated_at": "2026-09-24T10:00:41.472651+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -28557,7 +28557,7 @@
     },
     {
       "report_id": "italy-rome-career-founder",
-      "generated_at": "2026-09-23T09:58:57.705183+00:00",
+      "generated_at": "2026-09-24T10:00:41.472872+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -29419,7 +29419,7 @@
     },
     {
       "report_id": "italy-rome-career-enterprise",
-      "generated_at": "2026-09-23T09:58:57.705401+00:00",
+      "generated_at": "2026-09-24T10:00:41.473079+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -30281,7 +30281,7 @@
     },
     {
       "report_id": "italy-rome-career-agent",
-      "generated_at": "2026-09-23T09:58:57.705620+00:00",
+      "generated_at": "2026-09-24T10:00:41.473310+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -31143,7 +31143,7 @@
     },
     {
       "report_id": "italy-rome-build_portfolio-developer",
-      "generated_at": "2026-09-23T09:58:57.705846+00:00",
+      "generated_at": "2026-09-24T10:00:41.473525+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -32007,7 +32007,7 @@
     },
     {
       "report_id": "italy-rome-build_portfolio-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.706119+00:00",
+      "generated_at": "2026-09-24T10:00:41.473744+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -32871,7 +32871,7 @@
     },
     {
       "report_id": "italy-rome-build_portfolio-student",
-      "generated_at": "2026-09-23T09:58:57.706336+00:00",
+      "generated_at": "2026-09-24T10:00:41.473954+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -33733,7 +33733,7 @@
     },
     {
       "report_id": "italy-rome-build_portfolio-founder",
-      "generated_at": "2026-09-23T09:58:57.706568+00:00",
+      "generated_at": "2026-09-24T10:00:41.474202+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -34595,7 +34595,7 @@
     },
     {
       "report_id": "italy-rome-build_portfolio-enterprise",
-      "generated_at": "2026-09-23T09:58:57.706788+00:00",
+      "generated_at": "2026-09-24T10:00:41.474418+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -35457,7 +35457,7 @@
     },
     {
       "report_id": "italy-rome-build_portfolio-agent",
-      "generated_at": "2026-09-23T09:58:57.707067+00:00",
+      "generated_at": "2026-09-24T10:00:41.474628+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -36319,7 +36319,7 @@
     },
     {
       "report_id": "italy-rome-create_agents-developer",
-      "generated_at": "2026-09-23T09:58:57.707298+00:00",
+      "generated_at": "2026-09-24T10:00:41.474842+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -37183,7 +37183,7 @@
     },
     {
       "report_id": "italy-rome-create_agents-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.707539+00:00",
+      "generated_at": "2026-09-24T10:00:41.475071+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -38047,7 +38047,7 @@
     },
     {
       "report_id": "italy-rome-create_agents-student",
-      "generated_at": "2026-09-23T09:58:57.707757+00:00",
+      "generated_at": "2026-09-24T10:00:41.475311+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -38909,7 +38909,7 @@
     },
     {
       "report_id": "italy-rome-create_agents-founder",
-      "generated_at": "2026-09-23T09:58:57.708028+00:00",
+      "generated_at": "2026-09-24T10:00:41.475528+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -39771,7 +39771,7 @@
     },
     {
       "report_id": "italy-rome-create_agents-enterprise",
-      "generated_at": "2026-09-23T09:58:57.708265+00:00",
+      "generated_at": "2026-09-24T10:00:41.475749+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -40633,7 +40633,7 @@
     },
     {
       "report_id": "italy-rome-create_agents-agent",
-      "generated_at": "2026-09-23T09:58:57.708483+00:00",
+      "generated_at": "2026-09-24T10:00:41.475959+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -41495,7 +41495,7 @@
     },
     {
       "report_id": "italy-rome-startup-developer",
-      "generated_at": "2026-09-23T09:58:57.708706+00:00",
+      "generated_at": "2026-09-24T10:00:41.476209+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -42359,7 +42359,7 @@
     },
     {
       "report_id": "italy-rome-startup-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.709010+00:00",
+      "generated_at": "2026-09-24T10:00:41.476483+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -43223,7 +43223,7 @@
     },
     {
       "report_id": "italy-rome-startup-student",
-      "generated_at": "2026-09-23T09:58:57.709238+00:00",
+      "generated_at": "2026-09-24T10:00:41.476698+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -44085,7 +44085,7 @@
     },
     {
       "report_id": "italy-rome-startup-founder",
-      "generated_at": "2026-09-23T09:58:57.709453+00:00",
+      "generated_at": "2026-09-24T10:00:41.476919+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -44947,7 +44947,7 @@
     },
     {
       "report_id": "italy-rome-startup-enterprise",
-      "generated_at": "2026-09-23T09:58:57.709673+00:00",
+      "generated_at": "2026-09-24T10:00:41.477155+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -45809,7 +45809,7 @@
     },
     {
       "report_id": "italy-rome-startup-agent",
-      "generated_at": "2026-09-23T09:58:57.709896+00:00",
+      "generated_at": "2026-09-24T10:00:41.477388+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -46671,7 +46671,7 @@
     },
     {
       "report_id": "italy-rome-research-developer",
-      "generated_at": "2026-09-23T09:58:57.710154+00:00",
+      "generated_at": "2026-09-24T10:00:41.477612+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -47535,7 +47535,7 @@
     },
     {
       "report_id": "italy-rome-research-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.710375+00:00",
+      "generated_at": "2026-09-24T10:00:41.477826+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -48399,7 +48399,7 @@
     },
     {
       "report_id": "italy-rome-research-student",
-      "generated_at": "2026-09-23T09:58:57.710613+00:00",
+      "generated_at": "2026-09-24T10:00:41.478037+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -49261,7 +49261,7 @@
     },
     {
       "report_id": "italy-rome-research-founder",
-      "generated_at": "2026-09-23T09:58:57.710839+00:00",
+      "generated_at": "2026-09-24T10:00:41.478268+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -50123,7 +50123,7 @@
     },
     {
       "report_id": "italy-rome-research-enterprise",
-      "generated_at": "2026-09-23T09:58:57.711106+00:00",
+      "generated_at": "2026-09-24T10:00:41.478479+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -50985,7 +50985,7 @@
     },
     {
       "report_id": "italy-rome-research-agent",
-      "generated_at": "2026-09-23T09:58:57.711344+00:00",
+      "generated_at": "2026-09-24T10:00:41.478704+00:00",
       "location": {
         "country": "Italy",
         "city": "Rome"
@@ -51847,7 +51847,7 @@
     },
     {
       "report_id": "italy-milan-career-developer",
-      "generated_at": "2026-09-23T09:58:57.711573+00:00",
+      "generated_at": "2026-09-24T10:00:41.478917+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -52712,7 +52712,7 @@
     },
     {
       "report_id": "italy-milan-career-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.711794+00:00",
+      "generated_at": "2026-09-24T10:00:41.479152+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -53577,7 +53577,7 @@
     },
     {
       "report_id": "italy-milan-career-student",
-      "generated_at": "2026-09-23T09:58:57.712068+00:00",
+      "generated_at": "2026-09-24T10:00:41.479377+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -54442,7 +54442,7 @@
     },
     {
       "report_id": "italy-milan-career-founder",
-      "generated_at": "2026-09-23T09:58:57.712305+00:00",
+      "generated_at": "2026-09-24T10:00:41.479589+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -55307,7 +55307,7 @@
     },
     {
       "report_id": "italy-milan-career-enterprise",
-      "generated_at": "2026-09-23T09:58:57.712525+00:00",
+      "generated_at": "2026-09-24T10:00:41.479796+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -56172,7 +56172,7 @@
     },
     {
       "report_id": "italy-milan-career-agent",
-      "generated_at": "2026-09-23T09:58:57.712749+00:00",
+      "generated_at": "2026-09-24T10:00:41.480012+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -57037,7 +57037,7 @@
     },
     {
       "report_id": "italy-milan-build_portfolio-developer",
-      "generated_at": "2026-09-23T09:58:57.712993+00:00",
+      "generated_at": "2026-09-24T10:00:41.480242+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -57902,7 +57902,7 @@
     },
     {
       "report_id": "italy-milan-build_portfolio-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.713223+00:00",
+      "generated_at": "2026-09-24T10:00:41.480457+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -58767,7 +58767,7 @@
     },
     {
       "report_id": "italy-milan-build_portfolio-student",
-      "generated_at": "2026-09-23T09:58:57.713439+00:00",
+      "generated_at": "2026-09-24T10:00:41.480671+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -59632,7 +59632,7 @@
     },
     {
       "report_id": "italy-milan-build_portfolio-founder",
-      "generated_at": "2026-09-23T09:58:57.713670+00:00",
+      "generated_at": "2026-09-24T10:00:41.480880+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -60497,7 +60497,7 @@
     },
     {
       "report_id": "italy-milan-build_portfolio-enterprise",
-      "generated_at": "2026-09-23T09:58:57.714155+00:00",
+      "generated_at": "2026-09-24T10:00:41.481128+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -61362,7 +61362,7 @@
     },
     {
       "report_id": "italy-milan-build_portfolio-agent",
-      "generated_at": "2026-09-23T09:58:57.714443+00:00",
+      "generated_at": "2026-09-24T10:00:41.481360+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -62227,7 +62227,7 @@
     },
     {
       "report_id": "italy-milan-create_agents-developer",
-      "generated_at": "2026-09-23T09:58:57.714712+00:00",
+      "generated_at": "2026-09-24T10:00:41.481575+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -63092,7 +63092,7 @@
     },
     {
       "report_id": "italy-milan-create_agents-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.714981+00:00",
+      "generated_at": "2026-09-24T10:00:41.481792+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -63957,7 +63957,7 @@
     },
     {
       "report_id": "italy-milan-create_agents-student",
-      "generated_at": "2026-09-23T09:58:57.715223+00:00",
+      "generated_at": "2026-09-24T10:00:41.481998+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -64822,7 +64822,7 @@
     },
     {
       "report_id": "italy-milan-create_agents-founder",
-      "generated_at": "2026-09-23T09:58:57.715479+00:00",
+      "generated_at": "2026-09-24T10:00:41.482231+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -65687,7 +65687,7 @@
     },
     {
       "report_id": "italy-milan-create_agents-enterprise",
-      "generated_at": "2026-09-23T09:58:57.715747+00:00",
+      "generated_at": "2026-09-24T10:00:41.482432+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -66552,7 +66552,7 @@
     },
     {
       "report_id": "italy-milan-create_agents-agent",
-      "generated_at": "2026-09-23T09:58:57.716052+00:00",
+      "generated_at": "2026-09-24T10:00:41.482648+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -67417,7 +67417,7 @@
     },
     {
       "report_id": "italy-milan-startup-developer",
-      "generated_at": "2026-09-23T09:58:57.716282+00:00",
+      "generated_at": "2026-09-24T10:00:41.482860+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -68282,7 +68282,7 @@
     },
     {
       "report_id": "italy-milan-startup-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.716516+00:00",
+      "generated_at": "2026-09-24T10:00:41.483080+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -69147,7 +69147,7 @@
     },
     {
       "report_id": "italy-milan-startup-student",
-      "generated_at": "2026-09-23T09:58:57.716743+00:00",
+      "generated_at": "2026-09-24T10:00:41.483321+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -70012,7 +70012,7 @@
     },
     {
       "report_id": "italy-milan-startup-founder",
-      "generated_at": "2026-09-23T09:58:57.717075+00:00",
+      "generated_at": "2026-09-24T10:00:41.483537+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -70877,7 +70877,7 @@
     },
     {
       "report_id": "italy-milan-startup-enterprise",
-      "generated_at": "2026-09-23T09:58:57.717305+00:00",
+      "generated_at": "2026-09-24T10:00:41.483753+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -71742,7 +71742,7 @@
     },
     {
       "report_id": "italy-milan-startup-agent",
-      "generated_at": "2026-09-23T09:58:57.717522+00:00",
+      "generated_at": "2026-09-24T10:00:41.483967+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -72607,7 +72607,7 @@
     },
     {
       "report_id": "italy-milan-research-developer",
-      "generated_at": "2026-09-23T09:58:57.717739+00:00",
+      "generated_at": "2026-09-24T10:00:41.484203+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -73472,7 +73472,7 @@
     },
     {
       "report_id": "italy-milan-research-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.718004+00:00",
+      "generated_at": "2026-09-24T10:00:41.484419+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -74337,7 +74337,7 @@
     },
     {
       "report_id": "italy-milan-research-student",
-      "generated_at": "2026-09-23T09:58:57.718226+00:00",
+      "generated_at": "2026-09-24T10:00:41.484628+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -75202,7 +75202,7 @@
     },
     {
       "report_id": "italy-milan-research-founder",
-      "generated_at": "2026-09-23T09:58:57.718446+00:00",
+      "generated_at": "2026-09-24T10:00:41.484842+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -76067,7 +76067,7 @@
     },
     {
       "report_id": "italy-milan-research-enterprise",
-      "generated_at": "2026-09-23T09:58:57.718660+00:00",
+      "generated_at": "2026-09-24T10:00:41.485056+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -76932,7 +76932,7 @@
     },
     {
       "report_id": "italy-milan-research-agent",
-      "generated_at": "2026-09-23T09:58:57.718883+00:00",
+      "generated_at": "2026-09-24T10:00:41.485291+00:00",
       "location": {
         "country": "Italy",
         "city": "Milan"
@@ -77797,7 +77797,7 @@
     },
     {
       "report_id": "italy-turin-career-developer",
-      "generated_at": "2026-09-23T09:58:57.719207+00:00",
+      "generated_at": "2026-09-24T10:00:41.485549+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -78659,7 +78659,7 @@
     },
     {
       "report_id": "italy-turin-career-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.719440+00:00",
+      "generated_at": "2026-09-24T10:00:41.485767+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -79523,7 +79523,7 @@
     },
     {
       "report_id": "italy-turin-career-student",
-      "generated_at": "2026-09-23T09:58:57.719665+00:00",
+      "generated_at": "2026-09-24T10:00:41.485981+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -80385,7 +80385,7 @@
     },
     {
       "report_id": "italy-turin-career-founder",
-      "generated_at": "2026-09-23T09:58:57.719895+00:00",
+      "generated_at": "2026-09-24T10:00:41.486220+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -81247,7 +81247,7 @@
     },
     {
       "report_id": "italy-turin-career-enterprise",
-      "generated_at": "2026-09-23T09:58:57.720191+00:00",
+      "generated_at": "2026-09-24T10:00:41.486443+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -82109,7 +82109,7 @@
     },
     {
       "report_id": "italy-turin-career-agent",
-      "generated_at": "2026-09-23T09:58:57.720421+00:00",
+      "generated_at": "2026-09-24T10:00:41.486661+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -82971,7 +82971,7 @@
     },
     {
       "report_id": "italy-turin-build_portfolio-developer",
-      "generated_at": "2026-09-23T09:58:57.720646+00:00",
+      "generated_at": "2026-09-24T10:00:41.486886+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -83835,7 +83835,7 @@
     },
     {
       "report_id": "italy-turin-build_portfolio-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.720869+00:00",
+      "generated_at": "2026-09-24T10:00:41.487104+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -84699,7 +84699,7 @@
     },
     {
       "report_id": "italy-turin-build_portfolio-student",
-      "generated_at": "2026-09-23T09:58:57.721115+00:00",
+      "generated_at": "2026-09-24T10:00:41.487345+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -85561,7 +85561,7 @@
     },
     {
       "report_id": "italy-turin-build_portfolio-founder",
-      "generated_at": "2026-09-23T09:58:57.721341+00:00",
+      "generated_at": "2026-09-24T10:00:41.487562+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -86423,7 +86423,7 @@
     },
     {
       "report_id": "italy-turin-build_portfolio-enterprise",
-      "generated_at": "2026-09-23T09:58:57.721562+00:00",
+      "generated_at": "2026-09-24T10:00:41.487779+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -87285,7 +87285,7 @@
     },
     {
       "report_id": "italy-turin-build_portfolio-agent",
-      "generated_at": "2026-09-23T09:58:57.721789+00:00",
+      "generated_at": "2026-09-24T10:00:41.487995+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -88147,7 +88147,7 @@
     },
     {
       "report_id": "italy-turin-create_agents-developer",
-      "generated_at": "2026-09-23T09:58:57.722055+00:00",
+      "generated_at": "2026-09-24T10:00:41.488243+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -89011,7 +89011,7 @@
     },
     {
       "report_id": "italy-turin-create_agents-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.722300+00:00",
+      "generated_at": "2026-09-24T10:00:41.488465+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -89875,7 +89875,7 @@
     },
     {
       "report_id": "italy-turin-create_agents-student",
-      "generated_at": "2026-09-23T09:58:57.722525+00:00",
+      "generated_at": "2026-09-24T10:00:41.488678+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -90737,7 +90737,7 @@
     },
     {
       "report_id": "italy-turin-create_agents-founder",
-      "generated_at": "2026-09-23T09:58:57.722755+00:00",
+      "generated_at": "2026-09-24T10:00:41.488892+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -91599,7 +91599,7 @@
     },
     {
       "report_id": "italy-turin-create_agents-enterprise",
-      "generated_at": "2026-09-23T09:58:57.723039+00:00",
+      "generated_at": "2026-09-24T10:00:41.489101+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -92461,7 +92461,7 @@
     },
     {
       "report_id": "italy-turin-create_agents-agent",
-      "generated_at": "2026-09-23T09:58:57.723274+00:00",
+      "generated_at": "2026-09-24T10:00:41.489400+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -93323,7 +93323,7 @@
     },
     {
       "report_id": "italy-turin-startup-developer",
-      "generated_at": "2026-09-23T09:58:57.723500+00:00",
+      "generated_at": "2026-09-24T10:00:41.489767+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -94187,7 +94187,7 @@
     },
     {
       "report_id": "italy-turin-startup-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.723731+00:00",
+      "generated_at": "2026-09-24T10:00:41.490058+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -95051,7 +95051,7 @@
     },
     {
       "report_id": "italy-turin-startup-student",
-      "generated_at": "2026-09-23T09:58:57.723994+00:00",
+      "generated_at": "2026-09-24T10:00:41.490341+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -95913,7 +95913,7 @@
     },
     {
       "report_id": "italy-turin-startup-founder",
-      "generated_at": "2026-09-23T09:58:57.724266+00:00",
+      "generated_at": "2026-09-24T10:00:41.490602+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -96775,7 +96775,7 @@
     },
     {
       "report_id": "italy-turin-startup-enterprise",
-      "generated_at": "2026-09-23T09:58:57.724489+00:00",
+      "generated_at": "2026-09-24T10:00:41.490879+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -97637,7 +97637,7 @@
     },
     {
       "report_id": "italy-turin-startup-agent",
-      "generated_at": "2026-09-23T09:58:57.724720+00:00",
+      "generated_at": "2026-09-24T10:00:41.491272+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -98499,7 +98499,7 @@
     },
     {
       "report_id": "italy-turin-research-developer",
-      "generated_at": "2026-09-23T09:58:57.724965+00:00",
+      "generated_at": "2026-09-24T10:00:41.491640+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -99363,7 +99363,7 @@
     },
     {
       "report_id": "italy-turin-research-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.725197+00:00",
+      "generated_at": "2026-09-24T10:00:41.492008+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -100227,7 +100227,7 @@
     },
     {
       "report_id": "italy-turin-research-student",
-      "generated_at": "2026-09-23T09:58:57.725456+00:00",
+      "generated_at": "2026-09-24T10:00:41.492399+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -101089,7 +101089,7 @@
     },
     {
       "report_id": "italy-turin-research-founder",
-      "generated_at": "2026-09-23T09:58:57.725689+00:00",
+      "generated_at": "2026-09-24T10:00:41.492750+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -101951,7 +101951,7 @@
     },
     {
       "report_id": "italy-turin-research-enterprise",
-      "generated_at": "2026-09-23T09:58:57.725902+00:00",
+      "generated_at": "2026-09-24T10:00:41.493104+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -102813,7 +102813,7 @@
     },
     {
       "report_id": "italy-turin-research-agent",
-      "generated_at": "2026-09-23T09:58:57.726157+00:00",
+      "generated_at": "2026-09-24T10:00:41.493498+00:00",
       "location": {
         "country": "Italy",
         "city": "Turin"
@@ -103675,7 +103675,7 @@
     },
     {
       "report_id": "united-states-san-francisco-career-developer",
-      "generated_at": "2026-09-23T09:58:57.726388+00:00",
+      "generated_at": "2026-09-24T10:00:41.493866+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -104540,7 +104540,7 @@
     },
     {
       "report_id": "united-states-san-francisco-career-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.726617+00:00",
+      "generated_at": "2026-09-24T10:00:41.494256+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -105405,7 +105405,7 @@
     },
     {
       "report_id": "united-states-san-francisco-career-student",
-      "generated_at": "2026-09-23T09:58:57.726840+00:00",
+      "generated_at": "2026-09-24T10:00:41.494606+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -106270,7 +106270,7 @@
     },
     {
       "report_id": "united-states-san-francisco-career-founder",
-      "generated_at": "2026-09-23T09:58:57.727116+00:00",
+      "generated_at": "2026-09-24T10:00:41.494971+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -107135,7 +107135,7 @@
     },
     {
       "report_id": "united-states-san-francisco-career-enterprise",
-      "generated_at": "2026-09-23T09:58:57.727342+00:00",
+      "generated_at": "2026-09-24T10:00:41.495336+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -108000,7 +108000,7 @@
     },
     {
       "report_id": "united-states-san-francisco-career-agent",
-      "generated_at": "2026-09-23T09:58:57.727562+00:00",
+      "generated_at": "2026-09-24T10:00:41.495562+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -108865,7 +108865,7 @@
     },
     {
       "report_id": "united-states-san-francisco-build_portfolio-developer",
-      "generated_at": "2026-09-23T09:58:57.727786+00:00",
+      "generated_at": "2026-09-24T10:00:41.495784+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -109730,7 +109730,7 @@
     },
     {
       "report_id": "united-states-san-francisco-build_portfolio-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.728070+00:00",
+      "generated_at": "2026-09-24T10:00:41.496006+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -110595,7 +110595,7 @@
     },
     {
       "report_id": "united-states-san-francisco-build_portfolio-student",
-      "generated_at": "2026-09-23T09:58:57.728296+00:00",
+      "generated_at": "2026-09-24T10:00:41.496247+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -111460,7 +111460,7 @@
     },
     {
       "report_id": "united-states-san-francisco-build_portfolio-founder",
-      "generated_at": "2026-09-23T09:58:57.728523+00:00",
+      "generated_at": "2026-09-24T10:00:41.496465+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -112325,7 +112325,7 @@
     },
     {
       "report_id": "united-states-san-francisco-build_portfolio-enterprise",
-      "generated_at": "2026-09-23T09:58:57.728745+00:00",
+      "generated_at": "2026-09-24T10:00:41.496685+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -113190,7 +113190,7 @@
     },
     {
       "report_id": "united-states-san-francisco-build_portfolio-agent",
-      "generated_at": "2026-09-23T09:58:57.729043+00:00",
+      "generated_at": "2026-09-24T10:00:41.496941+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -114055,7 +114055,7 @@
     },
     {
       "report_id": "united-states-san-francisco-create_agents-developer",
-      "generated_at": "2026-09-23T09:58:57.729276+00:00",
+      "generated_at": "2026-09-24T10:00:41.497174+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -114920,7 +114920,7 @@
     },
     {
       "report_id": "united-states-san-francisco-create_agents-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.729505+00:00",
+      "generated_at": "2026-09-24T10:00:41.497403+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -115785,7 +115785,7 @@
     },
     {
       "report_id": "united-states-san-francisco-create_agents-student",
-      "generated_at": "2026-09-23T09:58:57.729733+00:00",
+      "generated_at": "2026-09-24T10:00:41.497617+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -116650,7 +116650,7 @@
     },
     {
       "report_id": "united-states-san-francisco-create_agents-founder",
-      "generated_at": "2026-09-23T09:58:57.730009+00:00",
+      "generated_at": "2026-09-24T10:00:41.497829+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -117515,7 +117515,7 @@
     },
     {
       "report_id": "united-states-san-francisco-create_agents-enterprise",
-      "generated_at": "2026-09-23T09:58:57.730284+00:00",
+      "generated_at": "2026-09-24T10:00:41.498040+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -118380,7 +118380,7 @@
     },
     {
       "report_id": "united-states-san-francisco-create_agents-agent",
-      "generated_at": "2026-09-23T09:58:57.730513+00:00",
+      "generated_at": "2026-09-24T10:00:41.498276+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -119245,7 +119245,7 @@
     },
     {
       "report_id": "united-states-san-francisco-startup-developer",
-      "generated_at": "2026-09-23T09:58:57.730740+00:00",
+      "generated_at": "2026-09-24T10:00:41.498499+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -120110,7 +120110,7 @@
     },
     {
       "report_id": "united-states-san-francisco-startup-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.731036+00:00",
+      "generated_at": "2026-09-24T10:00:41.498729+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -120975,7 +120975,7 @@
     },
     {
       "report_id": "united-states-san-francisco-startup-student",
-      "generated_at": "2026-09-23T09:58:57.731273+00:00",
+      "generated_at": "2026-09-24T10:00:41.498947+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -121840,7 +121840,7 @@
     },
     {
       "report_id": "united-states-san-francisco-startup-founder",
-      "generated_at": "2026-09-23T09:58:57.731498+00:00",
+      "generated_at": "2026-09-24T10:00:41.499171+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -122705,7 +122705,7 @@
     },
     {
       "report_id": "united-states-san-francisco-startup-enterprise",
-      "generated_at": "2026-09-23T09:58:57.731721+00:00",
+      "generated_at": "2026-09-24T10:00:41.499386+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -123570,7 +123570,7 @@
     },
     {
       "report_id": "united-states-san-francisco-startup-agent",
-      "generated_at": "2026-09-23T09:58:57.731981+00:00",
+      "generated_at": "2026-09-24T10:00:41.499606+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -124435,7 +124435,7 @@
     },
     {
       "report_id": "united-states-san-francisco-research-developer",
-      "generated_at": "2026-09-23T09:58:57.732215+00:00",
+      "generated_at": "2026-09-24T10:00:41.499820+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -125300,7 +125300,7 @@
     },
     {
       "report_id": "united-states-san-francisco-research-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.732439+00:00",
+      "generated_at": "2026-09-24T10:00:41.500031+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -126165,7 +126165,7 @@
     },
     {
       "report_id": "united-states-san-francisco-research-student",
-      "generated_at": "2026-09-23T09:58:57.732654+00:00",
+      "generated_at": "2026-09-24T10:00:41.500259+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -127030,7 +127030,7 @@
     },
     {
       "report_id": "united-states-san-francisco-research-founder",
-      "generated_at": "2026-09-23T09:58:57.732871+00:00",
+      "generated_at": "2026-09-24T10:00:41.500474+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -127895,7 +127895,7 @@
     },
     {
       "report_id": "united-states-san-francisco-research-enterprise",
-      "generated_at": "2026-09-23T09:58:57.733109+00:00",
+      "generated_at": "2026-09-24T10:00:41.500681+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -128760,7 +128760,7 @@
     },
     {
       "report_id": "united-states-san-francisco-research-agent",
-      "generated_at": "2026-09-23T09:58:57.733327+00:00",
+      "generated_at": "2026-09-24T10:00:41.500893+00:00",
       "location": {
         "country": "United States",
         "city": "San Francisco"
@@ -129625,7 +129625,7 @@
     },
     {
       "report_id": "india-bengaluru-career-developer",
-      "generated_at": "2026-09-23T09:58:57.733563+00:00",
+      "generated_at": "2026-09-24T10:00:41.501112+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -130474,7 +130474,7 @@
     },
     {
       "report_id": "india-bengaluru-career-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.733790+00:00",
+      "generated_at": "2026-09-24T10:00:41.501356+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -131323,7 +131323,7 @@
     },
     {
       "report_id": "india-bengaluru-career-student",
-      "generated_at": "2026-09-23T09:58:57.734079+00:00",
+      "generated_at": "2026-09-24T10:00:41.501621+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -132172,7 +132172,7 @@
     },
     {
       "report_id": "india-bengaluru-career-founder",
-      "generated_at": "2026-09-23T09:58:57.734308+00:00",
+      "generated_at": "2026-09-24T10:00:41.501842+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -133021,7 +133021,7 @@
     },
     {
       "report_id": "india-bengaluru-career-enterprise",
-      "generated_at": "2026-09-23T09:58:57.734532+00:00",
+      "generated_at": "2026-09-24T10:00:41.502054+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -133870,7 +133870,7 @@
     },
     {
       "report_id": "india-bengaluru-career-agent",
-      "generated_at": "2026-09-23T09:58:57.734749+00:00",
+      "generated_at": "2026-09-24T10:00:41.502287+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -134735,7 +134735,7 @@
     },
     {
       "report_id": "india-bengaluru-build_portfolio-developer",
-      "generated_at": "2026-09-23T09:58:57.735033+00:00",
+      "generated_at": "2026-09-24T10:00:41.502508+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -135584,7 +135584,7 @@
     },
     {
       "report_id": "india-bengaluru-build_portfolio-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.735275+00:00",
+      "generated_at": "2026-09-24T10:00:41.502734+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -136433,7 +136433,7 @@
     },
     {
       "report_id": "india-bengaluru-build_portfolio-student",
-      "generated_at": "2026-09-23T09:58:57.735490+00:00",
+      "generated_at": "2026-09-24T10:00:41.502948+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -137282,7 +137282,7 @@
     },
     {
       "report_id": "india-bengaluru-build_portfolio-founder",
-      "generated_at": "2026-09-23T09:58:57.735709+00:00",
+      "generated_at": "2026-09-24T10:00:41.503186+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -138131,7 +138131,7 @@
     },
     {
       "report_id": "india-bengaluru-build_portfolio-enterprise",
-      "generated_at": "2026-09-23T09:58:57.735961+00:00",
+      "generated_at": "2026-09-24T10:00:41.503407+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -138980,7 +138980,7 @@
     },
     {
       "report_id": "india-bengaluru-build_portfolio-agent",
-      "generated_at": "2026-09-23T09:58:57.736208+00:00",
+      "generated_at": "2026-09-24T10:00:41.503618+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -139845,7 +139845,7 @@
     },
     {
       "report_id": "india-bengaluru-create_agents-developer",
-      "generated_at": "2026-09-23T09:58:57.736438+00:00",
+      "generated_at": "2026-09-24T10:00:41.503835+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -140694,7 +140694,7 @@
     },
     {
       "report_id": "india-bengaluru-create_agents-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.736669+00:00",
+      "generated_at": "2026-09-24T10:00:41.504054+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -141559,7 +141559,7 @@
     },
     {
       "report_id": "india-bengaluru-create_agents-student",
-      "generated_at": "2026-09-23T09:58:57.736897+00:00",
+      "generated_at": "2026-09-24T10:00:41.504287+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -142424,7 +142424,7 @@
     },
     {
       "report_id": "india-bengaluru-create_agents-founder",
-      "generated_at": "2026-09-23T09:58:57.737140+00:00",
+      "generated_at": "2026-09-24T10:00:41.504502+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -143289,7 +143289,7 @@
     },
     {
       "report_id": "india-bengaluru-create_agents-enterprise",
-      "generated_at": "2026-09-23T09:58:57.737367+00:00",
+      "generated_at": "2026-09-24T10:00:41.504716+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -144154,7 +144154,7 @@
     },
     {
       "report_id": "india-bengaluru-create_agents-agent",
-      "generated_at": "2026-09-23T09:58:57.737581+00:00",
+      "generated_at": "2026-09-24T10:00:41.504933+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -145019,7 +145019,7 @@
     },
     {
       "report_id": "india-bengaluru-startup-developer",
-      "generated_at": "2026-09-23T09:58:57.737804+00:00",
+      "generated_at": "2026-09-24T10:00:41.505162+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -145868,7 +145868,7 @@
     },
     {
       "report_id": "india-bengaluru-startup-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.738060+00:00",
+      "generated_at": "2026-09-24T10:00:41.505394+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -146717,7 +146717,7 @@
     },
     {
       "report_id": "india-bengaluru-startup-student",
-      "generated_at": "2026-09-23T09:58:57.738289+00:00",
+      "generated_at": "2026-09-24T10:00:41.505611+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -147566,7 +147566,7 @@
     },
     {
       "report_id": "india-bengaluru-startup-founder",
-      "generated_at": "2026-09-23T09:58:57.738503+00:00",
+      "generated_at": "2026-09-24T10:00:41.505820+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -148415,7 +148415,7 @@
     },
     {
       "report_id": "india-bengaluru-startup-enterprise",
-      "generated_at": "2026-09-23T09:58:57.739700+00:00",
+      "generated_at": "2026-09-24T10:00:41.506578+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -149264,7 +149264,7 @@
     },
     {
       "report_id": "india-bengaluru-startup-agent",
-      "generated_at": "2026-09-23T09:58:57.739978+00:00",
+      "generated_at": "2026-09-24T10:00:41.506810+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -150129,7 +150129,7 @@
     },
     {
       "report_id": "india-bengaluru-research-developer",
-      "generated_at": "2026-09-23T09:58:57.740218+00:00",
+      "generated_at": "2026-09-24T10:00:41.507032+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -150978,7 +150978,7 @@
     },
     {
       "report_id": "india-bengaluru-research-ai_engineer",
-      "generated_at": "2026-09-23T09:58:57.740452+00:00",
+      "generated_at": "2026-09-24T10:00:41.507270+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -151827,7 +151827,7 @@
     },
     {
       "report_id": "india-bengaluru-research-student",
-      "generated_at": "2026-09-23T09:58:57.740677+00:00",
+      "generated_at": "2026-09-24T10:00:41.507509+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -152676,7 +152676,7 @@
     },
     {
       "report_id": "india-bengaluru-research-founder",
-      "generated_at": "2026-09-23T09:58:57.740899+00:00",
+      "generated_at": "2026-09-24T10:00:41.507724+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -153525,7 +153525,7 @@
     },
     {
       "report_id": "india-bengaluru-research-enterprise",
-      "generated_at": "2026-09-23T09:58:57.741139+00:00",
+      "generated_at": "2026-09-24T10:00:41.507934+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"
@@ -154374,7 +154374,7 @@
     },
     {
       "report_id": "india-bengaluru-research-agent",
-      "generated_at": "2026-09-23T09:58:57.741384+00:00",
+      "generated_at": "2026-09-24T10:00:41.508168+00:00",
       "location": {
         "country": "India",
         "city": "Bengaluru"

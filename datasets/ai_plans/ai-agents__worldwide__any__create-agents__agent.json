@@ -1,0 +1,63 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-24T10:01:47.308020+00:00",
+  "headline": "Launch your own AI Agent that orchestrates tools and APIs—show the world you can build the next‑gen workflow engine.",
+  "why_now": "Signal scores above 85 across GitHub, Hugging Face, and news outlets prove that AI agents are exploding in interest and hiring demand. The rapid growth (94) and high project potential (96) mean a portfolio demo will instantly resonate with recruiters and open‑source communities.",
+  "study": [
+    "Complete the LangChain fundamentals tutorial (focus on tool use and memory).",
+    "Build a simple OpenAI‑powered planner that can call a REST API (e.g., weather or calendar).",
+    "Learn agent orchestration with ReAct/Toolformer patterns on Hugging Face examples.",
+    "Study production best‑practices: Docker, FastAPI, async handling, and logging.",
+    "Read two recent papers/blogs on agentic workflows (e.g., AutoGPT, BabyAGI) and note their limitations."
+  ],
+  "build": {
+    "title": "Multi‑Tool Personal Assistant Agent",
+    "description": "An AI agent that receives natural‑language requests, decides which external tool to invoke (calendar, email, web search, or code execution), calls the appropriate API, and returns a concise result. It demonstrates end‑to‑end planning, tool integration, and stateful memory—exactly what employers are looking for in agentic work.",
+    "stack": [
+      "Python 3.11",
+      "LangChain",
+      "OpenAI GPT‑4o API",
+      "FastAPI (HTTP interface)",
+      "Docker & Docker Compose",
+      "Redis for short‑term memory",
+      "GitHub Actions CI"
+    ],
+    "deliverables": [
+      "GitHub repo with clean README and CI badge",
+      "Live demo hosted on Render or Railway (public URL)",
+      "Technical write‑up (medium article) describing architecture, challenges, and future extensions"
+    ]
+  },
+  "publish": [
+    "Post the repo link and demo video in the #ai-agents channel of the LangChain Discord and tag the community moderators.",
+    "Write a concise LinkedIn carousel explaining the problem, solution, and tech stack; use hashtags #AIAgent, #LangChain, #AgenticWorkflows.",
+    "Submit a short write‑up to the Hugging Face Spaces showcase, linking back to the repo.",
+    "Reach out to two recruiters specialized in AI tooling (via personalized InMail) and attach the demo link."
+  ],
+  "skills": [
+    "Prompt engineering & task planning",
+    "API integration & tool use",
+    "Stateful agent memory (Redis)",
+    "FastAPI backend development",
+    "Containerization with Docker",
+    "CI/CD with GitHub Actions",
+    "Technical communication (blog/LinkedIn)"
+  ],
+  "risks": [
+    "API cost can spike if the demo is left open; set usage limits and mock endpoints for public view.",
+    "Agent loops may produce hallucinations; implement guardrails and timeout checks.",
+    "Rapidly evolving libraries may cause breakage; pin versions and monitor release notes."
+  ],
+  "confidence": "Given the overwhelming signal strength across repositories, news, and job demand, this recommendation is highly solid and actionable.",
+  "content_hash": "e54817a127ebb242",
+  "generated_for": {
+    "country": "Worldwide",
+    "city": null,
+    "goal": "create_agents",
+    "profile": "agent"
+  }
+}
