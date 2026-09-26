@@ -1,0 +1,62 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-26T09:52:35.846654+00:00",
+  "headline": "Become Rome’s go‑to AI Engineer for autonomous agents and watch your career soar!",
+  "why_now": "Signal scores above 90 across GitHub, Hugging Face, and news show a booming ecosystem for AI agents. Employers in Italy are already hunting talent (job_demand 85) and the local community (local_relevance 82) is eager for real‑world demos, making this the perfect moment to specialize.",
+  "study": [
+    "1. Master the fundamentals of agentic architectures: read \"ReAct: Synergizing Reasoning and Acting\" and the LangChain docs.",
+    "2. Hands‑on with tool‑use libraries: complete the LangChain tutorial series and build a simple web‑search agent.",
+    "3. Dive into multi‑modal agents: experiment with OpenAI Function Calling and Hugging Face tool‑use models (e.g., AutoGPT‑like setups).",
+    "4. Learn orchestration patterns: study Temporal.io workflows and Airflow DAGs for long‑running tasks.",
+    "5. Explore security & observability: implement logging, tracing (OpenTelemetry) and sandboxed execution for agents."
+  ],
+  "build": {
+    "title": "Rome‑Assist: a multilingual civic‑service AI agent",
+    "description": "An autonomous agent that can answer resident queries about public transport, waste collection, and event permits by calling Rome’s open data APIs, scraping the city website, and scheduling appointments. It showcases end‑to‑end planning, tool use, and multi‑step execution—exactly what hiring managers are looking for.",
+    "stack": [
+      "Python 3.11",
+      "LangChain + OpenAI GPT‑4o",
+      "FastAPI for the HTTP interface",
+      "Temporal.io for workflow orchestration",
+      "Redis for state storage",
+      "Docker & GitHub Actions CI/CD"
+    ],
+    "deliverables": [
+      "GitHub repo with clean README and CI badge",
+      "Live demo on Railway or Render (public URL)",
+      "Technical write‑up + video walkthrough posted on LinkedIn and Medium"
+    ]
+  },
+  "publish": [
+    "1. Publish the repo and demo link on the #ai‑agents channel of the Italian AI meetup Slack and on Rome’s AI Discord.",
+    "2. Write a concise LinkedIn post tagging @OpenAI, @LangChainAI and local tech influencers, highlighting the city‑specific impact.",
+    "3. Submit a short article to Medium’s \"AI Agents\" publication and cross‑post to Hacker News (Show HN).",
+    "4. Present a 10‑minute live demo at the next Rome AI meetup or university tech talk."
+  ],
+  "skills": [
+    "Designing and orchestrating autonomous AI agents",
+    "Tool integration via APIs and web‑scraping",
+    "Workflow management with Temporal.io",
+    "Production‑grade deployment (Docker, CI/CD)",
+    "Observability and safety for agentic systems",
+    "Multilingual prompt engineering",
+    "Data handling from public‑sector APIs"
+  ],
+  "risks": [
+    "API rate limits or unstable public data sources can break the agent; include graceful fallback logic.",
+    "LLM hallucinations may produce incorrect civic advice; add verification steps and human‑in‑the‑loop checks.",
+    "Maintaining compliance with GDPR when handling personal data in Italy."
+  ],
+  "confidence": "Given the high signal strength across repositories, community buzz, and job demand, this plan is a very solid pathway to boost your AI‑engineer career in Rome.",
+  "content_hash": "e5ad993d748944d3",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "career",
+    "profile": "ai_engineer"
+  }
+}
