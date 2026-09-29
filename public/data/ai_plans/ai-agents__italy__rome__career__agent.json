@@ -1,0 +1,65 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-09-29T11:22:49.527917+00:00",
+  "headline": "Launch your AI agent career in Rome by building a smart travel‑assistant that showcases cutting‑edge agentic workflows.",
+  "why_now": "Signal scores above 90 on GitHub, Hugging Face, and news indicate a booming ecosystem for AI agents. Job demand (85) and local relevance (82) mean Rome companies are actively seeking these skills, while community activity (84) offers immediate networking opportunities.",
+  "study": [
+    "Complete the LangChain agent tutorial (focus on tool use and memory).",
+    "Learn to integrate external APIs (Google Places, OpenAI, and a weather service) with FastAPI.",
+    "Study prompt engineering for multi‑step planning and error handling.",
+    "Practice containerizing Python apps with Docker and deploying to a cloud platform.",
+    "Read case studies of successful AI agents on Hugging Face Spaces."
+  ],
+  "build": {
+    "title": "Rome AI Travel Agent",
+    "description": "An autonomous assistant that plans a multi‑day itinerary for visitors to Rome, books museum tickets, checks weather, and suggests hidden gems, demonstrating end‑to‑end agentic workflow and tool orchestration.",
+    "stack": [
+      "Python",
+      "LangChain",
+      "OpenAI GPT‑4o",
+      "FastAPI",
+      "Docker",
+      "PostgreSQL",
+      "Streamlit (demo UI)",
+      "GitHub Actions"
+    ],
+    "deliverables": [
+      "GitHub repo with clean README and CI",
+      "Live demo deployed on Render or Hugging Face Spaces",
+      "Technical write‑up + blog post explaining architecture and prompts"
+    ]
+  },
+  "publish": [
+    "Publish the blog post on Medium and cross‑post to dev.to with tags #AIAgents #LangChain #Rome.",
+    "Share the repo and demo on the Italian AI & ML Discord, Reddit r/MachineLearning, and the Rome Tech meetup Slack.",
+    "Create a short 2‑minute demo video and post it on LinkedIn, tagging local AI startups and recruiters.",
+    "Submit the project to the Hugging Face Spaces gallery and request a feature from the community moderators."
+  ],
+  "skills": [
+    "Prompt engineering for multi‑step agents",
+    "Designing and orchestrating tool‑using AI agents",
+    "API integration and data handling",
+    "Backend development with FastAPI",
+    "Containerization and cloud deployment",
+    "UI prototyping with Streamlit",
+    "CI/CD pipelines with GitHub Actions",
+    "Performance monitoring and cost optimization"
+  ],
+  "risks": [
+    "High API usage can lead to unexpected costs; implement usage caps early.",
+    "Complex agent loops may produce hallucinations; need robust validation and fallback logic.",
+    "Local market saturation – differentiate by focusing on Rome‑specific cultural insights."
+  ],
+  "confidence": "Given the strong signal scores and clear local demand, this recommendation is highly solid.",
+  "content_hash": "e7ab54cb2be1084c",
+  "generated_for": {
+    "country": "Italy",
+    "city": "Rome",
+    "goal": "career",
+    "profile": "agent"
+  }
+}

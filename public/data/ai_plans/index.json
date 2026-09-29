@@ -90,6 +90,15 @@
       "profile": "student",
       "generated_at": "2026-09-26T09:52:08.552288+00:00"
     },
+    "ai-agents__worldwide__any__create-agents__founder": {
+      "topic_id": "ai-agents",
+      "content_hash": "b8068380e1c71b4b",
+      "country": "Worldwide",
+      "city": null,
+      "goal": "create_agents",
+      "profile": "founder",
+      "generated_at": "2026-09-29T11:22:20.336045+00:00"
+    },
     "ai-agents__worldwide__any__create-agents__enterprise": {
       "topic_id": "ai-agents",
       "content_hash": "6aa73696f1bbb511",
@@ -197,6 +206,15 @@
       "goal": "career",
       "profile": "student",
       "generated_at": "2026-09-22T09:59:46.304728+00:00"
+    },
+    "ai-agents__italy__rome__career__agent": {
+      "topic_id": "ai-agents",
+      "content_hash": "e7ab54cb2be1084c",
+      "country": "Italy",
+      "city": "Rome",
+      "goal": "career",
+      "profile": "agent",
+      "generated_at": "2026-09-29T11:22:49.527917+00:00"
     },
     "ai-agents__italy__rome__build-portfolio__developer": {
       "topic_id": "ai-agents",
@@ -1495,7 +1513,7 @@
       "generated_at": "2026-08-31T12:50:47.424079+00:00"
     }
   },
-  "generated_at": "2026-09-28T11:42:17.926853+00:00",
+  "generated_at": "2026-09-29T11:22:49.591678+00:00",
   "ai_enabled": true,
-  "count": 166
+  "count": 168
 }
