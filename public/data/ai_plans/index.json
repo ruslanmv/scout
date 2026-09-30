@@ -18,6 +18,15 @@
       "profile": "ai_engineer",
       "generated_at": "2026-09-22T09:57:51.533129+00:00"
     },
+    "ai-agents__worldwide__any__career__student": {
+      "topic_id": "ai-agents",
+      "content_hash": "870c20927366cfb9",
+      "country": "Worldwide",
+      "city": null,
+      "goal": "career",
+      "profile": "student",
+      "generated_at": "2026-09-30T11:10:30.401145+00:00"
+    },
     "ai-agents__worldwide__any__career__enterprise": {
       "topic_id": "ai-agents",
       "content_hash": "b3c4a704f3337eba",
@@ -1513,7 +1522,7 @@
       "generated_at": "2026-08-31T12:50:47.424079+00:00"
     }
   },
-  "generated_at": "2026-09-29T11:22:49.591678+00:00",
+  "generated_at": "2026-09-30T11:11:39.987397+00:00",
   "ai_enabled": true,
-  "count": 168
+  "count": 169
 }
