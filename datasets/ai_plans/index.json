@@ -99,6 +99,15 @@
       "profile": "developer",
       "generated_at": "2026-09-21T10:44:15.452179+00:00"
     },
+    "ai-agents__worldwide__any__create-agents__ai-engineer": {
+      "topic_id": "ai-agents",
+      "content_hash": "33bb1499b555c90b",
+      "country": "Worldwide",
+      "city": null,
+      "goal": "create_agents",
+      "profile": "ai_engineer",
+      "generated_at": "2026-10-02T11:06:37.498149+00:00"
+    },
     "ai-agents__worldwide__any__create-agents__student": {
       "topic_id": "ai-agents",
       "content_hash": "c59f49045f2d800f",
@@ -152,6 +161,15 @@
       "goal": "startup",
       "profile": "founder",
       "generated_at": "2026-09-18T09:48:59.663013+00:00"
+    },
+    "ai-agents__worldwide__any__startup__enterprise": {
+      "topic_id": "ai-agents",
+      "content_hash": "5dbefc6f5bbe58fd",
+      "country": "Worldwide",
+      "city": null,
+      "goal": "startup",
+      "profile": "enterprise",
+      "generated_at": "2026-10-02T11:06:44.444988+00:00"
     },
     "ai-agents__worldwide__any__research__developer": {
       "topic_id": "ai-agents",
@@ -1540,7 +1558,7 @@
       "generated_at": "2026-08-31T12:50:47.424079+00:00"
     }
   },
-  "generated_at": "2026-10-01T11:37:42.774392+00:00",
+  "generated_at": "2026-10-02T11:06:54.434964+00:00",
   "ai_enabled": true,
-  "count": 171
+  "count": 173
 }
