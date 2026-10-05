@@ -153,6 +153,15 @@
       "profile": "ai_engineer",
       "generated_at": "2026-09-22T09:58:42.938395+00:00"
     },
+    "ai-agents__worldwide__any__startup__student": {
+      "topic_id": "ai-agents",
+      "content_hash": "073bc11d84fac54d",
+      "country": "Worldwide",
+      "city": null,
+      "goal": "startup",
+      "profile": "student",
+      "generated_at": "2026-10-05T12:16:44.044380+00:00"
+    },
     "ai-agents__worldwide__any__startup__founder": {
       "topic_id": "ai-agents",
       "content_hash": "85f87abf3bcd31ac",
@@ -170,6 +179,15 @@
       "goal": "startup",
       "profile": "enterprise",
       "generated_at": "2026-10-02T11:06:44.444988+00:00"
+    },
+    "ai-agents__worldwide__any__startup__agent": {
+      "topic_id": "ai-agents",
+      "content_hash": "34b97105cd2c9b4f",
+      "country": "Worldwide",
+      "city": null,
+      "goal": "startup",
+      "profile": "agent",
+      "generated_at": "2026-10-05T12:16:46.365003+00:00"
     },
     "ai-agents__worldwide__any__research__developer": {
       "topic_id": "ai-agents",
@@ -1558,7 +1576,7 @@
       "generated_at": "2026-08-31T12:50:47.424079+00:00"
     }
   },
-  "generated_at": "2026-10-04T11:07:17.050820+00:00",
+  "generated_at": "2026-10-05T12:16:51.511278+00:00",
   "ai_enabled": true,
-  "count": 173
+  "count": 175
 }

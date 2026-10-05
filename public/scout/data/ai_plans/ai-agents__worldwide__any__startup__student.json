@@ -1,0 +1,63 @@
+{
+  "topic_id": "ai-agents",
+  "topic_name": "AI Agents and Agentic Workflows",
+  "source": "ai-batch",
+  "provider": "OllaBridge Cloud",
+  "model": "free-best",
+  "generated_at": "2026-10-05T12:16:44.044380+00:00",
+  "headline": "Turn the AI agent boom into your first startup by building a multi‑tool personal assistant this semester",
+  "why_now": "Signal scores above 90 on GitHub and Hugging Face show explosive community and code growth, while news mentions (88) and job demand (85) prove enterprises are hiring agents now. The convergence of tool‑calling APIs and agentic workflows means a portfolio project will instantly signal market relevance.",
+  "study": [
+    "Complete the “Agents – LLM orchestration” Coursera specialization (weeks 1‑3).",
+    "Read the LangChain and Auto‑GPT docs; replicate the official “research‑assistant” notebook.",
+    "Experiment with tool‑calling on OpenAI Function Calls and Azure Functions; build a simple “weather‑+‑calendar” combo.",
+    "Study prompt‑engineering patterns for planning and memory (ReAct, Tree‑of‑Thought).",
+    "Join the Agentic‑Workflow Discord, contribute a bug fix, and attend a weekly live demo."
+  ],
+  "build": {
+    "title": "Campus‑Connect Agent: a student‑focused AI that schedules study sessions, fetches lecture notes, and books library resources",
+    "description": "The agent parses a student's calendar, queries the university API for room availability, scrapes lecture PDFs from the LMS, and books a study‑room via the campus booking API. It showcases end‑to‑end multi‑tool orchestration and can be demoed to peers and investors.",
+    "stack": [
+      "Python 3.11",
+      "LangChain",
+      "OpenAI GPT‑4o (function calling)",
+      "FastAPI for the agent server",
+      "Docker & GitHub Actions CI/CD",
+      "University REST API (mocked with Flask)",
+      "React front‑end for demo UI"
+    ],
+    "deliverables": [
+      "GitHub repo with clean README, tests, and CI badge",
+      "Live demo deployed on Railway or Render",
+      "Technical write‑up + 2‑minute pitch video on YouTube"
+    ]
+  },
+  "publish": [
+    "Post a concise project thread on Hacker News and r/LocalNews (include demo link).",
+    "Share the repo and demo video in the LangChain Discord #showcase channel and the Agentic‑Workflow Slack.",
+    "Write a Medium article titled “How I built a campus‑wide AI scheduling agent in 4 weeks” and cross‑post to LinkedIn with relevant hashtags (#AIAgents, #StudentTech).",
+    "Reach out to the university’s innovation hub or startup accelerator with a 1‑page teaser and invite them to a live demo."
+  ],
+  "skills": [
+    "LLM prompt engineering & planning",
+    "Tool‑calling & function‑call integration",
+    "API design & consumption (REST, GraphQL)",
+    "Full‑stack deployment (FastAPI + React)",
+    "Docker & CI/CD pipelines",
+    "Project scoping & MVP iteration",
+    "Technical writing & demo pitching"
+  ],
+  "risks": [
+    "University APIs may be rate‑limited or undocumented; be ready to mock them for the demo.",
+    "LLM usage costs can balloon if the agent loops; implement strict token limits and fallback logic.",
+    "Standing out among many agent projects requires a clear niche (student workflow) and polished UI."
+  ],
+  "confidence": "Given the high activity signals and clear market need on campuses, this plan is a very strong, low‑risk path to a startup‑ready portfolio.",
+  "content_hash": "073bc11d84fac54d",
+  "generated_for": {
+    "country": "Worldwide",
+    "city": null,
+    "goal": "startup",
+    "profile": "student"
+  }
+}
