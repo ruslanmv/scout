@@ -153,6 +153,15 @@
       "profile": "agent",
       "generated_at": "2026-09-24T10:01:47.308020+00:00"
     },
+    "ai-agents__worldwide__any__startup__developer": {
+      "topic_id": "ai-agents",
+      "content_hash": "fd06ba1f58149cb1",
+      "country": "Worldwide",
+      "city": null,
+      "goal": "startup",
+      "profile": "developer",
+      "generated_at": "2026-10-09T11:54:00.059527+00:00"
+    },
     "ai-agents__worldwide__any__startup__ai-engineer": {
       "topic_id": "ai-agents",
       "content_hash": "4e281d80868f2824",
@@ -1585,7 +1594,7 @@
       "generated_at": "2026-08-31T12:50:47.424079+00:00"
     }
   },
-  "generated_at": "2026-10-08T12:02:08.642228+00:00",
+  "generated_at": "2026-10-09T11:54:04.791960+00:00",
   "ai_enabled": true,
-  "count": 176
+  "count": 177
 }
