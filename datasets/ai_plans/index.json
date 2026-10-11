@@ -63,6 +63,15 @@
       "profile": "developer",
       "generated_at": "2026-09-22T09:58:02.434438+00:00"
     },
+    "ai-agents__worldwide__any__build-portfolio__ai-engineer": {
+      "topic_id": "ai-agents",
+      "content_hash": "38d5eeb5fe2a3808",
+      "country": "Worldwide",
+      "city": null,
+      "goal": "build_portfolio",
+      "profile": "ai_engineer",
+      "generated_at": "2026-10-11T11:24:19.958536+00:00"
+    },
     "ai-agents__worldwide__any__build-portfolio__student": {
       "topic_id": "ai-agents",
       "content_hash": "1fe789906832d3c6",
@@ -1594,7 +1603,7 @@
       "generated_at": "2026-08-31T12:50:47.424079+00:00"
     }
   },
-  "generated_at": "2026-10-10T11:11:04.638573+00:00",
+  "generated_at": "2026-10-11T11:24:24.346100+00:00",
   "ai_enabled": true,
-  "count": 177
+  "count": 178
 }
