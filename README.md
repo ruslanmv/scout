@@ -1,29 +1,36 @@
 <div align="center">
 
+<img src="docs/assets/scout-hero.svg" alt="Scout career discovery illustration: learn, practise and get seen" width="100%" />
+
 # 🛰️ Scout
 
-### Developer Trend Intelligence & Learning Navigator
+### Career intelligence → an actionable next move
 
-**Know what to learn, build, and publish next — grounded in real signals, explained by AI, and reliable by design.**
+**Find the skills to learn, the work to practise, and the proof to publish — all in one place.**
 
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB.svg?style=flat-square&logo=python&logoColor=white)](https://www.python.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-009688.svg?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![AI: OllaBridge Cloud](https://img.shields.io/badge/AI-OllaBridge%20Cloud-15a05a.svg?style=flat-square)](https://github.com/ruslanmv/ollabridge-cloud)
-[![MCP](https://img.shields.io/badge/MCP-server-7c5cff.svg?style=flat-square)](scout_mcp/README.md)
-[![Tests](https://img.shields.io/badge/tests-86%20passing-2ea44f.svg?style=flat-square)](tests/)
-[![License](https://img.shields.io/badge/License-Apache%202.0-0e7340.svg?style=flat-square)](LICENSE)
+Choose your profession, city and goal to get a practical starting plan. Explore topic signals and source-attributed job-posting observations where available, then build a structured learning path. **No account or installation is needed to try the browser demo.**
 
-**[Live demo](https://ruslanmv.com/scout/scout/)** · [Learning Navigator](#-learning-navigator--what-to-learn) · [My Learning](#-my-learning--follow--track) · [Quick start](#-quick-start) · [API](#-api-reference) · [MCP](#-mcp-server) · [Docs](#-documentation)
+[![Tests](https://github.com/ruslanmv/scout/actions/workflows/test.yml/badge.svg)](https://github.com/ruslanmv/scout/actions/workflows/test.yml)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-1b8c58?style=flat-square)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/ruslanmv/scout?style=flat-square&logo=github)](https://github.com/ruslanmv/scout/stargazers)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)](pyproject.toml)
+[![MCP server](https://img.shields.io/badge/MCP-server-6952a8?style=flat-square)](scout_mcp/README.md)
+
+### [Try Scout in your browser →](https://ruslanmv.com/scout/) · [Get Started](https://ruslanmv.com/scout/quickstart/) · [Explore Scout Pulse](https://ruslanmv.com/scout/trends/)
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ruslanmv/scout?quickstart=1)
+
+[Quickstart instructions](docs/QUICKSTART.md) · [Learning Navigator](https://ruslanmv.com/scout/learn/) · [API](#-api-reference) · [MCP](#-mcp-server) · [Contribute](CONTRIBUTING.md)
 
 Created by **[Ruslan Magana Vsevolodovna](https://ruslanmv.com)** — part of the **Agent-Matrix** ecosystem.
 
 </div>
 
-![Scout — know what to study, build, and publish next](docs/assets/screenshots/scout-report-premium.svg)
+> **Scout answers a simple question:** for my profession and location, what should I learn, practise, and publish next?
+>
+> **Evidence matters:** Scout distinguishes curated suggestions, topic-based scores and observed job-posting counts. It does not treat missing market data as a forecast or a verified hiring ranking.
 
-> **One question, answered with evidence:** given your location, goals, and current skills — what should you **study, build, and publish** right now, and exactly **how**?
-
-Scout turns noisy technology signals — GitHub activity, Hugging Face momentum, news, and job demand — into a personalized, one‑page action plan, and then into a **verified, ordered learning path** of skills, real courses, and certifications. Its defining principle: **deterministic logic decides what matters and in what order; AI only explains and personalizes it.** That keeps every recommendation auditable, evidence‑backed, and reliable — even with AI switched off.
+**New here?** [Open the live demo](https://ruslanmv.com/scout/) in your browser, or [follow the verified local API and MCP setup](docs/QUICKSTART.md). The web explorer, Python API, and optional MCP interface are separate ways to use Scout; no unverified PyPI installation or `scout init` command is required.
 
 ---
 

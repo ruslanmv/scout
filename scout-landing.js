@@ -574,6 +574,9 @@ function Landing({
   }, "◇"), "Scout"), /*#__PURE__*/React.createElement("nav", {
     className: "l-nav"
   }, /*#__PURE__*/React.createElement("a", {
+    className: "l-quickstart-link",
+    href: "quickstart/"
+  }, "Get Started"), /*#__PURE__*/React.createElement("a", {
     href: "learn/"
   }, "Learn"), /*#__PURE__*/React.createElement("a", {
     href: "my-learning/"
@@ -783,6 +786,8 @@ function Landing({
   }, /*#__PURE__*/React.createElement("span", null, "© 2026 Scout"), /*#__PURE__*/React.createElement("span", {
     className: "links"
   }, /*#__PURE__*/React.createElement("a", {
+    href: "quickstart/"
+  }, "Quickstart"), /*#__PURE__*/React.createElement("a", {
     href: "learn/"
   }, "Learn"), /*#__PURE__*/React.createElement("a", {
     href: "trends/"

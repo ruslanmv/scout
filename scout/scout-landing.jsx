@@ -338,7 +338,7 @@ function Landing({ profile, setProfile, city, country, setLocation, goal, setGoa
           <div className="l-wrap l-head-in">
             <a className="l-brand" href="./"><span className="gl">◇</span>Scout</a>
             <nav className="l-nav">
-              <a href="learn/">Learn</a><a href="my-learning/">My Learning</a><a href="trends/">Trends</a><a href="api/">API</a><a href="dataset/">Methodology</a><a href="dataset/#trust">Trust</a>
+              <a className="l-quickstart-link" href="quickstart/">Get Started</a><a href="learn/">Learn</a><a href="my-learning/">My Learning</a><a href="trends/">Trends</a><a href="api/">API</a><a href="dataset/">Methodology</a><a href="dataset/#trust">Trust</a>
               <a className="gh" href="https://github.com/ruslanmv/scout" target="_blank" rel="noreferrer"><LIc d={L_ICONS.git} size={18} />GitHub</a>
             </nav>
           </div>
@@ -416,7 +416,7 @@ function Landing({ profile, setProfile, city, country, setLocation, goal, setGoa
             <div className="l-foot-in">
               <span>© 2026 Scout</span>
               <span className="links">
-                <a href="learn/">Learn</a><a href="trends/">Trends</a><a href="api/">API</a><a href="dataset/">Dataset</a><a href="admin/">Admin</a>
+                <a href="quickstart/">Quickstart</a><a href="learn/">Learn</a><a href="trends/">Trends</a><a href="api/">API</a><a href="dataset/">Dataset</a><a href="admin/">Admin</a>
                 <a href="https://github.com/ruslanmv/scout" target="_blank" rel="noreferrer"><LIc d={L_ICONS.git} size={16} />GitHub</a>
               </span>
             </div>
