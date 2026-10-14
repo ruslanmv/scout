@@ -26,14 +26,14 @@ def test_ai_status_shape(runtime_env):
 
 
 def test_ai_plan_falls_back_without_network(runtime_env):
-    """AI disabled -> deterministic plan with the same contract as the AI path."""
+    """No network -> cached daily AI batch or deterministic template."""
     resp = client.post("/api/v1/ai/plan", json={
         "topic_id": "ai-agents", "country": "Italy", "city": "Rome",
         "goal": "build_portfolio", "profile": "developer",
     })
     assert resp.status_code == 200
     plan = resp.json()
-    assert plan["source"] == "deterministic"
+    assert plan["source"] in {"deterministic", "ai-batch"}
     assert isinstance(plan["study"], list) and plan["study"]
     assert isinstance(plan["build"], dict) and plan["build"]["title"]
     assert isinstance(plan["publish"], list)

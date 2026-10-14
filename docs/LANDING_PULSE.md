@@ -18,7 +18,8 @@ It publishes `scout/data/pulse/latest.json` for the project site and
   as globally representative observations. Sparse or missing observations
   display explicitly curated profession suggestions instead.
 - **Skills** are ranked by weighted associations with Scout's tracked
-  technology topics, not direct job-posting frequency.
+  technology topics, with city-level topic boosts where available, not direct
+  job-posting frequency.
 - **Tools** are a controlled subset of those topic-associated skills.
 - **Shuffling** only changes presentation of the five measured professions;
   for curated professions it samples five of eight starters. It does not alter

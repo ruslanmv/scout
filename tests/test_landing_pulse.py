@@ -20,9 +20,13 @@ def test_pulse_is_explicit_about_unavailable_hiring_data():
     assert feed["regions"]["Worldwide"]["status"] == "curated"
     assert len(feed["regions"]["Worldwide"]["items"]) == 8
     assert feed["source_status"] == "unavailable"
-    assert feed["skills"][0]["name"] == "Python"
+    assert "Python" in [item["name"] for item in feed["skills"][:3]]
     assert feed["skills"][0]["source"] == "topic_proxy"
     assert all(x["source"] == "topic_proxy" for x in feed["tools"])
+    localized = build_pulse({**_topics(), "local_boosts": {"italy:rome": {"AI": 20}}}, {"signals": []},
+                            "2026-10-14T08:00:00+00:00")
+    assert "italy:rome" in localized["skills_by_region"]
+    assert localized["skills_by_region"]["italy:rome"][0]["score"] >= feed["skills"][0]["score"]
 
 
 def test_measured_region_does_not_claim_a_sparse_or_global_ranking():

@@ -42,10 +42,10 @@ def _topic_score(topic: dict) -> float:
     return round(sum(float(sig.get(k) or 0) * v for k, v in WEIGHTS.items()), 2)
 
 
-def _topic_tags(topics: list[dict]) -> tuple[list[dict], list[dict]]:
+def _topic_tags(topics: list[dict], boosts: dict | None = None) -> tuple[list[dict], list[dict]]:
     scores: dict[str, dict] = {}
     for topic in topics:
-        value = _topic_score(topic)
+        value = _topic_score(topic) + float((boosts or {}).get(topic.get("id"), 0) or 0)
         for name in topic.get("skills") or []:
             name = str(name).strip()
             if not name:
@@ -64,7 +64,13 @@ def _topic_tags(topics: list[dict]) -> tuple[list[dict], list[dict]]:
 
 def build_pulse(topics_doc: dict, signals_doc: dict, generated_at: str | None = None) -> dict:
     generated_at = generated_at or datetime.now(timezone.utc).isoformat()
-    skills, tools = _topic_tags(topics_doc.get("topics") or [])
+    topics = topics_doc.get("topics") or []
+    skills, tools = _topic_tags(topics)
+    local_tags = {
+        key: _topic_tags(topics, boosts)
+        for key, boosts in (topics_doc.get("local_boosts") or {}).items()
+        if isinstance(boosts, dict)
+    }
     observations = []
     grouped: dict[str, dict[str, dict]] = defaultdict(dict)
     for row in signals_doc.get("signals") or []:
@@ -114,6 +120,8 @@ def build_pulse(topics_doc: dict, signals_doc: dict, generated_at: str | None = 
         "regions": regions,
         "skills": skills,
         "tools": tools,
+        "skills_by_region": {key: tags[0] for key, tags in local_tags.items()},
+        "tools_by_region": {key: tags[1] for key, tags in local_tags.items()},
         "role_observations": observations,
         "source_status": "measured" if observations else "unavailable",
         "methodology": {
