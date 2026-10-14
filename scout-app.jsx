@@ -2,7 +2,7 @@
 /* Scout landing entry — hero + scanning animation, then a real navigation to
    the dedicated report page (multi-page product; the report and its sections
    are separate routes under report/). */
-const { useState: uS, useEffect: uE } = React;
+const { useState: uS, useEffect: uE, useRef: uR } = React;
 const SA = window.SCOUT;
 const UI = window.ScoutUI;
 const Landing = window.ScoutLanding;
@@ -39,10 +39,41 @@ function scoutEvent(name) {
 
 function App() {
   const [phase, setPhase] = uS("hero");
-  const [country, setCountry] = uS("Italy");
-  const [city, setCity] = uS("Rome");
-  const [goal, setGoal] = uS("build_portfolio");
-  const [profile, setProfile] = uS("Developer");
+  const query = new URLSearchParams(window.location.search);
+  const [country, setCountry] = uS(() => query.get("country") || "Italy");
+  const [city, setCity] = uS(() => query.get("city") || "Rome");
+  const [goal, setGoal] = uS(() =>
+    SA.GOALS.some(g => g.id === query.get("goal")) ? query.get("goal") : "build_portfolio");
+  // No fabricated default: only auto-select the highest observed local role,
+  // or preserve an explicit user-entered/deep-linked profession.
+  const [profile, setProfile] = uS(() => (query.get("profile") || "").trim());
+  const userSelectedRole = uR(Boolean((query.get("profile") || "").trim()));
+  const [pulse, setPulse] = uS(null);
+  const [pulseStatus, setPulseStatus] = uS("loading");
+  uE(() => {
+    const controller = new AbortController();
+    fetch("data/pulse/latest.json", {cache: "no-store", signal: controller.signal})
+      .then(response => {
+        if (!response.ok) throw new Error("Current Pulse unavailable");
+        return response.json();
+      })
+      .then(feed => {
+        if (!feed || feed.schema_version !== 1) throw new Error("Unsupported Pulse feed");
+        setPulse(feed);
+        setPulseStatus("ready");
+      })
+      .catch(error => { if (!controller.signal.aborted) setPulseStatus("error"); });
+    return () => controller.abort();
+  }, []);
+  uE(() => {
+    if (userSelectedRole.current || !pulse) return;
+    const observed = window.ScoutRanking.roles(pulse, city, country);
+    setProfile(observed ? observed.items[0].name : "");
+  }, [pulse, city, country]);
+  const selectProfession = value => {
+    userSelectedRole.current = true;
+    setProfile(value);
+  };
   const [scanIdx, setScanIdx] = uS(0);
   const [animSafe, setAnimSafe] = uS(false);
 
@@ -50,7 +81,7 @@ function App() {
 
   const goalObj = SA.GOALS.find(g => g.id === goal) || SA.GOALS[0];
 
-  function generate() { scoutEvent("plan_cta_clicked"); setPhase("scanning"); setScanIdx(0); window.scrollTo({ top: 0, behavior: "smooth" }); }
+  function generate() { if (!profile.trim()) return; scoutEvent("plan_cta_clicked"); setPhase("scanning"); setScanIdx(0); window.scrollTo({ top: 0, behavior: "smooth" }); }
 
   // Advance the scanning log, then navigate to the real report route.
   uE(() => {
@@ -67,11 +98,12 @@ function App() {
     <div className={"app" + (animSafe ? " anim-safe" : "")}>
       {phase === "hero" && (
         <Landing
-          profile={profile} setProfile={setProfile}
+          profile={profile} setProfile={selectProfession}
           city={city} country={country}
           setLocation={(c, co) => { setCity(c); setCountry(co); }}
           goal={goal} setGoal={setGoal}
           onGenerate={generate}
+          pulse={pulse} pulseStatus={pulseStatus}
         />
       )}
 

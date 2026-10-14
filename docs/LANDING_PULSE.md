@@ -76,3 +76,33 @@ does not add third-party trackers or send personal data.
 Test: `pytest tests/test_landing_pulse.py` and
 `node --check scout/trends/pulse.js`. Run the exporter to regenerate
 `public/scout/trends/` and the published time-series feed.
+
+
+## Current observed profession rankings (no random suggestions)
+
+The landing **Top professions** and Scout Pulse **Top 5 professions**
+share one `scout-ranking.js` evidence gate over the most recently published
+`data/pulse/latest.json`:
+
+- Require **five distinct, source-attributed role observations** for the
+  selected city, or its country when no city sample exists.
+- The published feed **and each underlying observation** must have been
+  collected within the last 48 hours. Republishing stale data does not renew
+  it. Rank only by source-reported posting mentions.
+- **Worldwide curated suggestions, incomplete and stale samples, missing API
+  credentials, and demo scores never appear as top roles.**
+  When no verified ranking exists, display an honest no-data state, leave the
+  profession editable, and never auto-select Developer, Teacher or Nurse.
+- If the visitor has not chosen a profession, automatically prefill the first
+  current observed role when available. User edits and explicit `?profile=`
+  deep links take priority. Changing location updates the suggestion only
+  when the user has not edited it.
+- The typeahead list also contains only the current observed top five.
+- Skills use **Scout topic-association scores**, not measured employer skill
+  requests. No stale or fabricated skill rankings are shown.
+- This is a **daily published snapshot**, not live browser API queries.
+  Configure `ADZUNA_APP_ID` and `ADZUNA_APP_KEY` repository secrets for
+  the scheduled collector to publish observed profession demand.
+
+Run `node tests/current_roles.test.cjs` to validate freshness, region
+matching, sources, ordering, incomplete data, and shared UI behavior.

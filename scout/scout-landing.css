@@ -230,3 +230,7 @@
 .l-nav .l-quickstart-link{border:1px solid rgba(83,243,157,.42);color:#53f39d;border-radius:99px;padding:8px 12px;text-decoration:none;white-space:nowrap}
 .l-nav .l-quickstart-link:hover{background:rgba(83,243,157,.12);color:#fff}
 @media(max-width:680px){.l-nav .l-quickstart-link{display:inline-flex!important;font-size:12px;padding:7px 9px}}
+
+.l-quick-empty{font-size:12px;line-height:1.5;color:#c4dbce;margin:0;max-width:330px}
+.l-quick-method{grid-column:1/-1;color:#a0bbae;font-size:10px}
+.l-btn:disabled{cursor:not-allowed;opacity:.5;box-shadow:none;transform:none}

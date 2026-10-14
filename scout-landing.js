@@ -510,7 +510,7 @@ function OccField({
     value: value,
     onChange: onChange,
     autoComplete: "off",
-    placeholder: "your role — Nurse, Marketer, Developer…",
+    placeholder: "Type your profession…",
     spellCheck: "false"
   }), /*#__PURE__*/React.createElement("datalist", {
     id: "scout-occs"
@@ -529,10 +529,15 @@ function Landing({
   setLocation,
   goal,
   setGoal,
-  onGenerate
+  onGenerate,
+  pulse,
+  pulseStatus
 }) {
   const [locating, setLocating] = uSL(false);
   const locLabel = city + ", " + country;
+  const observed = window.ScoutRanking.roles(pulse, city, country);
+  const suggestedOccupations = observed
+    ? observed.items.map((role, i) => ({id: String(i), name: role.name})) : [];
   function useMyLoc() {
     if (!navigator.geolocation || locating) return;
     setLocating(true);
@@ -614,7 +619,7 @@ function Landing({
     k: "I'm a",
     value: profile,
     onChange: e => setProfile(e.target.value),
-    occupations: L_OCCS
+    occupations: suggestedOccupations
   }), /*#__PURE__*/React.createElement(LField, {
     k: "in",
     value: locLabel,
@@ -638,6 +643,8 @@ function Landing({
     className: "l-cta-row l-an d4"
   }, /*#__PURE__*/React.createElement("button", {
     className: "l-btn",
+    disabled: !profile.trim(),
+    title: !profile.trim() ? "Choose or type a profession first" : undefined,
     onClick: onGenerate
   }, "Find my next move ", /*#__PURE__*/React.createElement("span", {
     "aria-hidden": "true"
@@ -648,7 +655,9 @@ function Landing({
     city: city,
     country: country,
     profile: profile,
-    onProfession: setProfile
+    onProfession: setProfile,
+    data: pulse,
+    status: pulseStatus
   })), /*#__PURE__*/React.createElement(LCarousel, null)))), /*#__PURE__*/React.createElement("div", {
     className: "l-light"
   }, /*#__PURE__*/React.createElement("div", {
