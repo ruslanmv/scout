@@ -14,8 +14,6 @@
   const DEFAULTS = {
     skill: ["SQL", "Financial analysis", "Python"],
     profession: ["Data Analyst", "Developer", "Nurse"],
-    roles: ["Data Analyst", "Developer", "Nurse", "Marketing Specialist", "Electrician"],
-    skills: ["SQL", "Financial analysis", "Python", "Project management", "JavaScript"],
     emerging: ["AI Agents", "Vector databases", "Data visualization", "Cloud architecture", "LLM evaluation"]
   };
   const params = new URLSearchParams(location.search);
@@ -232,39 +230,46 @@
   }
   function renderKPIs(isDemo,series) {
     const feed=state.feed;
-    const r=feed?.regions?.[state.country];
     $("kpi-postings").textContent=isDemo?"PREVIEW":money((feed?.role_observations||[]).filter(x=>x.region===state.country).reduce((a,b)=>a+Number(b.sample_size||0),0));
     $("kpi-postings-note").textContent=isDemo?"Illustrative series · no measured trend available":"Source-reported mention totals · "+state.country;
-    $("kpi-roles").textContent=isDemo?"08":String(r?.status==="measured"?r.items.length:8).padStart(2,"0");
-    $("kpi-roles-note").textContent=isDemo?"Example profession categories":r?.status==="measured"?"Measured country role queries":"Curated role categories";
-    $("kpi-skills").textContent=String(feed?.skills?.length||16).padStart(2,"0");
-    const lead=(feed?.skills||[])[0]?.name||"SQL";
-    $("kpi-rising").textContent=isDemo?"SQL":lead;
-    $("kpi-rising-note").textContent=isDemo?"Illustrative skill example":"Ranked by Scout topic association · not measured growth";
+    const observedRoles=window.ScoutRanking.roles(state.feed,state.city,state.country);
+    $("kpi-roles").textContent=observedRoles?String(observedRoles.items.length).padStart(2,"0"):"—";
+    $("kpi-roles-note").textContent=observedRoles?"Observed regional top-five":"No verified regional role ranking";
+    const observedSkills=window.ScoutRanking.skills(state.feed,state.city,state.country);
+    $("kpi-skills").textContent=observedSkills.length?String(observedSkills.length).padStart(2,"0"):"—";
+    $("kpi-rising").textContent=observedSkills.length?observedSkills[0].name:"—";
+    $("kpi-rising-note").textContent=observedSkills.length?
+      "Highest Scout topic association · not verified growth":"No current skill signals";
     $("status-bar").textContent=isDemo?
       "DEMO MODE · Interactive example · no verified historical trends connected":
       ("OBSERVED HISTORY · "+(feed?.date||"dataset")+" · "+(state.kind==="skill"?"Topic proxies":"Job-posting signals"));
   }
-  function renderRanks(isDemo) {
-    const country=state.feed?.regions?.[state.city]?.status==="measured"?state.city:state.country;
-    const reg=state.feed?.regions?.[country];
-    const haveRoles=reg?.status==="measured";
-    const realSkills=state.feed?.skills||[];
-    if(haveRoles){
-      const selected=reg.items.slice(0,5);
-      makeRankList("top-roles",selected.map(x=>x.name),selected.map(x=>x.sample_size),true,"profession");
-      $("roles-sub").textContent="Observed job-posting query counts · "+country+" · "+state.feed.date;
-    }else{
-      makeRankList("top-roles",DEFAULTS.roles,[96,84,73,67,58],false,"profession");
-      $("roles-sub").textContent="Preview ranking · illustrative scores, not hiring data";
+  function renderRanks() {
+    // Shared source-backed ranking across homepage and Scout Pulse.
+    const current = window.ScoutRanking.roles(state.feed, state.city, state.country);
+    if (current) {
+      const list = current.items;
+      makeRankList("top-roles",list.map(x=>x.name),list.map(x=>x.sample_size),true,"profession");
+      $("roles-sub").textContent = "Observed posting mentions · "+current.region+
+        " · collected "+new Date(current.generated_at).toLocaleDateString();
+    } else {
+      $("top-roles").replaceChildren();
+      const li=document.createElement("li"); li.className="empty-ranking";
+      li.textContent="No recent, verified top-five ranking for "+state.city+", "+state.country+
+        ". Choose or type any profession on Scout to build a career plan.";
+      $("top-roles").append(li);
+      $("roles-sub").textContent="Current source-attributed job-posting counts only";
     }
-    if(realSkills.length>=5){
-      const s=realSkills.slice(0,5);
-      makeRankList("top-skills",s.map(x=>x.name),s.map(x=>x.score),false,"skill");
-      $("skills-sub").textContent="Tracked Scout topic associations · not observed job mentions";
-    }else{
-      makeRankList("top-skills",DEFAULTS.skills,[97,87,80,75,67],false,"skill");
-      $("skills-sub").textContent="Example skills · preview scores only";
+    const skills=window.ScoutRanking.skills(state.feed,state.city,state.country);
+    if(skills.length){
+      makeRankList("top-skills",skills.map(s=>s.name),skills.map(s=>Number(s.score)),false,"skill");
+      $("skills-sub").textContent="Scout topic-association scores · NOT employer-request counts";
+    } else {
+      $("top-skills").replaceChildren();
+      const li=document.createElement("li");li.className="empty-ranking";
+      li.textContent="No current topic-association scores available.";
+      $("top-skills").append(li);
+      $("skills-sub").textContent="Awaiting next published data snapshot";
     }
   }
   function renderHeatmap(isDemo) {

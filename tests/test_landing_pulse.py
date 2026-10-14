@@ -120,3 +120,23 @@ def test_funnel_events_measure_report_page_not_only_navigation():
     assert "sufficientRealHistory" in chart
     assert app == (root / "scout/scout-app.js").read_text()
     assert report == (root / "scout/scout-site.js").read_text()
+
+
+def test_landing_and_trends_share_current_observed_roles():
+    root=Path(__file__).resolve().parents[1]
+    for filename in ("scout-ranking.js","scout-pulse.js","scout-app.jsx","scout-app.js",
+                     "scout-landing.jsx","scout-landing.js","scout-landing.css"):
+        assert (root / filename).read_bytes() == (root / "scout" / filename).read_bytes()
+        assert (root / filename).read_bytes() == (root / "public/scout" / filename).read_bytes()
+    for filename in ("index.html","pulse.js","pulse.css"):
+        original = root / ("index.html" if filename=="index.html" else "trends/"+filename)
+        mirror = root / ("scout/index.html" if filename=="index.html" else "scout/trends/"+filename)
+        assert original.read_bytes() == mirror.read_bytes()
+    shared=(root/"scout-ranking.js").read_text()
+    assert 'isRecent(item.collected_at, now)' in shared
+    assert 'ranked.slice(0, 5)' in shared
+    assert '"Worldwide"' in shared
+    assert "Math.random" not in (root/"scout-pulse.js").read_text()
+    assert "ScoutRanking.roles" in (root/"scout-app.js").read_text()
+    assert "ScoutRanking.roles" in (root/"trends/pulse.js").read_text()
+    assert 'src="../scout-ranking.js"' in (root/"scout/trends/index.html").read_text()

@@ -6,7 +6,8 @@
    are separate routes under report/). */
 const {
   useState: uS,
-  useEffect: uE
+  useEffect: uE,
+  useRef: uR
 } = React;
 const SA = window.SCOUT;
 const UI = window.ScoutUI;
@@ -54,7 +55,34 @@ function App() {
   const [country, setCountry] = uS(() => query.get("country") || "Italy");
   const [city, setCity] = uS(() => query.get("city") || "Rome");
   const [goal, setGoal] = uS(() => SA.GOALS.some(g => g.id === query.get("goal")) ? query.get("goal") : "build_portfolio");
-  const [profile, setProfile] = uS(() => query.get("profile") || "Developer");
+  const [profile, setProfile] = uS(() => (query.get("profile") || "").trim());
+  const userSelectedRole = uR(Boolean((query.get("profile") || "").trim()));
+  const [pulse, setPulse] = uS(null);
+  const [pulseStatus, setPulseStatus] = uS("loading");
+  uE(() => {
+    const controller = new AbortController();
+    fetch("data/pulse/latest.json", {cache: "no-store", signal: controller.signal})
+      .then(response => {
+        if (!response.ok) throw new Error("Current Pulse unavailable");
+        return response.json();
+      })
+      .then(feed => {
+        if (!feed || feed.schema_version !== 1) throw new Error("Unsupported Pulse feed");
+        setPulse(feed);
+        setPulseStatus("ready");
+      })
+      .catch(error => { if (!controller.signal.aborted) setPulseStatus("error"); });
+    return () => controller.abort();
+  }, []);
+  uE(() => {
+    if (userSelectedRole.current || !pulse) return;
+    const observed = window.ScoutRanking.roles(pulse, city, country);
+    setProfile(observed ? observed.items[0].name : "");
+  }, [pulse, city, country]);
+  const selectProfession = value => {
+    userSelectedRole.current = true;
+    setProfile(value);
+  };
   const [scanIdx, setScanIdx] = uS(0);
   const [animSafe, setAnimSafe] = uS(false);
   uE(() => {
@@ -64,6 +92,7 @@ function App() {
   }, [phase]);
   const goalObj = SA.GOALS.find(g => g.id === goal) || SA.GOALS[0];
   function generate() {
+    if (!profile.trim()) return;
     scoutEvent("plan_cta_clicked");
     setPhase("scanning");
     setScanIdx(0);
@@ -89,7 +118,7 @@ function App() {
     className: "app" + (animSafe ? " anim-safe" : "")
   }, phase === "hero" && /*#__PURE__*/React.createElement(Landing, {
     profile: profile,
-    setProfile: setProfile,
+    setProfile: selectProfession,
     city: city,
     country: country,
     setLocation: (c, co) => {
@@ -98,7 +127,9 @@ function App() {
     },
     goal: goal,
     setGoal: setGoal,
-    onGenerate: generate
+    onGenerate: generate,
+    pulse: pulse,
+    pulseStatus: pulseStatus
   }), phase === "scanning" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ToolHeader, null), /*#__PURE__*/React.createElement("div", {
     className: "wrap"
   }, /*#__PURE__*/React.createElement("section", {

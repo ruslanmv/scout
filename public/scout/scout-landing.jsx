@@ -304,7 +304,7 @@ function OccField({ k, value, onChange, occupations }) {
     <label className="l-field l-field-type">
       <span className="lf-k">{k}</span>
       <input list="scout-occs" value={value} onChange={onChange} autoComplete="off"
-        placeholder="your role — Nurse, Marketer, Developer…" spellCheck="false" />
+        placeholder="Type your profession…" spellCheck="false" />
       <datalist id="scout-occs">
         {occupations.map(o => <option key={o.id} value={o.name} />)}
       </datalist>
@@ -313,9 +313,12 @@ function OccField({ k, value, onChange, occupations }) {
 }
 
 /* ---------- landing page ---------- */
-function Landing({ profile, setProfile, city, country, setLocation, goal, setGoal, onGenerate }) {
+function Landing({ profile, setProfile, city, country, setLocation, goal, setGoal, onGenerate, pulse, pulseStatus }) {
   const [locating, setLocating] = uSL(false);
   const locLabel = city + ", " + country;
+  const observed = window.ScoutRanking.roles(pulse, city, country);
+  const suggestedOccupations = observed
+    ? observed.items.map((role, i) => ({id: String(i), name: role.name})) : [];
   function useMyLoc() {
     if (!navigator.geolocation || locating) return;
     setLocating(true);
@@ -350,15 +353,15 @@ function Landing({ profile, setProfile, city, country, setLocation, goal, setGoa
               <h1 className="l-h1 l-an d1">Find your <em>next</em><br /><em>career move</em>.</h1>
               <p className="l-sub l-an d2">Whatever your profession, Scout turns real signals into a simple plan: what to <em>learn</em>, what to <em>practice</em>, and how to <em>get seen</em>.</p>
               <div className="l-form l-an d2">
-                <OccField k="I'm a" value={profile} onChange={e => setProfile(e.target.value)} occupations={L_OCCS} />
+                <OccField k="I'm a" value={profile} onChange={e => setProfile(e.target.value)} occupations={suggestedOccupations} />
                 <LField k="in" value={locLabel} onChange={e => { const o = L_LOCS.find(x => x.label === e.target.value); if (o) setLocation(o.city, o.country); }} options={L_LOCS.map(o => ({ value: o.label, label: o.label }))} />
                 <LField k="I want to" value={goal} onChange={e => setGoal(e.target.value)} options={SL.GOALS.map(g => ({ value: g.id, label: g.label }))} />
               </div>
               <div className="l-cta-row l-an d4">
-                <button className="l-btn" onClick={onGenerate}>Find my next move <span aria-hidden="true">→</span></button>
+                <button className="l-btn" disabled={!profile.trim()} onClick={onGenerate} title={!profile.trim() ? "Choose or type a profession first" : undefined}>Find my next move <span aria-hidden="true">→</span></button>
                 <button className="l-loc" onClick={useMyLoc}>{locating ? "Locating…" : "Use my current location"}</button>
               </div>
-              <SLPulse city={city} country={country} profile={profile} onProfession={setProfile} />
+              <SLPulse city={city} country={country} profile={profile} onProfession={setProfile} data={pulse} status={pulseStatus} />
             </div>
             <LCarousel />
           </div>
