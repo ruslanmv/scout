@@ -20,6 +20,7 @@ def test_pulse_is_explicit_about_unavailable_hiring_data():
     assert feed["regions"]["Worldwide"]["status"] == "curated"
     assert len(feed["regions"]["Worldwide"]["items"]) == 8
     assert feed["source_status"] == "unavailable"
+    assert feed["display"] == {"professions": 5, "skills": 5, "tools": 5}
     assert "Python" in [item["name"] for item in feed["skills"][:3]]
     assert feed["skills"][0]["source"] == "topic_proxy"
     assert all(x["source"] == "topic_proxy" for x in feed["tools"])

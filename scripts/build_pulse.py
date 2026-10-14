@@ -115,6 +115,7 @@ def build_pulse(topics_doc: dict, signals_doc: dict, generated_at: str | None = 
 
     return {
         "schema_version": 1,
+        "display": {"professions": 5, "skills": 5, "tools": 5},
         "generated_at": generated_at,
         "date": generated_at[:10],
         "regions": regions,

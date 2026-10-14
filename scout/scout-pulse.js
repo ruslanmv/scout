@@ -40,22 +40,25 @@
       || (countryFeed && countryFeed.status === "measured" && countryFeed)
       || (pulse && pulse.regions && pulse.regions.Worldwide);
     const measured = !!(feed && feed.status === "measured");
+    const display = (pulse && pulse.display) || {};
+    const cap = value => Math.max(1, Math.min(8, Number(value) || 5));
+    const nRoles = cap(display.professions), nSkills = cap(display.skills), nTools = cap(display.tools);
     const measuredPlace = cityFeed && cityFeed.status === "measured" ? city : country;
     const localSkills = pulse && pulse.skills_by_region && (pulse.skills_by_region[regionKey] || pulse.skills_by_region[country.toLowerCase()]);
     const localTools = pulse && pulse.tools_by_region && (pulse.tools_by_region[regionKey] || pulse.tools_by_region[country.toLowerCase()]);
     const names = measured
-      ? feed.items.slice(0, 5).map(item => item.name)
+      ? feed.items.slice(0, nRoles).map(item => item.name)
       : FALLBACK_ROLES;
     const professions = R.useMemo(
-      () => shuffle(names).slice(0, 5),
-      [city, country, pulse, rotation]
+      () => shuffle(names).slice(0, nRoles),
+      [city, country, pulse, rotation, nRoles]
     );
     const rankedSkills = localSkills && localSkills.length ? localSkills : (pulse && pulse.skills);
     const rankedTools = localTools && localTools.length ? localTools : (pulse && pulse.tools);
     const skills = rankedSkills && rankedSkills.length
-      ? rankedSkills.slice(0, 5).map(item => item.name) : FALLBACK_SKILLS;
+      ? rankedSkills.slice(0, nSkills).map(item => item.name) : FALLBACK_SKILLS.slice(0, nSkills);
     const tools = rankedTools && rankedTools.length
-      ? rankedTools.slice(0, 5).map(item => item.name) : FALLBACK_TOOLS;
+      ? rankedTools.slice(0, nTools).map(item => item.name) : FALLBACK_TOOLS.slice(0, nTools);
     const dataDate = pulse && /^\d{4}-\d{2}-\d{2}$/.test(pulse.date || "")
       ? pulse.date : null;
 
@@ -65,7 +68,7 @@
         R.createElement("button", { type: "button", className: "l-pulse-shuffle",
           onClick: () => setRotation(n => n + 1), "aria-label": "Shuffle featured professions" }, "↻ Shuffle")
       ),
-      R.createElement("div", { className: "l-pulse-label" }, measured ? "Top 5 professions in " + measuredPlace : "5 professions to explore"),
+      R.createElement("div", { className: "l-pulse-label" }, measured ? "Top " + nRoles + " professions in " + measuredPlace : nRoles + " professions to explore"),
       R.createElement("div", { className: "l-chips", "aria-live": "polite" },
         professions.map((name, index) => R.createElement("button", {
           key: name, type: "button",
@@ -74,11 +77,11 @@
           title: index === 0 ? "Featured profession for this visit" : "Choose " + name
         }, index === 0 ? "✦ " + name : name))
       ),
-      R.createElement("div", { className: "l-pulse-label" }, "5 skills to explore · Scout topic signals"),
+      R.createElement("div", { className: "l-pulse-label" }, nSkills + " skills to explore · Scout topic signals"),
       R.createElement("div", { className: "l-chips l-pulse-secondary" },
         skills.map(name => R.createElement("span", { key: name, className: "l-chip l-pulse-static" }, name))
       ),
-      R.createElement("div", { className: "l-pulse-label" }, "5 tools to explore · Topic associations"),
+      R.createElement("div", { className: "l-pulse-label" }, nTools + " tools to explore · Topic associations"),
       R.createElement("div", { className: "l-chips l-pulse-secondary" },
         tools.map(name => R.createElement("span", { key: name, className: "l-chip l-pulse-static" }, name))
       ),
