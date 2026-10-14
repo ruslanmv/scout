@@ -43,12 +43,18 @@ function reportUrl(profile, city, country, goal) {
   });
   return "report/?" + q.toString();
 }
+function scoutEvent(name) {
+  if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event: "scout_" + name, source: "landing" });
+  try { window.dispatchEvent(new CustomEvent("scout:analytics", { detail: { event: "scout_" + name, source: "landing" } })); } catch (_) {}
+}
+
 function App() {
   const [phase, setPhase] = uS("hero");
-  const [country, setCountry] = uS("Italy");
-  const [city, setCity] = uS("Rome");
-  const [goal, setGoal] = uS("build_portfolio");
-  const [profile, setProfile] = uS("Developer");
+  const query = new URLSearchParams(window.location.search);
+  const [country, setCountry] = uS(() => query.get("country") || "Italy");
+  const [city, setCity] = uS(() => query.get("city") || "Rome");
+  const [goal, setGoal] = uS(() => SA.GOALS.some(g => g.id === query.get("goal")) ? query.get("goal") : "build_portfolio");
+  const [profile, setProfile] = uS(() => query.get("profile") || "Developer");
   const [scanIdx, setScanIdx] = uS(0);
   const [animSafe, setAnimSafe] = uS(false);
   uE(() => {
@@ -58,6 +64,7 @@ function App() {
   }, [phase]);
   const goalObj = SA.GOALS.find(g => g.id === goal) || SA.GOALS[0];
   function generate() {
+    scoutEvent("plan_cta_clicked");
     setPhase("scanning");
     setScanIdx(0);
     window.scrollTo({
@@ -71,7 +78,7 @@ function App() {
     if (phase !== "scanning") return;
     if (scanIdx >= SCAN_LINES.length) {
       const t = setTimeout(() => {
-        window.location.href = reportUrl(profile, city, country, goal);
+        scoutEvent("report_opened"); window.location.href = reportUrl(profile, city, country, goal);
       }, 420);
       return () => clearTimeout(t);
     }

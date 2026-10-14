@@ -69,3 +69,42 @@ def test_landing_build_outputs_are_mirrored():
         text = (root / index).read_text()
         assert 'src="scout-pulse.js"' in text
         assert text.index('src="scout-pulse.js"') < text.index('src="scout-landing.js"')
+
+def test_pulse_publishes_labeled_time_series(tmp_path):
+    from scripts.build_pulse import build_pulse, write_pulse
+    day1 = build_pulse(_topics(), {"signals": [
+        {"subject_kind": "role", "subject": "Nurse", "region": "Italy",
+         "sample_size": 123, "demand": 0.2, "source": "adzuna"}
+    ]}, "2026-10-13T08:00:00+00:00")
+    day2 = build_pulse(_topics(), {"signals": [
+        {"subject_kind": "role", "subject": "Nurse", "region": "Italy",
+         "sample_size": 140, "demand": 0.25, "source": "adzuna"}
+    ]}, "2026-10-14T08:00:00+00:00")
+    write_pulse(day1, tmp_path)
+    write_pulse(day2, tmp_path)
+    write_pulse(day2, tmp_path)
+    feed = json.loads((tmp_path / "scout/data/pulse/series.json").read_text())
+    assert feed["schema_version"] == 1
+    observed = [r for r in feed["observations"] if r["kind"] == "profession"]
+    assert len(observed) == 2
+    assert [r["value"] for r in observed] == [123.0, 140.0]
+    assert all(r["measurement"] == "job_postings" for r in observed)
+    skills = [r for r in feed["observations"] if r["kind"] == "skill"]
+    assert skills and all(r["measurement"] == "topic_proxy" for r in skills)
+    assert (tmp_path / "datasets/pulse/series.json").read_text() == (
+        tmp_path / "scout/data/pulse/series.json").read_text()
+
+
+def test_scout_pulse_dashboard_static_contract():
+    root = Path(__file__).resolve().parents[1]
+    for rel in ("trends/index.html", "trends/pulse.css", "trends/pulse.js"):
+        assert (root / rel).read_bytes() == (root / "scout" / rel).read_bytes()
+    page = (root / "scout/trends/index.html").read_text()
+    script = (root / "scout/trends/pulse.js").read_text()
+    assert 'id="momentum-plot"' in page
+    assert "DEMO PREVIEW" in script and "Observed data through" in script
+    assert "series.json" in script
+    assert "new URLSearchParams" in script
+    assert 'href="trends/"' in (root / "scout-landing.jsx").read_text()
+    assert 'href: "trends/"' in (root / "scout-landing.js").read_text()
+    assert 'src="scout-pulse.js"' in (root / "scout/index.html").read_text()

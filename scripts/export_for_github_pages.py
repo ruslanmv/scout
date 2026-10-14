@@ -89,6 +89,9 @@ def main() -> None:
         for dest in (public / "data" / "pulse", public / "scout" / "data" / "pulse"):
             dest.mkdir(parents=True, exist_ok=True)
             shutil.copy2(pulse, dest / "latest.json")
+            history = ROOT / "datasets" / "pulse" / "series.json"
+            if history.exists():
+                shutil.copy2(history, dest / "series.json")
     print(f"Exported GitHub Pages bundle to {public} and {public / 'scout'}")
 
 

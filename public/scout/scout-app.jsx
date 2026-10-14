@@ -32,6 +32,11 @@ function reportUrl(profile, city, country, goal) {
   return "report/?" + q.toString();
 }
 
+function scoutEvent(name) {
+  if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event: "scout_" + name, source: "landing" });
+  try { window.dispatchEvent(new CustomEvent("scout:analytics", { detail: { event: "scout_" + name, source: "landing" } })); } catch (_) {}
+}
+
 function App() {
   const [phase, setPhase] = uS("hero");
   const [country, setCountry] = uS("Italy");
@@ -45,13 +50,13 @@ function App() {
 
   const goalObj = SA.GOALS.find(g => g.id === goal) || SA.GOALS[0];
 
-  function generate() { setPhase("scanning"); setScanIdx(0); window.scrollTo({ top: 0, behavior: "smooth" }); }
+  function generate() { scoutEvent("plan_cta_clicked"); setPhase("scanning"); setScanIdx(0); window.scrollTo({ top: 0, behavior: "smooth" }); }
 
   // Advance the scanning log, then navigate to the real report route.
   uE(() => {
     if (phase !== "scanning") return;
     if (scanIdx >= SCAN_LINES.length) {
-      const t = setTimeout(() => { window.location.href = reportUrl(profile, city, country, goal); }, 420);
+      const t = setTimeout(() => { scoutEvent("report_opened"); window.location.href = reportUrl(profile, city, country, goal); }, 420);
       return () => clearTimeout(t);
     }
     const t = setTimeout(() => setScanIdx(i => i + 1), scanIdx === 0 ? 360 : 300);

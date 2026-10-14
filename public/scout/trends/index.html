@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#041d13">
+  <meta name="description" content="Scout Pulse: explore the evolution of occupations and skills, compare regional signals and turn your research into a career plan.">
+  <title>Scout Pulse — Career &amp; Skill Signals</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pulse.css">
+  <script src="pulse.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to trends</a>
+  <header class="topbar">
+    <nav class="shell topbar-inner" aria-label="Primary navigation">
+      <a href="../" class="brand"><span aria-hidden="true">◇</span> Scout</a>
+      <div class="navlinks">
+        <a href="../learn/">Learn</a><a href="../my-learning/">My Learning</a>
+        <a href="./" aria-current="page">Trends</a><a href="../api/">API</a>
+        <a href="../dataset/">Methodology</a><a href="../dataset/#trust">Trust</a>
+        <a href="https://github.com/ruslanmv/scout" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main" class="shell">
+    <section class="pulse-hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="glow-dot"></span> MARKET PULSE</p>
+        <h1>Scout Pulse</h1>
+        <h2>See where demand is moving —<br>and turn it into <em>your next move.</em></h2>
+        <p class="lead">Explore how professional roles and skills evolve. Compare trends, discover new opportunities and turn insights into a career roadmap.</p>
+        <div class="hero-actions">
+          <a class="button primary" id="hero-plan" href="../">Get my career plan <span aria-hidden="true">→</span></a>
+          <a class="button outline" href="../dataset/">Explore methodology</a>
+        </div>
+        <div class="data-status" role="status" id="status-bar">Loading market coverage…</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orb"><div class="orb-inner"></div></div>
+        <div class="floating-stat a">✦ <strong>Signals, not hype</strong><span>Traceable observations</span></div>
+        <div class="floating-stat b">↗ <strong>Find your momentum</strong><span>Skills · Professions · Places</span></div>
+      </div>
+    </section>
+    <section class="kpi-grid" aria-label="Snapshot">
+      <article class="panel kpi"><span class="kpi-label">Tracked observations</span><strong id="kpi-postings">—</strong><p id="kpi-postings-note">Loading coverage</p><span class="kpi-icon">▥</span></article>
+      <article class="panel kpi"><span class="kpi-label">Professions explored</span><strong id="kpi-roles">—</strong><p id="kpi-roles-note">Across supported roles</p><span class="kpi-icon">◇</span></article>
+      <article class="panel kpi"><span class="kpi-label">Skills tracked</span><strong id="kpi-skills">—</strong><p>Scout's topic taxonomy</p><span class="kpi-icon">▦</span></article>
+      <article class="panel kpi"><span class="kpi-label">Skill worth exploring</span><strong class="kpi-name" id="kpi-rising">—</strong><p id="kpi-rising-note">From tracked signals</p><span class="kpi-icon">↗</span></article>
+    </section>
+    <section class="panel chart-panel" aria-labelledby="momentum-heading">
+      <div class="panel-head chart-header">
+        <div><p class="eyebrow small">SIGNAL EXPLORER</p><h2 id="momentum-heading">Demand momentum over time</h2><p class="muted" id="chart-description">Normalized index · 7-day trailing average · baseline = 100</p></div>
+        <div class="chart-controls">
+          <label class="select-label"><span class="sr-only">Region</span><select id="region-select" aria-label="Select location"></select></label>
+          <div class="segmented" role="group" aria-label="Time range"><button data-range="30" type="button">30D</button><button data-range="90" class="active" type="button">90D</button><button data-range="180" type="button">6M</button></div>
+          <div class="segmented" role="group" aria-label="Category"><button data-kind="skill" class="active" type="button">Skills</button><button data-kind="profession" type="button">Careers</button></div>
+        </div>
+      </div>
+      <div class="chart-intro">
+        <div class="legend" id="chart-legend" aria-label="Displayed series"></div>
+        <span id="chart-mode" class="mode-pill">Loading</span>
+      </div>
+      <div class="plot-wrap" id="plot-wrap">
+        <svg id="momentum-plot" viewBox="0 0 1060 385" role="img" aria-label="Historical indexed trend of selected professions or skills over time"></svg>
+        <div id="chart-tooltip" class="chart-tooltip" hidden></div>
+      </div>
+      <div class="chart-footer"><p id="coverage-note">Checking data availability…</p><a href="../dataset/">About these signals ↗</a></div>
+    </section>
+    <div class="two-col">
+      <section class="panel rank-panel" aria-labelledby="roles-heading">
+        <div class="panel-head"><div><h2 id="roles-heading">Top 5 professions</h2><p class="muted" id="roles-sub">Regional coverage · latest available</p></div><a class="mini-link" href="../?profile=Developer">Explore a career →</a></div>
+        <ol id="top-roles" class="rank-list"></ol>
+      </section>
+      <section class="panel rank-panel" aria-labelledby="skills-heading">
+        <div class="panel-head"><div><h2 id="skills-heading">Skills worth watching</h2><p class="muted" id="skills-sub">Top topic-associated skills</p></div><a class="mini-link" href="../learn/">Learn more →</a></div>
+        <ol id="top-skills" class="rank-list"></ol>
+      </section>
+    </div>
+    <div class="two-col lower-row">
+      <section class="panel matrix-panel" aria-labelledby="cities-heading">
+        <div class="panel-head"><div><h2 id="cities-heading">City demand comparison</h2><p class="muted" id="cities-sub">Like-for-like observations, where available</p></div></div>
+        <div class="matrix-scroll" id="city-matrix"></div>
+      </section>
+      <section class="panel emerging-panel" aria-labelledby="emerging-heading">
+        <div class="panel-head"><div><h2 id="emerging-heading">Emerging signals</h2><p class="muted" id="emerging-sub">Changes worth a closer look</p></div></div>
+        <div id="emerging-list" class="emerging-list"></div>
+      </section>
+    </div>
+    <section class="conversion-banner">
+      <div><p class="eyebrow small">◇ YOUR NEXT MOVE</p><h2>Turn signals into a plan.</h2><p>Choose your profession, location and goal. Scout will help you decide what to learn, practice and publish.</p></div>
+      <div class="hero-actions"><a class="button primary" id="bottom-plan" href="../">Build my roadmap →</a><a class="button outline" href="../dataset/">Our methodology</a></div>
+    </section>
+    <footer class="footer"><span>© 2026 Scout · Signal-led career discovery</span><div><a href="../">Home</a><a href="../dataset/">Methodology</a><a href="https://github.com/ruslanmv/scout">GitHub ↗</a></div></footer>
+  </main>
+</body>
+</html>
