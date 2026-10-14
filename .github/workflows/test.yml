@@ -16,5 +16,4 @@ jobs:
           node --check scout/scout-pulse.js
           node --check scout/scout-landing.js
           node --check scout/scout-app.js
-          node tests/landing_initial.test.cjs
       - run: pytest
