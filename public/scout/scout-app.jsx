@@ -39,10 +39,15 @@ function scoutEvent(name) {
 
 function App() {
   const [phase, setPhase] = uS("hero");
-  const [country, setCountry] = uS("Italy");
-  const [city, setCity] = uS("Rome");
-  const [goal, setGoal] = uS("build_portfolio");
-  const [profile, setProfile] = uS("Developer");
+  // Choose once per fresh visit; never overwrite edits or explicit deep links.
+  // A country/city remains stable rather than being randomized.
+  const [initial] = uS(() => window.ScoutLandingPresets.initialSelection(
+    new URLSearchParams(window.location.search), SA.GOALS, SA.LOCATIONS
+  ));
+  const [country, setCountry] = uS(initial.country);
+  const [city, setCity] = uS(initial.city);
+  const [goal, setGoal] = uS(initial.goal);
+  const [profile, setProfile] = uS(initial.profile);
   const [scanIdx, setScanIdx] = uS(0);
   const [animSafe, setAnimSafe] = uS(false);
 
