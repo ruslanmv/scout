@@ -108,3 +108,15 @@ def test_scout_pulse_dashboard_static_contract():
     assert 'href="trends/"' in (root / "scout-landing.jsx").read_text()
     assert 'href: "trends/"' in (root / "scout-landing.js").read_text()
     assert 'src="scout-pulse.js"' in (root / "scout/index.html").read_text()
+
+def test_funnel_events_measure_report_page_not_only_navigation():
+    root = Path(__file__).resolve().parents[1]
+    app = (root / "scout-app.js").read_text()
+    report = (root / "scout-site.js").read_text()
+    chart = (root / "trends/pulse.js").read_text()
+    assert "scoutEvent(\"report_navigation_started\")" in app
+    assert "scout_report_viewed" in report
+    assert "state.item && state.kind" in chart
+    assert "sufficientRealHistory" in chart
+    assert app == (root / "scout/scout-app.js").read_text()
+    assert report == (root / "scout/scout-site.js").read_text()

@@ -78,7 +78,7 @@ function App() {
     if (phase !== "scanning") return;
     if (scanIdx >= SCAN_LINES.length) {
       const t = setTimeout(() => {
-        scoutEvent("report_opened"); window.location.href = reportUrl(profile, city, country, goal);
+        scoutEvent("report_navigation_started"); window.location.href = reportUrl(profile, city, country, goal);
       }, 420);
       return () => clearTimeout(t);
     }

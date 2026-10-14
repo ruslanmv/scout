@@ -67,7 +67,7 @@ range, never certified confidence intervals. No claims are made that demo
 values represent jobs available or verified growth.
 
 Analytics integration points: `scout_plan_cta_clicked`,
-`scout_report_opened`, `scout_chart_view`,
+`scout_report_navigation_started and scout_report_viewed`, `scout_chart_view`,
 `scout_region_selected`, `scout_profession_selected` and
 `scout_skill_selected`. They push to an existing `window.dataLayer`
 or dispatch a local `scout:analytics` CustomEvent. This PR intentionally

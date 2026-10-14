@@ -56,7 +56,7 @@ function App() {
   uE(() => {
     if (phase !== "scanning") return;
     if (scanIdx >= SCAN_LINES.length) {
-      const t = setTimeout(() => { scoutEvent("report_opened"); window.location.href = reportUrl(profile, city, country, goal); }, 420);
+      const t = setTimeout(() => { scoutEvent("report_navigation_started"); window.location.href = reportUrl(profile, city, country, goal); }, 420);
       return () => clearTimeout(t);
     }
     const t = setTimeout(() => setScanIdx(i => i + 1), scanIdx === 0 ? 360 : 300);

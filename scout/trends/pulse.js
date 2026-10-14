@@ -52,7 +52,16 @@
       return {date:dateAgo(days-1-i),value:Math.max(48,100+curve+n+(i/days-0.5)*20*slope)};
     });
   }
-  function demoNames() { return state.kind === "skill" ? DEFAULTS.skill : DEFAULTS.profession; }
+  function demoNames() {
+    const names=(state.kind === "skill" ? DEFAULTS.skill : DEFAULTS.profession).slice();
+    if(state.item && state.kind==="skill"){
+      const existing=names.findIndex(n=>n.toLowerCase()===state.item.toLowerCase());
+      if(existing>=0) names.splice(existing,1);
+      names.unshift(state.item);
+      return names.slice(0,3);
+    }
+    return names;
+  }
   function topicProxy(d) {
     return d && Array.isArray(d.observations) ? d.observations : [];
   }
@@ -80,8 +89,9 @@
     return candidates.slice(0,3);
   }
   function rolling(data, window=7) {
-    return data.map((o,i)=>{
-      const prev=data.slice(Math.max(0,i-window+1),i+1);
+    return data.map(o=>{
+      const ts=toMs(o.date);
+      const prev=data.filter(p=>toMs(p.date)<=ts&&toMs(p.date)>=ts-(window-1)*86400000);
       return {...o,avg:prev.reduce((sum,x)=>sum+x.value,0)/prev.length};
     });
   }
@@ -141,7 +151,10 @@
     const today=data.flatMap(s=>s.points).map(x=>toMs(x.date)).reduce((a,b)=>Math.max(a,b),0);
     const projections=data.map(s=>scenario(s.points));
     const complete=projections.every(p=>p.length>0);
-    const project=complete && (isDemo || data.every(s=>s.points.length>=56));
+    const sufficientRealHistory=s=>s.points.length>=56 &&
+      toMs(s.points.at(-1).date)>=toMs(dateAgo(3)) &&
+      s.points.every((p,i)=>!i || toMs(p.date)-toMs(s.points[i-1].date)<=2*86400000);
+    const project=complete && (isDemo || data.every(sufficientRealHistory));
     const end=project?today+14*86400000:today;
     const allValues=data.flatMap(s=>s.points.map(p=>p.index)).concat(project?projections.flatMap(p=>p.flatMap(x=>[x.low,x.high])):[]);
     const low=Math.floor((Math.min(...allValues)-7)/10)*10, high=Math.ceil((Math.max(...allValues)+7)/10)*10;
@@ -181,7 +194,7 @@
     $("coverage-note").textContent=isDemo?
       "Preview only: all plotted values and projections are generated examples, not observed market activity or validated forecasts. Connect daily observations to display measured history.":
       ("Observed data through "+(state.feed?.date||"latest")+". "+(state.kind==="skill"?"Skills measure Scout topic associations, not job postings.":"Careers measure source-reported job posting counts, not vacancies filled.")+
-      (project?" Dotted paths show exploratory extrapolation with unvalidated ranges, not prediction confidence.":" Forecast hidden until at least 56 daily observations per series are available."));
+      (project?" Dotted paths show exploratory extrapolation with unvalidated ranges, not prediction confidence.":" Forecast hidden until at least 56 near-daily observations per series are available."));
     svg.onpointermove=event=>{
       const rect=svg.getBoundingClientRect(),svgX=(event.clientX-rect.left)*1060/rect.width;
       const ms=minDate+(svgX-55)/965*(end-minDate);
