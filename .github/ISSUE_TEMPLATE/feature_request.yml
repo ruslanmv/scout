@@ -1,0 +1,28 @@
+name: Feature request
+description: Suggest an improvement to Scout
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or user need
+      description: What makes Scout difficult to use today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe what should change for visitors or contributors.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: textarea
+    id: signals
+    attributes:
+      label: Data sources and integrity considerations
+      description: "For trends/forecasting: name evidence, update cadence and known coverage gaps."

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#061e15">
+<meta name="description" content="Start with Scout in your browser or run its open-source Python API and MCP server.">
+<title>Get Started — Scout</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="quickstart.css">
+<script src="quickstart.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to quickstart</a>
+<header class="top"><nav class="wrap nav" aria-label="Main navigation">
+<a class="brand" href="../"><span aria-hidden="true">◇</span> Scout</a>
+<div class="navlinks"><a href="../">Careers</a><a href="../trends/">Pulse</a><a href="../learn/">Learn</a><a href="../dataset/">Methodology</a><a href="https://github.com/ruslanmv/scout" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+<button id="theme-toggle" class="theme" type="button" aria-label="Switch to light theme">☼ <span>Theme</span></button>
+</nav></header>
+<main id="main" class="wrap">
+<section class="hero">
+<p class="eyebrow">◇ OPEN-SOURCE · CAREER INTELLIGENCE</p>
+<h1>Go from curious<br>to <em>building.</em></h1>
+<p class="lead">Try Scout instantly in your browser. Explore skills and careers, turn a signal into a plan, or run the FastAPI and MCP tools yourself.</p>
+<div class="actions"><a class="button primary" href="../">Try Scout in your browser →</a><a class="button secondary" href="https://codespaces.new/ruslanmv/scout?quickstart=1" target="_blank" rel="noopener noreferrer">Launch GitHub Codespaces ↗</a></div>
+<p class="note">No installation for the static demo. Some labor-market charts may show labeled illustrative examples when observed data is unavailable.</p>
+</section>
+<section class="steps" aria-label="Ways to try Scout">
+<a class="step" href="../"><span class="num">01 · EXPLORE</span><span class="glyph" aria-hidden="true">✦</span><strong>Find your next career move</strong><span>Pick a profession, location and goal. Get a practical starting plan.</span><b>Explore careers →</b></a>
+<a class="step" href="../trends/"><span class="num">02 · DISCOVER</span><span class="glyph" aria-hidden="true">⌁</span><strong>Scout Pulse</strong><span>Compare topic signals and observed hiring data where available.</span><b>See momentum →</b></a>
+<a class="step" href="../learn/"><span class="num">03 · LEARN</span><span class="glyph" aria-hidden="true">◈</span><strong>Learning Navigator</strong><span>Create a learning path and track your progress in your browser.</span><b>Build a path →</b></a>
+</section>
+<section class="terminal panel" aria-labelledby="code-title">
+<div class="blockhead"><div><p class="eyebrow">FOR DEVELOPERS</p><h2 id="code-title">Run Scout your way.</h2><p class="muted">Verified entry points: local FastAPI service, REST API and optional MCP server.</p></div><span class="device"><i></i><i></i><i></i></span></div>
+<div class="tabs" role="tablist" aria-label="Choose installation or API example">
+<button class="tab active" role="tab" aria-selected="true" id="tab-python" aria-controls="panel-python" data-tab="python">Python quickstart</button>
+<button class="tab" role="tab" aria-selected="false" id="tab-curl" aria-controls="panel-curl" data-tab="curl" tabindex="-1">cURL API</button>
+<button class="tab" role="tab" aria-selected="false" id="tab-mcp" aria-controls="panel-mcp" data-tab="mcp" tabindex="-1">MCP server</button>
+</div>
+<div class="codebox"><button class="copy" id="copy-code" type="button" aria-live="polite">Copy code</button>
+<pre id="panel-python" class="codepanel" role="tabpanel" aria-labelledby="tab-python"><code>git clone https://github.com/ruslanmv/scout.git
+cd scout
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python scripts/generate_snapshot.py
+python -m uvicorn app.main:app --reload</code></pre>
+<pre id="panel-curl" class="codepanel" role="tabpanel" aria-labelledby="tab-curl" hidden><code>curl "http://127.0.0.1:8000/api/v1/ui/bootstrap?country=Italy&amp;city=Rome&amp;goal=build_portfolio&amp;profile=developer"</code></pre>
+<pre id="panel-mcp" class="codepanel" role="tabpanel" aria-labelledby="tab-mcp" hidden><code>python -m pip install -e ".[mcp]"
+python -m scout_mcp</code></pre>
+</div>
+<div class="terminalfoot"><span>Python 3.10+ · Local API docs at <code>http://127.0.0.1:8000/docs</code></span><a href="https://github.com/ruslanmv/scout/blob/master/docs/QUICKSTART.md">Full setup &amp; troubleshooting ↗</a></div>
+</section>
+<section class="more panel"><div><p class="eyebrow">BUILT FOR TRUST</p><h2>Explore the evidence.<br><em>Build with confidence.</em></h2><p>Scout separates curated career advice, topic-based signals, and source-attributed observations. Missing API keys never become fake demand scores.</p></div><div class="morelinks"><a href="../dataset/">Data methodology →</a><a href="../api/">API documentation →</a><a href="https://github.com/ruslanmv/scout/blob/master/CONTRIBUTING.md">Contribute to Scout →</a><a href="https://github.com/ruslanmv/scout/issues/new/choose">Report an issue →</a></div></section>
+<footer><span>◇ Scout · Open source · Apache 2.0</span><div><a href="../">Home</a><a href="https://github.com/ruslanmv/scout">GitHub</a></div></footer>
+</main>
+</body>
+</html>

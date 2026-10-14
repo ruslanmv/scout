@@ -1,0 +1,38 @@
+name: Bug report
+description: Help reproduce a problem with the web UI, data or API
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thank you for helping Scout improve. Do not paste API keys, precise coordinates or private data."
+  - type: textarea
+    id: issue
+    attributes:
+      label: What happened?
+      description: Include the page route or API endpoint and any relevant error.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Open ...\n2. Select ...\n3. Click ..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "Browser version, OS, or Python version"
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Non-sensitive logs or screenshots
+      description: "Redact tokens and personal information."

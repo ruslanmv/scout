@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Scout documentation and quickstart
+    url: https://github.com/ruslanmv/scout/blob/master/docs/QUICKSTART.md
+    about: Find browser, Python and MCP setup instructions before opening an issue.

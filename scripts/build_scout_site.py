@@ -136,21 +136,23 @@ def become_widget(rel: str) -> str:
         <form id="becomeForm" novalidate>
           <div class="become-grid">
             <div class="field">
-              <label for="become-role">What do you want to become?</label>
+              <label for="become-role">Profession for your next learning path</label>
               <input id="become-role" list="become-roles" autocomplete="off"
-                     placeholder="e.g. AI Engineer" value="AI Engineer" />
+                     placeholder="e.g. Marketing Specialist" required />
               <datalist id="become-roles">
-                <option>AI Engineer</option><option>AI Agent Developer</option>
-                <option>Machine Learning Engineer</option><option>MLOps Engineer</option>
-                <option>Cloud Solutions Architect</option><option>Backend Developer</option>
-                <option>Data Engineer</option><option>Platform Engineer</option>
+                <option value="Developer"></option><option value="Data Analyst"></option>
+                <option value="Marketing Specialist"></option><option value="UX/Product Designer"></option>
+                <option value="Nurse"></option><option value="Teacher"></option>
+                <option value="Accountant"></option><option value="Electrician"></option>
+                <option value="AI Engineer"></option>
               </datalist>
             </div>
             <div class="field sel">
               <label for="become-goal">Your main objective</label>
               <select id="become-goal">
                 <option value="build_portfolio">Build a portfolio</option>
-                <option value="career">Land a job</option>
+                <option value="career">Advance my career</option>
+                <option value="create_agents">Create agents</option>
                 <option value="startup">Launch a product</option>
                 <option value="upskill">Upskill in my role</option>
               </select>
@@ -159,17 +161,18 @@ def become_widget(rel: str) -> str:
           <div class="become-focus">
             <span class="become-focus-l">Focus areas (optional)</span>
             <div class="chips" id="become-chips">
-              <button type="button" data-f="Multi-agent orchestration">Multi-agent orchestration</button>
-              <button type="button" data-f="Tool calling">Tool calling</button>
-              <button type="button" data-f="RAG">RAG</button>
-              <button type="button" data-f="Vector databases">Vector databases</button>
-              <button type="button" data-f="Evaluation">Evaluation</button>
-              <button type="button" data-f="Deployment">Deployment</button>
+              <button type="button" data-f="Career development">Career development</button>
+              <button type="button" data-f="Portfolio">Portfolio</button>
+              <button type="button" data-f="Industry tools">Industry tools</button>
+              <button type="button" data-f="Research">Research</button>
+              <button type="button" data-f="Analytics">Analytics</button>
+              <button type="button" data-f="Communication">Communication</button>
             </div>
           </div>
           <button class="btn primary big on-dark" type="submit">⚡ Generate my learning path →</button>
-          <p class="become-note">Uses your report's location automatically. The path is built by
-            Scout's deterministic pipeline; prices it can't verify show “Verify on provider”.</p>
+          <p class="become-note">Starts with the profession, career goal and location you chose on Scout.
+            You can edit the profession here before building your path. Prices it can't verify
+            show “Verify on provider”.</p>
         </form>
       </article>
     </section>
@@ -195,6 +198,10 @@ def become_widget(rel: str) -> str:
     <script>
     (function(){
       var q = new URLSearchParams(location.search);
+      var roleInput = document.getElementById('become-role');
+      // Never infer that every visitor wants to become an AI Engineer.
+      // Prefill from the exact profession passed by Scout's landing page.
+      roleInput.value = (q.get('profile') || '').trim();
       var goalSel = document.getElementById('become-goal');
       var g = q.get('goal');
       if (g) for (var i=0;i<goalSel.options.length;i++){ if (goalSel.options[i].value===g){ goalSel.selectedIndex=i; break; } }
@@ -208,7 +215,13 @@ def become_widget(rel: str) -> str:
       });
       document.getElementById('becomeForm').addEventListener('submit', function(e){
         e.preventDefault();
-        var role = (document.getElementById('become-role').value||'').trim() || 'AI Engineer';
+        var role = roleInput.value.trim();
+        if (!role) {
+          roleInput.setCustomValidity('Enter your profession to continue.');
+          roleInput.reportValidity();
+          return;
+        }
+        roleInput.setCustomValidity('');
         var u = new URL('__REL__learn/', location.href);
         u.searchParams.set('intent','advance_career');
         u.searchParams.set('role', role);
