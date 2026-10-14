@@ -253,5 +253,12 @@
       case "topic": renderTopic(state); break;
       default: break;
     }
+    // Successful report-page render is the funnel outcome, not just the CTA
+    // click that initiated navigation. No location or role is transmitted.
+    if (PAGE.type === "report") {
+      var event = { event: "scout_report_viewed", source: "report" };
+      if (Array.isArray(window.dataLayer)) window.dataLayer.push(event);
+      try { window.dispatchEvent(new CustomEvent("scout:analytics", { detail: event })); } catch (_) {}
+    }
   });
 })();

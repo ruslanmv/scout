@@ -578,6 +578,8 @@ function Landing({
   }, "Learn"), /*#__PURE__*/React.createElement("a", {
     href: "my-learning/"
   }, "My Learning"), /*#__PURE__*/React.createElement("a", {
+    href: "trends/"
+  }, "Trends"), /*#__PURE__*/React.createElement("a", {
     href: "api/"
   }, "API"), /*#__PURE__*/React.createElement("a", {
     href: "dataset/"
@@ -629,12 +631,7 @@ function Landing({
       value: g.id,
       label: g.label
     }))
-  })), /*#__PURE__*/React.createElement(SLPulse, {
-    city: city,
-    country: country,
-    profile: profile,
-    onProfession: setProfile
-  }), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement("div", {
     className: "l-cta-row l-an d4"
   }, /*#__PURE__*/React.createElement("button", {
     className: "l-btn",
@@ -644,7 +641,12 @@ function Landing({
   }, "→")), /*#__PURE__*/React.createElement("button", {
     className: "l-loc",
     onClick: useMyLoc
-  }, locating ? "Locating…" : "Use my current location"))), /*#__PURE__*/React.createElement(LCarousel, null)))), /*#__PURE__*/React.createElement("div", {
+  }, locating ? "Locating…" : "Use my current location")), /*#__PURE__*/React.createElement(SLPulse, {
+    city: city,
+    country: country,
+    profile: profile,
+    onProfession: setProfile
+  })), /*#__PURE__*/React.createElement(LCarousel, null)))), /*#__PURE__*/React.createElement("div", {
     className: "l-light"
   }, /*#__PURE__*/React.createElement("div", {
     className: "l-wrap"
@@ -783,6 +785,8 @@ function Landing({
   }, /*#__PURE__*/React.createElement("a", {
     href: "learn/"
   }, "Learn"), /*#__PURE__*/React.createElement("a", {
+    href: "trends/"
+  }, "Trends"), /*#__PURE__*/React.createElement("a", {
     href: "api/"
   }, "API"), /*#__PURE__*/React.createElement("a", {
     href: "dataset/"

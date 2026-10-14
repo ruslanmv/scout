@@ -11,4 +11,9 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
+      - run: |
+          node --check scout/trends/pulse.js
+          node --check scout/scout-pulse.js
+          node --check scout/scout-landing.js
+          node --check scout/scout-app.js
       - run: pytest

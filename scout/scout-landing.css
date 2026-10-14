@@ -203,16 +203,25 @@
   .l-foot-in{flex-direction:column;align-items:flex-start}
 }
 
-/* Daily Pulse discovery tags; clearly separate measured rankings from suggestions. */
-.l-pulse{margin-top:14px;max-width:610px}
-.l-pulse-top{display:flex;align-items:center;justify-content:space-between;gap:14px}
-.l-pulse-caption{font:700 10px var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--grn-bright)}
-.l-pulse-shuffle{background:transparent;border:0;color:#c7dccf;font:600 12px var(--sans);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.l-pulse-shuffle:hover,.l-pulse-shuffle:focus-visible{color:#fff}
-.l-pulse-label{font-size:12px;font-weight:700;color:#c5d8ce;margin:12px 0 2px}
-.l-pulse .l-chips{margin-top:6px}
-.l-pulse-secondary{gap:6px}
-.l-pulse .l-chip{white-space:normal}
-.l-pulse-static{cursor:default!important;color:#b1c7bb!important;background:rgba(255,255,255,.025)!important}
-.l-pulse-note{font-size:11px;line-height:1.55;color:#a9c2b3;margin:10px 0 0}
-.l-pulse-note a{color:var(--grn-bright);text-decoration:underline;text-underline-offset:2px}
+
+/* Scout conversion-first hero: preserve identity, improve visual hierarchy. */
+.l-hero-grid{grid-template-columns:minmax(0,1.06fr) minmax(0,1fr);gap:clamp(28px,3vw,52px)}
+.l-h1{font-size:clamp(49px,5.2vw,78px);line-height:1.01}
+.l-form{display:grid;grid-template-columns:minmax(120px,1fr) minmax(150px,1.18fr) minmax(145px,1fr);gap:10px}
+.l-field{min-width:0;overflow:hidden}
+.l-field select,.l-field-type input{max-width:100%;text-overflow:ellipsis}
+.l-cta-row{margin-top:16px;gap:18px}
+.l-btn{border-radius:100px;background:#53f39d;color:#032115;box-shadow:0 15px 40px -18px rgba(83,243,157,.85)}
+.l-btn:hover{background:#72ffaf}
+.l-quick-tags{margin-top:24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.13);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:18px;row-gap:14px}
+.l-quick-group{min-width:0}
+.l-quick-title{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#b2d1bf;margin-bottom:10px}
+.l-quick-row{display:flex;flex-wrap:wrap;gap:6px}
+.l-quick-chip{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;border:1px solid rgba(137,220,172,.25);background:rgba(255,255,255,.035);color:#d8e8de;font:600 11px var(--sans);cursor:pointer;text-decoration:none;transition:background .15s,border-color .15s}
+.l-quick-chip:hover,.l-quick-chip:focus-visible{background:rgba(83,243,157,.13);border-color:#53f39d;color:#fff}
+.l-quick-chip.selected{border-color:rgba(83,243,157,.45);color:#53f39d}
+.l-quick-link{grid-column:1/-1;width:max-content;font-size:12px;color:#53f39d;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.l-nav a[href="trends/"]{color:#53f39d}
+@media(max-width:1100px){.l-form{grid-template-columns:1fr 1fr}.l-form .l-field:last-child{grid-column:1/-1}}
+@media(max-width:980px){.l-hero-grid{grid-template-columns:1fr;gap:34px}.l-form{grid-template-columns:repeat(3,1fr)}.l-form .l-field:last-child{grid-column:auto}}
+@media(max-width:680px){.l-form{grid-template-columns:1fr}.l-form .l-field:last-child{grid-column:auto}.l-quick-tags{grid-template-columns:1fr}.l-quick-link{grid-column:1}.l-h1{font-size:clamp(43px,11.5vw,62px)}}

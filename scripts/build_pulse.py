@@ -168,6 +168,32 @@ def write_pulse(payload: dict, root: Path = ROOT) -> None:
         writer.writeheader()
         writer.writerows(rows)
 
+    # Public time-series feed, rebuilt from immutable dated snapshots. Do not
+    # mix measured posting counts with topic-association proxy scores.
+    observations = []
+    for row in rows:
+        if not row["name"] or not row["score"] and row["sample_size"] == "":
+            continue
+        is_posting = row["measurement"] == "job_postings"
+        observations.append({
+            "date": row["date"],
+            "region": row["region"],
+            "kind": row["kind"],
+            "name": row["name"],
+            "value": float(row["sample_size"] if is_posting else row["score"]),
+            "measurement": row["measurement"],
+            "source": row["source"],
+        })
+    series = {
+        "schema_version": 1,
+        "generated_at": payload["generated_at"],
+        "observations": observations,
+        "methodology": "Observed role posting-count snapshots and separate Scout topic-proxy scores; no forecasts or synthetic observations.",
+    }
+    series_json = json.dumps(series, indent=2, ensure_ascii=False) + "\n"
+    (folder / "series.json").write_text(series_json, encoding="utf-8")
+    (target.parent / "series.json").write_text(series_json, encoding="utf-8")
+
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
