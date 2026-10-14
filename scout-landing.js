@@ -8,6 +8,7 @@ const {
   useRef: uRL
 } = React;
 const SL = window.SCOUT;
+const SLPulse = window.ScoutPulse;
 const L_LOCS = SL.LOCATIONS.flatMap(l => l.cities.map(c => ({
   label: c + ", " + l.country,
   city: c,
@@ -15,7 +16,7 @@ const L_LOCS = SL.LOCATIONS.flatMap(l => l.cities.map(c => ({
 })));
 // Scout 2.0 Phase 1: occupations for the universal typeahead + popular chips.
 const L_OCCS = SL.OCCUPATIONS || [];
-const L_POPULAR = ["Developer", "Data Analyst", "Nurse", "Teacher", "Accountant", "Marketing Specialist", "UX/Product Designer", "Electrician"];
+
 const L_COORDS = {
   Rome: [41.9, 12.5],
   Milan: [45.46, 9.19],
@@ -628,14 +629,12 @@ function Landing({
       value: g.id,
       label: g.label
     }))
-  })), /*#__PURE__*/React.createElement("div", {
-    className: "l-chips l-an d2"
-  }, L_POPULAR.map(p => /*#__PURE__*/React.createElement("button", {
-    key: p,
-    type: "button",
-    className: "l-chip" + (profile === p ? " on" : ""),
-    onClick: () => setProfile(p)
-  }, p))), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement(SLPulse, {
+    city: city,
+    country: country,
+    profile: profile,
+    onProfession: setProfile
+  }), /*#__PURE__*/React.createElement("div", {
     className: "l-cta-row l-an d4"
   }, /*#__PURE__*/React.createElement("button", {
     className: "l-btn",

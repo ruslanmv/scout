@@ -82,6 +82,13 @@ def main() -> None:
         for dest in (public / "data", public / "scout" / "data"):
             dest.mkdir(parents=True, exist_ok=True)
             shutil.copy2(signals, dest / "signals.json")
+
+    # Daily profession/skill/tool tags for the landing page.
+    pulse = ROOT / "datasets" / "pulse" / "latest.json"
+    if pulse.exists():
+        for dest in (public / "data" / "pulse", public / "scout" / "data" / "pulse"):
+            dest.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(pulse, dest / "latest.json")
     print(f"Exported GitHub Pages bundle to {public} and {public / 'scout'}")
 
 
