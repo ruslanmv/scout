@@ -76,3 +76,24 @@ does not add third-party trackers or send personal data.
 Test: `pytest tests/test_landing_pulse.py` and
 `node --check scout/trends/pulse.js`. Run the exporter to regenerate
 `public/scout/trends/` and the published time-series feed.
+
+## Initial landing-page suggestions
+
+The first render now selects a **curated profession and one of Scout's four
+supported career goals at random**. This is an exploratory default, not a
+measured labor-market ranking or an inferred user identity. These values are
+chosen once when the app mounts, so React re-renders and user edits cannot
+reshuffle them.
+
+The prior automatically suggested profession and goal are saved in
+`localStorage` to avoid immediate repeats on subsequent visits in the same
+browser. The stored values are only generated examples: we never persist the
+user's real edited profile, goals or location. If storage is unavailable,
+selection remains functional and randomized without repeat protection.
+
+Deep links using `?profile=&goal=&city=&country=` take precedence and are
+never randomized; unknown goal IDs fall back to one of the supported goals.
+Location is not randomized; absent an explicit location it defaults to
+Rome, Italy. When only a country is specified the first supported city is
+selected. The three subtle landing role chips retain the chosen curated role
+so visitors can understand the default is editable.
