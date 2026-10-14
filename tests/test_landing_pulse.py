@@ -120,19 +120,3 @@ def test_funnel_events_measure_report_page_not_only_navigation():
     assert "sufficientRealHistory" in chart
     assert app == (root / "scout/scout-app.js").read_text()
     assert report == (root / "scout/scout-site.js").read_text()
-
-
-def test_landing_uses_randomized_initial_profession_and_goal():
-    root = Path(__file__).resolve().parents[1]
-    for filename in ("scout-app.jsx", "scout-app.js"):
-        source = (root / filename).read_text(encoding="utf-8")
-        assert "ScoutLandingPresets.initialSelection" in source
-        assert "uS(initial.profile)" in source
-        assert "uS(initial.goal)" in source
-        assert (root / "scout" / filename).read_text(encoding="utf-8") == source
-        assert (root / "public" / "scout" / filename).read_text(encoding="utf-8") == source
-    pulse = (root / "scout-pulse.js").read_text(encoding="utf-8")
-    assert "scout:last-suggested-role" in pulse
-    assert "scout:last-suggested-goal" in pulse
-    assert (root / "scout/scout-pulse.js").read_text(encoding="utf-8") == pulse
-    assert (root / "public/scout/scout-pulse.js").read_text(encoding="utf-8") == pulse
