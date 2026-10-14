@@ -34,7 +34,7 @@ from app.services.learning import taxonomy
 
 # Countries we sweep by default. Adzuna covers a subset; unknown labels degrade
 # to its widest catalog inside the adapter, so this list is safe to extend.
-DEFAULT_COUNTRIES = ["Worldwide", "United States", "United Kingdom", "Germany", "India"]
+DEFAULT_COUNTRIES = ["Worldwide", "United States", "United Kingdom", "Germany", "India", "Italy", "Spain"]
 
 
 def _roles_by_domain() -> dict[str, list[str]]:

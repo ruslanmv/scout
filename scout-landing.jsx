@@ -2,11 +2,12 @@
 /* Scout landing — header, hero (form + carousel), how-it-works, what-you-get, agent banner, footer */
 const { useState: uSL, useEffect: uEL, useRef: uRL } = React;
 const SL = window.SCOUT;
+const SLPulse = window.ScoutPulse;
 
 const L_LOCS = SL.LOCATIONS.flatMap(l => l.cities.map(c => ({ label: c + ", " + l.country, city: c, country: l.country })));
 // Scout 2.0 Phase 1: occupations for the universal typeahead + popular chips.
 const L_OCCS = (SL.OCCUPATIONS || []);
-const L_POPULAR = ["Developer", "Data Analyst", "Nurse", "Teacher", "Accountant", "Marketing Specialist", "UX/Product Designer", "Electrician"];
+
 const L_COORDS = {
   Rome: [41.9, 12.5], Milan: [45.46, 9.19], Turin: [45.07, 7.69],
   Berlin: [52.52, 13.40], Munich: [48.14, 11.58],
@@ -353,13 +354,7 @@ function Landing({ profile, setProfile, city, country, setLocation, goal, setGoa
                 <LField k="in" value={locLabel} onChange={e => { const o = L_LOCS.find(x => x.label === e.target.value); if (o) setLocation(o.city, o.country); }} options={L_LOCS.map(o => ({ value: o.label, label: o.label }))} />
                 <LField k="I want to" value={goal} onChange={e => setGoal(e.target.value)} options={SL.GOALS.map(g => ({ value: g.id, label: g.label }))} />
               </div>
-              <div className="l-chips l-an d2">
-                {L_POPULAR.map(p => (
-                  <button key={p} type="button"
-                    className={"l-chip" + (profile === p ? " on" : "")}
-                    onClick={() => setProfile(p)}>{p}</button>
-                ))}
-              </div>
+              <SLPulse city={city} country={country} profile={profile} onProfession={setProfile} />
               <div className="l-cta-row l-an d4">
                 <button className="l-btn" onClick={onGenerate}>Find my next move <span aria-hidden="true">→</span></button>
                 <button className="l-loc" onClick={useMyLoc}>{locating ? "Locating…" : "Use my current location"}</button>

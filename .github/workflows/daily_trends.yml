@@ -34,6 +34,8 @@ jobs:
         env:
           ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
           ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+      - name: Build evidence-labeled daily landing tags and history
+        run: python scripts/build_pulse.py
       - name: Narrate AI plans into the dataset (Scout 2.0)
         # Pre-computes AI plans per (location x goal x profile) cell so the static
         # site serves real AI output. Only cells whose ranking changed are
@@ -55,6 +57,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add datasets public README.md || true
+          git add datasets public scout README.md || true
           git commit -m "Update Scout trend datasets, reports and README" || echo "No changes"
           git push || true
