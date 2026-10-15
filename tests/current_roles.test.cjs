@@ -50,7 +50,7 @@ const app=fs.readFileSync("scout/scout-app.js","utf8");
 const chart=fs.readFileSync("scout/trends/pulse.js","utf8");
 const index=fs.readFileSync("scout/index.html","utf8");
 assert.ok(index.indexOf('src="scout-ranking.js"')<index.indexOf('src="scout-pulse.js"'));
-assert.ok(app.includes("ScoutRanking.roles"));
+assert.ok(app.includes("ScoutSuggestions.professions"));
 assert.ok(app.includes('fetch("data/pulse/latest.json"'));
 assert.ok(app.includes('query.get("profile")'));
 assert.ok(app.includes("userSelectedRole.current"));
