@@ -18,7 +18,7 @@ def test_profession_ui_is_mirrored_for_static_hosts(relative):
     assert base == (ROOT / "public/scout" / relative).read_bytes()
 
 
-def test_profession_search_is_keyboard_accessible_and_not_limited_to_verified_roles():
+def test_profession_search_is_keyboard_accessible_and_uses_observed_roles_only():
     source = (ROOT / "scout-landing.jsx").read_text()
     assert 'role: "combobox"' in source
     assert '"aria-autocomplete": "list"' in source
@@ -26,12 +26,12 @@ def test_profession_search_is_keyboard_accessible_and_not_limited_to_verified_ro
     assert 'event.key === "ArrowDown"' in source
     assert 'event.key === "Escape"' in source
     assert ".slice(0, 5)" in source
-    assert "[...occupations, ...L_OCCS]" in source
-    assert 'o.observed ? "Observed regional signal"' in source
+    assert "const suggestions = occupations;" in source
+    assert 'o.observed ? "Observed job postings · last 7 days"' in source
     assert '"scout-occs"' not in source
 
 
-def test_trend_chart_supports_compare_visibility_and_distinguishes_demo_data():
+def test_trend_chart_supports_comparison_without_synthetic_history():
     page = (ROOT / "trends/index.html").read_text()
     script = (ROOT / "trends/pulse.js").read_text()
     for identifier in ("compare-form", "compare-input", "compare-options",
@@ -41,7 +41,9 @@ def test_trend_chart_supports_compare_visibility_and_distinguishes_demo_data():
     assert 'state.hidden[state.kind]' in script
     assert 'state.selected[state.kind]' in script
     assert 'setAttribute("aria-pressed"' in script
-    assert '"DEMO PREVIEW"' in script
+    assert '"NO VERIFIED TREND"' in script
+    assert "demoValues" not in script
+    assert "scenario(" not in script
     assert '"job_postings"' in script
     assert "chartCatalog()" in script
     assert '"../scout-data.js"' in page

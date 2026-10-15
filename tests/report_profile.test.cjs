@@ -19,10 +19,9 @@ function render(search){
     reportValidity(){return false;},focus(){}};
   let submit,ready;
   const form={addEventListener(event,fn){if(event==="submit")submit=fn;}};
-  const popular=element(),popularLabel=element(),roleList=element();
+  const roleList=element(),note=element();
   const elements={"become-goal":goal,"become-role":role,"becomeForm":form,
-    "become-popular-options":popular,"become-popular-label":popularLabel,
-    "become-roles":roleList};
+    "become-data-note":note,"become-roles":roleList};
   const document={
     getElementById(id){return elements[id]||null;},
     querySelectorAll(){return [];},
@@ -41,7 +40,7 @@ function render(search){
   ready();
   assert.equal(typeof submit,"function");
   function send(){submit({preventDefault(){}});return window.location.href;}
-  return {role,goal,send,popular,popularLabel};
+  return {role,goal,send,note};
 }
 
 const marketing=render("?profile=Marketing+Specialist&city=Rome&country=Italy&goal=build_portfolio");
@@ -54,7 +53,7 @@ assert.equal(url.searchParams.get("goal"),"build_portfolio");
 assert.equal(url.searchParams.get("country"),"Italy");
 assert.equal(url.searchParams.get("city"),"Rome");
 assert.equal(url.searchParams.get("start"),"1");
-assert.equal(marketing.popular.children.length,3);
+assert.equal(marketing.role.value,"Marketing Specialist");
 
 const another=render("?profile=UX%2FProduct+Designer&city=Berlin&country=Germany&goal=create_agents");
 assert.equal(another.role.value,"UX/Product Designer");
@@ -66,12 +65,7 @@ assert.equal(url.searchParams.get("goal"),"create_agents");
 assert.equal(url.searchParams.get("city"),"Berlin");
 
 const missing=render("?city=Rome&country=Italy");
-assert.equal(missing.role.value,"Developer","curated default is selected when no profile is supplied");
-assert.equal(missing.popularLabel.textContent.includes("curated"),true);
-url=new URL(missing.send());
-assert.equal(url.searchParams.get("role"),"Developer");
-missing.role.value="";
-missing.send();
-assert.ok(missing.role.message.includes("Enter your profession"),
-  "cleared profession must fail validation");
+assert.equal(missing.role.value,"","No synthetic profession default without observed evidence");
+assert.equal(missing.send(),"","An empty profession must not submit");
+assert.ok(missing.role.message.includes("Enter your profession"));
 console.log("Scout report profession / goal / location handoff passed.");

@@ -1,81 +1,66 @@
-"""Regression tests for profession recommendations and report combobox."""
+"""Weekly source-backed profession suggestions and no redundant chips."""
 from pathlib import Path
 import shutil
 import subprocess
-
 import pytest
-
 from scripts.build_scout_site import become_widget
 
 ROOT = Path(__file__).resolve().parents[1]
 
-
 @pytest.mark.skipif(shutil.which("node") is None, reason="Node is unavailable")
-def test_recommendation_engine_prefers_verified_roles_and_never_invents_rankings():
-    js = r"""
+def test_only_verified_weekly_professions_appear():
+    code = r"""
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
-const ctx={window:{SCOUT:{
-  OCCUPATIONS:[{name:'Data Analyst',domain:'Tech & Data'},{name:'Data Engineer',domain:'Tech & Data'}],
-  TOPICS:[{skills:['Python','SQL']},{skills:['Python','Docker']}]
-}}};
-vm.runInNewContext(fs.readFileSync('scout-ranking.js','utf8'),ctx);
+const ctx={window:{SCOUT:{OCCUPATIONS:[{name:'Fake Engineer'}],TOPICS:[{skills:['Python']}]}}};
 vm.runInNewContext(fs.readFileSync('scout-suggestions.js','utf8'),ctx);
 const s=ctx.window.ScoutSuggestions;
-const curated=s.professions(null,'Rome','Italy');
-assert.equal(curated.observed,false);
-assert.equal(curated.recommended,'Developer');
-assert.equal(curated.items[0].name,'Developer');
-assert.deepEqual(Array.from(s.matches(curated.items,'Data').map(i=>i.name)),['Data Analyst','Data Engineer']);
-assert.equal(s.skills(null,'Rome','Italy').source,'curated');
-assert.equal(s.skills(null,'Rome','Italy').items[0].name,'Python');
-const today=new Date().toISOString();
-const measured=Array.from({length:5},(_,i)=>({
-  name:i===0?'Registered Nurse':'Profession '+i,
-  source:'adzuna',sample_size:100-i,collected_at:today
-}));
-const live={schema_version:1,generated_at:today,regions:{
-  Rome:{status:'measured',items:measured},
-  Worldwide:{items:[{name:'Developer',source:'curated'}]}
-},skills:[{name:'Python',source:'topic_proxy',score:20}]};
-const ranked=s.professions(live,'Rome','Italy');
-assert.equal(ranked.observed,true);
-assert.equal(ranked.recommended,'Registered Nurse');
-assert.equal(ranked.region,'Rome');
-assert.equal(s.skills(live,'Rome','Italy').source,'topic_proxy');
-const stale={...live,generated_at:'2025-01-01T00:00:00Z'};
-assert.equal(s.professions(stale,'Rome','Italy').observed,false);
-assert.equal(s.professions(stale,'Rome','Italy').recommended,'Developer');
+assert.equal(s.professions(null,'Rome','Italy').recommended,'');
+assert.equal(s.professions(null,'Rome','Italy').items.length,0);
+assert.equal(s.skills(null,'Rome','Italy').items.length,0);
+const now=Date.parse('2026-10-15T12:00:00Z'),recent='2026-10-11T12:00:00Z';
+const feed={schema_version:1,generated_at:'2026-10-15T10:00:00Z',
+  regions:{Worldwide:{status:'curated',items:[{name:'Developer',source:'curated'}]}},
+  role_observations:[
+    {name:'Nurse',region:'Italy',sample_size:12,source:'adzuna',collected_at:recent},
+    {name:'Data Analyst',region:'Italy',sample_size:29,source:'adzuna',collected_at:recent},
+    {name:'Invented',region:'Italy',sample_size:100,source:'curated',collected_at:recent},
+    {name:'Stale',region:'Italy',sample_size:200,source:'adzuna',collected_at:'2026-09-01T00:00:00Z'},
+    {name:'Paris Engineer',region:'France',sample_size:400,source:'adzuna',collected_at:recent}
+  ]};
+const ranked=s.professions(feed,'Rome','Italy',now);
+assert.equal(ranked.recommended,'Data Analyst');
+assert.deepEqual(Array.from(ranked.items,x=>x.name),['Data Analyst']);
+assert.equal(ranked.region,'Italy');
+assert.equal(s.professions(feed,'Berlin','Germany',now).items.length,0);
+assert.deepEqual(Array.from(s.matches(ranked.items,'Data').map(x=>x.name)),['Data Analyst','Nurse']);
+assert.equal(s.professions({...feed,generated_at:'2026-09-01T00:00:00Z'},'Rome','Italy',now).items.length,0);
 """
-    subprocess.run(["node", "-e", js], cwd=ROOT, check=True, capture_output=True, text=True)
+    subprocess.run(["node", "-e", code], cwd=ROOT, check=True, capture_output=True, text=True)
 
-
-def test_report_autocomplete_is_generated_into_all_three_static_pages():
-    widget = become_widget("../").strip()
+def test_report_keeps_only_inline_autocomplete():
+    widget=become_widget("../").strip()
     assert 'role="listbox"' in widget
-    assert 'id="become-popular-options"' in widget
-    assert "window.ScoutSuggestions.mountAutocomplete(" in widget
+    assert "ScoutSuggestions.mountAutocomplete(" in widget
+    assert 'id="become-popular-options"' not in widget
+    assert "Suggested professions · curated" not in widget
     assert "roleInput.value = (q.get('profile') || '').trim()" in widget
-    assert "if (!roleInput.value) roleInput.value = suggested.recommended" in widget
-    assert "manuallyChanged" in widget
-    for path in ("report/index.html", "scout/report/index.html", "public/scout/report/index.html"):
-        page = (ROOT / path).read_text()
+    assert "if (!roleInput.value) roleInput.value = suggested.recommended" not in widget
+    for path in ("report/index.html","scout/report/index.html","public/scout/report/index.html"):
+        page=(ROOT/path).read_text()
         assert widget in page
         assert 'src="../scout-suggestions.js"' in page
-        assert 'src="../scout-ranking.js"' in page
 
-
-def test_homepage_has_fallback_default_and_source_labels():
-    app = (ROOT / "scout-app.jsx").read_text()
-    pulse = (ROOT / "scout-pulse.js").read_text()
-    assert "window.ScoutSuggestions.professions(null" in app
-    assert "userSelectedRole.current" in app
-    assert "window.ScoutSuggestions.professions(pulse, city, country).recommended" in app
-    assert "Suggested professions · curated" in pulse
-    assert "Skills to explore · curated" in pulse
-    assert "not a regional popularity or demand ranking" in pulse
-
+def test_landing_has_no_duplicate_recommendation_chips():
+    app=(ROOT/"scout-app.jsx").read_text()
+    pulse=(ROOT/"scout-pulse.js").read_text()
+    suggest=(ROOT/"scout-suggestions.js").read_text()
+    assert 'const [profile, setProfile] = uS(() => (query.get("profile") || "").trim());' in app
+    assert "ScoutSuggestions.professions(pulse, city, country)" in app
+    assert "l-quick-chip" not in pulse
+    assert "CURATED" not in suggest
+    assert "FALLBACK_ROLES" not in suggest
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="Node is unavailable")
-@pytest.mark.parametrize("path", ["scout-suggestions.js","scout-app.js","scout-landing.js"])
-def test_modified_scripts_parse(path):
+@pytest.mark.parametrize("path",["scout-suggestions.js","scout-app.js","scout-landing.js","trends/pulse.js"])
+def test_changed_scripts_parse(path):
     subprocess.run(["node","--check",str(ROOT/path)],check=True,capture_output=True,text=True)

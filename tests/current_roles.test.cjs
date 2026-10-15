@@ -35,7 +35,7 @@ assert.equal(Rank.roles(feed,"Berlin","Germany",now),null,"never borrow a differ
 assert.equal(Rank.roles(feed,"Rome","United States",now),null);
 assert.equal(Rank.roles(null,"Rome","Italy",now),null);
 assert.equal(Rank.roles({...feed,schema_version:2},"Rome","Italy",now),null);
-assert.equal(Rank.roles({...feed,generated_at:"2026-10-12T08:00:00Z"},"Rome","Italy",now),null);
+assert.equal(Rank.roles({...feed,generated_at:"2026-10-01T08:00:00Z"},"Rome","Italy",now),null);
 const old=records.map(x=>({...x,collected_at:"2026-09-01T08:00:00Z"}));
 assert.equal(Rank.roles({...feed,regions:{Italy:{status:"measured",items:old}}},"Rome","Italy",now),null,
   "republishing old observations must not renew them");

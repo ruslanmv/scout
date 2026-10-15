@@ -5,8 +5,6 @@ const SL = window.SCOUT;
 const SLPulse = window.ScoutPulse;
 
 const L_LOCS = SL.LOCATIONS.flatMap(l => l.cities.map(c => ({ label: c + ", " + l.country, city: c, country: l.country })));
-// Scout 2.0 Phase 1: occupations for the universal typeahead + popular chips.
-const L_OCCS = (SL.OCCUPATIONS || []);
 
 const L_COORDS = {
   Rome: [41.9, 12.5], Milan: [45.46, 9.19], Turin: [45.07, 7.69],

@@ -14,8 +14,6 @@ const L_LOCS = SL.LOCATIONS.flatMap(l => l.cities.map(c => ({
   city: c,
   country: l.country
 })));
-// Scout 2.0 Phase 1: occupations for the universal typeahead + popular chips.
-const L_OCCS = SL.OCCUPATIONS || [];
 
 const L_COORDS = {
   Rome: [41.9, 12.5],

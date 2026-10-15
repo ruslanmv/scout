@@ -55,8 +55,7 @@ function App() {
   const [country, setCountry] = uS(() => query.get("country") || "Italy");
   const [city, setCity] = uS(() => query.get("city") || "Rome");
   const [goal, setGoal] = uS(() => SA.GOALS.some(g => g.id === query.get("goal")) ? query.get("goal") : "build_portfolio");
-  const [profile, setProfile] = uS(() => (query.get("profile") || "").trim() ||
-    window.ScoutSuggestions.professions(null, query.get("city") || "Rome", query.get("country") || "Italy").recommended);
+  const [profile, setProfile] = uS(() => (query.get("profile") || "").trim());
   const userSelectedRole = uR(Boolean((query.get("profile") || "").trim()));
   const [pulse, setPulse] = uS(null);
   const [pulseStatus, setPulseStatus] = uS("loading");
@@ -77,9 +76,8 @@ function App() {
   }, []);
   uE(() => {
     if (userSelectedRole.current || !pulse) return;
-    const observed = window.ScoutRanking.roles(pulse, city, country);
-    setProfile(observed ? observed.items[0].name :
-      window.ScoutSuggestions.professions(pulse, city, country).recommended);
+    const observed = window.ScoutSuggestions.professions(pulse, city, country);
+    setProfile(observed.recommended);
   }, [pulse, city, country]);
   const selectProfession = value => {
     userSelectedRole.current = true;
