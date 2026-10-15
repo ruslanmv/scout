@@ -245,3 +245,6 @@
 .l-occ-title{font-size:14px;font-weight:700}
 .l-occ-option small{color:#a2c5af;font-size:11px}
 @media(max-width:640px){.l-occ-wrap{flex:1 1 100%}.l-occ-option{min-height:48px;justify-content:center}}
+
+/* On phones the software keyboard occupies the lower viewport; open suggestions upward. */
+@media(max-width:640px){.l-occ-options{top:auto;bottom:calc(100% + 6px)}}
