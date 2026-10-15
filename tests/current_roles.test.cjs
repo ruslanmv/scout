@@ -43,7 +43,7 @@ assert.equal(Rank.roles({...feed,regions:{Italy:{status:"measured",items:records
 assert.equal(Rank.roles({...feed,regions:{Italy:{status:"measured",items:[...records.slice(0,4),{...records[4],source:"curated"}]}}},"Rome","Italy",now),null);
 assert.equal(Rank.roles({...feed,regions:{Italy:{status:"measured",items:[...records.slice(0,4),{...records[4],sample_size:0}]}}},"Rome","Italy",now),null);
 assert.deepEqual(Array.from(Rank.skills(feed,"Rome","Italy",now),x=>x.name),["Python","Docker","SQL"]);
-assert.equal(Rank.skills({...feed,generated_at:"2026-10-09T00:00:00Z"},"Rome","Italy",now).length,0);
+assert.equal(Rank.skills({...feed,generated_at:"2026-10-01T00:00:00Z"},"Rome","Italy",now).length,0);
 // Both pages consume the same feed and selector.
 const landing=fs.readFileSync("scout/scout-pulse.js","utf8");
 const app=fs.readFileSync("scout/scout-app.js","utf8");
