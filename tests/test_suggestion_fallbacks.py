@@ -29,10 +29,10 @@ const feed={schema_version:1,generated_at:'2026-10-15T10:00:00Z',
   ]};
 const ranked=s.professions(feed,'Rome','Italy',now);
 assert.equal(ranked.recommended,'Data Analyst');
-assert.deepEqual(Array.from(ranked.items,x=>x.name),['Data Analyst']);
+assert.deepEqual(Array.from(ranked.items,x=>x.name),['Data Analyst','Nurse']);
 assert.equal(ranked.region,'Italy');
 assert.equal(s.professions(feed,'Berlin','Germany',now).items.length,0);
-assert.deepEqual(Array.from(s.matches(ranked.items,'Data').map(x=>x.name)),['Data Analyst','Nurse']);
+assert.deepEqual(Array.from(s.matches(ranked.items,'Data').map(x=>x.name)),['Data Analyst']);
 assert.equal(s.professions({...feed,generated_at:'2026-09-01T00:00:00Z'},'Rome','Italy',now).items.length,0);
 """
     subprocess.run(["node", "-e", code], cwd=ROOT, check=True, capture_output=True, text=True)

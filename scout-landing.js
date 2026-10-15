@@ -494,8 +494,7 @@ function LField({
 function OccField({ k, value, onChange, occupations }) {
   const [open, setOpen] = uSL(false);
   const [active, setActive] = uSL(0);
-  const suggestions = [...occupations, ...L_OCCS].filter((item, index, all) =>
-    all.findIndex(other => other.name.toLocaleLowerCase() === item.name.toLocaleLowerCase()) === index);
+  const suggestions = occupations;
   const matches = window.ScoutSuggestions.matches(suggestions, value, 5).slice(0, 5);
   const expanded = open && matches.length > 0;
   function choose(name) {
@@ -539,7 +538,7 @@ function OccField({ k, value, onChange, occupations }) {
         onMouseEnter: () => setActive(i), onClick: () => choose(o.name)
       },
         React.createElement("span", { className: "l-occ-title" }, o.name),
-        React.createElement("small", null, o.observed ? "Observed regional signal" : (o.domain || "Profession"))
+        React.createElement("small", null, o.observed ? "Observed job postings · last 7 days" : (o.domain || "Profession"))
       ))
     )
   );
