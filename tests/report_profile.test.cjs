@@ -71,6 +71,7 @@ assert.equal(missing.popularLabel.textContent.includes("curated"),true);
 url=new URL(missing.send());
 assert.equal(url.searchParams.get("role"),"Developer");
 missing.role.value="";
+missing.send();
 assert.ok(missing.role.message.includes("Enter your profession"),
   "cleared profession must fail validation");
 console.log("Scout report profession / goal / location handoff passed.");
