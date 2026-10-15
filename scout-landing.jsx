@@ -300,24 +300,9 @@ function LField({ k, value, onChange, options }) {
 function OccField({ k, value, onChange, occupations }) {
   const [open, setOpen] = uSL(false);
   const [active, setActive] = uSL(0);
-  const term = value.trim().toLocaleLowerCase();
-  const known = new Set();
-  const suggestions = [...occupations, ...L_OCCS].filter(o => {
-    const key = o.name.toLocaleLowerCase();
-    if (known.has(key)) return false;
-    known.add(key);
-    return true;
-  });
-  const priority = o => {
-    const name = o.name.toLocaleLowerCase();
-    if (name.startsWith(term)) return 0;
-    if (name.replace(/[^a-z0-9]+/g, " ").split(" ").some(word => word.startsWith(term))) return 1;
-    return 2;
-  };
-  const matches = term ? suggestions.filter(o => o.name.toLocaleLowerCase().includes(term))
-    .sort((a, b) => priority(a) - priority(b) ||
-      Number(Boolean(b.observed)) - Number(Boolean(a.observed)) ||
-      a.name.localeCompare(b.name)).slice(0, 5) : [];
+  const suggestions = [...occupations, ...L_OCCS].filter((item, index, all) =>
+    all.findIndex(other => other.name.toLocaleLowerCase() === item.name.toLocaleLowerCase()) === index);
+  const matches = window.ScoutSuggestions.matches(suggestions, value, 5).slice(0, 5);
   const expanded = open && matches.length > 0;
   function choose(name) {
     onChange({ target: { value: name } });
@@ -371,8 +356,8 @@ function Landing({ profile, setProfile, city, country, setLocation, goal, setGoa
   const [locating, setLocating] = uSL(false);
   const locLabel = city + ", " + country;
   const observed = window.ScoutRanking.roles(pulse, city, country);
-  const suggestedOccupations = observed
-    ? observed.items.map((role, i) => ({id: "observed-" + i, name: role.name, observed: true})) : [];
+  const suggestedOccupations = window.ScoutSuggestions.professions(pulse, city, country).items
+    .map((role, i) => ({...role, id: role.id || "suggested-" + i}));
   function useMyLoc() {
     if (!navigator.geolocation || locating) return;
     setLocating(true);

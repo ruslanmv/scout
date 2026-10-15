@@ -135,17 +135,12 @@ def become_widget(rel: str) -> str:
       <article class="darkpanel" style="padding:clamp(20px,3vw,32px)">
         <form id="becomeForm" novalidate>
           <div class="become-grid">
-            <div class="field">
-              <label for="become-role">Profession for your next learning path</label>
-              <input id="become-role" list="become-roles" autocomplete="off"
+            <div class="field become-role-field">
+              <label for="become-role">What do you want to become?</label>
+              <input id="become-role" autocomplete="off"
                      placeholder="e.g. Marketing Specialist" required />
-              <datalist id="become-roles">
-                <option value="Developer"></option><option value="Data Analyst"></option>
-                <option value="Marketing Specialist"></option><option value="UX/Product Designer"></option>
-                <option value="Nurse"></option><option value="Teacher"></option>
-                <option value="Accountant"></option><option value="Electrician"></option>
-                <option value="AI Engineer"></option>
-              </datalist>
+              <div id="become-roles" class="become-options" role="listbox"
+                   aria-label="Suggested professions" hidden></div>
             </div>
             <div class="field sel">
               <label for="become-goal">Your main objective</label>
@@ -157,6 +152,10 @@ def become_widget(rel: str) -> str:
                 <option value="upskill">Upskill in my role</option>
               </select>
             </div>
+          </div>
+          <div class="become-popular">
+            <span id="become-popular-label">Suggested professions · curated</span>
+            <div id="become-popular-options" class="become-suggested" aria-label="Suggested professions"></div>
           </div>
           <div class="become-focus">
             <span class="become-focus-l">Focus areas (optional)</span>
@@ -185,6 +184,25 @@ def become_widget(rel: str) -> str:
       #become .field input:focus,#become .field select:focus{border-color:var(--green-on-dark);
         box-shadow:0 0 0 4px rgba(84,217,140,.15)}
       #become .field.sel::after{color:var(--green-on-dark)}
+      #become .become-role-field{position:relative}
+      #become .become-options{position:absolute;top:calc(100% + 5px);left:0;right:0;z-index:30;
+        max-height:290px;overflow-y:auto;border-radius:12px;background:#09271b;
+        border:1px solid rgba(84,217,140,.5);padding:5px;box-shadow:0 18px 35px #0006}
+      #become .become-options[hidden]{display:none}
+      #become .become-option{width:100%;display:flex;flex-direction:column;align-items:flex-start;
+        gap:2px;text-align:left;padding:10px 12px;border:0;background:transparent;
+        color:#eefaf1;border-radius:8px;cursor:pointer;min-height:45px}
+      #become .become-option small{color:#a7c9b2;font-size:11px}
+      #become .become-option:hover,#become .become-option[aria-selected="true"]{background:rgba(84,217,140,.17)}
+      #become .become-option:focus-visible,#become .become-suggested button:focus-visible{outline:2px solid #53f39d}
+      #become .become-popular{margin-top:13px}
+      #become #become-popular-label{font-size:11px;font-weight:800;text-transform:uppercase;color:#b4d4bf}
+      #become .become-suggested{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+      #become .become-suggested button{border:1px solid rgba(120,200,160,.28);
+        border-radius:999px;background:rgba(255,255,255,.05);color:#d7e8dd;
+        min-height:34px;padding:6px 12px;font-size:12px;cursor:pointer}
+      #become .become-suggested button[aria-pressed="true"]{border-color:#53f39d;color:#53f39d}
+      @media(max-width:560px){#become .become-options{top:auto;bottom:calc(100% + 5px)}}
       #become .become-focus{margin:16px 0 6px}
       #become .become-focus-l{display:block;font-weight:800;color:#cfe0d6;font-size:11px;
         text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
@@ -196,12 +214,47 @@ def become_widget(rel: str) -> str:
       #become .become-note{color:#8fb0a0;font-size:12px;margin:12px 0 0}
     </style>
     <script>
-    (function(){
+    document.addEventListener('DOMContentLoaded', function(){
       var q = new URLSearchParams(location.search);
       var roleInput = document.getElementById('become-role');
-      // Never infer that every visitor wants to become an AI Engineer.
-      // Prefill from the exact profession passed by Scout's landing page.
       roleInput.value = (q.get('profile') || '').trim();
+      var manuallyChanged = false;
+      var suggested = window.ScoutSuggestions.professions(null, q.get('city') || 'Rome', q.get('country') || 'Italy');
+      if (!roleInput.value) roleInput.value = suggested.recommended;
+      var autocomplete = window.ScoutSuggestions.mountAutocomplete(
+        roleInput, document.getElementById('become-roles'), function(){return suggested.items;},
+        function(){manuallyChanged = true;renderPopular();}
+      );
+      roleInput.addEventListener('input', function(){
+        manuallyChanged = true;roleInput.setCustomValidity('');renderPopular();
+      });
+      function chooseRole(role) {
+        manuallyChanged = true;roleInput.value = role;
+        roleInput.setCustomValidity('');autocomplete.close();renderPopular();
+      }
+      function renderPopular() {
+        var list = document.getElementById('become-popular-options');
+        list.replaceChildren();
+        document.getElementById('become-popular-label').textContent =
+          suggested.observed ? 'Top observed professions · ' + suggested.region :
+          'Suggested professions · curated (not measured demand)';
+        suggested.items.slice(0,5).forEach(function(item){
+          var button = document.createElement('button');
+          button.type = 'button';button.textContent = item.name;
+          button.setAttribute('aria-pressed',String(item.name === roleInput.value));
+          button.addEventListener('click',function(){chooseRole(item.name);});
+          list.append(button);
+        });
+      }
+      renderPopular();
+      fetch('__REL__data/pulse/latest.json',{cache:'no-store'}).then(function(response){
+        return response.ok ? response.json() : null;
+      }).then(function(feed){
+        if (!feed || feed.schema_version !== 1) return;
+        suggested = window.ScoutSuggestions.professions(feed,q.get('city') || 'Rome',q.get('country') || 'Italy');
+        if (!(q.get('profile') || '').trim() && !manuallyChanged) roleInput.value = suggested.recommended;
+        autocomplete.refresh();renderPopular();
+      }).catch(function(){ /* Curated choices remain available offline. */ });
       var goalSel = document.getElementById('become-goal');
       var g = q.get('goal');
       if (g) for (var i=0;i<goalSel.options.length;i++){ if (goalSel.options[i].value===g){ goalSel.selectedIndex=i; break; } }
@@ -232,7 +285,7 @@ def become_widget(rel: str) -> str:
         u.searchParams.set('start','1');
         window.location.href = u.toString();
       });
-    })();
+    });
     </script>
     """
     return html.replace("__REL__", rel)
@@ -241,6 +294,8 @@ def become_widget(rel: str) -> str:
 def scripts(rel: str, cfg: str) -> str:
     return f"""  <script>window.SCOUT_PAGE = {cfg};</script>
   <script src="{rel}scout-data.js"></script>
+  <script src="{rel}scout-ranking.js"></script>
+  <script src="{rel}scout-suggestions.js"></script>
   <script src="{rel}scout-site.js"></script>
 </body>
 </html>"""
