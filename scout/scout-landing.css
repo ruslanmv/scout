@@ -207,7 +207,7 @@
 /* Scout conversion-first hero: preserve identity, improve visual hierarchy. */
 .l-hero-grid{grid-template-columns:minmax(0,1.06fr) minmax(0,1fr);gap:clamp(28px,3vw,52px)}
 .l-h1{font-size:clamp(49px,5.2vw,78px);line-height:1.01}
-.l-form{display:grid;grid-template-columns:minmax(120px,1fr) minmax(150px,1.18fr) minmax(145px,1fr);gap:10px}
+.l-form{display:grid;align-items:start;grid-template-columns:minmax(120px,1fr) minmax(150px,1.18fr) minmax(145px,1fr);gap:10px}
 .l-field{min-width:0;overflow:hidden}
 .l-field select,.l-field-type input{max-width:100%;text-overflow:ellipsis}
 .l-cta-row{margin-top:16px;gap:18px}
@@ -238,7 +238,7 @@
 /* Profession suggestions: positioned outside the field so the keyboard does not hide input text. */
 .l-occ-wrap{position:relative;flex:1 1 215px;min-width:170px;z-index:6}
 .l-occ-wrap .l-field{display:block;width:100%;cursor:text}
-.l-occ-options{position:absolute;top:calc(100% + 6px);left:0;right:0;max-height:min(320px,45vh);overflow-y:auto;z-index:20;padding:6px;background:#09281b;border:1px solid rgba(83,243,157,.48);border-radius:12px;box-shadow:0 16px 40px rgba(0,0,0,.46)}
+.l-occ-options{position:relative;width:100%;margin-top:8px;max-height:min(240px,36vh);overflow-y:auto;overscroll-behavior:contain;padding:6px;background:#09281b;border:1px solid rgba(83,243,157,.48);border-radius:12px;box-shadow:0 16px 40px rgba(0,0,0,.3)}
 .l-occ-caption{font:600 10px var(--mono);letter-spacing:.13em;color:#85bda0;padding:8px 10px}
 .l-occ-option{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;text-align:left;background:transparent;border:0;border-radius:8px;padding:10px 11px;color:#f4fff7;cursor:pointer}
 .l-occ-option:hover,.l-occ-option.is-active,.l-occ-option:focus-visible{background:rgba(83,243,157,.15);outline:none}
@@ -246,5 +246,5 @@
 .l-occ-option small{color:#a2c5af;font-size:11px}
 @media(max-width:640px){.l-occ-wrap{flex:1 1 100%}.l-occ-option{min-height:48px;justify-content:center}}
 
-/* On phones the software keyboard occupies the lower viewport; open suggestions upward. */
-@media(max-width:640px){.l-occ-options{top:auto;bottom:calc(100% + 6px)}}
+/* Keep suggestions in flow on phones as well: other controls must never sit beneath them. */
+@media(max-width:640px){.l-occ-options{max-height:min(216px,38vh)}}

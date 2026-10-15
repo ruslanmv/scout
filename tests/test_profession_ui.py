@@ -51,3 +51,15 @@ def test_trend_chart_supports_compare_visibility_and_distinguishes_demo_data():
 @pytest.mark.parametrize("file", ["scout-landing.js", "trends/pulse.js"])
 def test_ui_scripts_have_valid_javascript_syntax(file):
     subprocess.run(["node", "--check", str(ROOT / file)], check=True, capture_output=True, text=True)
+
+
+def test_profession_dropdown_reserves_layout_space_without_obscuring_cta():
+    """The suggestions panel must push the CTA/chips down, not overlay them."""
+    stylesheet = (ROOT / "scout-landing.css").read_text()
+    assert ".l-form{display:grid;align-items:start;" in stylesheet
+    assert ".l-occ-options{position:relative;" in stylesheet
+    assert "max-height:min(240px,36vh)" in stylesheet
+    assert "overscroll-behavior:contain" in stylesheet
+    assert ".l-occ-options{position:absolute;" not in stylesheet
+    assert "bottom:calc(100% + 6px)" not in stylesheet
+    assert "@media(max-width:640px){.l-occ-options{max-height:min(216px,38vh)}}" in stylesheet
