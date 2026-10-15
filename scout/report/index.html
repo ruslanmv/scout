@@ -155,7 +155,7 @@
         suggested = window.ScoutSuggestions.professions(feed,q.get('city') || 'Rome',q.get('country') || 'Italy');
         if (suggested.items.length) {
           note.textContent = 'Observed job-posting mentions in ' + suggested.region +
-            ' · collected within the last 7 days. Type to see suggestions.';
+            ' · collected within the weekly window. Type to see suggestions.';
         } else {
           note.textContent = 'No verified regional profession data this week. Enter any profession.';
         }

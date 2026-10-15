@@ -99,7 +99,7 @@
         button.setAttribute("role","option");button.setAttribute("aria-selected",String(i===active));
         const name=document.createElement("strong");name.textContent=item.name;
         const meta=document.createElement("small");
-        meta.textContent=item.observed?"Observed job postings · last 7 days":(item.domain || "Profession");
+        meta.textContent=item.observed?"Observed weekly job postings":(item.domain || "Profession");
         button.append(name,meta);
         button.addEventListener("pointerdown",event=>event.preventDefault());
         button.addEventListener("click",()=>choose(item));

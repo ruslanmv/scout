@@ -27,7 +27,7 @@ def test_profession_search_is_keyboard_accessible_and_uses_observed_roles_only()
     assert 'event.key === "Escape"' in source
     assert ".slice(0, 5)" in source
     assert "const suggestions = occupations;" in source
-    assert 'o.observed ? "Observed job postings · last 7 days"' in source
+    assert 'o.observed ? "Observed weekly job postings"' in source
     assert '"scout-occs"' not in source
 
 
@@ -65,3 +65,15 @@ def test_profession_dropdown_reserves_layout_space_without_obscuring_cta():
     assert ".l-occ-options{position:absolute;" not in stylesheet
     assert "bottom:calc(100% + 6px)" not in stylesheet
     assert "@media(max-width:640px){.l-occ-options{max-height:min(216px,38vh)}}" in stylesheet
+
+
+def test_landing_carousel_never_invents_market_growth_percentages():
+    jsx=(ROOT/"scout-landing.jsx").read_text()
+    compiled=(ROOT/"scout-landing.js").read_text()
+    for source in (jsx,compiled):
+        assert "+142%" not in source
+        assert "+113%" not in source
+        assert "+87%" not in source
+        assert "No verified regional job-posting observations this week" in source
+        assert "sample_size.toLocaleString" in source
+    assert "L_SLIDES[idx].render({observed,pulseStatus})" in jsx

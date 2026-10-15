@@ -312,52 +312,28 @@ function LGlobe() {
 
 /* ---------- carousel ---------- */
 const L_SLIDES = [{
-  title: "Discover signals near you",
-  render: () => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-    className: "lc-trend t1"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "lc-ic"
-  }, /*#__PURE__*/React.createElement(LIc, {
-    d: L_ICONS.zap,
-    size: 17
-  })), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "AI Agents"), /*#__PURE__*/React.createElement("i", null, "+142%"))), /*#__PURE__*/React.createElement("div", {
-    className: "lc-trend t2"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "lc-ic"
-  }, /*#__PURE__*/React.createElement(LIc, {
-    d: L_ICONS.layers,
-    size: 17
-  })), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "RAG Systems"), /*#__PURE__*/React.createElement("i", null, "+87%"))), /*#__PURE__*/React.createElement("div", {
-    className: "lc-trend t3"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "lc-ic"
-  }, /*#__PURE__*/React.createElement(LIc, {
-    d: L_ICONS.plug,
-    size: 17
-  })), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, "MCP Tools"), /*#__PURE__*/React.createElement("i", null, "+113%"))))
+  title: "Observed professions near you",
+  render: ({ observed,pulseStatus }) => observed.items.length ?
+    React.createElement(React.Fragment,null,
+      observed.items.slice(0,3).map((item,i)=>React.createElement("div",{
+        key:item.name,className:"lc-trend t"+(i+1)
+      },React.createElement("span",{className:"lc-ic"},React.createElement(LIc,{d:L_ICONS.trend,size:17})),
+        React.createElement("span",null,React.createElement("b",null,item.name),
+          React.createElement("i",null,item.sample_size.toLocaleString("en-US")+" job-posting mentions"))))) :
+    React.createElement("div",{className:"lc-center"},
+      React.createElement("div",{className:"lc-bptitle"},
+        pulseStatus==="loading"?"Checking weekly job-posting observations…":
+        "No verified regional job-posting observations this week."))
 }, {
-  title: "Know what is rising",
-  render: () => /*#__PURE__*/React.createElement("div", {
-    className: "lc-center"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "lc-row"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "n"
-  }, "#1"), /*#__PURE__*/React.createElement("b", null, "AI Agents"), /*#__PURE__*/React.createElement("span", {
-    className: "pct"
-  }, "+142%")), /*#__PURE__*/React.createElement("div", {
-    className: "lc-row"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "n"
-  }, "#2"), /*#__PURE__*/React.createElement("b", null, "MCP Tools"), /*#__PURE__*/React.createElement("span", {
-    className: "pct"
-  }, "+113%")), /*#__PURE__*/React.createElement("div", {
-    className: "lc-row"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "n"
-  }, "#3"), /*#__PURE__*/React.createElement("b", null, "RAG Systems"), /*#__PURE__*/React.createElement("span", {
-    className: "pct"
-  }, "+87%")))
+  title: "Trust the source, not a placeholder",
+  render: ({ observed }) => React.createElement("div",{className:"lc-center"},
+    observed.items.length ?
+      React.createElement(React.Fragment,null,
+        React.createElement("div",{className:"lc-bptitle"},"Measured observations · ",observed.region),
+        React.createElement("div",{className:"lc-kv"},React.createElement("span",{className:"k"},"Source"),React.createElement("span",{className:"v"},observed.items[0].source)),
+        React.createElement("div",{className:"lc-kv"},React.createElement("span",{className:"k"},"Collected"),React.createElement("span",{className:"v"},new Date(observed.items[0].collected_at).toLocaleDateString())),
+        React.createElement("div",{className:"lc-kv"},React.createElement("span",{className:"k"},"Growth"),React.createElement("span",{className:"v"},"View measured history in Scout Pulse"))) :
+      React.createElement("div",{className:"lc-bptitle"},"Trend comparisons need collected, dated history. No estimates shown."))
 }, {
   title: "Learn with a plan",
   render: () => /*#__PURE__*/React.createElement("div", {
@@ -414,7 +390,8 @@ const L_SLIDES = [{
     size: 19
   })), /*#__PURE__*/React.createElement("b", null, t))))
 }];
-function LCarousel() {
+function LCarousel({pulse,city,country,pulseStatus}) {
+  const observed = window.ScoutSuggestions.professions(pulse,city,country);
   const N = L_SLIDES.length;
   const [idx, setIdx] = uSL(0);
   const [paused, setPaused] = uSL(false);
@@ -456,7 +433,7 @@ function LCarousel() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "lc-slide",
     key: idx
-  }, L_SLIDES[idx].render(), /*#__PURE__*/React.createElement("div", {
+  }, L_SLIDES[idx].render({observed,pulseStatus}), /*#__PURE__*/React.createElement("div", {
     className: "lc-title"
   }, L_SLIDES[idx].title))), /*#__PURE__*/React.createElement("div", {
     className: "lc-dots"
@@ -538,7 +515,7 @@ function OccField({ k, value, onChange, occupations }) {
         onMouseEnter: () => setActive(i), onClick: () => choose(o.name)
       },
         React.createElement("span", { className: "l-occ-title" }, o.name),
-        React.createElement("small", null, o.observed ? "Observed job postings · last 7 days" : (o.domain || "Profession"))
+        React.createElement("small", null, o.observed ? "Observed weekly job postings" : (o.domain || "Profession"))
       ))
     )
   );
@@ -682,7 +659,7 @@ function Landing({
     onProfession: setProfile,
     data: pulse,
     status: pulseStatus
-  })), /*#__PURE__*/React.createElement(LCarousel, null)))), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement(LCarousel, {pulse:pulse,city:city,country:country,pulseStatus:pulseStatus})))), /*#__PURE__*/React.createElement("div", {
     className: "l-light"
   }, /*#__PURE__*/React.createElement("div", {
     className: "l-wrap"
