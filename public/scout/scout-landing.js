@@ -492,32 +492,74 @@ function LField({
   }, "▾"));
 }
 
-/* Free-text occupation typeahead (Scout 2.0 Phase 1): any profession, not a
-   closed dev-role list. A native datalist gives suggestions while still allowing
-   hybrid/emerging titles ("Growth Hacker", "Prompt Engineer"). */
-function OccField({
-  k,
-  value,
-  onChange,
-  occupations
-}) {
-  return /*#__PURE__*/React.createElement("label", {
-    className: "l-field l-field-type"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "lf-k"
-  }, k), /*#__PURE__*/React.createElement("input", {
-    list: "scout-occs",
-    value: value,
-    onChange: onChange,
-    autoComplete: "off",
-    placeholder: "Type your profession…",
-    spellCheck: "false"
-  }), /*#__PURE__*/React.createElement("datalist", {
-    id: "scout-occs"
-  }, occupations.map(o => /*#__PURE__*/React.createElement("option", {
-    key: o.id,
-    value: o.name
-  }))));
+/* Accessible, source-aware profession autocomplete with free-text fallback. */
+function OccField({ k, value, onChange, occupations }) {
+  const [open, setOpen] = uSL(false);
+  const [active, setActive] = uSL(0);
+  const term = value.trim().toLocaleLowerCase();
+  const known = new Set();
+  const suggestions = [...occupations, ...L_OCCS].filter(o => {
+    const key = o.name.toLocaleLowerCase();
+    if (known.has(key)) return false;
+    known.add(key);
+    return true;
+  });
+  const priority = o => {
+    const name = o.name.toLocaleLowerCase();
+    if (name.startsWith(term)) return 0;
+    if (name.replace(/[^a-z0-9]+/g, " ").split(" ").some(word => word.startsWith(term))) return 1;
+    return 2;
+  };
+  const matches = term ? suggestions.filter(o => o.name.toLocaleLowerCase().includes(term))
+    .sort((a, b) => priority(a) - priority(b) ||
+      Number(Boolean(b.observed)) - Number(Boolean(a.observed)) ||
+      a.name.localeCompare(b.name)).slice(0, 5) : [];
+  const expanded = open && matches.length > 0;
+  function choose(name) {
+    onChange({ target: { value: name } });
+    setOpen(false);
+    setActive(0);
+  }
+  function handleKey(event) {
+    if (!expanded) return;
+    if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+      event.preventDefault();
+      setActive(i => (i + (event.key === "ArrowDown" ? 1 : -1) + matches.length) % matches.length);
+    } else if (event.key === "Enter") {
+      event.preventDefault();
+      choose(matches[Math.min(active, matches.length - 1)].name);
+    } else if (event.key === "Escape") {
+      setOpen(false);
+    }
+  }
+  return React.createElement("div", {
+    className: "l-occ-wrap",
+    onBlur: e => { if (!e.currentTarget.contains(e.relatedTarget)) setOpen(false); }
+  },
+    React.createElement("label", { className: "l-field l-field-type", htmlFor: "scout-profession" },
+      React.createElement("span", { className: "lf-k" }, k),
+      React.createElement("input", {
+        id: "scout-profession", value, onChange: e => { onChange(e); setOpen(true); setActive(0); },
+        onFocus: () => { setOpen(true); setActive(0); },
+        onKeyDown: handleKey, autoComplete: "off", placeholder: "Type your profession…",
+        spellCheck: false, role: "combobox", "aria-autocomplete": "list",
+        "aria-expanded": expanded, "aria-controls": "scout-profession-options",
+        "aria-activedescendant": expanded ? "scout-profession-option-" + Math.min(active, matches.length - 1) : undefined
+      })
+    ),
+    expanded && React.createElement("div", { className: "l-occ-options", id: "scout-profession-options", role: "listbox", "aria-label": "Suggested professions" },
+      React.createElement("div", { className: "l-occ-caption" }, "SUGGESTED PROFESSIONS"),
+      matches.map((o, i) => React.createElement("button", {
+        key: o.id || o.name, id: "scout-profession-option-" + i, type: "button",
+        role: "option", "aria-selected": i === active,
+        className: "l-occ-option" + (i === active ? " is-active" : ""),
+        onMouseEnter: () => setActive(i), onClick: () => choose(o.name)
+      },
+        React.createElement("span", { className: "l-occ-title" }, o.name),
+        React.createElement("small", null, o.observed ? "Observed regional signal" : (o.domain || "Profession"))
+      ))
+    )
+  );
 }
 
 /* ---------- landing page ---------- */
@@ -537,7 +579,7 @@ function Landing({
   const locLabel = city + ", " + country;
   const observed = window.ScoutRanking.roles(pulse, city, country);
   const suggestedOccupations = observed
-    ? observed.items.map((role, i) => ({id: String(i), name: role.name})) : [];
+    ? observed.items.map((role, i) => ({id: "observed-" + i, name: role.name, observed: true})) : [];
   function useMyLoc() {
     if (!navigator.geolocation || locating) return;
     setLocating(true);

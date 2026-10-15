@@ -6,3 +6,28 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
 
 .rank-list li.empty-ranking{display:block;padding:18px;border:1px dashed var(--line);border-radius:12px;color:var(--sub);font-size:13px;line-height:1.6}
+
+/* Manage up to five comparisons without crowding the historical plot. */
+.compare-form{display:flex;flex-direction:column;gap:7px;margin-top:20px;max-width:520px}
+.compare-label{font-weight:700;font-size:12px;color:#d8ebde}
+.compare-row{display:flex;gap:8px}
+.compare-row input{min-width:0;flex:1;min-height:43px;padding:10px 12px;color:#f4fff7;background:#092b1f;border:1px solid rgba(123,222,161,.35);border-radius:10px;font:inherit}
+.compare-row input::placeholder{color:#9fbcaa}
+.compare-add{background:var(--mint);color:#052319;border:0;border-radius:10px;padding:0 18px;font-weight:800;min-height:43px}
+.compare-help{font-size:11px;color:var(--sub);margin:0}
+.compare-status:empty{display:none}
+.compare-status{font-size:12px;color:var(--lime);margin:0}
+.comparison-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.comparison-actions button{border:1px solid var(--line);background:#0a3022;border-radius:9px;color:#e4f9e9;padding:7px 12px;font-size:12px}
+.comparison-actions button:hover{border-color:var(--mint)}
+.legend{gap:8px}
+.legend-item{display:flex;align-items:stretch;gap:0;border:1px solid var(--line);border-radius:9px;background:#0a2c20;min-height:37px;overflow:hidden}
+.legend-toggle{display:flex;align-items:center;gap:8px;background:transparent;color:#e2f8e8;border:0;padding:8px 10px;font-size:12px;text-align:left}
+.legend-toggle i{width:10px;height:10px;border-radius:50%;flex:none}
+.legend-eye{font-size:14px;color:var(--mint);padding-left:4px}
+.legend-item.is-hidden .legend-toggle{color:#829c8d}
+.legend-item.is-hidden .legend-toggle i{opacity:.35}
+.legend-remove{border:0;border-left:1px solid var(--line);background:transparent;color:#cfdfd3;padding:6px 10px;font-size:18px}
+.legend-toggle:hover,.legend-remove:hover{background:rgba(83,243,157,.12)}
+.compare-row input:focus-visible,.legend button:focus-visible,.comparison-actions button:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+@media(max-width:520px){.compare-form{max-width:100%}.legend{gap:6px}.chart-intro{align-items:flex-start}.legend-item{max-width:100%}.legend-toggle{min-width:0}.legend-toggle span:not(.legend-eye){overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.compare-add{padding:0 12px}}
