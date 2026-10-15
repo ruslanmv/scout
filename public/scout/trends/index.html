@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="pulse.css">
   <script src="../scout-ranking.js" defer></script>
+  <script src="../scout-data.js" defer></script>
   <script src="pulse.js" defer></script>
 </head>
 <body>
@@ -59,6 +60,21 @@
           <div class="segmented" role="group" aria-label="Time range"><button data-range="30" type="button">30D</button><button data-range="90" class="active" type="button">90D</button><button data-range="180" type="button">6M</button></div>
           <div class="segmented" role="group" aria-label="Category"><button data-kind="skill" class="active" type="button">Skills</button><button data-kind="profession" type="button">Careers</button></div>
         </div>
+      </div>
+      <form id="compare-form" class="compare-form" autocomplete="off">
+        <label for="compare-input" class="compare-label">Add to comparison</label>
+        <div class="compare-row">
+          <input id="compare-input" list="compare-options" placeholder="Search a profession or skill…" aria-describedby="compare-help" />
+          <datalist id="compare-options"></datalist>
+          <button type="submit" class="compare-add">+ Add</button>
+        </div>
+        <p id="compare-help" class="compare-help">Select an available series to compare.</p>
+        <p id="compare-status" class="compare-status" role="status" aria-live="polite"></p>
+      </form>
+      <div class="comparison-actions" role="group" aria-label="Chart series visibility">
+        <button id="series-show-all" type="button">Show all</button>
+        <button id="series-hide-all" type="button">Hide all</button>
+        <button id="series-reset" type="button">Reset</button>
       </div>
       <div class="chart-intro">
         <div class="legend" id="chart-legend" aria-label="Displayed series"></div>

@@ -2,7 +2,7 @@
 (function () {
   "use strict";
   const $ = id => document.getElementById(id);
-  const COLORS = ["#c3ff70", "#b7a2ff", "#66d6ee"];
+  const COLORS = ["#c3ff70", "#b7a2ff", "#66d6ee", "#f7bc74", "#ff9fc6"];
   const CITIES = [
     ["Rome", "Italy"], ["Milan", "Italy"], ["Turin", "Italy"],
     ["Berlin", "Germany"], ["Munich", "Germany"], ["Madrid", "Spain"],
@@ -19,7 +19,9 @@
   const params = new URLSearchParams(location.search);
   const state = {kind: params.get("kind") === "careers" ? "profession" : "skill", days: 90,
     city: params.get("city") || "Rome", country: params.get("country") || "Italy",
-    item: params.get("item") || "", focusRole: params.get("profile") || "Developer",
+    item: params.get("item") || (params.get("kind") === "careers" ? params.get("profile") || "" : ""),
+    focusRole: params.get("profile") || "Developer",
+    selected: {skill:null,profession:null}, hidden: {skill:[],profession:[]},
     feed: null, series: null, mode: "demo"};
   const seriesURL = "../data/pulse/series.json";
   const latestURL = "../data/pulse/latest.json";
@@ -52,7 +54,7 @@
   }
   function demoNames() {
     const names=(state.kind === "skill" ? DEFAULTS.skill : DEFAULTS.profession).slice();
-    if(state.item && state.kind==="skill"){
+    if(state.item && state.kind===(params.get("kind")==="careers"?"profession":"skill")){
       const existing=names.findIndex(n=>n.toLowerCase()===state.item.toLowerCase());
       if(existing>=0) names.splice(existing,1);
       names.unshift(state.item);
@@ -83,8 +85,8 @@
     const candidates=[...grouped.entries()].map(([name,records])=>({name,records:[...records.values()].sort((a,b)=>a.date.localeCompare(b.date))}))
       .filter(x=>new Set(x.records.map(d=>d.date)).size>=14)
       .sort((a,b)=>b.records.length-a.records.length || a.name.localeCompare(b.name));
-    if(state.item){const p=candidates.find(x=>x.name.toLowerCase()===state.item.toLowerCase());if(p){candidates.splice(candidates.indexOf(p),1);candidates.unshift(p);}}
-    return candidates.slice(0,3);
+    if(state.item && state.kind===(params.get("kind")==="careers"?"profession":"skill")){const p=candidates.find(x=>x.name.toLowerCase()===state.item.toLowerCase());if(p){candidates.splice(candidates.indexOf(p),1);candidates.unshift(p);}}
+    return candidates;
   }
   function rolling(data, window=7) {
     return data.map(o=>{
@@ -93,25 +95,41 @@
       return {...o,avg:prev.reduce((sum,x)=>sum+x.value,0)/prev.length};
     });
   }
-  function pointsForPlot() {
-    const raw=available(state.city,state.kind);
-    const names=seriesNames(raw);
-    // Two distinct series with sufficient history are required for a comparable chart.
-    const real=names.length>=2;
-    state.mode=real?"observed":"demo";
-    if(!real){
-      return demoNames().map((name,i)=>{
+  // Only offer observed series with comparable coverage for the selected window.
+  // When that coverage is absent, all additional choices remain clearly DEMO PREVIEW.
+  function chartCatalog() {
+    const since=toMs(dateAgo(state.days-1));
+    const observed=seriesNames(available(state.city,state.kind))
+      .filter(item=>item.records.filter(row=>toMs(row.date)>=since).length>=14);
+    const real=observed.length>=2;
+    const extra=state.kind==="profession"?
+      (window.SCOUT?.OCCUPATIONS||[]).map(o=>o.name):
+      ["SQL","Python","Financial analysis","Machine learning","Cloud architecture","Data visualization"];
+    const names=real?observed.map(o=>o.name):[...new Set([...demoNames(),...extra])];
+    if(state.selected[state.kind]===null){
+      state.selected[state.kind]=names.slice(0,3);
+    }else{
+      state.selected[state.kind]=state.selected[state.kind].filter(name=>names.includes(name));
+    }
+    state.hidden[state.kind]=state.hidden[state.kind].filter(name=>state.selected[state.kind].includes(name));
+    return {real,observed,names};
+  }
+  function pointsForPlot(catalog) {
+    const selected=state.selected[state.kind];
+    const visible=selected.filter(name=>!state.hidden[state.kind].includes(name));
+    state.mode=catalog.real?"observed":"demo";
+    return visible.map(name=>{
+      const color=COLORS[selected.indexOf(name)%COLORS.length];
+      if(!catalog.real){
         const points=rolling(demoValues(name,state.days,state.city));
         const baseline=Math.max(.01,points[0].avg);
-        return {name,color:COLORS[i],points:points.map(x=>({...x,index:x.avg/baseline*100})),
-          measurement:"illustrative"};
-      });
-    }
-    return names.map((item,i)=>{
+        return {name,color,points:points.map(x=>({...x,index:x.avg/baseline*100})),measurement:"illustrative"};
+      }
+      const item=catalog.observed.find(x=>x.name===name);
       const items=item.records.filter(d=>toMs(d.date)>=toMs(dateAgo(state.days-1)));
       const pts=rolling(items.map(x=>({date:x.date,value:Number(x.value)})));
       const base=Math.max(.01,pts[0].avg);
-      return {name:item.name,color:COLORS[i],points:pts.map(x=>({...x,index:x.avg/base*100})),
+      return {name,color,points:pts.map(x=>({...x,index:x.avg/base*100})),
         measurement:state.kind==="skill"?"topic_proxy":"job_postings",source:item.records[item.records.length-1].source};
     });
   }
@@ -135,15 +153,73 @@
     return el;
   }
   function linePath(points,fx,fy,key="index") { return points.map((p,i)=>(i?"L":"M")+fx(p.date).toFixed(1)+","+fy(p[key]).toFixed(1)).join(" "); }
+  function renderSeriesControls(catalog) {
+    const list=$("chart-legend");
+    list.replaceChildren();
+    const selected=state.selected[state.kind];
+    const hidden=state.hidden[state.kind];
+    if(!selected.length){
+      const empty=document.createElement("span");
+      empty.textContent="No series selected. Search above to add one.";
+      list.append(empty);
+    }
+    selected.forEach((name,i)=>{
+      const row=document.createElement("div");row.className="legend-item"+(hidden.includes(name)?" is-hidden":"");
+      const button=document.createElement("button");
+      button.type="button";button.className="legend-toggle";
+      button.setAttribute("aria-pressed",String(!hidden.includes(name)));
+      button.setAttribute("aria-label",(hidden.includes(name)?"Show ":"Hide ")+name);
+      const dot=document.createElement("i");dot.style.background=COLORS[i%COLORS.length];
+      dot.setAttribute("aria-hidden","true");
+      const label=document.createElement("span");label.textContent=name;
+      const eye=document.createElement("span");eye.className="legend-eye";
+      eye.setAttribute("aria-hidden","true");eye.textContent=hidden.includes(name)?"○":"◉";
+      button.append(dot,label,eye);
+      button.addEventListener("click",()=>{
+        state.hidden[state.kind]=hidden.includes(name)?hidden.filter(n=>n!==name):[...hidden,name];
+        track("series_visibility",{kind:state.kind,series:name,visible:hidden.includes(name)});
+        drawChart();
+      });
+      const remove=document.createElement("button");remove.type="button";remove.className="legend-remove";
+      remove.textContent="×";remove.setAttribute("aria-label","Remove "+name);
+      remove.title="Remove "+name+" from comparison";
+      remove.addEventListener("click",()=>{
+        state.selected[state.kind]=selected.filter(n=>n!==name);
+        state.hidden[state.kind]=hidden.filter(n=>n!==name);
+        drawChart();
+      });
+      row.append(button,remove);list.append(row);
+    });
+    const options=$("compare-options");options.replaceChildren();
+    catalog.names.filter(name=>!selected.includes(name)).forEach(name=>{
+      const option=document.createElement("option");option.value=name;options.append(option);
+    });
+    const noun=state.kind==="profession"?"professions":"skills";
+    $("compare-input").placeholder="Search "+noun+" to compare…";
+    $("compare-help").textContent=catalog.real?
+      "Observed "+noun+" with at least 14 dated observations in this time range.":
+      "DEMO PREVIEW: additional "+noun+" are illustrative, not measured hiring trends.";
+    $("compare-status").textContent="";
+  }
   function drawChart() {
-    const data=pointsForPlot(),svg=$("momentum-plot");
+    const catalog=chartCatalog(),data=pointsForPlot(catalog),svg=$("momentum-plot");
     svg.replaceChildren();
-    const isDemo=state.mode==="demo",colors=data.map(x=>x.color);
+    $("chart-tooltip").hidden=true;
+    renderSeriesControls(catalog);
+    const isDemo=state.mode==="demo";
     $("chart-mode").textContent=isDemo?"DEMO PREVIEW":"OBSERVED HISTORY";
     $("chart-description").textContent=isDemo?
       "Illustrative examples · indexed 7-day trailing mean · start = 100":
       (state.kind==="skill"?"Scout topic-association score index":"Observed job-posting count index")+" · 7-day trailing mean · start = 100";
-    $("chart-legend").innerHTML=data.map(s=>'<span><i style="background:'+s.color+'"></i>'+safe(s.name)+'</span>').join("");
+    if(!data.length){
+      svg.append(svgEl("text",{x:530,y:193,fill:"#bad8c5","font-size":19,"text-anchor":"middle"},
+        "No visible series — add or show a profession or skill above"));
+      $("coverage-note").textContent=isDemo?
+        "DEMO PREVIEW: illustrative examples only; no measured trend is available.":
+        "Observed source data is available, but all comparison lines are hidden or removed.";
+      renderKPIs(isDemo,data);renderRanks();renderHeatmap(isDemo);renderEmerging(isDemo);
+      return;
+    }
     const oldest=data.flatMap(s=>s.points).map(x=>toMs(x.date));
     const minDate=Math.min(...oldest);
     const today=data.flatMap(s=>s.points).map(x=>toMs(x.date)).reduce((a,b)=>Math.max(a,b),0);
@@ -346,7 +422,9 @@
     if(CITIES.some(x=>x[0]===state.city))sel.value=state.city;
     else {state.city="Rome";state.country="Italy";sel.value=state.city;}
     sel.addEventListener("change",()=>{
-      state.city=sel.value;state.country=CITIES.find(x=>x[0]===state.city)[1];syncPlanLinks();drawChart();
+      state.city=sel.value;state.country=CITIES.find(x=>x[0]===state.city)[1];
+      state.selected={skill:null,profession:null};state.hidden={skill:[],profession:[]};
+      syncPlanLinks();drawChart();
       track("region_selected",{city:state.city});
     });
     document.querySelectorAll("[data-range]").forEach(btn=>btn.addEventListener("click",()=>{
@@ -359,6 +437,26 @@
       document.querySelectorAll("[data-kind]").forEach(b=>b.classList.toggle("active",b===btn));
       drawChart();
     }));
+    $("compare-form").addEventListener("submit",event=>{
+      event.preventDefault();
+      const raw=$("compare-input").value.trim();
+      const catalog=chartCatalog(),name=catalog.names.find(n=>n.toLocaleLowerCase()===raw.toLocaleLowerCase());
+      const selected=state.selected[state.kind];
+      if(!name){$("compare-status").textContent="Choose a profession or skill from the available suggestions.";return;}
+      if(selected.includes(name)){$("compare-status").textContent="Already in comparison — use Show if it is hidden.";return;}
+      if(selected.length>=5){$("compare-status").textContent="Compare up to five series. Remove one to add another.";return;}
+      state.selected[state.kind]=[...selected,name];
+      if(state.kind==="profession"){state.focusRole=name;syncPlanLinks();}
+      $("compare-input").value="";
+      track("series_added",{kind:state.kind,series:name,mode:state.mode});drawChart();
+    });
+    $("series-show-all").addEventListener("click",()=>{state.hidden[state.kind]=[];drawChart();});
+    $("series-hide-all").addEventListener("click",()=>{
+      state.hidden[state.kind]=state.selected[state.kind]||[];drawChart();
+    });
+    $("series-reset").addEventListener("click",()=>{
+      state.selected[state.kind]=null;state.hidden[state.kind]=[];drawChart();
+    });
     document.querySelectorAll('a.button.primary').forEach(a=>a.addEventListener("click",()=>track("plan_cta_clicked",{city:state.city,mode:state.mode})));
     document.querySelectorAll("[data-kind]").forEach(b=>b.classList.toggle("active",b.dataset.kind===state.kind));
   }
