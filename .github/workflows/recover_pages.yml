@@ -1,0 +1,38 @@
+name: Recover stuck GitHub Pages deployment
+
+# Manual repair for a Pages deployment that timed out but still blocks newer
+# deployments. Never cancel a deployment automatically during normal pushes.
+on:
+  workflow_dispatch:
+    inputs:
+      deployment_sha:
+        description: "Blocking commit SHA shown in the Pages deployment error"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    name: Cancel blocked Pages deployment
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+    steps:
+      - name: Cancel the specified stuck Pages deployment
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEPLOYMENT_SHA: ${{ inputs.deployment_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! "$DEPLOYMENT_SHA" =~ ^[0-9a-fA-F]{40}$ ]]; then
+            echo 'Enter the 40-character commit SHA from the Pages error.' >&2
+            exit 1
+          fi
+          echo "Requesting cancellation of blocked Pages deployment: $DEPLOYMENT_SHA"
+          gh api --method POST \
+            -H 'Accept: application/vnd.github+json' \
+            "repos/${GITHUB_REPOSITORY}/pages/deployments/${DEPLOYMENT_SHA}/cancel"
+          echo 'Cancellation requested. Re-run the failed Pages deployment job from Actions.'
