@@ -18,16 +18,18 @@ def test_profession_ui_is_mirrored_for_static_hosts(relative):
     assert base == (ROOT / "public/scout" / relative).read_bytes()
 
 
-def test_profession_search_is_keyboard_accessible_and_uses_observed_roles_only():
+def test_profession_search_is_keyboard_accessible_and_has_catalog_fallback():
     source = (ROOT / "scout-landing.jsx").read_text()
     assert 'role: "combobox"' in source
     assert '"aria-autocomplete": "list"' in source
     assert 'role: "listbox"' in source
     assert 'event.key === "ArrowDown"' in source
     assert 'event.key === "Escape"' in source
-    assert ".slice(0, 5)" in source
-    assert "const suggestions = occupations;" in source
-    assert 'o.observed ? "Observed weekly job postings"' in source
+    assert "window.ScoutSuggestions.matches(occupations, value, 5)" in source
+    assert "const expanded = open && (occupations.length > 0" in source
+    assert "Observed job-posting mentions" in source
+    assert "Occupation catalog" in source
+    assert "No matching profession in the catalog" in source
     assert '"scout-occs"' not in source
 
 

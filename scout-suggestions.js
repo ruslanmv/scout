@@ -1,5 +1,5 @@
-/* Profession autocomplete only from timestamped, source-backed weekly observations.
-   No curated profession list, catalog padding, or fabricated popularity labels. */
+/* Source-ranked profession search with a clearly labeled occupation-catalog fallback.
+   Taxonomy suggestions are not hiring-demand rankings. */
 (function () {
   "use strict";
   const WEEK_MS = 8 * 24 * 60 * 60 * 1000;
@@ -12,38 +12,54 @@
     return typeof source === "string" && source.trim() &&
       !DENIED.has(source.trim().toLowerCase());
   }
+  // Browse the maintained occupation taxonomy even when the job collector is offline.
+  // Catalog entries are suggestions, never evidence of hiring popularity.
+  function catalogProfessions() {
+    const catalog = window.SCOUT && Array.isArray(window.SCOUT.OCCUPATIONS) ?
+      window.SCOUT.OCCUPATIONS : [];
+    const seen = new Set();
+    return catalog.filter(item => {
+      if (!item || typeof item.name !== "string" || !item.name.trim()) return false;
+      const key=item.name.trim().toLocaleLowerCase();
+      if(seen.has(key))return false;
+      seen.add(key);return true;
+    }).map(item => ({name:item.name.trim(),domain:item.domain || "Profession",
+      observed:false, catalog:true}));
+  }
   function professions(feed, city, country, now = Date.now()) {
-    if (!feed || feed.schema_version !== 1 || !recent(feed.generated_at,now)) {
-      return {items:[],observed:false,region:"",recommended:""};
-    }
-    const regions = [...new Set([city,country].filter(Boolean))];
-    for (const region of regions) {
-      const direct = feed.regions?.[region];
-      const records = [
-        ...(direct?.status === "measured" && Array.isArray(direct.items) ? direct.items : []),
-        ...(Array.isArray(feed.role_observations) ?
-          feed.role_observations.filter(row=>row.region===region) : [])
-      ];
-      const byName = new Map();
-      for (const row of records) {
-        if (!row || typeof row.name !== "string" || !row.name.trim() ||
-            !validSource(row.source) || !recent(row.collected_at,now)) continue;
-        const count = Number(row.sample_size);
-        if (!Number.isFinite(count) || count <= 0) continue;
-        const name = row.name.trim(), key = name.toLocaleLowerCase();
-        const previous = byName.get(key);
-        if (!previous || previous.sample_size < count) {
-          byName.set(key, {name, sample_size:count, source:row.source,
-            collected_at:row.collected_at, observed:true, domain:"Observed job postings"});
+    const catalog=catalogProfessions();
+    const observed=[];
+    let region="";
+    if(feed && feed.schema_version===1 && recent(feed.generated_at,now)){
+      for(const candidate of [...new Set([city,country].filter(Boolean))]){
+        const direct=feed.regions?.[candidate];
+        const records=[
+          ...(direct?.status==="measured" && Array.isArray(direct.items)?direct.items:[]),
+          ...(Array.isArray(feed.role_observations)?
+            feed.role_observations.filter(row=>row.region===candidate):[])
+        ];
+        const byName=new Map();
+        for(const row of records){
+          if(!row || typeof row.name!=="string" || !row.name.trim() ||
+            !validSource(row.source) || !recent(row.collected_at,now))continue;
+          const count=Number(row.sample_size);
+          if(!Number.isFinite(count)||count<=0)continue;
+          const name=row.name.trim(),key=name.toLocaleLowerCase();
+          const old=byName.get(key);
+          if(!old || old.sample_size<count){
+            byName.set(key,{name,sample_size:count,source:row.source,
+              collected_at:row.collected_at,observed:true,domain:"Observed job postings"});
+          }
         }
-      }
-      const items=[...byName.values()].sort((a,b)=>
-        b.sample_size-a.sample_size || a.name.localeCompare(b.name));
-      if (items.length) {
-        return {items, observed:true, region, recommended:items[0].name};
+        const ranked=[...byName.values()].sort((x,y)=>
+          y.sample_size-x.sample_size || x.name.localeCompare(y.name));
+        if(ranked.length){observed.push(...ranked);region=candidate;break;}
       }
     }
-    return {items:[],observed:false,region:"",recommended:""};
+    const seen=new Set(observed.map(item=>item.name.toLocaleLowerCase()));
+    const items=[...observed,...catalog.filter(item=>!seen.has(item.name.toLocaleLowerCase()))];
+    return {items,observed:observed.length>0,region,
+      recommended:observed.length?observed[0].name:""};
   }
   function skills(feed, city, country, now = Date.now()) {
     if (!feed || feed.schema_version !== 1 || !recent(feed.generated_at,now)) {
@@ -57,22 +73,28 @@
         .sort((a,b)=>Number(b.score)-Number(a.score) || a.name.localeCompare(b.name)).slice(0,5):[],
       source:"topic_proxy"};
   }
+  // Google-style relevance: starts-with, word-prefix, then substring.
+  // Within the same match tier, measured results precede catalog suggestions.
   function matches(items, input, max=5) {
-    const query = String(input || "").trim().toLocaleLowerCase();
-    if (!query) return items.slice(0,max);
-    // A focused field containing an exact selected profession still shows alternatives.
-    const selected = items.some(item => item.name.toLocaleLowerCase() === query);
-    if (selected) return items.slice(0,max);
-    function weight(name) {
-      const value = name.toLocaleLowerCase();
-      if (value.startsWith(query)) return 0;
-      if (value.split(/[^a-z0-9]+/).some(part => part.startsWith(query))) return 1;
-      return 2;
+    const query=String(input||"").trim().toLocaleLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"");
+    if(!query)return items.slice(0,max);
+    const scored=[];
+    for(let index=0;index<items.length;index++){
+      const item=items[index];
+      const name=item.name.toLocaleLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"");
+      let score=3;
+      if(name===query)score=0;
+      else if(name.startsWith(query))score=1;
+      else if(name.split(/[^a-z0-9]+/).some(word=>word.startsWith(query)))score=2;
+      else if(!name.includes(query))continue;
+      scored.push({item,score,index});
     }
-    return items.filter(item=>item.name.toLocaleLowerCase().includes(query))
-      .sort((a,b)=>weight(a.name)-weight(b.name) ||
-        Number(Boolean(b.observed))-Number(Boolean(a.observed)) ||
-        a.name.localeCompare(b.name)).slice(0,max);
+    scored.sort((a,b)=>a.score-b.score ||
+      Number(Boolean(b.item.observed))-Number(Boolean(a.item.observed)) ||
+      (a.item.observed&&b.item.observed?
+        Number(b.item.sample_size||0)-Number(a.item.sample_size||0):0) ||
+      a.index-b.index);
+    return scored.slice(0,max).map(x=>x.item);
   }
   // DOM-based combobox for non-React report pages; landing uses the same match logic.
   function mountAutocomplete(input, list, getOptions, onChoose) {
@@ -99,7 +121,7 @@
         button.setAttribute("role","option");button.setAttribute("aria-selected",String(i===active));
         const name=document.createElement("strong");name.textContent=item.name;
         const meta=document.createElement("small");
-        meta.textContent=item.observed?"Observed weekly job postings":(item.domain || "Profession");
+        meta.textContent=item.observed?"Observed job-posting mentions · "+item.source:"Occupation catalog · "+(item.domain || "Profession");
         button.append(name,meta);
         button.addEventListener("pointerdown",event=>event.preventDefault());
         button.addEventListener("click",()=>choose(item));

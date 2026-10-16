@@ -58,6 +58,7 @@
     
 
 
+
     <section class="section reveal" id="become">
       <div class="section-head">
         <h3>🎯 Create a new learning path</h3>
@@ -73,9 +74,9 @@
               <input id="become-role" autocomplete="off"
                      placeholder="e.g. Marketing Specialist" required />
               <div id="become-roles" class="become-options" role="listbox"
-                   aria-label="Observed weekly professions" hidden></div>
+                   aria-label="Profession autocomplete" hidden></div>
               <p class="become-data-note" id="become-data-note" role="status">
-                Checking weekly job-posting observations… You can enter any profession.
+                Search the profession catalog. Verified regional job-posting results appear first when available.
               </p>
             </div>
             <div class="field sel">
@@ -153,15 +154,15 @@
         return response.ok ? response.json() : null;
       }).then(function(feed){
         suggested = window.ScoutSuggestions.professions(feed,q.get('city') || 'Rome',q.get('country') || 'Italy');
-        if (suggested.items.length) {
-          note.textContent = 'Observed job-posting mentions in ' + suggested.region +
-            ' · collected within the weekly window. Type to see suggestions.';
+        if (suggested.observed) {
+          note.textContent = 'Observed job-posting matches for ' + suggested.region +
+            ' appear first. Other results come from the occupation catalog.';
         } else {
-          note.textContent = 'No verified regional profession data this week. Enter any profession.';
+          note.textContent = 'Browsing the occupation catalog · no verified regional hiring ranking this week.';
         }
         autocomplete.refresh();
       }).catch(function(){
-        note.textContent = 'Job-posting data unavailable. Enter any profession.';
+        note.textContent = 'Occupation catalog available · current job-posting data unavailable.';
       });
       var goalSel = document.getElementById('become-goal');
       var g = q.get('goal');
