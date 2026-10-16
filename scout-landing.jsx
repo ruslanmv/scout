@@ -312,24 +312,22 @@ function LField({ k, value, onChange, options }) {
 function OccField({ k, value, onChange, occupations }) {
   const [open, setOpen] = uSL(false);
   const [active, setActive] = uSL(0);
-  const suggestions = occupations;
-  const matches = window.ScoutSuggestions.matches(suggestions, value, 5).slice(0, 5);
-  const expanded = open && matches.length > 0;
+  const matches = window.ScoutSuggestions.matches(occupations, value, 5);
+  const expanded = open && (occupations.length > 0 || Boolean(value.trim()));
   function choose(name) {
     onChange({ target: { value: name } });
     setOpen(false);
     setActive(0);
   }
   function handleKey(event) {
-    if (!expanded) return;
+    if (event.key === "Escape") { setOpen(false); return; }
+    if (!expanded || !matches.length) return;
     if (event.key === "ArrowDown" || event.key === "ArrowUp") {
       event.preventDefault();
       setActive(i => (i + (event.key === "ArrowDown" ? 1 : -1) + matches.length) % matches.length);
     } else if (event.key === "Enter") {
       event.preventDefault();
       choose(matches[Math.min(active, matches.length - 1)].name);
-    } else if (event.key === "Escape") {
-      setOpen(false);
     }
   }
   return React.createElement("div", {
@@ -341,23 +339,30 @@ function OccField({ k, value, onChange, occupations }) {
       React.createElement("input", {
         id: "scout-profession", value, onChange: e => { onChange(e); setOpen(true); setActive(0); },
         onFocus: () => { setOpen(true); setActive(0); },
-        onKeyDown: handleKey, autoComplete: "off", placeholder: "Type your profession…",
+        onKeyDown: handleKey, autoComplete: "off", placeholder: "Search professions…",
         spellCheck: false, role: "combobox", "aria-autocomplete": "list",
         "aria-expanded": expanded, "aria-controls": "scout-profession-options",
-        "aria-activedescendant": expanded ? "scout-profession-option-" + Math.min(active, matches.length - 1) : undefined
+        "aria-activedescendant": expanded && matches.length ?
+          "scout-profession-option-" + Math.min(active, matches.length - 1) : undefined
       })
     ),
-    expanded && React.createElement("div", { className: "l-occ-options", id: "scout-profession-options", role: "listbox", "aria-label": "Suggested professions" },
-      React.createElement("div", { className: "l-occ-caption" }, "SUGGESTED PROFESSIONS"),
-      matches.map((o, i) => React.createElement("button", {
+    expanded && React.createElement("div", { className: "l-occ-options", id: "scout-profession-options", role: "listbox", "aria-label": "Profession autocomplete" },
+      React.createElement("div", { className: "l-occ-caption" },
+        matches.some(item => item.observed) ? "OBSERVED RESULTS FIRST · PROFESSION CATALOG" :
+          "EXPLORE PROFESSIONS · CATALOG, NOT HIRING RANKS"),
+      matches.length ? matches.map((o, i) => React.createElement("button", {
         key: o.id || o.name, id: "scout-profession-option-" + i, type: "button",
         role: "option", "aria-selected": i === active,
         className: "l-occ-option" + (i === active ? " is-active" : ""),
+        onMouseDown: e => e.preventDefault(),
         onMouseEnter: () => setActive(i), onClick: () => choose(o.name)
       },
         React.createElement("span", { className: "l-occ-title" }, o.name),
-        React.createElement("small", null, o.observed ? "Observed weekly job postings" : (o.domain || "Profession"))
-      ))
+        React.createElement("small", null, o.observed ?
+          "Observed job-posting mentions · " + o.source :
+          "Occupation catalog · " + (o.domain || "Profession"))
+      )) : React.createElement("div", { className: "l-occ-empty", role: "status" },
+        "No matching profession in the catalog. You can still enter your own.")
     )
   );
 }

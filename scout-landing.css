@@ -244,6 +244,8 @@
 .l-occ-option:hover,.l-occ-option.is-active,.l-occ-option:focus-visible{background:rgba(83,243,157,.15);outline:none}
 .l-occ-title{font-size:14px;font-weight:700}
 .l-occ-option small{color:#a2c5af;font-size:11px}
+.l-occ-empty{padding:10px 12px;color:#c7dfd1;font-size:12px;line-height:1.5}
+.l-occ-option:focus-visible{outline:2px solid #53f39d;outline-offset:-2px}
 @media(max-width:640px){.l-occ-wrap{flex:1 1 100%}.l-occ-option{min-height:48px;justify-content:center}}
 
 /* Keep suggestions in flow on phones as well: other controls must never sit beneath them. */
