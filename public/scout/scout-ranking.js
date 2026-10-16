@@ -1,9 +1,9 @@
 /* Shared evidence gate for Scout landing and Pulse. No synthetic rankings. */
 (function () {
   "use strict";
-  // Scout's collector runs daily, not continuously. Stop calling a snapshot
-  // 'current' if it is more than 48 hours old.
-  const MAX_AGE_MS = 48 * 60 * 60 * 1000;
+  // Accept at most one weekly collection window. The source collected_at
+  // must also be within this window; a new feed cannot revive old evidence.
+  const MAX_AGE_MS = 8 * 24 * 60 * 60 * 1000;
   const CLOCK_SKEW_MS = 60 * 60 * 1000;
 
   function isRecent(timestamp, now) {

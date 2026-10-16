@@ -5,8 +5,6 @@ const SL = window.SCOUT;
 const SLPulse = window.ScoutPulse;
 
 const L_LOCS = SL.LOCATIONS.flatMap(l => l.cities.map(c => ({ label: c + ", " + l.country, city: c, country: l.country })));
-// Scout 2.0 Phase 1: occupations for the universal typeahead + popular chips.
-const L_OCCS = (SL.OCCUPATIONS || []);
 
 const L_COORDS = {
   Rome: [41.9, 12.5], Milan: [45.46, 9.19], Turin: [45.07, 7.69],
@@ -191,22 +189,35 @@ function LGlobe() {
 /* ---------- carousel ---------- */
 const L_SLIDES = [
   {
-    title: "Discover signals near you",
-    render: () => (
-      <React.Fragment>
-        <div className="lc-trend t1"><span className="lc-ic"><LIc d={L_ICONS.zap} size={17} /></span><span><b>AI Agents</b><i>+142%</i></span></div>
-        <div className="lc-trend t2"><span className="lc-ic"><LIc d={L_ICONS.layers} size={17} /></span><span><b>RAG Systems</b><i>+87%</i></span></div>
-        <div className="lc-trend t3"><span className="lc-ic"><LIc d={L_ICONS.plug} size={17} /></span><span><b>MCP Tools</b><i>+113%</i></span></div>
-      </React.Fragment>
+    title: "Observed professions near you",
+    render: ({ observed, pulseStatus }) => (
+      observed.items.length ? (
+        <React.Fragment>
+          {observed.items.slice(0, 3).map((item, i) => (
+            <div key={item.name} className={"lc-trend t" + (i + 1)}>
+              <span className="lc-ic"><LIc d={L_ICONS.trend} size={17} /></span>
+              <span><b>{item.name}</b><i>{item.sample_size.toLocaleString("en-US")} job-posting mentions</i></span>
+            </div>
+          ))}
+        </React.Fragment>
+      ) : <div className="lc-center"><div className="lc-bptitle">
+        {pulseStatus === "loading" ? "Checking weekly job-posting observations…" :
+          "No verified regional job-posting observations this week."}
+      </div></div>
     )
   },
   {
-    title: "Know what is rising",
-    render: () => (
+    title: "Trust the source, not a placeholder",
+    render: ({ observed }) => (
       <div className="lc-center">
-        <div className="lc-row"><span className="n">#1</span><b>AI Agents</b><span className="pct">+142%</span></div>
-        <div className="lc-row"><span className="n">#2</span><b>MCP Tools</b><span className="pct">+113%</span></div>
-        <div className="lc-row"><span className="n">#3</span><b>RAG Systems</b><span className="pct">+87%</span></div>
+        {observed.items.length ? (
+          <React.Fragment>
+            <div className="lc-bptitle">Measured observations · {observed.region}</div>
+            <div className="lc-kv"><span className="k">Source</span><span className="v">{observed.items[0].source}</span></div>
+            <div className="lc-kv"><span className="k">Collected</span><span className="v">{new Date(observed.items[0].collected_at).toLocaleDateString()}</span></div>
+            <div className="lc-kv"><span className="k">Growth</span><span className="v">View measured history in Scout Pulse</span></div>
+          </React.Fragment>
+        ) : <div className="lc-bptitle">Trend comparisons need collected, dated history. No estimates shown.</div>}
       </div>
     )
   },
@@ -245,7 +256,8 @@ const L_SLIDES = [
   }
 ];
 
-function LCarousel() {
+function LCarousel({pulse,city,country,pulseStatus}) {
+  const observed = window.ScoutSuggestions.professions(pulse,city,country);
   const N = L_SLIDES.length;
   const [idx, setIdx] = uSL(0);
   const [paused, setPaused] = uSL(false);
@@ -272,7 +284,7 @@ function LCarousel() {
       </div>
       <div className="lc-stage">
         <div className="lc-slide" key={idx}>
-          {L_SLIDES[idx].render()}
+          {L_SLIDES[idx].render({observed,pulseStatus})}
           <div className="lc-title">{L_SLIDES[idx].title}</div>
         </div>
       </div>
@@ -300,8 +312,7 @@ function LField({ k, value, onChange, options }) {
 function OccField({ k, value, onChange, occupations }) {
   const [open, setOpen] = uSL(false);
   const [active, setActive] = uSL(0);
-  const suggestions = [...occupations, ...L_OCCS].filter((item, index, all) =>
-    all.findIndex(other => other.name.toLocaleLowerCase() === item.name.toLocaleLowerCase()) === index);
+  const suggestions = occupations;
   const matches = window.ScoutSuggestions.matches(suggestions, value, 5).slice(0, 5);
   const expanded = open && matches.length > 0;
   function choose(name) {
@@ -345,7 +356,7 @@ function OccField({ k, value, onChange, occupations }) {
         onMouseEnter: () => setActive(i), onClick: () => choose(o.name)
       },
         React.createElement("span", { className: "l-occ-title" }, o.name),
-        React.createElement("small", null, o.observed ? "Observed regional signal" : (o.domain || "Profession"))
+        React.createElement("small", null, o.observed ? "Observed weekly job postings" : (o.domain || "Profession"))
       ))
     )
   );
@@ -402,7 +413,7 @@ function Landing({ profile, setProfile, city, country, setLocation, goal, setGoa
               </div>
               <SLPulse city={city} country={country} profile={profile} onProfession={setProfile} data={pulse} status={pulseStatus} />
             </div>
-            <LCarousel />
+            <LCarousel pulse={pulse} city={city} country={country} pulseStatus={pulseStatus} />
           </div>
         </section>
       </div>

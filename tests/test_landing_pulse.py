@@ -102,7 +102,8 @@ def test_scout_pulse_dashboard_static_contract():
     page = (root / "scout/trends/index.html").read_text()
     script = (root / "scout/trends/pulse.js").read_text()
     assert 'id="momentum-plot"' in page
-    assert "DEMO PREVIEW" in script and "Observed data through" in script
+    assert "NO VERIFIED TREND" in script and "Last published observation" in script
+    assert "demoValues" not in script
     assert "series.json" in script
     assert "new URLSearchParams" in script
     assert 'href="trends/"' in (root / "scout-landing.jsx").read_text()
@@ -117,7 +118,7 @@ def test_funnel_events_measure_report_page_not_only_navigation():
     assert "scoutEvent(\"report_navigation_started\")" in app
     assert "scout_report_viewed" in report
     assert "state.item && state.kind" in chart
-    assert "sufficientRealHistory" in chart
+    assert "at least two dated observations" in chart
     assert app == (root / "scout/scout-app.js").read_text()
     assert report == (root / "scout/scout-site.js").read_text()
 
@@ -137,6 +138,6 @@ def test_landing_and_trends_share_current_observed_roles():
     assert 'ranked.slice(0, 5)' in shared
     assert '"Worldwide"' in shared
     assert "Math.random" not in (root/"scout-pulse.js").read_text()
-    assert "ScoutRanking.roles" in (root/"scout-app.js").read_text()
+    assert "ScoutSuggestions.professions" in (root/"scout-app.js").read_text()
     assert "ScoutRanking.roles" in (root/"trends/pulse.js").read_text()
     assert 'src="../scout-ranking.js"' in (root/"scout/trends/index.html").read_text()

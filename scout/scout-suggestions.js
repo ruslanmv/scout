@@ -1,53 +1,61 @@
-/* Shared profession and skill suggestions. Curated choices are not hiring rankings. */
+/* Profession autocomplete only from timestamped, source-backed weekly observations.
+   No curated profession list, catalog padding, or fabricated popularity labels. */
 (function () {
   "use strict";
-  const FALLBACK_ROLES = [
-    "Developer", "Data Analyst", "Nurse", "Teacher", "Accountant",
-    "Marketing Specialist", "UX/Product Designer", "AI Engineer"
-  ];
-  const FALLBACK_SKILLS = ["Python", "SQL", "Communication", "Data analysis", "Project management"];
-  function unique(items) {
-    const seen = new Set();
-    return items.filter(item => {
-      if (!item || typeof item.name !== "string" || !item.name.trim()) return false;
-      const key = item.name.trim().toLocaleLowerCase();
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
+  const WEEK_MS = 8 * 24 * 60 * 60 * 1000;
+  const DENIED = new Set(["curated", "unknown", "demo", "sample", "synthetic"]);
+  function recent(value, now) {
+    const ts = Date.parse(value);
+    return Number.isFinite(ts) && ts <= now + 60 * 60 * 1000 && now - ts <= WEEK_MS;
   }
-  function professions(feed, city, country) {
-    const observed = window.ScoutRanking && window.ScoutRanking.roles(feed, city, country);
-    const catalog = (window.SCOUT && window.SCOUT.OCCUPATIONS) || [];
-    const curated = (feed && feed.regions && feed.regions.Worldwide &&
-      Array.isArray(feed.regions.Worldwide.items) ?
-      feed.regions.Worldwide.items.filter(item => item.source === "curated") : []);
-    const items = unique([
-      ...(observed ? observed.items.map(item => ({...item, observed:true})) : []),
-      ...curated.map(item => ({name:item.name, domain:"Curated profession"})),
-      ...FALLBACK_ROLES.map(name => ({name, domain:"Curated profession"})),
-      ...catalog.map(item => ({name:item.name, domain:item.domain || "Profession"}))
-    ]);
-    return {
-      items,
-      observed: Boolean(observed),
-      region: observed ? observed.region : "",
-      recommended: items.length ? items[0].name : "Developer"
-    };
+  function validSource(source) {
+    return typeof source === "string" && source.trim() &&
+      !DENIED.has(source.trim().toLowerCase());
   }
-  function skills(feed, city, country) {
-    const ranked = window.ScoutRanking ? window.ScoutRanking.skills(feed, city, country) : [];
-    if (ranked.length) return {items: ranked, source: "topic_proxy"};
-    // These are merely labels from the Scout taxonomy, not measured skill demand.
-    const catalog = (window.SCOUT && window.SCOUT.TOPICS) || [];
-    const counts = new Map();
-    for (const topic of catalog) for (const name of (topic.skills || [])) {
-      counts.set(name, (counts.get(name) || 0) + 1);
+  function professions(feed, city, country, now = Date.now()) {
+    if (!feed || feed.schema_version !== 1 || !recent(feed.generated_at,now)) {
+      return {items:[],observed:false,region:"",recommended:""};
     }
-    const suggested = [...counts].sort((a,b) => b[1]-a[1] || a[0].localeCompare(b[0]))
-      .map(([name])=>({name,source:"curated"}));
-    return {items: unique([...suggested,...FALLBACK_SKILLS.map(name=>({name,source:"curated"}))]).slice(0,5),
-      source: "curated"};
+    const regions = [...new Set([city,country].filter(Boolean))];
+    for (const region of regions) {
+      const direct = feed.regions?.[region];
+      const records = [
+        ...(direct?.status === "measured" && Array.isArray(direct.items) ? direct.items : []),
+        ...(Array.isArray(feed.role_observations) ?
+          feed.role_observations.filter(row=>row.region===region) : [])
+      ];
+      const byName = new Map();
+      for (const row of records) {
+        if (!row || typeof row.name !== "string" || !row.name.trim() ||
+            !validSource(row.source) || !recent(row.collected_at,now)) continue;
+        const count = Number(row.sample_size);
+        if (!Number.isFinite(count) || count <= 0) continue;
+        const name = row.name.trim(), key = name.toLocaleLowerCase();
+        const previous = byName.get(key);
+        if (!previous || previous.sample_size < count) {
+          byName.set(key, {name, sample_size:count, source:row.source,
+            collected_at:row.collected_at, observed:true, domain:"Observed job postings"});
+        }
+      }
+      const items=[...byName.values()].sort((a,b)=>
+        b.sample_size-a.sample_size || a.name.localeCompare(b.name));
+      if (items.length) {
+        return {items, observed:true, region, recommended:items[0].name};
+      }
+    }
+    return {items:[],observed:false,region:"",recommended:""};
+  }
+  function skills(feed, city, country, now = Date.now()) {
+    if (!feed || feed.schema_version !== 1 || !recent(feed.generated_at,now)) {
+      return {items:[],source:"unavailable"};
+    }
+    const key=(country+":"+city).toLowerCase();
+    const input=(feed.skills_by_region||{})[key] || feed.skills || [];
+    return {items:Array.isArray(input)?
+      input.filter(item=>item && typeof item.name==="string" &&
+        item.source==="topic_proxy" && Number.isFinite(Number(item.score)))
+        .sort((a,b)=>Number(b.score)-Number(a.score) || a.name.localeCompare(b.name)).slice(0,5):[],
+      source:"topic_proxy"};
   }
   function matches(items, input, max=5) {
     const query = String(input || "").trim().toLocaleLowerCase();
@@ -91,7 +99,7 @@
         button.setAttribute("role","option");button.setAttribute("aria-selected",String(i===active));
         const name=document.createElement("strong");name.textContent=item.name;
         const meta=document.createElement("small");
-        meta.textContent=item.observed?"Observed regional signal":(item.domain || "Curated profession");
+        meta.textContent=item.observed?"Observed weekly job postings":(item.domain || "Profession");
         button.append(name,meta);
         button.addEventListener("pointerdown",event=>event.preventDefault());
         button.addEventListener("click",()=>choose(item));

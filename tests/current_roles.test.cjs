@@ -35,7 +35,7 @@ assert.equal(Rank.roles(feed,"Berlin","Germany",now),null,"never borrow a differ
 assert.equal(Rank.roles(feed,"Rome","United States",now),null);
 assert.equal(Rank.roles(null,"Rome","Italy",now),null);
 assert.equal(Rank.roles({...feed,schema_version:2},"Rome","Italy",now),null);
-assert.equal(Rank.roles({...feed,generated_at:"2026-10-12T08:00:00Z"},"Rome","Italy",now),null);
+assert.equal(Rank.roles({...feed,generated_at:"2026-10-01T08:00:00Z"},"Rome","Italy",now),null);
 const old=records.map(x=>({...x,collected_at:"2026-09-01T08:00:00Z"}));
 assert.equal(Rank.roles({...feed,regions:{Italy:{status:"measured",items:old}}},"Rome","Italy",now),null,
   "republishing old observations must not renew them");
@@ -43,14 +43,14 @@ assert.equal(Rank.roles({...feed,regions:{Italy:{status:"measured",items:records
 assert.equal(Rank.roles({...feed,regions:{Italy:{status:"measured",items:[...records.slice(0,4),{...records[4],source:"curated"}]}}},"Rome","Italy",now),null);
 assert.equal(Rank.roles({...feed,regions:{Italy:{status:"measured",items:[...records.slice(0,4),{...records[4],sample_size:0}]}}},"Rome","Italy",now),null);
 assert.deepEqual(Array.from(Rank.skills(feed,"Rome","Italy",now),x=>x.name),["Python","Docker","SQL"]);
-assert.equal(Rank.skills({...feed,generated_at:"2026-10-09T00:00:00Z"},"Rome","Italy",now).length,0);
+assert.equal(Rank.skills({...feed,generated_at:"2026-10-01T00:00:00Z"},"Rome","Italy",now).length,0);
 // Both pages consume the same feed and selector.
 const landing=fs.readFileSync("scout/scout-pulse.js","utf8");
 const app=fs.readFileSync("scout/scout-app.js","utf8");
 const chart=fs.readFileSync("scout/trends/pulse.js","utf8");
 const index=fs.readFileSync("scout/index.html","utf8");
 assert.ok(index.indexOf('src="scout-ranking.js"')<index.indexOf('src="scout-pulse.js"'));
-assert.ok(app.includes("ScoutRanking.roles"));
+assert.ok(app.includes("ScoutSuggestions.professions"));
 assert.ok(app.includes('fetch("data/pulse/latest.json"'));
 assert.ok(app.includes('query.get("profile")'));
 assert.ok(app.includes("userSelectedRole.current"));
