@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-16T09:48:35.307595+00:00",
+  "generated_at": "2026-10-17T09:20:25.998154+00:00",
   "latest": "latest.json",
   "batches": "batches/latest.json",
   "global": "global/latest.json",
-  "snapshot": "snapshots/2026-10-16.json",
+  "snapshot": "snapshots/2026-10-17.json",
   "topics": [
     "topics/ai-agents/latest.json",
     "topics/rag/latest.json",
