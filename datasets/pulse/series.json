@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-23T10:02:59.395394+00:00",
+  "generated_at": "2026-10-24T09:32:03.060755+00:00",
   "observations": [
     {
       "date": "2026-10-14",
@@ -2785,6 +2785,285 @@
     },
     {
       "date": "2026-10-23",
+      "region": "Worldwide",
+      "kind": "tool",
+      "name": "Kubernetes",
+      "value": 86.12,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "Python",
+      "value": 443.36,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "Docker",
+      "value": 178.42,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "FastAPI",
+      "value": 178.42,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "LangGraph",
+      "value": 92.3,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "MCP",
+      "value": 92.3,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "RAG",
+      "value": 92.3,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "Embeddings",
+      "value": 89.74,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "LangChain",
+      "value": 89.74,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "LlamaIndex",
+      "value": 89.74,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "Vector databases",
+      "value": 89.74,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "Detection engineering",
+      "value": 88.68,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "SIEM",
+      "value": 88.68,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "Security",
+      "value": 88.68,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "Dashboards",
+      "value": 88.2,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "Evaluation",
+      "value": 88.2,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "Observability",
+      "value": 88.2,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "OpenTelemetry",
+      "value": 88.2,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "CI/CD",
+      "value": 86.12,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "Cloud",
+      "value": 86.12,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "Kubernetes",
+      "value": 86.12,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "Governance",
+      "value": 84.44,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "Policy engines",
+      "value": 84.44,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "skill",
+      "name": "Risk management",
+      "value": 84.44,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "tool",
+      "name": "Docker",
+      "value": 178.42,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "tool",
+      "name": "FastAPI",
+      "value": 178.42,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "tool",
+      "name": "LangGraph",
+      "value": 92.3,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "tool",
+      "name": "LangChain",
+      "value": 89.74,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "tool",
+      "name": "LlamaIndex",
+      "value": 89.74,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "tool",
+      "name": "SIEM",
+      "value": 88.68,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Worldwide",
+      "kind": "tool",
+      "name": "OpenTelemetry",
+      "value": 88.2,
+      "measurement": "topic_proxy",
+      "source": "scout_topics"
+    },
+    {
+      "date": "2026-10-24",
       "region": "Worldwide",
       "kind": "tool",
       "name": "Kubernetes",
