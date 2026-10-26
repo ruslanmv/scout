@@ -1,0 +1,1201 @@
+{
+  "schema_version": 1,
+  "display": {
+    "professions": 5,
+    "skills": 5,
+    "tools": 5
+  },
+  "generated_at": "2026-10-26T11:06:28.551126+00:00",
+  "date": "2026-10-26",
+  "regions": {
+    "Worldwide": {
+      "status": "curated",
+      "description": "Illustrative profession suggestions; no comparable local hiring ranking.",
+      "items": [
+        {
+          "name": "Developer",
+          "source": "curated"
+        },
+        {
+          "name": "Data Analyst",
+          "source": "curated"
+        },
+        {
+          "name": "Nurse",
+          "source": "curated"
+        },
+        {
+          "name": "Teacher",
+          "source": "curated"
+        },
+        {
+          "name": "Accountant",
+          "source": "curated"
+        },
+        {
+          "name": "Marketing Specialist",
+          "source": "curated"
+        },
+        {
+          "name": "UX/Product Designer",
+          "source": "curated"
+        },
+        {
+          "name": "Electrician",
+          "source": "curated"
+        }
+      ]
+    }
+  },
+  "skills": [
+    {
+      "name": "Python",
+      "score": 443.36,
+      "topics_count": 5,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "Docker",
+      "score": 178.42,
+      "topics_count": 2,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "FastAPI",
+      "score": 178.42,
+      "topics_count": 2,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "LangGraph",
+      "score": 92.3,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "MCP",
+      "score": 92.3,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "RAG",
+      "score": 92.3,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "Embeddings",
+      "score": 89.74,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "LangChain",
+      "score": 89.74,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "LlamaIndex",
+      "score": 89.74,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "Vector databases",
+      "score": 89.74,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "Detection engineering",
+      "score": 88.68,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "SIEM",
+      "score": 88.68,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "Security",
+      "score": 88.68,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "Dashboards",
+      "score": 88.2,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "Evaluation",
+      "score": 88.2,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "Observability",
+      "score": 88.2,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "OpenTelemetry",
+      "score": 88.2,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "CI/CD",
+      "score": 86.12,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "Cloud",
+      "score": 86.12,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "Kubernetes",
+      "score": 86.12,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "Governance",
+      "score": 84.44,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "Policy engines",
+      "score": 84.44,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "Risk management",
+      "score": 84.44,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    }
+  ],
+  "tools": [
+    {
+      "name": "Docker",
+      "score": 178.42,
+      "topics_count": 2,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "FastAPI",
+      "score": 178.42,
+      "topics_count": 2,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "LangGraph",
+      "score": 92.3,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "LangChain",
+      "score": 89.74,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "LlamaIndex",
+      "score": 89.74,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "SIEM",
+      "score": 88.68,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "OpenTelemetry",
+      "score": 88.2,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    },
+    {
+      "name": "Kubernetes",
+      "score": 86.12,
+      "topics_count": 1,
+      "source": "topic_proxy"
+    }
+  ],
+  "skills_by_region": {
+    "italy:rome": [
+      {
+        "name": "Python",
+        "score": 460.36,
+        "topics_count": 5,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Docker",
+        "score": 182.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "FastAPI",
+        "score": 182.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangGraph",
+        "score": 96.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "MCP",
+        "score": 96.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "RAG",
+        "score": 96.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Embeddings",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangChain",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LlamaIndex",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Vector databases",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Detection engineering",
+        "score": 91.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "SIEM",
+        "score": 91.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Security",
+        "score": 91.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Governance",
+        "score": 90.44,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Policy engines",
+        "score": 90.44,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Risk management",
+        "score": 90.44,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Dashboards",
+        "score": 88.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Evaluation",
+        "score": 88.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Observability",
+        "score": 88.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "OpenTelemetry",
+        "score": 88.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "CI/CD",
+        "score": 86.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Cloud",
+        "score": 86.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Kubernetes",
+        "score": 86.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      }
+    ],
+    "italy:milan": [
+      {
+        "name": "Python",
+        "score": 454.36,
+        "topics_count": 5,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Docker",
+        "score": 187.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "FastAPI",
+        "score": 187.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangGraph",
+        "score": 96.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "MCP",
+        "score": 96.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "RAG",
+        "score": 96.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Embeddings",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangChain",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LlamaIndex",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Vector databases",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Dashboards",
+        "score": 91.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Evaluation",
+        "score": 91.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Observability",
+        "score": 91.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "OpenTelemetry",
+        "score": 91.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "CI/CD",
+        "score": 91.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Cloud",
+        "score": 91.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Kubernetes",
+        "score": 91.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Detection engineering",
+        "score": 88.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "SIEM",
+        "score": 88.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Security",
+        "score": 88.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Governance",
+        "score": 84.44,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Policy engines",
+        "score": 84.44,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Risk management",
+        "score": 84.44,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      }
+    ],
+    "italy": [
+      {
+        "name": "Python",
+        "score": 450.36,
+        "topics_count": 5,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Docker",
+        "score": 178.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "FastAPI",
+        "score": 178.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangGraph",
+        "score": 92.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "MCP",
+        "score": 92.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "RAG",
+        "score": 92.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Detection engineering",
+        "score": 91.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "SIEM",
+        "score": 91.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Security",
+        "score": 91.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Embeddings",
+        "score": 89.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangChain",
+        "score": 89.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LlamaIndex",
+        "score": 89.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Vector databases",
+        "score": 89.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Governance",
+        "score": 88.44,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Policy engines",
+        "score": 88.44,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Risk management",
+        "score": 88.44,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Dashboards",
+        "score": 88.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Evaluation",
+        "score": 88.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Observability",
+        "score": 88.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "OpenTelemetry",
+        "score": 88.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "CI/CD",
+        "score": 86.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Cloud",
+        "score": 86.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Kubernetes",
+        "score": 86.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      }
+    ],
+    "united-states:san francisco": [
+      {
+        "name": "Python",
+        "score": 455.36,
+        "topics_count": 5,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Docker",
+        "score": 189.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "FastAPI",
+        "score": 189.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangGraph",
+        "score": 99.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "MCP",
+        "score": 99.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "RAG",
+        "score": 99.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Dashboards",
+        "score": 93.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Evaluation",
+        "score": 93.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Observability",
+        "score": 93.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "OpenTelemetry",
+        "score": 93.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "CI/CD",
+        "score": 90.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Cloud",
+        "score": 90.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Kubernetes",
+        "score": 90.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Embeddings",
+        "score": 89.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangChain",
+        "score": 89.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LlamaIndex",
+        "score": 89.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Vector databases",
+        "score": 89.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Detection engineering",
+        "score": 88.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "SIEM",
+        "score": 88.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Security",
+        "score": 88.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Governance",
+        "score": 84.44,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Policy engines",
+        "score": 84.44,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Risk management",
+        "score": 84.44,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      }
+    ],
+    "india:bengaluru": [
+      {
+        "name": "Python",
+        "score": 452.36,
+        "topics_count": 5,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Docker",
+        "score": 188.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "FastAPI",
+        "score": 188.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangGraph",
+        "score": 97.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "MCP",
+        "score": 97.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "RAG",
+        "score": 97.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Embeddings",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangChain",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LlamaIndex",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Vector databases",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "CI/CD",
+        "score": 91.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Cloud",
+        "score": 91.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Kubernetes",
+        "score": 91.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Detection engineering",
+        "score": 88.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "SIEM",
+        "score": 88.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Security",
+        "score": 88.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Dashboards",
+        "score": 88.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Evaluation",
+        "score": 88.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Observability",
+        "score": 88.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "OpenTelemetry",
+        "score": 88.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Governance",
+        "score": 84.44,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Policy engines",
+        "score": 84.44,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Risk management",
+        "score": 84.44,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      }
+    ]
+  },
+  "tools_by_region": {
+    "italy:rome": [
+      {
+        "name": "Docker",
+        "score": 182.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "FastAPI",
+        "score": 182.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangGraph",
+        "score": 96.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangChain",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LlamaIndex",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "SIEM",
+        "score": 91.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "OpenTelemetry",
+        "score": 88.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Kubernetes",
+        "score": 86.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      }
+    ],
+    "italy:milan": [
+      {
+        "name": "Docker",
+        "score": 187.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "FastAPI",
+        "score": 187.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangGraph",
+        "score": 96.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangChain",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LlamaIndex",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "OpenTelemetry",
+        "score": 91.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Kubernetes",
+        "score": 91.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "SIEM",
+        "score": 88.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      }
+    ],
+    "italy": [
+      {
+        "name": "Docker",
+        "score": 178.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "FastAPI",
+        "score": 178.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangGraph",
+        "score": 92.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "SIEM",
+        "score": 91.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangChain",
+        "score": 89.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LlamaIndex",
+        "score": 89.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "OpenTelemetry",
+        "score": 88.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Kubernetes",
+        "score": 86.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      }
+    ],
+    "united-states:san francisco": [
+      {
+        "name": "Docker",
+        "score": 189.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "FastAPI",
+        "score": 189.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangGraph",
+        "score": 99.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "OpenTelemetry",
+        "score": 93.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Kubernetes",
+        "score": 90.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangChain",
+        "score": 89.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LlamaIndex",
+        "score": 89.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "SIEM",
+        "score": 88.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      }
+    ],
+    "india:bengaluru": [
+      {
+        "name": "Docker",
+        "score": 188.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "FastAPI",
+        "score": 188.42,
+        "topics_count": 2,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangGraph",
+        "score": 97.3,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LangChain",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "LlamaIndex",
+        "score": 93.74,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "Kubernetes",
+        "score": 91.12,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "SIEM",
+        "score": 88.68,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      },
+      {
+        "name": "OpenTelemetry",
+        "score": 88.2,
+        "topics_count": 1,
+        "source": "topic_proxy"
+      }
+    ]
+  },
+  "role_observations": [],
+  "source_status": "unavailable",
+  "methodology": {
+    "professions": "Region-matched observed job-posting sample sizes, or explicitly curated fallback.",
+    "skills": "Sum of blended topic scores for each associated skill; not skill job-posting demand.",
+    "tools": "Tool names drawn from topic-associated skills; not measured tool adoption."
+  }
+}
