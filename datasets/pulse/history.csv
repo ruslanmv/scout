@@ -526,3 +526,34 @@ date,region,kind,name,score,sample_size,source,measurement
 2026-10-30,Worldwide,tool,SIEM,88.68,,scout_topics,topic_proxy
 2026-10-30,Worldwide,tool,OpenTelemetry,88.2,,scout_topics,topic_proxy
 2026-10-30,Worldwide,tool,Kubernetes,86.12,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,Python,443.36,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,Docker,178.42,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,FastAPI,178.42,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,LangGraph,92.3,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,MCP,92.3,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,RAG,92.3,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,Embeddings,89.74,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,LangChain,89.74,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,LlamaIndex,89.74,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,Vector databases,89.74,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,Detection engineering,88.68,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,SIEM,88.68,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,Security,88.68,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,Dashboards,88.2,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,Evaluation,88.2,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,Observability,88.2,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,OpenTelemetry,88.2,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,CI/CD,86.12,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,Cloud,86.12,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,Kubernetes,86.12,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,Governance,84.44,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,Policy engines,84.44,,scout_topics,topic_proxy
+2026-10-31,Worldwide,skill,Risk management,84.44,,scout_topics,topic_proxy
+2026-10-31,Worldwide,tool,Docker,178.42,,scout_topics,topic_proxy
+2026-10-31,Worldwide,tool,FastAPI,178.42,,scout_topics,topic_proxy
+2026-10-31,Worldwide,tool,LangGraph,92.3,,scout_topics,topic_proxy
+2026-10-31,Worldwide,tool,LangChain,89.74,,scout_topics,topic_proxy
+2026-10-31,Worldwide,tool,LlamaIndex,89.74,,scout_topics,topic_proxy
+2026-10-31,Worldwide,tool,SIEM,88.68,,scout_topics,topic_proxy
+2026-10-31,Worldwide,tool,OpenTelemetry,88.2,,scout_topics,topic_proxy
+2026-10-31,Worldwide,tool,Kubernetes,86.12,,scout_topics,topic_proxy
